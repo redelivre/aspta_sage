@@ -101,3 +101,7 @@ wp_reset_query();
   }
 ?>
 </div>
+<div>
+<br>
+<input type="button" onclick="" value="Buscar" />
+<div>
