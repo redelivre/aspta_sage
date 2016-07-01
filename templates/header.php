@@ -16,10 +16,10 @@
         <h2 class='site-description'><?php bloginfo( 'description' ); ?></h2>
     </hgroup>
 <?php endif; ?>
-    <nav class="nav-primary">
+    <nav class="collapse navbar-collapse" role="navigation">
       <?php
       if (has_nav_menu('primary_navigation')) :
-        wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']);
+        wp_nav_menu(['theme_location' => 'primary_navigation', 'walker' => new wp_bootstrap_navwalker(), 'menu_class' => 'nav navbar-nav']);
       endif;
       ?>
     </nav>
@@ -34,12 +34,6 @@
       </button>
     </div>
 
-    <nav class="collapse navbar-collapse" role="navigation">
-      <?php
-      if (has_nav_menu('primary_navigation')) :
-        wp_nav_menu(['theme_location' => 'primary_navigation', 'walker' => new wp_bootstrap_navwalker(), 'menu_class' => 'nav navbar-nav']);
-      endif;
-      ?>
-    </nav>
+    
 </div>
 </header>
