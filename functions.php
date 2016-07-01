@@ -18,7 +18,10 @@ $sage_includes = [
   'lib/customizer.php', // Theme customizer
   'lib/bootstrap-nav-walker.php', // nav walker class
   'lib/hacklab_post2home/hacklab_post2home.php', // hacklab fetured posts
-  'lib/footer.php' // footer widget
+  'lib/footer.php', // footer widget
+  'lib/revista.php', // newspaper as-pta widget
+  'lib/blog_clean_plates.php', // blog clean plates widget
+  'lib/see_also.php' // see also about as-pta widget
 ];
 
 foreach ($sage_includes as $file) {

@@ -8,17 +8,17 @@ use WP_Widget;
  * Footer widget
  */
 
-class FooterWidget extends WP_Widget {
+class NewsPaperWidget extends WP_Widget {
 
   /**
    * Sets up the widgets name etc
    */
   public function __construct() {
     $widget_ops = array( 
-      'classname' => 'footer_widget',
-      'description' => __('Logo and text for footer AS-PTA'),
+      'classname' => 'newspaper_widget',
+      'description' => __('Last newspaper AS-PTA'),
     );
-    parent::__construct( 'footer_widget', __('Logo/Text AS-PTA'), $widget_ops );
+    parent::__construct( 'newspaper_widget', __('Last Newspaper AS-PTA'), $widget_ops );
   }
 
   /**
@@ -28,7 +28,24 @@ class FooterWidget extends WP_Widget {
    * @param array $instance
    */
   public function widget( $args, $instance ) {
-    // outputs the content of the widget
+    ?>
+    <div class="sidebar-module">
+    <h3>Revista Agriculturas</h3>
+    <?php
+    query_posts( array (
+          'post_type'      => 'revista',
+          'post_parent'    => 0,
+          'posts_per_page' => 1
+          ));
+    if ( have_posts() ) : 
+      while ( have_posts() ) : the_post()?>
+      <a href="<?php echo get_permalink( $revista->ID ); ?> "><?php the_revista_thumbnail( 'large' ); ?></a>
+      <?php
+      endwhile;
+      endif;
+      ?>
+    </div>
+    <?php
   }
 
   /**
