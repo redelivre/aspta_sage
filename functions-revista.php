@@ -326,7 +326,7 @@ function issuu_switcher($matches)
 function issuu_reader_1($matches)
 {
 	global $documentid;
-	
+        global $post;	
     $folderid = getValueWithDefault('/folderid=([\S]*)/i', $matches[1], '');
     $documentid = getValueWithDefault('/documentid=([\S]*)/i', $matches[1], '');
     $username = getValueWithDefault('/username=([\S]*)/i', $matches[1], '');
