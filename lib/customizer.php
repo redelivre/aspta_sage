@@ -3,6 +3,7 @@
 namespace Roots\Sage\Customizer;
 
 use Roots\Sage\Assets;
+use WP_Customize_Image_Control;
 
 /**
  * Add postMessage support
