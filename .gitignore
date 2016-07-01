@@ -5,3 +5,15 @@ bower_components
 node_modules
 npm-debug.log
 vendor
+*~
+*swp
+.DS*Store
+Thumbs.db
+.project
+nbproject
+.buildpath
+.settings
+# Sublime Text project files
+*.sublime-project
+*.sublime-workspace
+
