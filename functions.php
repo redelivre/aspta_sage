@@ -17,7 +17,8 @@ $sage_includes = [
   'lib/wrapper.php',   // Theme wrapper class
   'lib/customizer.php', // Theme customizer
   'lib/bootstrap-nav-walker.php', // nav walker class
-  'lib/hacklab_post2home/hacklab_post2home.php' // hacklab fetured posts
+  'lib/hacklab_post2home/hacklab_post2home.php', // hacklab fetured posts
+  'lib/footer.php' // footer widget
 ];
 
 foreach ($sage_includes as $file) {
@@ -118,4 +119,3 @@ function aspta_sage_theme_customizer( $wp_customize ) {
 
 }
 add_action( 'customize_register', 'aspta_sage_theme_customizer' );
-
