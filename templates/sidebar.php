@@ -1,6 +1,8 @@
 <?php //dynamic_sidebar('sidebar-primary'); ?>
+
+<div class="col-sm-11 col-sm-offset-1 blog-sidebar">
 <div class="sidebar-module">
-<h2>Revista Agriculturas</h2>
+<h3>Revista Agriculturas</h3>
 <?php
 query_posts( array (
       'post_type'      => 'revista',
@@ -15,32 +17,38 @@ if ( have_posts() ) :
   endwhile;
   endif;
   ?>
-
-  <h2>Blog em pratos Limpos</h2>
+</div>
+<div class="sidebar-module">
+<h3>Blog em pratos Limpos</h3>
 <?php
   $rss = fetch_feed('http://pratoslimpos.org.br/?feed=rss2');
-
-
   if (!is_wp_error( $rss ) ) : 
-
     $maxitems = $rss->get_item_quantity(6); 
     $rss_items = $rss->get_items(0, $maxitems); 
     endif;
+if ($maxitems == 0){
 ?>
-<?php 
-if ($maxitems == 0) echo '<li>'.__("Não há itens no blog.").'</li>';
+  <li><?php _e("Não há itens no blog."); ?></li>
+<?php
+}
 else 
 foreach ( $rss_items as $item ) : ?>
-<a href='<?php echo esc_url( $item->get_permalink() ); ?>' title='<?php echo esc_html( $item->get_title() ); ?>'> <?php echo esc_html( $item->get_title() ); ?></a>
+  <p>
+    <strong>
+      <a href='<?php echo esc_url( $item->get_permalink() ); ?>' 
+      title='<?php echo esc_html( $item->get_title() ); ?>'>
+      <?php echo esc_html( $item->get_title() ); ?></a>
+    </strong>
+  </p>
+  
 <?php endforeach; ?>
-
-
-
-
-<h2> Consulte Também</h2>
-
-<img src="<?php bloginfo('stylesheet_directory'); ?>/images/sidebar_partiners/alizanza.png" alt="parceiro: Alianza por la Agroecologia"/>
-<img src="<?php bloginfo('stylesheet_directory'); ?>/images/sidebar_partiners/agroecologia-em-rede.png" alt="parceiro: Agroecologia em Rede"/>
-<img src="<?php bloginfo('stylesheet_directory'); ?>/images/sidebar_partiners/aba.png" alt="parceiro: aba Agroecologia"/>
-
+</div>
+<div class="sidebar-module">
+  <h3> Consulte Também</h3>
+  <div class="logo_partiners" >
+    <img src="<?php bloginfo('stylesheet_directory'); ?>/images/sidebar_partiners/alizanza.png" alt="parceiro: Alianza por la Agroecologia"/>
+    <img src="<?php bloginfo('stylesheet_directory'); ?>/images/sidebar_partiners/agroecologia-em-rede.png" alt="parceiro: Agroecologia em Rede"/>
+    <img src="<?php bloginfo('stylesheet_directory'); ?>/images/sidebar_partiners/aba.png" alt="parceiro: aba Agroecologia"/>
+  </div>
+</div>
 </div>
