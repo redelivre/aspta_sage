@@ -110,3 +110,10 @@ function assets() {
   wp_enqueue_script('jquery-slider-scroller', get_template_directory_uri() . '/assets/scripts/jquery.slider.scroller.js', array('jquery-cycle2'), null, true);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
+
+// add footer widget
+
+add_action( 'widgets_init', function(){
+     register_widget( 'Roots\Sage\Widget\FooterWidget' );
+});
+
