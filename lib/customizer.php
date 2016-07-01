@@ -11,7 +11,7 @@ function customize_register($wp_customize) {
   $wp_customize->get_setting('blogname')->transport = 'postMessage';
   
   $wp_customize->add_section('aspta_sage_logo', array(
-  	'title'    => __('Upload Logo', 'aspta_sage'),
+  	'title'    => __('Header', 'aspta_sage'),
   	'description' => '',
   	'priority' => 120,
   ));
@@ -26,6 +26,16 @@ function customize_register($wp_customize) {
   	'settings' => 'aspta_sage_upload_logo',
   )));
   
+  $wp_customize->add_setting('aspta_sage_header_background', array(
+  	'capability'        => 'edit_theme_options',
+  	'type'           => 'option',
+  ));
+  
+  $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'aspta_sage_header_background', array(
+  	'label'    => __('Header Background Image', 'aspta_sage'),
+  	'section'  => 'aspta_sage_logo',
+  	'settings' => 'aspta_sage_header_background',
+  )));
 }
 add_action('customize_register', __NAMESPACE__ . '\\customize_register');
 
