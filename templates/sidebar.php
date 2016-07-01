@@ -46,9 +46,15 @@ foreach ( $rss_items as $item ) : ?>
 <div class="sidebar-module">
   <h3> Consulte Também</h3>
   <div class="logo_partiners" >
-    <img src="<?php bloginfo('stylesheet_directory'); ?>/images/sidebar_partiners/alizanza.png" alt="parceiro: Alianza por la Agroecologia"/>
-    <img src="<?php bloginfo('stylesheet_directory'); ?>/images/sidebar_partiners/agroecologia-em-rede.png" alt="parceiro: Agroecologia em Rede"/>
-    <img src="<?php bloginfo('stylesheet_directory'); ?>/images/sidebar_partiners/aba.png" alt="parceiro: aba Agroecologia"/>
+    <a href="http://aspta.org.br/2014/03/projeto-alianca-pela-agroecologia/" >
+      <img src="<?php bloginfo('stylesheet_directory'); ?>/images/sidebar_partiners/alizanza.png" alt="parceiro: Alianza por la Agroecologia"/>
+    </a>
+    <a href="http://www.agroecologiaemrede.org.br/" >
+      <img src="<?php bloginfo('stylesheet_directory'); ?>/images/sidebar_partiners/agroecologia-em-rede.png" alt="parceiro: Agroecologia em Rede"/>
+    </a>
+    <a href="http://www6.ufrgs.br/abaagroeco" >
+      <img src="<?php bloginfo('stylesheet_directory'); ?>/images/sidebar_partiners/aba.png" alt="parceiro: aba Agroecologia"/>
+    </a>
   </div>
 </div>
 </div>
