@@ -16,7 +16,8 @@ $sage_includes = [
   'lib/titles.php',    // Page titles
   'lib/wrapper.php',   // Theme wrapper class
   'lib/customizer.php', // Theme customizer
-  'lib/bootstrap-nav-walker.php' // nav walker class
+  'lib/bootstrap-nav-walker.php', // nav walker class
+  'lib/hacklab_post2home/hacklab_post2home.php' // hacklab fetured posts
 ];
 
 foreach ($sage_includes as $file) {
