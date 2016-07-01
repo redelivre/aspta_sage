@@ -1,9 +1,19 @@
 <?php //dynamic_sidebar('sidebar-primary'); ?>
 <div class="sidebar-module">
-<h2>Blog em pratos Limpos</h2>
-<img src="http://fase.org.br/wp-content/uploads/2014/11/foto_capa-agriculturas.jpg"  />
+<h2>Revista Agriculturas</h2>
 <?php
-
+query_posts( array (
+  'post_type'      => 'revista',
+  'post_parent'    => 0,
+  'posts_per_page' => 1,
+  'paged'          => $paged
+));
+if ( have_posts() ) : 
+while ( have_posts() ) : the_post()?>
+<a href="<?php echo get_permalink( $revista->ID ); ?> "><?php the_revista_thumbnail( 'large' ); ?></a>
+<?php
+endwhile;
+endif;
 $args = array(
        'post_type' => 'post',
        'fields' => 'ids',
