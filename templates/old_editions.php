@@ -15,7 +15,7 @@ query_posts( array (
 <?php
 if ( have_posts() ) :
   while ( have_posts() ) : the_post()?>
-  <a href="<?php echo get_permalink( $revista->ID ); ?> "><?php the_revista_thumbnail( 'medium' ); ?></a>
+  <a href="<?php echo get_permalink( get_the_ID() ); ?> "><?php the_revista_thumbnail( 'medium' ); ?></a>
   <?php
   endwhile;
   endif;
