@@ -63,7 +63,14 @@ function widgets_init() {
     'before_title'  => '<h3>',
     'after_title'   => '</h3>'
   ]);
-
+  register_sidebar([
+    'name'          => __('Logo and text on Footer', 'sage'),
+    'id'            => 'sidebar-logo-text-footer',
+    'before_widget' => '<section class="widget col-sm-4 %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>'
+  ]);
   register_sidebar([
     'name'          => __('Footer', 'sage'),
     'id'            => 'sidebar-footer',
@@ -72,6 +79,7 @@ function widgets_init() {
     'before_title'  => '<h3>',
     'after_title'   => '</h3>'
   ]);
+
 }
 add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
 
