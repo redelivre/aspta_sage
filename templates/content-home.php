@@ -65,7 +65,52 @@
 	} // have_posts()
 ?>
 <div class="clearfix"></div>
-
-<?php dynamic_sidebar('sidebar-home-session-1'); ?>
-<?php dynamic_sidebar('sidebar-home-session-2'); ?>
-<?php dynamic_sidebar('sidebar-home-session-banners'); ?>
+<?php
+$news = new WP_Query(
+		array(
+			'posts_per_page' => 3, // TODO Custom option
+			'ignore_sticky_posts' => 1,
+			'orderby' => 'date', // TODO Custom option
+			'order' => 'DESC', // TODO Custom option
+			'post__not_in' => $feature_ids // Remove highlighted posts
+		));
+$news_ids = array();
+if($news->have_posts())
+{
+	while ( $news->have_posts() )
+	{
+		$news->the_post();
+		$news_ids[] = get_the_ID();?>
+		<div class="col-sm-3 home-news-list">
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<div class="entry-meta">
+					<?php $category = get_the_category();
+					if(is_array($category) && count($category) > 0)
+					{?>
+						<a href="<?php echo get_category_link( $category[0]->term_id ); ?>"><?php echo $category[0]->cat_name; ?></a><?php
+					}?>
+				</div>
+				<div class="media home-news"><?php
+					if ( has_post_thumbnail() ) : ?>
+						<div class="entry-image"><?php
+							$post_thumbnail_id = get_post_thumbnail_id(get_the_ID());
+							$thumb = wp_get_attachment_image_src($post_thumbnail_id, 'slider', false);
+							if(is_array($thumb))
+							{?>
+								<div class="highlights-image" style="background-image: url(<?php echo $thumb[0]; ?>)" ></div><?php
+							}?>
+						</div><?php
+					endif; ?>
+					<div class="bd">
+						<h2 class="entry-title">
+							<a href="<?php the_permalink(); ?>"><?php echo substr(the_title($before = '', $after = '', FALSE), 0, 60).'...'; ?></a>
+						</h2>
+					</div>
+				</div><!-- /home-news -->
+			</article><!-- /article -->
+		</div><!-- /home-news-list --><?php
+	}
+}
+dynamic_sidebar('sidebar-home-session-1');
+dynamic_sidebar('sidebar-home-session-2');
+dynamic_sidebar('sidebar-home-session-banners');
