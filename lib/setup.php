@@ -82,7 +82,7 @@ function widgets_init() {
   register_sidebar([
   	'name'          => __('Home Session 1', 'sage'),
   	'id'            => 'sidebar-home-session-1',
-  	'before_widget' => '<section class="widget %1$s %2$s">',
+  	'before_widget' => '<section class="widget col-sm-3 %1$s %2$s">',
   	'after_widget'  => '</section>',
   	'before_title'  => '<h3>',
   	'after_title'   => '</h3>'
@@ -91,7 +91,7 @@ function widgets_init() {
   register_sidebar([
   	'name'          => __('Home Session 2', 'sage'),
   	'id'            => 'sidebar-home-session-2',
-  	'before_widget' => '<section class="widget %1$s %2$s">',
+  	'before_widget' => '<section class="widget col-sm-3 %1$s %2$s">',
   	'after_widget'  => '</section>',
   	'before_title'  => '<h3>',
   	'after_title'   => '</h3>'
@@ -99,7 +99,7 @@ function widgets_init() {
   register_sidebar([
   	'name'          => __('Home Session Banners', 'sage'),
   	'id'            => 'sidebar-home-session-banners',
-  	'before_widget' => '<section class="widget %1$s %2$s">',
+  	'before_widget' => '<section class="widget col-sm-3 %1$s %2$s">',
   	'after_widget'  => '</section>',
   	'before_title'  => '<h3>',
   	'after_title'   => '</h3>'
