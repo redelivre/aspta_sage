@@ -6,6 +6,7 @@
 				'meta_key' => '_home',
 				'meta_value' => 1
 			));
+	$feature_ids = array();
 	if($feature->have_posts())
 	{
 		?>
@@ -14,7 +15,8 @@
 				<div class="cycle-pager"></div>
 				<div class="cycle-prev"></div>
 				<div class="cycle-next"></div><?php
-				while ( $feature->have_posts() ) : $feature->the_post(); ?>
+				while ( $feature->have_posts() ) : $feature->the_post();
+					$feature_ids[] = get_the_ID();?>
 					<li class="cycles-slide">
 						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<div class="media slide cf"><?php
@@ -63,3 +65,7 @@
 	} // have_posts()
 ?>
 <div class="clearfix"></div>
+
+<?php dynamic_sidebar('sidebar-home-session-1'); ?>
+<?php dynamic_sidebar('sidebar-home-session-2'); ?>
+<?php dynamic_sidebar('sidebar-home-session-banners'); ?>
