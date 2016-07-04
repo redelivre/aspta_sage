@@ -63,16 +63,22 @@ function widgets_init() {
     'before_title'  => '<h3>',
     'after_title'   => '</h3>'
   ]);
-
   register_sidebar([
-    'name'          => __('Footer', 'sage'),
-    'id'            => 'sidebar-footer',
-    'before_widget' => '<section class="widget %1$s %2$s">',
+    'name'          => __('Logo and text on Footer', 'sage'),
+    'id'            => 'sidebar-logo-text-footer',
+    'before_widget' => '<section class="widget col-sm-4 %1$s %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',
     'after_title'   => '</h3>'
   ]);
-  
+  register_sidebar([
+    'name'          => __('Footer', 'sage'),
+    'id'            => 'sidebar-footer',
+    'before_widget' => '<section class="widget col-sm-2 %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>'
+  ]);
   register_sidebar([
   	'name'          => __('Home Session 1', 'sage'),
   	'id'            => 'sidebar-home-session-1',
@@ -90,7 +96,6 @@ function widgets_init() {
   	'before_title'  => '<h3>',
   	'after_title'   => '</h3>'
   ]);
-  
   register_sidebar([
   	'name'          => __('Home Session Banners', 'sage'),
   	'id'            => 'sidebar-home-session-banners',
@@ -138,9 +143,12 @@ function assets() {
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
 
-// add footer widget
+// register all as-pta widget's
 
 add_action( 'widgets_init', function(){
      register_widget( 'Roots\Sage\Widget\FooterWidget' );
+     register_widget( 'Roots\Sage\Widget\NewsPaperWidget' );
+     register_widget( 'Roots\Sage\Widget\BlogCleanPlatesWidget' );
+     register_widget( 'Roots\Sage\Widget\SeeAlsoWidget' );
 });
 
