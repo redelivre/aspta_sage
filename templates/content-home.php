@@ -108,9 +108,9 @@ if($news->have_posts())
 					</div>
 				</div><!-- /home-news -->
 			</article><!-- /article -->
-		</div><!-- /home-news-list -->
-		<div class="clearfix"></div><?php
+		</div><!-- /home-news-list --><?php
 	}
+	?><div class="clearfix"></div><?php
 }
 dynamic_sidebar('sidebar-home-session-1');
 ?><div class="clearfix"></div><?php
