@@ -7,10 +7,12 @@
 	        value="<?php echo get_search_query() ?>" name="s"
 	        title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
 	    </form>
-	    <?php if ( get_theme_mod( 'aspta_sage_upload_logo' ) ) : ?>
-	    <div class='site-logo'>
-	      <a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><img src='<?php echo esc_url( get_theme_mod( 'aspta_sage_upload_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a>
-	    </div>
+	    <?php
+	    	$logo = get_theme_mod( 'aspta_sage_upload_logo', false );
+	    	if ( $logo ) : ?>
+		    <div class='site-logo'>
+		      <a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><img src='<?php echo esc_url( $logo ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a>
+		    </div>
 		<?php else : ?>
 		    <hgroup>
 		        <h1 class='site-title'><a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><?php bloginfo( 'name' ); ?></a></h1>
