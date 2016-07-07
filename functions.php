@@ -101,3 +101,15 @@ function build_taxonomies() {
 
 add_action( 'init', 'build_taxonomies', 0 );
 
+/** mau functions
+the ideia is insert functions on extras but dont works now... :(
+**/
+
+// get selected mark for options on newspaper edition select
+// but this is usable for ...
+
+function is_selected($value, $get, $name) {
+    if (isset($get[$name]) && $value === $get[$name])
+      echo "selected";
+}
+

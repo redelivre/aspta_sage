@@ -2,20 +2,28 @@
 /* 
 Template Name: Biblioteca 
 */
+
+      var_dump($_GET);
+
 ?>
 
 <h1><?php the_title();?></h1>
 
+<form method="get">
+
 <div class="library-box">
   <h4>Tipos de Materiais</h4>
-  
   <?php 
   $terms = get_terms( 'category', array( 'hide_empty' => false ) );
-  
+
   foreach($terms as $term){
+
     if ($term->slug !== "sem-categoria"){
-      echo "<input type='checkbox' name='term-" . $term->slug . "' value='" . $term->name . "' />";
-        echo "<label for='term-" . $term->slug . "'>" . $term->name . "</label>";
+
+      ?>
+      <input type='checkbox' name="<?php echo $term->slug ?>" <?php echo isset($_GET[$term->slug])?"checked":"" ?> value="<?php echo $term->name ?>" />
+      <label for="<?php echo $term->slug ?>"><?php echo $term->name ?></label>
+      <?php
     }
   }
   
@@ -28,8 +36,9 @@ Template Name: Biblioteca
   $terms = get_terms( 'temas-de-intervencao', array( 'hide_empty' => false ) );
   
   foreach($terms as $term){
-    echo "<label for='term-" . $term->slug . "'>" . $term->name . "</label>";
-    echo "<input type='checkbox' name='term-" . $term->slug . "' value='" . $term->name . "' />";
+    ?>
+      <input type='checkbox' name="<?php echo $term->slug ?>" <?php echo isset($_GET[$term->slug])?"checked":"" ?> value="<?php echo $term->name ?>" />
+      <label for="<?php echo $term->slug ?>"><?php echo $term->name ?></label>    <?php
   }
   ?>
 </div>
@@ -37,11 +46,11 @@ Template Name: Biblioteca
   <h4>Revista Agriculturas</h4>
   <p>
     <label>Titúlo de artigo</label>
-    <input type="text" name="article_title" />
+    <input type="text" name="article_title" value="<?php echo isset($_GET['article_title'])?$_GET['article_title']:"" ?>" />
   </p>
   <p>
     <label>Autor</label>
-    <input type="text" name="article_author" />
+    <input type="text" name="article_author" value="<?php echo isset($_GET['article_author'])?$_GET['article_author']:"" ?>" />
   </p>
   <p>
     <label>Edição</label>
@@ -66,7 +75,7 @@ $target = get_the_title();
 preg_match("/V\d{1,3},\sN\d{1,3}/", $target , $keyword);
 if (!empty($keyword)){
 ?>
-  <option value="<?php echo $keyword[0]; ?>"><?php echo $keyword[0]; ?></option>
+  <option value="<?php echo $keyword[0]; ?>" <?php is_selected($keyword[0],$_GET, "edition"); ?>><?php echo $keyword[0]; ?></option>
 <?php
 }
 
@@ -103,5 +112,6 @@ wp_reset_query();
 </div>
 <div>
 <br>
-<input type="button" onclick="" value="Buscar" />
+<input type="submit" id="submit" class="button button-primary" value="Pesquisar"        />
 <div>
+</form>
