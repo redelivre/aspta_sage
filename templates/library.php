@@ -55,8 +55,25 @@ Template Name: Biblioteca
   </p>
   <p>
     <label>Autor</label>
-    <!-- bora usar o get_users ou o wp_list_authors aqui -->
-    <input type="text" name="article_author" value="<?php echo isset($_POST['article_author'])?$_POST['article_author']:"" ?>" />
+    <?php
+  $args = array(
+      'orderby' => 'nicename',
+      'role__not_in' => 'administrator'
+    );
+   $authors = get_users($args);
+    ?>
+    <select name ="author">
+<?php
+
+
+  foreach ($authors as $author) {
+    var_dump($author);
+    ?>
+      <option> <?php echo $author->user_nicename ?></option>
+    <?php
+  }
+?>
+</select>
   </p>
   <p>
     <label>Edição</label>
@@ -139,7 +156,6 @@ $theme = array();
 $all_post_type = array('post', 'revista', 'campanha');
 
 if(isset($_POST["article_title"])){
-  $all_post_type = 'revista';
   $article_title = $_POST["article_title"];
 }
 
@@ -170,19 +186,36 @@ $theme = $aux;
 var_dump($material);
 var_dump($theme);
 
-$args = array( 
-  'post_type' => array('post', 'revista', 'campanha'),
-  'cat' => $material,
-  'posts_per_page' => -1,
-  'post_status' => 'publish',
-  'tax_query' => array(
-    array(
-      'taxonomy' => 'temas-de-intervencao',
-      'field' => 'term_id',
-      'terms' => $theme,
+
+$args = array();
+
+if (isset($_POST["article_title"])) {
+  $args = array( 
+    'post_type' => 'revista',
+    's' => $article_title,
+    'posts_per_page' => -1,
+    'post_status' => 'publish',
+  );
+}else{
+  $args = array( 
+    'post_type' => array('post', 'revista', 'campanha'),
+    'cat' => $material,
+    'posts_per_page' => -1,
+    'post_status' => 'publish',
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'temas-de-intervencao',
+        'field' => 'term_id',
+        'terms' => $theme,
+      ),
     ),
-  ),
-);
+  );  
+}
+
+
+
+
+
 // The Query
 $the_query = new WP_Query( $args );
 
