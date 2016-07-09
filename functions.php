@@ -109,7 +109,7 @@ the ideia is insert functions on extras but dont works now... :(
 // but this is usable for ...
 
 function is_selected($value, $get, $name) {
-    if (isset($get[$name]) && $value === $get[$name])
+    if (isset($get[$name]) && $value == $get[$name])
       echo "selected";
 }
 

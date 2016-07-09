@@ -15,14 +15,14 @@ Template Name: Biblioteca
   <h4>Tipos de Materiais</h4>
   <?php 
   $terms = get_terms( 'category', array( 'hide_empty' => false ) );
-
   foreach($terms as $term){
 
     if ($term->slug !== "sem-categoria"){
-
       ?>
-      <input type='checkbox' name="<?php echo $term->slug ?>" <?php echo isset($_POST[$term->slug])?"checked":"" ?> value="<?php echo $term->name ?>" />
-      <label for="<?php echo $term->slug ?>"><?php echo $term->name ?></label>
+      <input type='checkbox' name="material[]" 
+      <?php echo isset($_POST["material"]) ? (in_array($term->term_id, $_POST["material"])?"checked":""):"" ?> 
+      value="<?php echo $term->term_id ?>" />
+      <a href="<?php echo get_term_link($term) ?>"><label for="material[]"><?php echo $term->name ?></label></a>
       <?php
     }
   }
@@ -36,9 +36,14 @@ Template Name: Biblioteca
   $terms = get_terms( 'temas-de-intervencao', array( 'hide_empty' => false ) );
   
   foreach($terms as $term){
+
+    // arrumar o $_POST sendo obtido direto isso vai dar problema... :(
     ?>
-      <input type='checkbox' name="<?php echo $term->slug ?>" <?php echo isset($_POST[$term->slug])?"checked":"" ?> value="<?php echo $term->name ?>" />
-      <label for="<?php echo $term->slug ?>"><?php echo $term->name ?></label>    <?php
+      <input type='checkbox' name="theme[]" 
+      <?php echo isset($_POST["theme"])? (in_array($term->term_id, $_POST["theme"])?"checked":""): ""; ?> 
+      value="<?php echo $term->term_id ?>" />
+      <a href="<?php echo get_term_link($term) ?>"><label for="theme[]"><?php echo $term->name ?></label></a>
+      <?php
   }
   ?>
 </div>
@@ -50,6 +55,7 @@ Template Name: Biblioteca
   </p>
   <p>
     <label>Autor</label>
+    <!-- bora usar o get_users ou o wp_list_authors aqui -->
     <input type="text" name="article_author" value="<?php echo isset($_POST['article_author'])?$_POST['article_author']:"" ?>" />
   </p>
   <p>
@@ -90,16 +96,10 @@ wp_reset_query();
   </p>
   <p>
     <label>Ano</label>
-    <?php 
-    //$years = range(date("Y"), 2011); 
-    $years = array( 2011, 2012, 2013, 2014, 2015, 2016);
-    var_dump($years);
-    ?>
-    <select name="year">
-     <?php foreach($years as $year){ 
-      var_dump($year);
-      var_dump($_POST["year"]);      ?>
-     <option value="<?php echo $year; ?>" <?php //is_selected($year,$_POST, "year"); ?>><?php echo $year; ?></option>
+    <?php $_years = range(date("Y"), 2011);  ?>
+    <select name="_year">
+     <?php foreach($_years as $_year){ ?>
+     <option value="<?php echo $_year; ?>" <?php is_selected($_year,$_POST, "_year"); ?>><?php echo $_year; ?></option>
      <?php } ?>
     </select>
   </p>
@@ -111,8 +111,12 @@ wp_reset_query();
   $terms = get_terms( 'programas', array( 'hide_empty' => false ) );
   
   foreach($terms as $term){
-    echo "<label for='term-" . $term->slug . "'>" . $term->name . "</label>";
-    echo "<input type='checkbox' name='term-" . $term->slug . "' value='" . $term->name . "' />";
+  ?>
+      <input type='checkbox' name="program[]" 
+      <?php echo isset($_POST["program"])? (in_array($term->term_id, $_POST["program"])?"checked":""): ""; ?> 
+      value="<?php echo $term->term_id ?>" />
+      <a href="<?php echo get_term_link($term) ?>"><label for="program[]"><?php echo $term->name ?></label></a>
+  <?php
   }
 ?>
 </div>
@@ -121,3 +125,83 @@ wp_reset_query();
 <input type="submit" id="submit" class="button button-primary" value="Pesquisar" />
 <div>
 </form>
+
+<?php
+
+// formando array de tipos de materiais
+
+wp_reset_query();
+
+
+$material = array();
+$theme = array();
+
+$all_post_type = array('post', 'revista', 'campanha');
+
+if(isset($_POST["article_title"])){
+  $all_post_type = 'revista';
+  $article_title = $_POST["article_title"];
+}
+
+if(isset($_POST["material"]))
+  $material = $_POST["material"];
+
+if(isset($_POST["theme"]))
+  $theme = $_POST["theme"];
+
+$aux = array();
+
+foreach ($material as $key => $value) {
+  $aux[] = $value;
+}
+
+$material = $aux;
+
+$aux = array();
+
+
+foreach ($theme as $key => $value) {
+  $aux[] = $value;
+}
+
+
+$theme = $aux;
+
+var_dump($material);
+var_dump($theme);
+
+$args = array( 
+  'post_type' => array('post', 'revista', 'campanha'),
+  'cat' => $material,
+  'posts_per_page' => -1,
+  'post_status' => 'publish',
+  'tax_query' => array(
+    array(
+      'taxonomy' => 'temas-de-intervencao',
+      'field' => 'term_id',
+      'terms' => $theme,
+    ),
+  ),
+);
+// The Query
+$the_query = new WP_Query( $args );
+
+// The Loop
+if ( $the_query->have_posts() ) {
+  echo '<ul>';
+  while ( $the_query->have_posts() ) {
+    $the_query->the_post();?>
+    <a href="<?php echo get_permalink(); ?>"><h4><?php echo get_the_title() ?></h4></a>
+    <!--li><?php echo get_post_type() ?></li-->
+  <?php
+  }
+  echo '</ul>';
+  /* Restore original Post Data */
+  wp_reset_postdata();
+} else {
+  // no posts found
+}
+
+$numberofpost = $wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->posts;");
+ 
+echo "The number of rows in posts table are:" .$numberofpost;
