@@ -21,7 +21,8 @@ $sage_includes = [
   'lib/footer.php', // footer widget
   'lib/revista.php', // newspaper as-pta widget
   'lib/blog_clean_plates.php', // blog clean plates widget
-  'lib/see_also.php' // see also about as-pta widget
+  'lib/see_also.php', // see also about as-pta widget
+  'lib/library.php' // library as-pta widget
 ];
 
 foreach ($sage_includes as $file) {

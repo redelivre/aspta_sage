@@ -6,7 +6,7 @@ Template Name: Biblioteca
 
 <h1><?php the_title();?></h1>
 
-<form method="post">
+<form method="get">
 
 <div class="library-box">
   <h4>Tipos de Materiais</h4>
@@ -17,7 +17,7 @@ Template Name: Biblioteca
     if ($term->slug !== "sem-categoria"){
       ?>
       <input type='checkbox' name="material[]" 
-      <?php echo isset($_POST["material"]) ? (in_array($term->term_id, $_POST["material"])?"checked":""):"" ?> 
+      <?php echo isset($_GET["material"]) ? (in_array($term->term_id, $_GET["material"])?"checked":""):"" ?> 
       value="<?php echo $term->term_id ?>" />
       <a href="<?php echo get_term_link($term) ?>"><label for="material[]"><?php echo $term->name ?></label></a>
       <?php
@@ -34,10 +34,10 @@ Template Name: Biblioteca
   
   foreach($terms as $term){
 
-    // arrumar o $_POST sendo obtido direto isso vai dar problema... :(
+    // arrumar o $_GET sendo obtido direto isso vai dar problema... :(
     ?>
       <input type='checkbox' name="theme[]" 
-      <?php echo isset($_POST["theme"])? (in_array($term->term_id, $_POST["theme"])?"checked":""): ""; ?> 
+      <?php echo isset($_GET["theme"])? (in_array($term->term_id, $_GET["theme"])?"checked":""): ""; ?> 
       value="<?php echo $term->term_id ?>" />
       <a href="<?php echo get_term_link($term) ?>"><label for="theme[]"><?php echo $term->name ?></label></a>
       <?php
@@ -48,7 +48,7 @@ Template Name: Biblioteca
   <h4>Revista Agriculturas</h4>
   <p>
     <label>Titúlo de artigo</label>
-    <input type="text" name="article_title" value="<?php echo isset($_POST['article_title'])?$_POST['article_title']:"" ?>" />
+    <input type="text" name="article_title" value="<?php echo isset($_GET['article_title'])?$_GET['article_title']:"" ?>" />
   </p>
   <p>
     <label>Autor</label>
@@ -66,7 +66,7 @@ Template Name: Biblioteca
   foreach ($_authors as $_author) {
     ?>
       <option value="<?php echo $_author->ID ?>" 
-      <?php echo isset($_POST["_author"])?($_author->ID==$_POST["_author"]?"selected":""):"" ?>>
+      <?php echo isset($_GET["_author"])?($_author->ID==$_GET["_author"]?"selected":""):"" ?>>
       <?php echo $_author->user_nicename ?></option>
     <?php
   }
@@ -97,7 +97,7 @@ $target = get_the_title();
 preg_match("/V\d{1,3},\sN\d{1,3}/", $target , $keyword);
 if (!empty($keyword)){
 ?>
-  <option value="<?php echo $keyword[0]; ?>" <?php is_selected($keyword[0],$_POST, "edition"); ?>><?php echo $keyword[0]; ?></option>
+  <option value="<?php echo $keyword[0]; ?>" <?php is_selected($keyword[0],$_GET, "edition"); ?>><?php echo $keyword[0]; ?></option>
 <?php
 }
 
@@ -117,7 +117,7 @@ wp_reset_query();
     <select name="_year">
     <option value="">Nenhum ano selecionado!</option>
      <?php foreach($_years as $_year){ ?>
-     <option value="<?php echo $_year; ?>" <?php is_selected($_year,$_POST, "_year"); ?>><?php echo $_year; ?></option>
+     <option value="<?php echo $_year; ?>" <?php is_selected($_year,$_GET, "_year"); ?>><?php echo $_year; ?></option>
      <?php } ?>
     </select>
   </p>
@@ -131,7 +131,7 @@ wp_reset_query();
   foreach($terms as $term){
   ?>
       <input type='checkbox' name="program[]" 
-      <?php echo isset($_POST["program"])? (in_array($term->term_id, $_POST["program"])?"checked":""): ""; ?> 
+      <?php echo isset($_GET["program"])? (in_array($term->term_id, $_GET["program"])?"checked":""): ""; ?> 
       value="<?php echo $term->term_id ?>" />
       <a href="<?php echo get_term_link($term) ?>"><label for="program[]"><?php echo $term->name ?></label></a>
   <?php
@@ -165,35 +165,35 @@ $all_post_type = array('post', 'revista', 'campanha');
 // data validation
 {
   // this two if's walk together
-  if(isset($_POST["article_title"])){
-    $article_title = $_POST["article_title"];
+  if(isset($_GET["article_title"])){
+    $article_title = $_GET["article_title"];
   }
 
-  if (isset($_POST["edition"])) {
-    if ($_POST["edition"]!="") {
-      $article_title = $_POST["edition"] ;  
+  if (isset($_GET["edition"])) {
+    if ($_GET["edition"]!="") {
+      $article_title = $_GET["edition"] ;  
     }
     
   }  
 }
 
 
-if(isset($_POST["material"]))
-  $material = $_POST["material"];
+if(isset($_GET["material"]))
+  $material = $_GET["material"];
 
-if(isset($_POST["theme"]))
-  $theme = $_POST["theme"];
+if(isset($_GET["theme"]))
+  $theme = $_GET["theme"];
 
-if (isset($_POST["program"])) {
-  $program = $_POST["program"];
+if (isset($_GET["program"])) {
+  $program = $_GET["program"];
 }
 
-if (isset($_POST["_author"])) {
-  $author = $_POST["_author"];
+if (isset($_GET["_author"])) {
+  $author = $_GET["_author"];
 }
 
-if (isset($_POST["_year"])) {
-  $_year = (int)$_POST["_year"];
+if (isset($_GET["_year"])) {
+  $_year = (int)$_GET["_year"];
 }
 
 // data prepare
@@ -227,7 +227,7 @@ $args = array();
 
 $tax_query =  array();
 
-if (isset($_POST["theme"])) {
+if (isset($_GET["theme"])) {
       $tax_query[] = array(
         'taxonomy' => 'temas-de-intervencao',
         'field' => 'term_id',
@@ -235,7 +235,7 @@ if (isset($_POST["theme"])) {
       );   
 }   
 
-if (isset($_POST["program"])) {
+if (isset($_GET["program"])) {
       $tax_query[] = array(
         'taxonomy' => 'programas',
         'field' => 'term_id',
@@ -243,7 +243,7 @@ if (isset($_POST["program"])) {
       );
 }
 
-if (isset($_POST["material"]) || isset($_POST["theme"]) || isset($_POST["program"])) {
+if (isset($_GET["material"]) || isset($_GET["theme"]) || isset($_GET["program"])) {
   //todos
   $args = array( 
     'post_type' => array('post', 'revista', 'campanha'),

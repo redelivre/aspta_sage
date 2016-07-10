@@ -147,6 +147,7 @@ add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
 
 add_action( 'widgets_init', function(){
      register_widget( 'Roots\Sage\Widget\FooterWidget' );
+     register_widget( 'Roots\Sage\Widget\LibraryWidget' );
      register_widget( 'Roots\Sage\Widget\NewsPaperWidget' );
      register_widget( 'Roots\Sage\Widget\BlogCleanPlatesWidget' );
      register_widget( 'Roots\Sage\Widget\SeeAlsoWidget' );
