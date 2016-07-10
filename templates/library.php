@@ -2,9 +2,6 @@
 /* 
 Template Name: Biblioteca 
 */
-
-      var_dump($_POST);
-
 ?>
 
 <h1><?php the_title();?></h1>
@@ -62,7 +59,6 @@ Template Name: Biblioteca
     );
    $_authors = get_users($args);
     ?>
-    <br>
     <select name ="_author">
     <option value="">Nenhum autor selecionado!</option>
 <?php
@@ -116,6 +112,7 @@ wp_reset_query();
   </p>
   <p>
     <label>Ano</label>
+    <!-- this is cool -> https://codex.wordpress.org/Function_Reference/get_year_link -->
     <?php $_years = range(date("Y"), 2011);  ?>
     <select name="_year">
     <option value="">Nenhum ano selecionado!</option>
@@ -158,22 +155,38 @@ wp_reset_query();
 
 $material = array();
 $theme = array();
+$program = array();
 $author = "";
-$_year = "";
+$_year = null;
+$article_title = "";
 $all_post_type = array('post', 'revista', 'campanha');
 
 
 // data validation
+{
+  // this two if's walk together
+  if(isset($_POST["article_title"])){
+    $article_title = $_POST["article_title"];
+  }
 
-if(isset($_POST["article_title"])){
-  $article_title = $_POST["article_title"];
+  if (isset($_POST["edition"])) {
+    if ($_POST["edition"]!="") {
+      $article_title = $_POST["edition"] ;  
+    }
+    
+  }  
 }
+
 
 if(isset($_POST["material"]))
   $material = $_POST["material"];
 
 if(isset($_POST["theme"]))
   $theme = $_POST["theme"];
+
+if (isset($_POST["program"])) {
+  $program = $_POST["program"];
+}
 
 if (isset($_POST["_author"])) {
   $author = $_POST["_author"];
@@ -195,21 +208,52 @@ $material = $aux;
 
 $aux = array();
 
-
 foreach ($theme as $key => $value) {
   $aux[] = $value;
 }
 
-
 $theme = $aux;
 
-var_dump($material);
-var_dump($theme);
 
+$aux = array();
+
+foreach ($program as $key => $value) {
+  $aux[] = $value;
+}
+
+$program = $aux;
 
 $args = array();
 
-if (isset($_POST["article_title"]) || isset($_POST["_author"])) {
+$tax_query =  array();
+
+if (isset($_POST["theme"])) {
+      $tax_query[] = array(
+        'taxonomy' => 'temas-de-intervencao',
+        'field' => 'term_id',
+        'terms' => $theme,
+      );   
+}   
+
+if (isset($_POST["program"])) {
+      $tax_query[] = array(
+        'taxonomy' => 'programas',
+        'field' => 'term_id',
+        'terms' => $program,
+      );
+}
+
+if (isset($_POST["material"]) || isset($_POST["theme"]) || isset($_POST["program"])) {
+  //todos
+  $args = array( 
+    'post_type' => array('post', 'revista', 'campanha'),
+    'cat' => $material,
+    'posts_per_page' => -1,
+    'post_status' => 'publish',
+    'tax_query' => $tax_query,
+  ); 
+}else{
+  // revista
   $args = array( 
     'post_type' => 'revista',
     's' => $article_title,
@@ -218,25 +262,8 @@ if (isset($_POST["article_title"]) || isset($_POST["_author"])) {
     'author' => $author,
     'date_query' => array( 'year' => $_year),
   );
-}else{
-  $args = array( 
-    'post_type' => array('post', 'revista', 'campanha'),
-    'cat' => $material,
-    'posts_per_page' => -1,
-    'post_status' => 'publish',
-    'tax_query' => array(
-      array(
-        'taxonomy' => 'temas-de-intervencao',
-        'field' => 'term_id',
-        'terms' => $theme,
-      ),
-    ),
-  );  
+ 
 }
-
-
-
-
 
 // The Query
 $the_query = new WP_Query( $args );
@@ -256,7 +283,3 @@ if ( $the_query->have_posts() ) {
 } else {
   // no posts found
 }
-
-$numberofpost = $wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->posts;");
- 
-echo "The number of rows in posts table are:" .$numberofpost;
