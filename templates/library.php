@@ -60,16 +60,18 @@ Template Name: Biblioteca
       'orderby' => 'nicename',
       'role__not_in' => 'administrator'
     );
-   $authors = get_users($args);
+   $_authors = get_users($args);
     ?>
-    <select name ="author">
+    <br>
+    <select name ="_author">
+    <option value="">Nenhum autor selecionado!</option>
 <?php
 
-
-  foreach ($authors as $author) {
-    var_dump($author);
+  foreach ($_authors as $_author) {
     ?>
-      <option> <?php echo $author->user_nicename ?></option>
+      <option value="<?php echo $_author->ID ?>" 
+      <?php echo isset($_POST["_author"])?($_author->ID==$_POST["_author"]?"selected":""):"" ?>>
+      <?php echo $_author->user_nicename ?></option>
     <?php
   }
 ?>
@@ -91,6 +93,7 @@ $the_query = new WP_Query( $args );
 // The Loop
 ?>
 <select name ="edition">
+<option value="">Nenhuma edição Selecionada!</option>
 <?php
 while ( $the_query->have_posts() ):
 $the_query->the_post();
@@ -115,6 +118,7 @@ wp_reset_query();
     <label>Ano</label>
     <?php $_years = range(date("Y"), 2011);  ?>
     <select name="_year">
+    <option value="">Nenhum ano selecionado!</option>
      <?php foreach($_years as $_year){ ?>
      <option value="<?php echo $_year; ?>" <?php is_selected($_year,$_POST, "_year"); ?>><?php echo $_year; ?></option>
      <?php } ?>
@@ -152,6 +156,7 @@ wp_reset_query();
 
 $material = array();
 $theme = array();
+$author = "";
 
 $all_post_type = array('post', 'revista', 'campanha');
 
@@ -164,6 +169,10 @@ if(isset($_POST["material"]))
 
 if(isset($_POST["theme"]))
   $theme = $_POST["theme"];
+
+if (isset($_POST["_author"])) {
+  $author = $_POST["_author"];
+}
 
 $aux = array();
 
@@ -189,12 +198,13 @@ var_dump($theme);
 
 $args = array();
 
-if (isset($_POST["article_title"])) {
+if (isset($_POST["article_title"]) || isset($_POST["_author"])) {
   $args = array( 
     'post_type' => 'revista',
     's' => $article_title,
     'posts_per_page' => -1,
     'post_status' => 'publish',
+    'author' => $author,
   );
 }else{
   $args = array( 
