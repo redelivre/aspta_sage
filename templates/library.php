@@ -154,11 +154,16 @@ wp_reset_query();
 wp_reset_query();
 
 
+// data declaration
+
 $material = array();
 $theme = array();
 $author = "";
-
+$_year = "";
 $all_post_type = array('post', 'revista', 'campanha');
+
+
+// data validation
 
 if(isset($_POST["article_title"])){
   $article_title = $_POST["article_title"];
@@ -173,6 +178,12 @@ if(isset($_POST["theme"]))
 if (isset($_POST["_author"])) {
   $author = $_POST["_author"];
 }
+
+if (isset($_POST["_year"])) {
+  $_year = (int)$_POST["_year"];
+}
+
+// data prepare
 
 $aux = array();
 
@@ -205,6 +216,7 @@ if (isset($_POST["article_title"]) || isset($_POST["_author"])) {
     'posts_per_page' => -1,
     'post_status' => 'publish',
     'author' => $author,
+    'date_query' => array( 'year' => $_year),
   );
 }else{
   $args = array( 
