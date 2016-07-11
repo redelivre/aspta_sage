@@ -156,3 +156,10 @@ add_action( 'init', function(){
     }
   }
 });
+
+
+add_filter( 'wp_nav_menu_items', function($items, $args){
+    
+    $items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-13843 active" id="menu-item-13843"><a href="http://aspta.pretao/revistas/V13, N1" title="Revistas">Revistas</a></li>';
+    return $items;
+}, 10, 2 );
