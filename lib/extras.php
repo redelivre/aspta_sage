@@ -31,3 +31,13 @@ function excerpt_more() {
   return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'sage') . '</a>';
 }
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
+
+add_filter('sage/wrap_base', __NAMESPACE__ . '\\sage_wrap_base_cpts'); // Add our function to the sage/wrap_base filter
+
+function sage_wrap_base_cpts($templates) {
+  global $wp_query;
+  if(array_key_exists('newspaper', $wp_query->query_vars)){
+     array_unshift($templates, 'base-newspaper.php'); // Shift the template to the front of the array
+  }
+  return $templates; // Return our modified array with base-$cpt.php at the front of the queue
+}

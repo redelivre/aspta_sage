@@ -127,14 +127,14 @@ add_action( 'init', function(){
 });
 
 // Catch the URL and redirect it to a template file
-add_action('template_redirect', function(){
+/*add_action('template_redirect', function(){
   global $wp_query;
   if(array_key_exists('newspaper', $wp_query->query_vars))
   {
     load_template( get_template_directory() . '/templates/newspaper.php', true);
     exit();
   }
-});
+});*/
     
 add_action( 'init', function(){
   $rules = get_option('rewrite_rules');
@@ -159,7 +159,8 @@ add_action( 'init', function(){
 
 
 add_filter( 'wp_nav_menu_items', function($items, $args){
-    
-    $items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-13843 active" id="menu-item-13843"><a href="http://aspta.pretao/revistas/V13, N1" title="Revistas">Revistas</a></li>';
+    $items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-13843 active" id="menu-item-13843"><a href="' . get_site_url() . '/revistas/V13, N1" title="revistas">Revistas Agriculturas</a></li>';
+    $items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-13843 active" id="menu-item-13843"><a href="' . get_site_url() . '?feed=rss2" title="feed">Assine o feed</a></li>';
+
     return $items;
 }, 10, 2 );

@@ -1,8 +1,3 @@
-
-<?php get_header('default'); ?>
-<div class="wrap container" role="document">
-  <div class="content row">
-  <main class="main">
     <?php 
 
     	$edition = urldecode(get_query_var( 'newspaper'));
@@ -81,19 +76,3 @@
         wp_reset_query();
        ?>
 	   </div>
-  </main>
-  <aside class="sidebar">
-	<div class="col-sm-11 col-sm-offset-1 blog-sidebar">
-	<?php dynamic_sidebar('sidebar-primary'); ?>
-	</div>	
-  </aside>
-  </div>
-</div>
-  <footer class="content-info">
-    <div class="container">
-	  <div class="row">
-	  	<?php dynamic_sidebar('sidebar-logo-text-footer'); ?>
-	   	<?php dynamic_sidebar('sidebar-footer'); ?>
-	  </div>
-	</div>
-  </footer>
