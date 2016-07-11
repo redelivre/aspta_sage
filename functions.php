@@ -19,7 +19,7 @@ $sage_includes = [
   'lib/bootstrap-nav-walker.php', // nav walker class
   'lib/hacklab_post2home/hacklab_post2home.php', // hacklab fetured posts
   'lib/footer.php', // footer widget
-  'lib/revista.php', // newspaper as-pta widget
+  'lib/newspaper.php', // newspaper as-pta widget
   'lib/blog_clean_plates.php', // blog clean plates widget
   'lib/see_also.php', // see also about as-pta widget
   'lib/library.php' // library as-pta widget
@@ -36,7 +36,7 @@ unset($file, $filepath);
 
 
 /*
- * Revista Agriculturas e Campanha
+ * newspaper Agriculturas e Campanha
  * 
  * Inclui os arquivos relacionados com estas duas áreas do site
  */
@@ -114,3 +114,45 @@ function is_selected($value, $get, $name) {
       echo "selected";
 }
 
+// Create the query var so that WP catches the custom /member/username url
+add_filter('query_vars', function($vars){
+  $vars[] = 'newspaper';
+  return $vars;
+} , 100);
+
+// create page newspaper
+add_action( 'init', function(){
+  add_rewrite_tag('%newspaper%', '([^&]+)');
+  add_rewrite_rule('^revistas/([^/]*)?', 'index.php?newspaper=$matches[1]', 'top');
+});
+
+// Catch the URL and redirect it to a template file
+add_action('template_redirect', function(){
+  global $wp_query;
+  if(array_key_exists('newspaper', $wp_query->query_vars))
+  {
+    load_template( get_template_directory() . '/templates/newspaper.php', true);
+    exit();
+  }
+});
+    
+add_action( 'init', function(){
+  $rules = get_option('rewrite_rules');
+  $found = false;
+  if(is_array($rules))
+  {
+    foreach($rules as $rule)
+    {
+      if(strpos($rule, 'newspaper') !== false)
+      {
+        $found = true;
+        break;
+      }
+    }
+    if(! $found)
+    {
+      global $wp_rewrite;
+      $wp_rewrite->flush_rules();
+    }
+  }
+});
