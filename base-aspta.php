@@ -21,8 +21,11 @@ use Roots\Sage\Wrapper;
     <div class="wrap container" role="document">
       <div class="content row">
         <main class="main">
-          <?php //include Wrapper\template_path(); ?>
-          <?php get_template_part('templates/newspaper'); ?>
+          <?php //include Wrapper\template_path();
+          	global $wp;
+			$type = key($wp->query_vars);
+		  ?>
+          <?php get_template_part('templates/' . $type); ?>
         </main><!-- /.main -->
         <?php //if (Setup\display_sidebar()) : ?>
           <aside class="sidebar">

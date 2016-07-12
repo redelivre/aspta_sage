@@ -1,10 +1,4 @@
-<?php 
-/* 
-Template Name: Biblioteca 
-*/
-?>
-
-<h1><?php the_title();?></h1>
+<h1>Biblioteca</h1>
 
 <form method="get">
 

@@ -117,6 +117,7 @@ function is_selected($value, $get, $name) {
 // Create the query var so that WP catches the custom /member/username url
 add_filter('query_vars', function($vars){
   $vars[] = 'newspaper';
+  $vars[] = 'library';
   return $vars;
 } , 100);
 
@@ -124,18 +125,10 @@ add_filter('query_vars', function($vars){
 add_action( 'init', function(){
   add_rewrite_tag('%newspaper%', '([^&]+)');
   add_rewrite_rule('^revistas/([^/]*)?', 'index.php?newspaper=$matches[1]', 'top');
+  add_rewrite_tag('%library%', '([^&]+)');
+  add_rewrite_rule('^biblioteca?', 'index.php?library=aspta', 'top');
 });
 
-// Catch the URL and redirect it to a template file
-/*add_action('template_redirect', function(){
-  global $wp_query;
-  if(array_key_exists('newspaper', $wp_query->query_vars))
-  {
-    load_template( get_template_directory() . '/templates/newspaper.php', true);
-    exit();
-  }
-});*/
-    
 add_action( 'init', function(){
   $rules = get_option('rewrite_rules');
   $found = false;
@@ -159,6 +152,8 @@ add_action( 'init', function(){
 
 
 add_filter( 'wp_nav_menu_items', function($items, $args){
+	$items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-13843 active" id="menu-item-13843"><a href="' . get_site_url() . '/quem-somos/" title="quem-somos">Quem Somos</a></li>';
+	$items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-13843 active" id="menu-item-13843"><a href="' . get_site_url() . '/biblioteca/aspta" title="biblioteca">Biblioteca</a></li>';
     $items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-13843 active" id="menu-item-13843"><a href="' . get_site_url() . '/revistas/V13, N1" title="revistas">Revistas Agriculturas</a></li>';
     $items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-13843 active" id="menu-item-13843"><a href="' . get_site_url() . '?feed=rss2" title="feed">Assine o feed</a></li>';
 
