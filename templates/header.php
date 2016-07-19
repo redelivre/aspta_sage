@@ -1,12 +1,20 @@
 <header class="banner">
   <div class="container">
   	<div class="header-background">
-	    <form role="search" method="get" class="searchform group" action="<?php echo home_url( '/' ); ?>">
-	        <input type="search" class="search-field"
-	        placeholder="Busca!"
-	        value="<?php echo get_search_query() ?>" name="s"
-	        title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
-	    </form>
+	<div id="sb-search" class="sb-search">
+		<form role="search" method="get" class="searchform group">
+			<input class="sb-search-input" placeholder="Busca!" 
+			type="search" 
+			value="<?php echo get_search_query() ?>" 
+			name="s" 
+			id="search" 
+			title="<?php echo esc_attr_x( 'Search for: ', ' label' ) ?>"
+			action="<?php echo home_url( '/' ); ?>">
+
+			<input class="sb-search-submit" type="submit" value="">
+			<span class="sb-icon-search"></span>
+		</form>
+	</div>	    
 	    <?php
 	    	$logo = get_theme_mod( 'aspta_sage_upload_logo', false );
 	    	if ( $logo ) : ?>
@@ -28,4 +36,9 @@
       ?>
     </nav>
   </div>
+  <script type='text/javascript' src='http://aspta.pretao/wp-content/themes/aspta_sage/assets/scripts/classie.js'></script>
+  <script type='text/javascript' src='http://aspta.pretao/wp-content/themes/aspta_sage/assets/scripts/uisearch.js'></script>
+  <script>
+	new UISearch( document.getElementById( 'sb-search' ) );
+  </script>
 </header>
