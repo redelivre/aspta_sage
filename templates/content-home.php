@@ -212,12 +212,14 @@ if($news->have_posts())
     <?php
     }
     else 
+      $numItems = count($rss_items);
+      $i = 0;
     foreach ( $rss_items as $item ) : ?>
       <p>
         <strong>
-          <h4><a href='<?php echo esc_url( $item->get_permalink() ); ?>' 
+          <h4 class="<?php if( ++$i === $numItems ) echo "sem-borda"; ?>" ><a href='<?php echo esc_url( $item->get_permalink() ); ?>' 
           title='<?php echo esc_html( $item->get_title() ); ?>'>
-          <?php echo esc_html( $item->get_title() ); ?></a></h4>
+          <?php echo esc_html( $item->get_title()); ?></a></h4>
         </strong>
       </p>
       
