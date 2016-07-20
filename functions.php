@@ -152,14 +152,11 @@ add_action( 'init', function(){
 
 
 add_filter( 'wp_nav_menu_items', function($items, $args){
-	$items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-13843 active" id="menu-item-13843"><a href="' . get_site_url() . '/quem-somos/" title="quem-somos">Quem Somos</a></li>';
-	$items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-13843 active" id="menu-item-13843"><a href="' . get_site_url() . '/biblioteca/aspta" title="biblioteca">Biblioteca</a></li>';
-    $items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-13843 active" id="menu-item-13843"><a href="' . get_site_url() . '/revistas/V13, N1" title="revistas">Revistas Agriculturas</a></li>';
-    $items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-13843 active" id="menu-item-13843"><a href="' . get_site_url() . '?feed=rss2" title="feed">Assine o feed</a></li>';
+	$class = "nav navbar_nav";
+	$items .= '<li class="' . $class . '" id="quem-somos"><a href="' . get_site_url() . '/quem-somos/" title="quem-somos">Quem Somos</a></li>';
+	$items .= '<li class="' . $class . '" id="biblioteca"><a href="' . get_site_url() . '/biblioteca/aspta" title="biblioteca">Biblioteca</a></li>';
+    $items .= '<li class="' . $class . '" id="revista"><a href="' . get_site_url() . '/revistas/V13, N1" title="revistas">Revistas Agriculturas</a></li>';
+    $items .= '<li class="' . $class . '" id="feed"><a href="' . get_site_url() . '?feed=rss2" title="feed">Assine o feed</a></li>';
 
     return $items;
 }, 10, 2 );
-
-register_nav_menus( array(
-    'primary' => __( 'Menu Principal', 'aspta' ),
-) );
