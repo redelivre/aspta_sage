@@ -139,94 +139,123 @@ if($news->have_posts())
 
 <div class="clearfix"></div>
 
-<aside id="prog-midias">
-<div class="container">
-<div class="row">
-<div class="col-md-4 col-sm-10 programas-locais">
-<h3>Programas Locais</h3>
-<div class="programa">
-<h3 class="prog-title">Programa da Paraíba</h3>
-<h4 class="prog-desc">Breve descritivo do programa para fazer uma chamada rápida.</h4>
-<div class="btn-saibamais"><a class="btn btn-lg" role="button">saiba mais</a></div>
-</div>
-<div class="programa">
-<h3 class="prog-title">Programa da Agricultura Urbana</h3>
-<h4 class="prog-desc">Breve descritivo do programa para fazer uma chamada rápida.</h4>
-<div class="btn-saibamais"><a class="btn btn-lg" role="button">saiba mais</a></div>
-</div>
-<div class="programa">
-<h3 class="prog-title">Programa do Contestado</h3>
-<h4 class="prog-desc">Breve descritivo do programa para fazer uma chamada rápida.</h4>
-<div class="btn-saibamais"><a class="btn btn-lg" role="button">saiba mais</a></div>
-</div>
-</div><!-- /.programas-locais -->
-<div class="col-md-4 col-sm-10 video-da-semana">
-<h3>Vídeo da Semana</h3>
-<div class="video">
-<h4>Assista aos vídeos da ASPTA.</h4>
-<div class="box-video"><img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/images/banner-video.jpg" alt=""></div>
-</div>
-</div><!-- /.video-da-semana -->
-<div class="col-md-4 col-sm-10 revista">
-<h3>Revista Agriculturas</h3>
-<img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/images/banner-revista.jpg" alt="Revista Agriculturas">
-</div>
-</div>
-</div>
-</aside><!-- /.prog-midias -->
+  <aside id="prog-midias">
+  <div class="container">
+  <div class="row">
+  <div class="col-md-4 col-sm-10 programas-locais">
+
+  <h3>Programas Locais</h3>
+  <div class="programa">
+  <h3 class="prog-title">Programa da Paraíba</h3>
+  <h4 class="prog-desc">Breve descritivo do programa para fazer uma chamada rápida.</h4>
+  <div class="btn-saibamais"><a class="btn btn-lg" role="button">saiba mais</a></div>
+  </div>
+  <div class="programa">
+  <h3 class="prog-title">Programa da Agricultura Urbana</h3>
+  <h4 class="prog-desc">Breve descritivo do programa para fazer uma chamada rápida.</h4>
+  <div class="btn-saibamais"><a class="btn btn-lg" role="button">saiba mais</a></div>
+  </div>
+  <div class="programa">
+  <h3 class="prog-title">Programa do Contestado</h3>
+  <h4 class="prog-desc">Breve descritivo do programa para fazer uma chamada rápida.</h4>
+  <div class="btn-saibamais"><a class="btn btn-lg" role="button">saiba mais</a></div>
+  </div>
+  </div><!-- /.programas-locais -->
+
+  <div class="col-md-4 col-sm-10 video-da-semana">
+  <h3>Vídeo da Semana</h3>
+  <div class="video">
+  <h4>Assista aos vídeos da ASPTA.</h4>
+  <div class="box-video"><img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/images/banner-video.jpg" alt=""></div>
+  </div>
+  </div><!-- /.video-da-semana -->
+
+  <div class="col-md-4 col-sm-10 revista">
+  <h3>Revista Agriculturas</h3>
+  <img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/images/banner-revista.jpg" alt="Revista Agriculturas">
+  </div>
+  </div>
+  </div>
+  </aside><!-- /.prog-midias -->
 
 <div class="clearfix"></div>
 
-<aside id="camp-blog">
-<div class="container">
-<div class="row">
-<div class="col-md-4 col-sm-10 boletim-campanha">
-<h3 class="text-uppercase branco">Brasil livre de transgênicos e agrotóxicos</h3>
-<h4>Comentários ao pedido de liberação comercial do milho transgênico Liberty Link</h4>
-<h4 class="branco">Rotular é preciso</h4>
-<h4 class="sem-borda">Livro: Lavouras Transgênicas - Riscos e incertezas: mais de 750 estudos desprezados pelos órgãos reguladores de OGMs</h4>
-<h4 class="text-uppercase branco assine">Assine o Boletim da Campanha</h3>
-<form>
-<div class="form-group">
-<input type="text" class="form-control" placeholder="Digite seu e-mail e aperte enter">
-</div>
-<button type="submit" class="btn btn-lg btn-enviar">enviar</button>
-</form>
-</div>
-<div class="col-md-4 col-sm-10 blog-pratos-limpos">
-<h3 class="text-uppercase">Blog Em Pratos Limpos</h3>
-<h4>Sementes da Paixão - Calendário 2016 da AS-PTA e do Polo da Borborema</h4>
-<h4>Nota da ANA "Em defesa da Democracia e contra o golpe"</h4>
-<h4 class="laranja">TTIP: já ouviu falar?</h4>
-<h4>La tierra en Paraguay</h4>
-<h4>Pela redução de agrotóxicos</h4>
-<h4 class="sem-borda">Nota do MST sobre o impeachment da presidenta Dilma</h4>
-</div>
-<div class="col-md-4 col-sm-10 campanhas">
-<h3 class="text-uppercase">Campanhas</h3>
-<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/banner-polo-da-borborema.jpg" alt="Polo da Borborema" />
-<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/banner-coletivo-triunfo.jpg" alt="Coletivo triunfo" />
-<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/banner-produtos-da-gente.jpg" alt="Produtos da Gente" />
-</div>
-</div>
-</div>
-</aside><!-- /.camp-blog -->
+  <aside id="camp-blog">
+  <div class="container">
+  <div class="row">
+  <div class="col-md-4 col-sm-10 boletim-campanha">
+  <h3 class="text-uppercase branco">Brasil livre de transgênicos e agrotóxicos</h3>
+  <h4>Comentários ao pedido de liberação comercial do milho transgênico Liberty Link</h4>
+  <h4 class="branco">Rotular é preciso</h4>
+  <h4 class="sem-borda">Livro: Lavouras Transgênicas - Riscos e incertezas: mais de 750 estudos desprezados pelos órgãos reguladores de OGMs</h4>
+  
+  <h4 class="text-uppercase branco assine">Assine o Boletim da Campanha</h3>
+  <form>
+  <div class="form-group">
+  <input type="text" class="form-control" placeholder="Digite seu e-mail e aperte enter">
+  </div>
+  <button type="submit" class="btn btn-lg btn-enviar">enviar</button>
+  </form>
+  </div>
+
+  <div class="col-md-4 col-sm-10 blog-pratos-limpos">  
+  <h3 class="text-uppercase">Blog Em Pratos Limpos</h3>
+    <?php
+    $rss = fetch_feed('http://pratoslimpos.org.br/?feed=rss2');
+    if (!is_wp_error( $rss ) ) : 
+      $maxitems = $rss->get_item_quantity(6); 
+      $rss_items = $rss->get_items(0, $maxitems); 
+      endif;
+    if ($maxitems == 0){
+    ?>
+      <li><?php _e("Não há itens no blog."); ?></li>
+    <?php
+    }
+    else 
+    foreach ( $rss_items as $item ) : ?>
+      <p>
+        <strong>
+          <h4><a href='<?php echo esc_url( $item->get_permalink() ); ?>' 
+          title='<?php echo esc_html( $item->get_title() ); ?>'>
+          <?php echo esc_html( $item->get_title() ); ?></a></h4>
+        </strong>
+      </p>
+      
+    <?php endforeach; ?>
+    <!-- apenas como o rodi fez as coisas devemos usar como referencia -->
+    <!--h4>Sementes da Paixão - Calendário 2016 da AS-PTA e do Polo da Borborema</h4>
+    <h4>Nota da ANA "Em defesa da Democracia e contra o golpe"</h4>
+    <h4 class="laranja">TTIP: já ouviu falar?</h4>
+    <h4>La tierra en Paraguay</h4>
+    <h4>Pela redução de agrotóxicos</h4>
+    <h4 class="sem-borda">Nota do MST sobre o impeachment da presidenta Dilma</h4-->
+  </div>
+
+  <div class="col-md-4 col-sm-10 campanhas">
+  <h3 class="text-uppercase">Campanhas</h3>
+  <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/banner-polo-da-borborema.jpg" alt="Polo da Borborema" />
+  <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/banner-coletivo-triunfo.jpg" alt="Coletivo triunfo" />
+  <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/banner-produtos-da-gente.jpg" alt="Produtos da Gente" />
+  </div>
+  </div>
+  </div>
+  </aside><!-- /.camp-blog -->
 
 <div class="clearfix"></div>
 
-<aside id="redes-e-parcerias">
-<div class="container">
-<div class="row">
-<div class="col-md-2 parcerias-title">
-<h3>redes e parcerias</h3>
-</div>
-<div class="col-md-10 parceiras-banner">
-<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/banner-parcerias.jpg" />
-</div>
+  <aside id="redes-e-parcerias">
+  <div class="container">
+  <div class="row">
+  <div class="col-md-2 parcerias-title">
+  <h3>redes e parcerias</h3>
+  </div>
+  <div class="col-md-10 parceiras-banner">
+  <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/banner-parcerias.jpg" />
+  </div>
 
-</div>
-</div>
-</aside>
+  </div>
+  </div>
+  </aside>
 
 <div class="clearfix"></div>
 
