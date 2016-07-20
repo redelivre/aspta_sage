@@ -1,66 +1,50 @@
 <?php
 /**
- * Sage includes
+ * Aspta includes
  *
- * The $sage_includes array determines the code library included in your theme.
+ * The $aspta_includes array determines the code library included in your theme.
  * Add or remove files to the array as needed. Supports child theme overrides.
  *
  * Please note that missing files will produce a fatal error.
- *
- * @link https://github.com/roots/sage/pull/1042
  */
-$sage_includes = [
-  'lib/assets.php',    // Scripts and stylesheets
-  'lib/extras.php',    // Custom functions
-  'lib/setup.php',     // Theme setup
-  'lib/titles.php',    // Page titles
-  'lib/wrapper.php',   // Theme wrapper class
-  'lib/customizer.php', // Theme customizer
-  'lib/bootstrap-nav-walker.php', // nav walker class
-  'lib/hacklab_post2home/hacklab_post2home.php', // hacklab fetured posts
-  'lib/footer.php', // footer widget
-  'lib/revista.php', // newspaper as-pta widget
-  'lib/blog_clean_plates.php', // blog clean plates widget
-  'lib/see_also.php' // see also about as-pta widget
+$aspta_includes = [
+  'inc/extras.php',    // Custom functions
+  'inc/wp_bootstrap_navwalker.php', // nav walker class
 ];
-
-foreach ($sage_includes as $file) {
+foreach ($aspta_includes as $file) {
   if (!$filepath = locate_template($file)) {
-    trigger_error(sprintf(__('Error locating %s for inclusion', 'sage'), $file), E_USER_ERROR);
+    trigger_error(sprintf(__('Error locating %s for inclusion', 'aspta'), $file), E_USER_ERROR);
   }
-
   require_once $filepath;
 }
 unset($file, $filepath);
 
-
 /*
  * Revista Agriculturas e Campanha
  * 
- * Inclui os arquivos relacionados com estas duas Ã¡reas do site
+ * Inclui os arquivos relacionados com estas duas áreas do site
  */
 include( plugin_dir_path( __FILE__ ).'functions-revista.php' );
 include( plugin_dir_path( __FILE__ ).'functions-campanha.php' );
 
 /*
  * Custom Taxonomies
- * Criando as taxonomias personalizadas 'Temas de intervenÃ§Ã£o' / 'Programas'
+ * Criando as taxonomias personalizadas 'Temas de intervenção' / 'Programas'
  */
-function build_taxonomies() {
-
-	// Temas de intervenÃ§Ã£o
+function aspta_build_taxonomies() {
+	// Temas de intervenção
 	  $labels = array(
-	    'name' 				=> 'Temas de intervenÃ§Ã£o',
-	    'singular_name'	 	=> 'Tema de intervenÃ§Ã£o',
+	    'name' 				=> 'Temas de intervenção',
+	    'singular_name'	 	=> 'Tema de intervenção',
 	    'search_items' 		=> 'Pesquisar temas',
 	    'all_items' 		=> 'Todos os temas',
 	    'parent_item' 		=> 'Tema pai',
 	    'parent_item_colon' => 'Tema pai: ',
 	    'edit_item' 		=> 'Editar tema', 
 	    'update_item' 		=> 'Atualizar tema',
-	    'add_new_item' 		=> 'Adicionar Novo Tema de IntervenÃ§Ã£o',
+	    'add_new_item' 		=> 'Adicionar Novo Tema de Intervenção',
 	    'new_item_name' 	=> 'Novo tema',
-	    'menu_name' 		=> 'Temas de intervenÃ§Ã£o'
+	    'menu_name' 		=> 'Temas de intervenção'
 	  ); 	
 	
 	  register_taxonomy( 'temas-de-intervencao', 'post', array(
@@ -72,7 +56,6 @@ function build_taxonomies() {
 	  	'capabilities'      => array('edit_terms' => false,'manage_terms' => false),
 	    'rewrite' 			=> array( 'slug' => 'aspta-temas-de-intervencao' ),
 	  ));
-
 	  // Programas
 	  $labels = array(
 	    'name' 				=> 'Programas',
@@ -98,6 +81,12 @@ function build_taxonomies() {
 	    'rewrite' 			=> array( 'slug' => 'aspta-programas' ),
 	  ));
 }
+add_action( 'init', 'aspta_build_taxonomies', 0 );
 
-add_action( 'init', 'build_taxonomies', 0 );
-
+/*
+ * Registra a área de menu
+ */
+register_nav_menus( array(
+    'primary' => __( 'Menu Principal', 'aspta' ),
+) );
+?>
