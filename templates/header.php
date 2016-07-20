@@ -1,14 +1,3 @@
-
-<!DOCTYPE html>
-<!--[if IE 7]>
-<html class="ie ie7" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if IE 8]>
-<html class="ie ie8" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if !(IE 7) | !(IE 8) ]><!-->
-<html <?php language_attributes(); ?>>
-<!--<![endif]-->
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -41,7 +30,7 @@
 							</form>
 						</div>
 					</div>
-					<div class="col-md-5 col-sm-5 logo"><a href="<?php bloginfo('home'); ?>" title="AS-PTA"><img src="<?php echo get_theme_mod('aspta_logo'); ?>" class="img-responsive center-block"></a></div>
+					<div class="col-md-5 col-sm-5 logo"><a href="<?php bloginfo('home'); ?>" title="AS-PTA"><img src="<?php echo get_theme_mod('aspta_logo') ? get_theme_mod('aspta_logo') : get_template_directory_uri(). "/images/logo_aspta.png"; ?>" class="img-responsive center-block"></a></div>
 				</div>
 			</div><!-- /.topo -->
 			
