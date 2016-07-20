@@ -39,7 +39,7 @@ class NewsPaperWidget extends WP_Widget {
           ));
     if ( have_posts() ) : 
       while ( have_posts() ) : the_post()?>
-      <a href="<?php echo get_permalink( $revista->ID ); ?> "><?php the_revista_thumbnail( 'large' ); ?></a>
+      <a href="<?php echo get_permalink( get_the_ID() ); ?> "><?php the_revista_thumbnail( 'large' ); ?></a>
       <?php
       endwhile;
       endif;
