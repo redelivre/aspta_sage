@@ -171,7 +171,7 @@ function my_meta_uploader_save( $post_id ) {
  
 	$current_data = get_post_meta( $post_id, 'upload_file', true );	
  
-	$new_data = $_POST['upload_file'];
+	$new_data = isset($_POST['upload_file'])?$_POST['upload_file']:"";
  
 	if ( $current_data ) 
 	{
