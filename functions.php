@@ -152,11 +152,13 @@ add_action( 'init', function(){
 
 
 add_filter( 'wp_nav_menu_items', function($items, $args){
-	$class = "nav navbar_nav";
-	$items .= '<li class="' . $class . '" id="quem-somos"><a href="' . get_site_url() . '/quem-somos/" title="quem-somos">Quem Somos</a></li>';
-	$items .= '<li class="' . $class . '" id="biblioteca"><a href="' . get_site_url() . '/biblioteca/aspta" title="biblioteca">Biblioteca</a></li>';
-    $items .= '<li class="' . $class . '" id="revista"><a href="' . get_site_url() . '/revistas/V13, N1" title="revistas">Revistas Agriculturas</a></li>';
-    $items .= '<li class="' . $class . '" id="feed"><a href="' . get_site_url() . '?feed=rss2" title="feed">Assine o feed</a></li>';
-
+	if( $args->menu->name == 'aspta' ){
+		$class = "nav navbar_nav";
+		$items .= '<li class="' . $class . '" id="quem-somos"><a href="' . get_site_url() . '/quem-somos/" title="quem-somos">Quem Somos</a></li>';
+		$items .= '<li class="' . $class . '" id="biblioteca"><a href="' . get_site_url() . '/biblioteca/aspta" title="biblioteca">Biblioteca</a></li>';
+	    $items .= '<li class="' . $class . '" id="revista"><a href="' . get_site_url() . '/revistas/V13, N1" title="revistas">Revistas Agriculturas</a></li>';
+	    $items .= '<li class="' . $class . '" id="feed"><a href="' . get_site_url() . '?feed=rss2" title="feed">Assine o feed</a></li>';
+	}
+	
     return $items;
 }, 10, 2 );
