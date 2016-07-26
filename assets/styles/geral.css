@@ -1,0 +1,683 @@
+@import url('bootstrap.css');
+@import url('normalize.css');
+
+/* Fontes */
+@font-face {
+	font-family: 'Droid Sans';
+	src: url('../fonts/droidsans/droidsans-webfont.eot');
+	src: url('../fonts/droidsans/droidsans-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/droidsans/droidsans-webfont.woff') format('woff'),
+	     url('../fonts/droidsans/droidsans-webfont.woff2') format('woff2'),
+	     url('../fonts/droidsans/droidsans-webfont.ttf') format('truetype'),
+	     url('../fonts/droidsans/droidsans-webfont.svg#droidsans') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+html {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	height: 100%;
+	box-sizing: border-box;
+}
+*,
+*:after,
+*:before { 
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+body {
+	position: relative;
+	margin: 0;
+	padding-bottom: 6rem;
+	font-family: 'Droid Sans', sans-serif;
+	min-height: 100%;
+}
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before,
+.clearfix:after { 
+	content: " ";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+
+a,
+a:hover {
+	text-decoration: none;
+}
+
+/* Header */
+header {
+	height: 381px;
+	background: url(../images/back_header.jpg) no-repeat;
+	background-size: cover;
+}
+
+/* Search icon by IcoMoon, made with http://icomoon.io/app/ */
+.sb-search {
+	position: relative;
+	margin-top: 0;
+	width: 0%;
+	min-width: 60px;
+	height: 60px;
+	float: left;
+	overflow: hidden;
+	-webkit-transition: width 0.3s;
+	-moz-transition: width 0.3s;
+	transition: width 0.3s;
+	-webkit-backface-visibility: hidden;
+	z-index: 2;
+}
+.sb-search-input {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: none;
+	outline: none;
+	background: #fff;
+	width: 100%;
+	height: 60px;
+	margin: 0;
+	z-index: 10;
+	padding: 20px 65px 20px 20px;
+	font-family: inherit;
+	font-size: 20px;
+	color: #2c3e50;
+}
+.sb-search-input::-webkit-input-placeholder {
+	color: #efb480;
+}
+
+.sb-search-input:-moz-placeholder {
+	color: #efb480;
+}
+.sb-search-input::-moz-placeholder {
+	color: #efb480;
+}
+.sb-search-input:-ms-input-placeholder {
+	color: #efb480;
+}
+.sb-icon-search,
+.sb-search-submit  {
+	width: 60px;
+	height: 60px;
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 0;
+	margin: 0;
+	line-height: 60px;
+	text-align: center;
+	cursor: pointer;
+}
+.sb-search-submit {
+	background: #fff; /* IE needs this */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
+    filter: alpha(opacity=0); /* IE 5-7 */
+    opacity: 0;
+	color: transparent;
+	border: none;
+	outline: none;
+	z-index: -1;
+}
+.sb-icon-search {
+	color: #327c3b;
+	font-size: 2em;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	background: #d7d7d7;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	z-index: 90;
+}
+[class^="icon-"]:before,
+[class*=" icon-"]:before,
+[data-icon]:before,
+.sb-icon-search:before {
+  font-family: 'FontAwesome'; /* BYO icon font, mapped smartly */
+  content: attr(data-icon);
+  speak: none; /* Not to be trusted, but hey. */
+}
+/* Open state */
+.sb-search.sb-search-open,
+.no-js .sb-search {
+	width: 100%;
+}
+.sb-search.sb-search-open .sb-icon-search,
+.no-js .sb-search .sb-icon-search {
+	background: #d6dbb5;
+	color: #003e2d;
+	z-index: 11;
+}
+.sb-search.sb-search-open .sb-search-submit,
+.no-js .sb-search .sb-search-submit {
+	z-index: 90;
+}
+
+/* Logo */
+.logo {
+	margin: 142px 0;
+}
+
+
+/* Navegação */
+.menu-topo {
+	height: 80px;
+	text-transform: uppercase;
+	background: url(../images/back_menu.jpg);
+}
+.caret {
+	display: none;
+}
+
+/* Customize the nav-justified links 
+to be fill the entire space of the .navbar */
+.nav-justified {
+	align-items: center;
+}
+.navbar-nav > li > a,
+.dropdown-menu > li > a {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-bottom: 0;
+	font-size: 16px;
+	font-weight: bold;
+	color: #003e2d;
+	max-width: 170px;
+	text-align: center;
+	white-space: normal;
+	display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+}
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+	background-image: none;
+	background-color: #a7b739;
+}
+.navbar-nav > li:last-child > a {
+	border-bottom: 0;
+}
+.nav .open > a:focus,
+.navbar-nav > li > a:hover,
+.dropdown-menu > li > a:hover {
+	background-color: #a7b739;
+}
+.navbar-nav,
+.navbar-nav > li,
+.navbar-nav > li > a {
+	min-height: 80px;
+}
+.navbar-nav > li > a {
+	border-right: 2px solid #d6dbb5;
+	border-left: 2px solid #fff;
+}
+.navbar-nav > li:first-child > a {
+	border-left: 0;
+}
+.navbar-nav > li:last-child > a {
+	border-right: 0;
+}
+
+
+/* Seções */
+.aspta-content {
+ 	margin: 0 auto 340px;
+ 	height: 100%;
+	background: url('../images/back_content.jpg');
+}
+
+.destaques-slides {
+	margin: 40px 0;
+}
+.cycle-slideshow { width: 100% }
+.cycle-slideshow img { width: 100%; height: auto }
+
+#noticias .cat-title {
+	background-color: #003e2d;
+	width: 33.3%;
+}
+#noticias .cat-title h5 {
+	margin: 0;
+	padding: 5px;
+	font-weight: bold;
+	color: #a7b739;
+	text-align: center;
+}
+#noticias .post-title {
+	padding: 5px 5px 15px 5px;
+	color: #003e2d;
+	min-height: 157px;
+	border-bottom: 5px solid #a7b739;
+}
+.btn-noticias {
+	margin: 0 15px 40px 0;
+	float: right;
+	background-color: #003e2d;
+}
+.btn-noticias a,
+.btn-noticias a:hover {
+	padding: 10px;
+	color: #a7b739;
+	text-align: center;
+}
+
+#prog-midias {
+	background: rgba(153, 153, 153, 0.2);
+}
+.programas-locais {
+	padding: 20px 0;
+}
+.programas-locais h3,
+.revista h3 {
+	margin: 20px 0;
+	font-weight: bold;
+	color: #e97200;
+	text-transform: uppercase;
+}
+.programa {
+	padding: 0 15px;
+	border-top: 3px solid #286919;
+}
+.programa .prog-title,
+.programa .prog-desc {
+	font-weight: bold;
+	color: #003e2d;
+	text-transform: none;
+}
+.btn-saibamais,
+.btn-enviar {
+	margin: 0 0 10px 66.6%;
+	background-color: #003e2d;
+	width: 33.3%;
+	text-align: center;
+}
+.programa a,
+.programa a:hover {
+	color: #a7b739;
+}
+
+.video-da-semana,
+.revista {
+	padding: 20px;
+}
+.video-da-semana h3 {
+	margin: 20px 0;
+	font-weight: bold;
+	color: #e97200;
+}
+.video-da-semana .video {
+	padding-left: 15px;
+	border-top: 3px solid #e97200;	
+}
+.video-da-semana .video h4 {
+	margin: 20px 0 40px;
+	font-weight: bold;
+	color: #003e2d;
+}
+
+#camp-blog {
+	margin: 40px 0;
+}
+.boletim-campanha {
+	background: url(../images/back-bol-camp.jpg) repeat;
+}
+.boletim-campanha h3 {
+	margin: 20px 0;
+	padding-bottom: 20px;
+	border-bottom: 3px solid #fff;
+}
+.boletim-campanha h4 {
+	padding: 20px 10px;
+	font-weight: bold;
+	color: #003e2d;
+	text-decoration: underline;
+	border-bottom: 2px solid #286919;	
+}
+.boletim-campanha .sem-borda,
+.blog-pratos-limpos .sem-borda {
+	border: none;
+}
+.branco {
+	color: #fff !important;
+}
+.boletim-campanha .assine {
+	padding: 40px 0 0 0;
+	text-align: center;
+	text-decoration: none;
+	border: none;
+}
+.boletim-campanha form {
+	align-items: baseline;
+}
+.boletim-campanha input {
+	float: left;
+	height: 46px;
+	width: 65%;
+}
+.boletim-campanha .btn-enviar,
+.boletim-campanha .btn-enviar:hover {
+	margin-top: -55px;
+	color: #a7b739;
+}
+
+.blog-pratos-limpos h3,
+.campanhas h3 {
+	margin: 20px 0 0 20px;
+	padding-bottom: 20px;
+	font-weight: bold;
+	color: #e97200;
+	border-bottom: 3px solid #e97200;
+}
+.blog-pratos-limpos h4 {
+	margin-left: 20px;
+	padding: 15px 0;
+	font-weight: bold;
+	border-bottom: 2px solid #e97200;		
+}
+.blog-pratos-limpos h4 a {
+	color: #003e2d;
+	text-decoration: underline;
+}	
+.blog-pratos-limpos h4 a:hover {
+	color: #e97200;
+	text-decoration: none;
+}
+
+.campanhas img {
+	margin: 10px 0;
+	padding: 10px 0 0 20px;
+	width: 100%;
+}
+
+
+#redes-e-parcerias {
+	background-color: #fff;
+}
+.parcerias-title h3 {
+	padding: 30px;
+	font-weight: bold;
+	color: #e97200;
+	border-right: 3px solid #e97200;
+}
+
+
+/* Footer */
+.footer {
+	position: absolute;
+	bottom: 0;
+	color: #a7b739;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 370px;
+	background: url(../images/back_footer.jpg);
+	z-index: 3;
+}
+.footer a,
+.footer a:hover {
+	color: #a7b739;
+}
+.footer-logo {
+	margin: 40px auto 20px;
+	width: 80%;
+}
+.footer-descricao {
+	text-align: justify;
+}
+.footer-menu {
+	margin-top: 40px;
+}
+.footer-menu-item {
+	font-weight: bold;
+}
+.footer-menu .laranja {
+	color: #e97200 !important;
+}
+.footer-redes-sociais {
+	margin-top: 100px;
+	height: 80px;
+	background-color: #003e2d;
+}
+.footer-icones {
+	margin: 0 auto;
+	width: 137px;
+}
+.footer-icones ul {
+	margin: 0;
+    padding: 0;
+    display: inline;
+    list-style: none;
+}
+.footer-icones .icone:last-child {
+    margin-right:0;
+}
+.footer-icones .icone {
+	margin-top: 20px;
+	margin-right: 30px;
+	float: left;
+}
+
+
+/*==================================================
+=            Bootstrap 3 Media Queries             =
+==================================================*/
+
+/* Customize toggle navbar to 1000px screen */
+@media only screen and (max-width: 1000px) {
+	.navbar {
+	    height: 50px;
+	    z-index: 9999;
+	}
+	.navbar-justified .navbar-nav {
+		position: relative;
+	    margin: 7.5px -15px;
+	    width: 170px;
+	}
+	.navbar-justified .collapse {
+		display: none !important;
+	}
+	.navbar-justified .navbar-toggle {
+	  display: block !important;
+	}
+	.navbar-justified .navbar-header{
+	    float: none;
+	}
+	/* since 3.1.0 */
+	.navbar-justified .navbar-collapse.collapse.in { 
+	    display: block!important;
+	}
+	.navbar-justified .collapsing {
+	    overflow: hidden!important;
+	}
+	.navbar-nav > li > a,
+	.dropdown-menu > li > a {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: 14px;
+		background-color: #eee;
+		min-width: 170px;
+	}
+	.navbar-justified {
+		float: right;
+		z-index: 9999;
+	}
+	.navbar-justified .navbar-toggle {
+	    border-color: #003e2d;
+	}
+	.navbar-justified .navbar-toggle .icon-bar {
+	    background-color: #003e2d;
+	}
+
+	.btn-saibamais {
+		width: 39%;
+	}
+}
+
+@media only screen and (max-width : 981px) {
+	header {
+		height: 415px;
+	}
+	.menu-topo {
+	    height: 55px;
+	}
+	.aspta-content {
+	    margin-bottom: 285px;
+	}
+	.btn-saibamais {
+		width: 36%;
+	}
+	.parcerias-title h3 {
+	    border: none;
+	    text-align: center;
+	}
+	.footer {
+		height: 308px;
+	}
+	.footer-redes-sociais {
+		margin-top: 80px;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	header {
+		height: 220px;
+	}
+	.pesquisa-topo {
+		height: 50px;
+		width: 50px;
+	}
+	.pesquisa-topo span {
+	    margin-top: 10px;
+	}
+	.logo {
+	    margin: 50px 0;
+	}
+	
+	.menu-topo {
+	    height: 60px;
+	}
+
+	.aspta-content {
+	    margin-bottom: 320px;
+	}
+	#noticias {
+		padding-top: 40px;
+	}
+	.noticia {
+		max-width: 400px;
+	}
+	.btn-noticias {
+	    margin: 0 auto 40px;
+	    float: none;
+	    width: 190px;
+	}
+	
+	#prog-midias,
+	#camp-blog {
+		padding: 0 40px 0 60px;
+	}
+	.blog-pratos-limpos h3,
+	.campanhas h3,
+	.boletim-campanha h3 {
+		margin-top: 40px;
+	}
+	.revista h3 {
+		text-align: center;
+	}
+
+	#redes-e-parcerias {
+		margin-bottom: -60px;
+	}
+	.parcerias-title h3 {
+		border: none;
+	}
+	
+	.footer {
+		height: 300px;
+	}
+	.footer-redes-sociais {
+		height: 70px;
+	}
+	.footer-redes-sociais {
+		margin-top: 72px;
+	}
+}
+
+@media only screen and (max-width : 640px) {
+    header {
+		height: 250px;
+	}
+	.footer-redes-sociais {
+		margin-top: 67px;
+	}
+}
+
+@media only screen and (max-width : 480px) {
+    header {
+		height: 246px;
+	}
+	.menu-topo {
+		height: 50px;
+	}
+	
+	#prog-midias, #camp-blog {
+	    padding: 10px;
+	}
+	.boletim-campanha h3 {
+	    padding: 20px;
+	}
+	
+	.btn-saibamais,
+	.btn-enviar {
+	    margin: 0 0 10px 60%;
+	    width: 45%;
+	}
+	.footer-redes-sociais {
+		margin-top: 74px;
+	}
+}
+
+@media only screen and (max-width : 414px) {
+	header {
+	    height: 232px;
+	}
+	.footer {
+	    height: 285px;
+	}
+}
+
+@media only screen and (max-width : 375px) {
+	header {
+	    height: 224px;
+	}
+}
+
+@media only screen and (max-width : 360px) {
+	header {
+	    height: 221px;
+	}
+	.footer-redes-sociais {
+		margin-top: 59px;
+	}
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+	.menu-topo {
+	    margin-top: 9px;
+	}
+	.footer-redes-sociais {
+		margin-top: 46px;
+	}
+}
