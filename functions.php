@@ -10,19 +10,19 @@
  * @link https://github.com/roots/sage/pull/1042
  */
 $sage_includes = [
-  'lib/assets.php',    // Scripts and stylesheets
-  'lib/extras.php',    // Custom functions
-  'lib/setup.php',     // Theme setup
-  'lib/titles.php',    // Page titles
-  'lib/wrapper.php',   // Theme wrapper class
-  'lib/customizer.php', // Theme customizer
-  'lib/bootstrap-nav-walker.php', // nav walker class
-  'lib/hacklab_post2home/hacklab_post2home.php', // hacklab fetured posts
-  'lib/footer.php', // footer widget
-  'lib/newspaper.php', // newspaper as-pta widget
-  'lib/blog_clean_plates.php', // blog clean plates widget
-  'lib/see_also.php', // see also about as-pta widget
-  'lib/library.php' // library as-pta widget
+  'lib/assets.php',									// Scripts and Stylesheets
+  'lib/blog_clean_plates.php',						// Blog Clean Plates Widget
+  'lib/customizer.php',								// Theme Customizer
+  'lib/extras.php',									// Custom Functions
+  'lib/footer.php',									// Footer Widget
+  'lib/hacklab_post2home/hacklab_post2home.php',	// Hacklab Fetured Posts
+  'lib/library.php',								// Library AS-PTA Widget
+  'lib/newspaper.php',								// Newspaper AS-PTA Widget
+  'lib/see_also.php',								// See also about AS-PTA Widget
+  'lib/setup.php',									// Theme Setup
+  'lib/titles.php',									// Page Titles
+  'lib/wp_bootstrap_navwalker.php',					// Nav Walker Class
+  'lib/wrapper.php',								// Theme Wrapper Class
 ];
 
 foreach ($sage_includes as $file) {
@@ -38,54 +38,54 @@ unset($file, $filepath);
 /*
  * newspaper Agriculturas e Campanha
  * 
- * Inclui os arquivos relacionados com estas duas Ã¡reas do site
+ * Inclui os arquivos relacionados com estas duas áreas do site
  */
 include( plugin_dir_path( __FILE__ ).'functions-revista.php' );
 include( plugin_dir_path( __FILE__ ).'functions-campanha.php' );
 
 /*
  * Custom Taxonomies
- * Criando as taxonomias personalizadas 'Temas de intervenÃ§Ã£o' / 'Programas'
+ * Criando as taxonomias personalizadas 'Temas de intervenção' / 'Programas'
  */
 function aspta_build_taxonomies() {
 
-	// Temas de intervenÃ§Ã£o
+	// Temas de intervenção
 	  $labels = array(
-	    'name' 			=> 'Temas de intervenÃ§Ã£o',
-	    'singular_name'	 	=> 'Tema de intervenÃ§Ã£o',
+	    'name' 				=> 'Temas de intervenção',
+	    'singular_name'	 	=> 'Tema de intervenção',
 	    'search_items' 		=> 'Pesquisar temas',
 	    'all_items' 		=> 'Todos os temas',
 	    'parent_item' 		=> 'Tema pai',
-	    'parent_item_colon'         => 'Tema pai: ',
+	    'parent_item_colon' => 'Tema pai: ',
 	    'edit_item' 		=> 'Editar tema', 
 	    'update_item' 		=> 'Atualizar tema',
-	    'add_new_item' 		=> 'Adicionar Novo Tema de intervenÃ§Ã£o',
-	    'new_item_name' 	        => 'Novo tema',
-	    'menu_name' 		=> 'Temas de intervenÃ§Ã£o'
+	    'add_new_item' 		=> 'Adicionar Novo Tema de intervenção',
+	    'new_item_name' 	=> 'Novo tema',
+	    'menu_name' 		=> 'Temas de intervenção'
 	  ); 	
 	
 	  register_taxonomy( 'temas-de-intervencao', 'post', array(
 	    'hierarchical'		=> true,
 	    'labels' 			=> $labels,
 	    'show_ui' 			=> true,
-	    'show_in_nav_menus'         => false,
+	  	'show_in_nav_menus' => false,
 	    'query_var' 		=> true,
-	    'capabilities'              => array('edit_terms' => false,'manage_terms' => false),
+	  	'capabilities'      => array('edit_terms' => false,'manage_terms' => false),
 	    'rewrite' 			=> array( 'slug' => 'aspta-temas-de-intervencao' ),
 	  ));
 
 	  // Programas
 	  $labels = array(
-	    'name' 			=> 'Programas',
+	    'name' 				=> 'Programas',
 	    'singular_name'	 	=> 'Programa',
 	    'search_items' 		=> 'Pesquisar programas',
 	    'all_items' 		=> 'Todos os programas',
 	    'parent_item' 		=> 'Programa pai',
-	    'parent_item_colon'         => 'Programa pai:',
+	    'parent_item_colon' => 'Programa pai: ',
 	    'edit_item' 		=> 'Editar programa', 
 	    'update_item' 		=> 'Atualizar programa',
 	    'add_new_item' 		=> 'Adicionar Novo Programa',
-	    'new_item_name' 	        => 'Novo programa',
+	    'new_item_name' 	=> 'Novo programa',
 	    'menu_name' 		=> 'Programas'
 	  ); 	
 	
@@ -93,14 +93,14 @@ function aspta_build_taxonomies() {
 	    'hierarchical'		=> true,
 	    'labels' 			=> $labels,
 	    'show_ui' 			=> true,
-	    'show_in_nav_menus'         => false,
+	  	'show_in_nav_menus' => false,
 	    'query_var' 		=> true,
-	    'capabilities'              => array('edit_terms' => false,'manage_terms' => false),
+	  	'capabilities'      => array('edit_terms' => false,'manage_terms' => false),
 	    'rewrite' 			=> array( 'slug' => 'aspta-programas' ),
 	  ));
 }
 
-add_action( 'init', 'aspta_build_taxonomies', 0);
+add_action( 'init', 'aspta_build_taxonomies', 0 );
 
 /** mau functions
 the ideia is insert functions on extras but dont works now... :(
@@ -151,26 +151,14 @@ add_action( 'init', function(){
 });
 
 
+/* Esta função só pode existir se não houver menu cadastrado, caso contrário, duplica.
+
 add_filter( 'wp_nav_menu_items', function($items, $args){
-	if( $args->menu->name == 'aspta' ){
-	    $class = "nav navbar_nav";
-	    $items .= '<li class="' . $class . '" id="quem-somos"><a href="' . get_site_url() . '/quem-somos/" title="quem-somos">Quem Somos</a></li>';
-	    $items .= '<li class="' . $class . '" id="biblioteca"><a href="' . get_site_url() . '/biblioteca/aspta" title="biblioteca">Biblioteca</a></li>';
-	    $items .= '<li class="' . $class . '" id="revista"><a href="' . get_site_url() . '/revistas/V13, N1" title="revistas">Revistas Agriculturas</a></li>';
-	    $items .= '<li class="' . $class . '" id="feed"><a href="' . get_site_url() . '?feed=rss2" title="feed">Assine o feed</a></li>';
-	}
-	
+	$class = "nav navbar_nav";
+	$items .= '<li class="' . $class . '" id="quem-somos"><a href="' . get_site_url() . '/quem-somos/" title="quem-somos">Quem Somos</a></li>';
+	$items .= '<li class="' . $class . '" id="biblioteca"><a href="' . get_site_url() . '/biblioteca/aspta" title="biblioteca">Biblioteca</a></li>';
+    $items .= '<li class="' . $class . '" id="revista"><a href="' . get_site_url() . '/revistas/V13, N1" title="revistas">Revistas Agriculturas</a></li>';
+    $items .= '<li class="' . $class . '" id="feed"><a href="' . get_site_url() . '?feed=rss2" title="feed">Assine o feed</a></li>';
+
     return $items;
-}, 10, 2 );
-
-// Moving the Comment Text Field to Bottom
-
-function aspta_move_comment_field_to_bottom( $fields ) {
-$comment_field = $fields['comment'];
-unset( $fields['comment'] );
-$fields['comment'] = $comment_field;
-return $fields;
-}
-
-add_filter( 'comment_form_fields', 'aspta_move_comment_field_to_bottom' );
-
+}, 10, 2 );*/
