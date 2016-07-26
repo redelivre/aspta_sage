@@ -162,3 +162,15 @@ add_filter( 'wp_nav_menu_items', function($items, $args){
 	
     return $items;
 }, 10, 2 );
+
+// Moving the Comment Text Field to Bottom
+
+function aspta_move_comment_field_to_bottom( $fields ) {
+$comment_field = $fields['comment'];
+unset( $fields['comment'] );
+$fields['comment'] = $comment_field;
+return $fields;
+}
+
+add_filter( 'comment_form_fields', 'aspta_move_comment_field_to_bottom' );
+
