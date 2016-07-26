@@ -29,7 +29,7 @@ class FooterWidget extends WP_Widget {
    */
   public function widget( $args, $instance ) {
     ?>
-    <img class="img-responsive footer-logo" src="<?php echo get_template_directory_uri(); ?>/images/logo_aspta.png" alt=""/>
+    <img class="img-responsive footer-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_aspta.png" alt=""/>
     <p class="footer-descricao">A AS-PTA - Agricultura Familiar e Agroecologia é uma associação de direito civil sem fins lucrativos que, desde 1983, atua para o fortalecimento da agricultura familiar e a promoção do desenvolvimento rural sustentável no Brasil.</p>
     <?php
   }
