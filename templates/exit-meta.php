@@ -31,6 +31,18 @@ while ($my_query->have_posts()) : $my_query->the_post(); ?>
 endwhile;
 ?>
 <hr>
+<p>
+  <strong><?php _e("Compartilhe este conteúdo", "aspta"); ?></strong>
+</p>
+<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank">
+  facebook
+</a>
+<a href="https://plus.google.com/share?url=<?php the_permalink(); ?>" target="_blank">
+  google+
+</a>
+<a href="http://www.twitter.com/share?url=<?php the_permalink(); ?>" target="_blank">
+  twitter
+</a>
 <hr>
 <?php
 endif;
