@@ -99,7 +99,7 @@
 						<div class="home-news">
 							<a id="featured-thumbnail" href="<?php the_permalink(); ?>" rel="nofollow">
 								<div class="entry-image">
-									<?php if ( has_post_thumbnail() ) {
+									<?php if ( has_post_thumbnail('destaque') ) {
 									  the_post_thumbnail();
 									} else { ?>
 									<img class="img-responsive" src="http://placehold.it/360x258/">
