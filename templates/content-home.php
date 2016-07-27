@@ -30,7 +30,7 @@
 											$thumb = wp_get_attachment_image_src($post_thumbnail_id, 'slider', false);
 											if(is_array($thumb)) {?>
 											<!--style="background-image: url('<?php echo $thumb[0]; ?>')"-->
-											<div class="highlights-image"><img class="img-responsive" src="<?php the_post_thumbnail(); ?>"></div>
+											<div class="highlights-image"><?php the_post_thumbnail(); ?></div>
 											<?php } else { ?>
 											<div class="highlights-image"><img class="img-responsive" src="http://placehold.it/1140x400/"></div>
 											<?php } ?>
@@ -99,7 +99,13 @@
 						<div class="home-news">
 							<a id="featured-thumbnail" href="<?php the_permalink(); ?>" rel="nofollow">
 								<div class="entry-image">
-									<?php the_post_thumbnail(); ?>
+									<?php $post_thumbnail_id = get_post_thumbnail_id(get_the_ID());
+									$thumb = wp_get_attachment_image_src($post_thumbnail_id, 'slider', false);
+									if(is_array($thumb)) { ?>
+									<img class="img-responsive" src="<?php url('<?php echo $thumb[0]; ?>'); ?>">
+									<?php } else { ?>
+									<img class="img-responsive" src="http://placehold.it/360x258/">
+									<?php } ?>
 								</div>
 							</a>
 							<div class="entry-title post-title">
