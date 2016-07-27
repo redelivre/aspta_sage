@@ -32,7 +32,7 @@
 											<!--style="background-image: url('<?php echo $thumb[0]; ?>')"-->
 											<div class="highlights-image"><img class="img-responsive" src="<?php the_post_thumbnail(); ?>"></div>
 											<?php } else { ?>
-											<div class="highlights-image"><img class="img-responsive" src="http://placehold.it/1140x350/"></div>
+											<div class="highlights-image"><img class="img-responsive" src="http://placehold.it/1140x400/"></div>
 											<?php } ?>
 										</div>
 										<?php endif; ?>
@@ -44,7 +44,7 @@
 												<a href="<?php echo get_category_link( $category[0]->term_id ); ?>"><?php echo $category[0]->cat_name; ?></a>
 												<?php } ?>
 											</div>
-											<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php echo substr(the_title($before = '', $after = '', FALSE), 0, 60).'...'; ?></a></h2>
+											<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php echo substr(the_title($before = '', $after = '', FALSE), 0, 60).'...'; ?></a></h3>
 											<div class="entry-summary">
 												<?php the_excerpt(); ?>
 											</div>
@@ -75,7 +75,7 @@
 	<aside id="noticias">
 		<div class="container">
 			<div class="row">
-				<?php
+				<?php 
 				$news = new WP_Query(
 					array(
 						'posts_per_page' => 3, // TODO Custom option
@@ -86,36 +86,42 @@
 					));
 				$news_ids = array();
 				if($news->have_posts()) : while ( $news->have_posts() ) : $news->the_post();
-					$news_ids[] = get_the_ID();?>
-					<div class="col-md-4 col-sm-4 noticia center-block home-news-list">
-						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-							<div class="entry-meta">
-							<?php $category = get_the_category();
-							if(is_array($category) && count($category) > 0) { ?>
-								<div class="cat-title">
-									<h5><a href="<?php echo get_category_link( $category[0]->term_id ); ?>"><?php echo $category[0]->cat_name; ?></a></h5>
-								</div> 
-							<?php } ?>
+				$news_ids[] = get_the_ID(); ?>
+				<div class="col-md-4 col-sm-4 noticia center-block home-news-list">
+					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+						<?php/* if ( has_post_thumbnail() ) {  Se houver imagem destacada exibe o post */ ?>
+						<div class="entry-meta">
+							<?php $category = get_the_category(); ?>
+							<div class="cat-title">
+								<h5><a href="<?php echo get_category_link( $category[0]->term_id ); ?>"><?php echo $category[0]->cat_name; ?></a></h5>
+							</div> 
+						</div><!-- /.entry-meta -->
+						<div class="home-news">
+							<a id="featured-thumbnail" href="<?php the_permalink(); ?>" rel="nofollow">
+								<div class="entry-image">
+									<?php the_post_thumbnail(); ?>
+								</div>
+							</a>
+							<div class="entry-title post-title">
+								<a href="<?php the_permalink(); ?>"><?php echo substr(the_title($before = '', $after = '', FALSE), 0, 90).'...'; ?></a>
 							</div>
-							<div class="home-news">
-								<?php if ( has_post_thumbnail() ) { ?>
-								<div class="entry-image">
-									<div class="highlights-image"><img class="img-responsive" src="<?php the_post_thumbnail(); ?>"></div>
-								</div>
-								<?php } else { ?>
-								<div class="entry-image">
-									<div class="highlights-image"><img class="img-responsive" src="http://placehold.it/360x200/"></div>
-								</div>
-								<?php } ?>
-								<div class="bd">
-									<h2 class="entry-title post-title"><a href="<?php the_permalink(); ?>"><?php echo substr(the_title($before = '', $after = '', FALSE), 0, 60).'...'; ?></a></h2>
-								</div>
-							</div><!-- /.home-news -->
-						</article><!-- /article -->
-					</div><!-- /.home-news-list -->
-					<?php endwhile; ?>
+						</div><!-- /.home-news -->
+						<?php/* }  Endif Thumbnail */ ?>
+					</article><!-- /article -->
+				</div><!-- /.home-news-list -->
+				
+				<?php endwhile;
+
+				/* If no posts, then serve error message */
+				else: ?>
+				<div class="col-md-12 noticia center-block home-news-list">
+					<article>
+						<p><?php _e( 'Em breve você poderá ler notícias aqui.', 'aspta' ); ?></p>
+					</article>
+				</div>
 				<?php endif; ?>
 			</div>
+
 			<div class="row">
 				<div class="btn-noticias"><a class="btn btn-lg" role="button">ver todas as notícias</a></div>
 			</div>
