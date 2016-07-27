@@ -99,10 +99,8 @@
 						<div class="home-news">
 							<a id="featured-thumbnail" href="<?php the_permalink(); ?>" rel="nofollow">
 								<div class="entry-image">
-									<?php $post_thumbnail_id = get_post_thumbnail_id(get_the_ID());
-									$thumb = wp_get_attachment_image_src($post_thumbnail_id, 'slider', false);
-									if(is_array($thumb)) { ?>
-									<img class="img-responsive" src="<?php url('<?php echo $thumb[0]; ?>'); ?>">
+									if ( has_post_thumbnail() ) { ?>
+									<?php the_post_thumbnail(); ?>
 									<?php } else { ?>
 									<img class="img-responsive" src="http://placehold.it/360x258/">
 									<?php } ?>
