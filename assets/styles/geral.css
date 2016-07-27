@@ -239,9 +239,22 @@ to be fill the entire space of the .navbar */
 
 .destaques-slides {
 	margin: 40px 0;
+	z-index: 2;
 }
-.cycle-slideshow { width: 100% }
-.cycle-slideshow img { width: 100%; height: auto }
+.cycle-slideshow {
+	width: 100%
+}
+.cycle-slideshow img:before {
+  content: "";
+  display: block;
+}
+
+.cycle-slideshow img {
+	display: block;
+	max-height: 400px;
+	max-width: 1140px;
+	overflow: hidden;
+}
 
 #noticias .cat-title {
 	background-color: #003e2d;
@@ -250,18 +263,31 @@ to be fill the entire space of the .navbar */
 #noticias .cat-title h5 {
 	margin: 0;
 	padding: 5px;
+	text-align: center;
+}
+#noticias .cat-title h5 a {
 	font-weight: bold;
 	color: #a7b739;
-	text-align: center;
+	text-decoration: none;
+}
+#noticias .entry-image {
+	max-width: 100%;
+	height: 258px;
+	border: 1px solid #ccc;
 }
 #noticias .post-title {
 	padding: 5px 5px 15px 5px;
-	color: #003e2d;
-	min-height: 157px;
+	min-height: 110px;
+	text-align: justify;
 	border-bottom: 5px solid #a7b739;
 }
+#noticias .post-title a {
+	font-size: 20px;
+	color: #003e2d;
+	text-decoration: none;
+}
 .btn-noticias {
-	margin: 0 15px 40px 0;
+	margin: 10px 15px 40px 0;
 	float: right;
 	background-color: #003e2d;
 }
