@@ -99,9 +99,9 @@
 						<div class="home-news">
 							<a id="featured-thumbnail" href="<?php the_permalink(); ?>" rel="nofollow">
 								<div class="entry-image">
-									if ( has_post_thumbnail() ) { ?>
-									<?php the_post_thumbnail(); ?>
-									<?php } else { ?>
+									<?php if ( has_post_thumbnail() ) {
+									  the_post_thumbnail();
+									} else { ?>
 									<img class="img-responsive" src="http://placehold.it/360x258/">
 									<?php } ?>
 								</div>
