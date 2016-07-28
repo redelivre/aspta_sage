@@ -1,34 +1,34 @@
-    <?php 
+<?php 
 
-    	$edition = urldecode(get_query_var( 'newspaper'));
-    	if (!(strpos($edition, 'V') == 0) && !(strpos($edition, 'N') == 5)) {
-    		$edition = 'V13, N1';
-    	}
-    ?>
-    <div class="sidebar-module">
-    <h3>Revista Agriculturas Edições anteriores</h3>
-    <?php
-      query_posts( array (
-          'post_type'      => 'revista',
-          's' => $edition,
-          'post_parent'    => 0,
-          'posts_per_page' => 1
-          ));
-      if ( have_posts() ) : 
-      while ( have_posts() ) : the_post()
-    ?>
-    <a href="<?php echo get_permalink( $revista->ID ); ?> "><?php the_revista_thumbnail( 'large' ); ?></a>
-    <?php
-      endwhile;
-      endif;
-      wp_reset_query();
-    ?>
-    </div>
-    <?php
+  $edition = urldecode(get_query_var( 'newspaper' ));
+  if (!(strpos($edition, 'V') == 0) && !(strpos($edition, 'N') == 5)) {
+    $edition = 'V13, N1';
+  }
+  ?>
+  <div class="sidebar-module">
+  <h3>Revista Agriculturas Edições anteriores</h3>
+  <?php
+    query_posts( array (
+      'post_type'      => 'revista',
+      's' => $edition,
+      'post_parent'    => 0,
+      'posts_per_page' => 1
+    ));
+    if ( have_posts() ) : 
+    while ( have_posts() ) : the_post()
+  ?>
+  <a href="<?= get_permalink( $revista->ID ); ?> "><?php the_revista_thumbnail( 'large' ); ?></a>
+  <?php
+    endwhile;
+    endif;
+    wp_reset_query();
+  ?>
+  </div>
+  <?php
 	    $args = array( 
 		    'post_type' => 'revista',
 		    's' => $edition,
-		    'posts_per_page' => -1,
+		    'posts_per_page' => 6,
 		    'post_status' => 'publish',
 	    );
 
@@ -41,8 +41,8 @@
 		  while ( $the_query->have_posts() ) {
 		    $the_query->the_post();
     ?>
-		    <a href="<?php echo get_permalink(); ?>"><li><?php echo get_the_title() ?></li></a>
-		    <li><?php echo get_the_author() ?></li>
+		    <a href="<?= get_permalink(); ?>"><li><?php echo get_the_title() ?></li></a>
+		    <li><?= get_the_author(); ?></li>
     <?php
 		}
 		echo '</ul>';

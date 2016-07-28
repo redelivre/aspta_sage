@@ -127,7 +127,7 @@
 			</div>
 
 			<div class="row">
-				<div class="btn-noticias"><a class="btn btn-lg" role="button">ver todas as notícias</a></div>
+				<div class="btn-noticias"><a class="btn btn-lg" href="<?= get_site_url(); ?>/noticias" role="button">ver todas as notícias</a></div>
 			</div>
 		</div>
 	</aside><!-- /.noticias -->
