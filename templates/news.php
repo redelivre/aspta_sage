@@ -2,10 +2,14 @@
 /**
  * Template Name: Noticias
  */
+?>
+
+<h1><?= the_title(); ?></h1>
+<hr>
+<?php
 
 // The Query
 $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
-var_dump($paged);
 $the_query = new WP_Query( 
                           array(  
                                 'posts_per_page' => '5', 
@@ -17,13 +21,22 @@ $the_query = new WP_Query(
                          );
 // The Loop
 if ( $the_query->have_posts() ) {
-	while ( $the_query->have_posts() ) : ?>
-		<?= $the_query->the_post(); ?>
-		<div><a href="<?= get_permalink(); ?>"><?= get_the_title(); ?></a></div>
-<?php
-	endwhile;
-	/* Restore original Post Data */
-	wp_reset_postdata();
+  while ( $the_query->have_posts() ) : ?>
+    <?= $the_query->the_post(); ?>
+    <?php if ( has_post_thumbnail() ) : ?>
+      <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+        <img src="<?php the_post_thumbnail_url('medium'); ?>"/>
+      </a>
+    <?php endif; ?>
+    <a href="<?= get_permalink(); ?>"><?= get_the_title(); ?></a>
+    <?= the_excerpt(); ?>
+    <time class="updated" datetime="<?= get_post_time('c', true); ?>"><?= get_the_date(); ?></time>
+    <hr>
+  <?php
+  endwhile;
+/* Restore original Post Data */
+wp_reset_postdata();
+
 } else {
 	// no posts found
 }
