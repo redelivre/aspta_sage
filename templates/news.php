@@ -6,8 +6,15 @@
 // The Query
 $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 var_dump($paged);
-$the_query = new WP_Query( array(  'posts_per_page' => '5', 'paged'  => $paged ) );
-
+$the_query = new WP_Query( 
+                          array(  
+                                'posts_per_page' => '5', 
+                                'paged'  => $paged, 
+			        'ignore_sticky_posts' => 1,
+			        'orderby' => 'date', 
+			        'order' => 'DESC',
+                               )
+                         );
 // The Loop
 if ( $the_query->have_posts() ) {
 	while ( $the_query->have_posts() ) : ?>
