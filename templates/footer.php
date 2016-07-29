@@ -4,7 +4,7 @@
 					<div class="col-md-4 col-sm-6 footer-assinatura">
 						<?php dynamic_sidebar('sidebar-logo-text-footer'); ?>
 					</div><!-- /.footer-assinatura -->
-    	<div class="footer-menu hidden-xs hidden-sm">
+    	<div class="col-md-8 footer-menu hidden-xs hidden-sm">
     	  <?php dynamic_sidebar('sidebar-footer'); ?>
         </div>
     </div>
