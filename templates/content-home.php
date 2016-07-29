@@ -29,8 +29,9 @@
 											$post_thumbnail_id = get_post_thumbnail_id(get_the_ID());
 											$thumb = wp_get_attachment_image_src($post_thumbnail_id, 'slider', false);
 											if(is_array($thumb)) {?>
-											<!--style="background-image: url('<?php echo $thumb[0]; ?>')"-->
-											<div class="highlights-image"><?php the_post_thumbnail(); ?></div>
+											<div class="highlights-image">
+												<img class="img-responsive" src="<?php echo $thumb[0]; ?>" />
+											</div>
 											<?php } else { ?>
 											<div class="highlights-image"><img class="img-responsive" src="http://placehold.it/1140x400/"></div>
 											<?php } ?>
@@ -44,7 +45,8 @@
 												<a href="<?php echo get_category_link( $category[0]->term_id ); ?>"><?php echo $category[0]->cat_name; ?></a>
 												<?php } ?>
 											</div>
-											<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php echo substr(the_title($before = '', $after = '', FALSE), 0, 60).'...'; ?></a></h3>
+											<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php echo substr(the_title($before = '', $after = '', FALSE), 0, 70).'...'; ?></a></h3>
+											<div class="btn-saibamais"><a href="<?php the_permalink(); ?>" class="btn btn-lg" role="button">saiba mais</a></div>
 											<div class="entry-summary">
 												<?php the_excerpt(); ?>
 											</div>
@@ -99,15 +101,15 @@
 						<div class="home-news">
 							<a id="featured-thumbnail" href="<?php the_permalink(); ?>" rel="nofollow">
 								<div class="entry-image">
-									<?php if ( has_post_thumbnail('destaque') ) {
-									  the_post_thumbnail();
+									<?php if ( has_post_thumbnail() ) {
+										the_post_thumbnail('destaque');
 									} else { ?>
 									<img class="img-responsive" src="http://placehold.it/360x258/">
 									<?php } ?>
 								</div>
 							</a>
 							<div class="entry-title post-title">
-								<a href="<?php the_permalink(); ?>"><?php echo substr(the_title($before = '', $after = '', FALSE), 0, 90).'...'; ?></a>
+								<a href="<?php the_permalink(); ?>"><h4><?php echo substr(the_title($before = '', $after = '', FALSE), 0, 60).'...'; ?></h4></a>
 							</div>
 						</div><!-- /.home-news -->
 						<?php/* }  Endif Thumbnail */ ?>
