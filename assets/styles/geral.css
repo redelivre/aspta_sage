@@ -526,8 +526,10 @@ to be fill the entire space of the .navbar */
 .footer-menu {
 	margin-top: 40px;
 }
-.footer-menu-item {
-	font-weight: bold;
+.footer-menu .menu-item {
+    font-weight: bold;
+    list-style: none;
+    width: 200px;
 }
 .footer-menu .laranja {
 	color: #e97200 !important;
