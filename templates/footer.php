@@ -35,4 +35,4 @@
 				new UISearch( document.getElementById( 'sb-search' ) );
 			</script>
 			<?php wp_footer(); ?>		
-</footer>
+		</footer>
