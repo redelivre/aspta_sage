@@ -91,7 +91,6 @@
 				$news_ids[] = get_the_ID(); ?>
 				<div class="col-md-4 col-sm-4 noticia center-block home-news-list">
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-						<?php/* if ( has_post_thumbnail() ) {  Se houver imagem destacada exibe o post */ ?>
 						<div class="entry-meta">
 							<?php $category = get_the_category(); ?>
 							<div class="cat-title">
@@ -104,7 +103,7 @@
 									<?php if ( has_post_thumbnail() ) {
 										the_post_thumbnail('destaque');
 									} else { ?>
-									<img class="img-responsive" src="http://placehold.it/360x258/">
+									<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/aspta-no-thumb.jpg">
 									<?php } ?>
 								</div>
 							</a>
@@ -112,7 +111,6 @@
 								<a href="<?php the_permalink(); ?>"><h4><?php echo substr(the_title($before = '', $after = '', FALSE), 0, 60).'...'; ?></h4></a>
 							</div>
 						</div><!-- /.home-news -->
-						<?php/* }  Endif Thumbnail */ ?>
 					</article><!-- /article -->
 				</div><!-- /.home-news-list -->
 				

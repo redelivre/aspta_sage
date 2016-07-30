@@ -15,9 +15,9 @@
 						<div class="col-md-12">
 							<div class="footer-icones">
 								<ul>
-									<li class="icone"><a href="http://www.facebook.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-facebook.png" alt=""/></a></li>
+									<li class="icone"><a href="http://www.facebook.com/asptaagroecologia/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-facebook.png" alt=""/></a></li>
 									<li class="icone"><a href="http://plus.google.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-gplus.png" alt=""/></a></li>
-									<li class="icone"><a href="http://www.youtube.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-youtube.png" alt=""/></a></li>
+									<li class="icone"><a href="http://www.youtube.com/channel/UCfRvRTdz58FkPVese6OzQmA" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-youtube.png" alt=""/></a></li>
 								</ul>
 							</div>
 						</div>
