@@ -52,6 +52,7 @@ function setup() {
 	// Habilita suporte a thumbnails e define tamanhos.
 	add_theme_support('post-thumbnails');
 	set_post_thumbnail_size(640, '', true);
+	add_image_size('slide', 1140, 400, true);
 	add_image_size('destaque', 360, 258, true);
 	add_image_size('medio', 200, 200, true);
 	add_image_size('pequeno', 150, 150, true);
