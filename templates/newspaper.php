@@ -17,7 +17,7 @@
     if ( have_posts() ) : 
     while ( have_posts() ) : the_post()
   ?>
-  <a href="<?= get_permalink( $revista->ID ); ?> "><?php the_revista_thumbnail( 'large' ); ?></a>
+  <a href="<?= get_permalink( get_the_ID() ); ?> "><?php the_revista_thumbnail( 'large' ); ?></a>
   <?php
     endwhile;
     endif;
