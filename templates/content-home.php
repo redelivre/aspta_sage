@@ -237,9 +237,9 @@
 						
 						<div class="col-md-4 col-sm-10 campanhas">
 							<h3 class="text-uppercase">Campanhas</h3>
-							<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-polo-da-borborema.jpg" alt="Polo da Borborema" />
-							<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-coletivo-triunfo.jpg" alt="Coletivo triunfo" />
-							<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-produtos-da-gente.jpg" alt="Produtos da Gente" />
+							<a href="<?php get_site_url(); ?>/programas/programa-paraiba/" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-polo-da-borborema.jpg" alt="Polo da Borborema" /></a>
+							<a href="<?php get_site_url(); ?>/programas/programa-do-contestado/" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-coletivo-triunfo.jpg" alt="Coletivo triunfo" /></a>
+							<a href="<?php get_site_url(); ?>/programas/programa-de-agricultura-urbana/" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-produtos-da-gente.jpg" alt="Produtos da Gente" /></a>
 						</div>
 					</div>
 				</div>
