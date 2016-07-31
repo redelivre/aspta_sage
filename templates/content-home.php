@@ -156,12 +156,7 @@
 						
 						<div class="col-md-4 col-sm-10 video-da-semana">
 							<h3>Vídeo da Semana</h3>
-							<div class="video">
-								<h4>Assista aos vídeos da ASPTA.</h4>
-								<div class="box-video">
-									<img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-video.jpg" alt="">
-								</div>
-							</div>
+							<?php dynamic_sidebar('sidebar-home-video-embed'); ?> 
 						</div><!-- /.video-da-semana -->
 						
 						<div class="col-md-4 col-sm-10 revista">

@@ -113,6 +113,14 @@ function widgets_init() {
   	'before_title'  => '<h3>',
   	'after_title'   => '</h3>'
   ]);
+  register_sidebar([
+  	'name'          => __('Home Video Embed', 'aspta'),
+  	'id'            => 'sidebar-home-video-embed',
+  	'before_widget' => '<div class="box-video">',
+  	'after_widget'  => '</div>',
+  	'before_title'  => '<h4>',
+  	'after_title'   => '</h4>'
+  ]);
 }
 add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
 
