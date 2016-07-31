@@ -139,21 +139,19 @@
 					<div class="row">
 						<div class="col-md-4 col-sm-10 programas-locais">
 							<h3>Programas Locais</h3>
-							<div class="programa">
-								<h3 class="prog-title">Programa da Paraíba</h3>
-								<h4 class="prog-desc">Breve descritivo do programa para fazer uma chamada rápida.</h4>
-								<div class="btn-saibamais"><a class="btn btn-lg" role="button">saiba mais</a></div>
-							</div>
-							<div class="programa">
-								<h3 class="prog-title">Programa da Agricultura Urbana</h3>
-								<h4 class="prog-desc">Breve descritivo do programa para fazer uma chamada rápida.</h4>
-								<div class="btn-saibamais"><a class="btn btn-lg" role="button">saiba mais</a></div>
-							</div>
-							<div class="programa">
-								<h3 class="prog-title">Programa do Contestado</h3>
-								<h4 class="prog-desc">Breve descritivo do programa para fazer uma chamada rápida.</h4>
-								<div class="btn-saibamais"><a class="btn btn-lg" role="button">saiba mais</a></div>
-							</div>
+							<?php
+							$programs = get_terms("programas");
+
+                                                        foreach($programs as $program){
+                                                          ?>
+							  <div class="programa">
+                                                            <h3 class="prog-title" ><?= $program->name; ?></h3>
+						            <h4 class="prog-desc"><?= $program->description; ?></h4>
+						            <div class="btn-saibamais"><a class="btn btn-lg" role="button" href="<?= get_term_link($program); ?>">saiba mais</a></div>
+							  </div>
+                                                          <?php
+                                                        }
+							?>
 						</div><!-- /.programas-locais -->
 						
 						<div class="col-md-4 col-sm-10 video-da-semana">
