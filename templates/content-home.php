@@ -166,7 +166,7 @@
 						
 						<div class="col-md-4 col-sm-10 revista">
 							<h3>Revista Agriculturas</h3>
-							<img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-revista.jpg" alt="Revista Agriculturas">
+							<a href="revistas/aspta"><img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-revista.jpg" alt="Revista Agriculturas"></a>
 						</div>
 					</div>
 				</div>
