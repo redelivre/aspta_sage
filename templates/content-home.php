@@ -80,10 +80,10 @@
 						<?php 
 						$news = new WP_Query(
 							array(
-								'posts_per_page' => 3, // TODO Custom option
+								'posts_per_page' => 3,
 								'ignore_sticky_posts' => 1,
-								'orderby' => 'date', // TODO Custom option
-								'order' => 'DESC', // TODO Custom option
+								'orderby' => 'date', 
+								'order' => 'DESC', 
 								'post__not_in' => $feature_ids // Remove highlighted posts
 							));
 						$news_ids = array();
