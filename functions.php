@@ -102,12 +102,12 @@ function aspta_build_taxonomies() {
 
 add_action( 'init', 'aspta_build_taxonomies', 0 );
 
-/** mau functions
-the ideia is insert functions on extras but dont works now... :(
-**/
+/** Mau Alert
+    The ideia is insert functions on extras but dont works now... :(
 
-// get selected mark for options on newspaper edition select
-// but this is usable for ...
+    get selected mark for options on newspaper edition select
+    but this is usable for ...
+**/
 
 function is_selected($value, $get, $name) {
     if (isset($get[$name]) && $value == $get[$name])
@@ -117,7 +117,6 @@ function is_selected($value, $get, $name) {
 // Create the query var so that WP catches the custom /member/username url
 add_filter('query_vars', function($vars){
   $vars[] = 'newspaper';
-  $vars[] = 'library';
   return $vars;
 } , 100);
 
@@ -125,8 +124,6 @@ add_filter('query_vars', function($vars){
 add_action( 'init', function(){
   add_rewrite_tag('%newspaper%', '([^&]+)');
   add_rewrite_rule('^revistas/([^/]*)?', 'index.php?newspaper=$matches[1]', 'top');
-  add_rewrite_tag('%library%', '([^&]+)');
-  add_rewrite_rule('^biblioteca?', 'index.php?library=aspta', 'top');
 });
 
 add_action( 'init', function(){
@@ -149,16 +146,3 @@ add_action( 'init', function(){
     }
   }
 });
-
-
-/* Esta função só pode existir se não houver menu cadastrado, caso contrário, duplica.
-
-add_filter( 'wp_nav_menu_items', function($items, $args){
-	$class = "nav navbar_nav";
-	$items .= '<li class="' . $class . '" id="quem-somos"><a href="' . get_site_url() . '/quem-somos/" title="quem-somos">Quem Somos</a></li>';
-	$items .= '<li class="' . $class . '" id="biblioteca"><a href="' . get_site_url() . '/biblioteca/aspta" title="biblioteca">Biblioteca</a></li>';
-    $items .= '<li class="' . $class . '" id="revista"><a href="' . get_site_url() . '/revistas/V13, N1" title="revistas">Revistas Agriculturas</a></li>';
-    $items .= '<li class="' . $class . '" id="feed"><a href="' . get_site_url() . '?feed=rss2" title="feed">Assine o feed</a></li>';
-
-    return $items;
-}, 10, 2 );*/

@@ -35,7 +35,7 @@ function revista_create_post_type() {
 	
 		'menu_position'		=> 5,
 		'public' 			=> true,
-		//'has_archive'		=> true,
+		'has_archive'		=> true,
 		'supports'			=> array( 'title', 'author', 'editor', 'excerpt', 'comments','page-attributes' ),
 		'hierarchical'		=> true,
         'taxonomies'        => array('post_tag'),	
