@@ -1,3 +1,4 @@
+<?php if ( get_post_type( get_the_ID() ) != 'article' ): ?>
 <div class="programas">
   Programas: <?= get_the_term_list( get_the_ID(), "programas" ); ?>
 </div>
@@ -48,6 +49,7 @@ endwhile;
 endif;
 wp_reset_query();
 }
+endif;
 ?>
 
 
