@@ -8,7 +8,7 @@
   Tags: <?= get_the_tag_list('',', '); ?>
 </div>
 <hr>
-<h2><?php _e("Noticias Relacionas", "aspta"); ?></h2>
+<h2><?php _e("Noticias Relacionadas", "aspta"); ?></h2>
 <?php
 //for use in the loop, list 5 post titles related to first tag on current post
 $tags = wp_get_post_tags($post->ID);
