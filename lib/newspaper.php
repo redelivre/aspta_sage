@@ -29,7 +29,7 @@ class NewsPaperWidget extends WP_Widget {
    */
   public function widget( $args, $instance ) {
     ?>
-    <div class="sidebar-module">
+    <div class="sidebar-module row">
     <h3>Revista Agriculturas</h3>
     <?php
     query_posts( array (
@@ -39,7 +39,7 @@ class NewsPaperWidget extends WP_Widget {
           ));
     if ( have_posts() ) : 
       while ( have_posts() ) : the_post()?>
-      <a href="<?php echo get_permalink( get_the_ID() ); ?> "><?php the_revista_thumbnail( 'large' ); ?></a>
+      <a class="img-responsive" href="<?php echo get_permalink( get_the_ID() ); ?> "><?php the_revista_thumbnail( 'large' ); ?></a>
       <?php
       endwhile;
       endif;

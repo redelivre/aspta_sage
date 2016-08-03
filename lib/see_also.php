@@ -29,18 +29,24 @@ class SeeAlsoWidget extends WP_Widget {
    */
   public function widget( $args, $instance ) {
     ?>
-    <div class="sidebar-module">
+    <div class="sidebar-module row">
     <h3>Consulte Também</h3>
-      <div class="logo_partiners" >
-        <a href="http://aspta.org.br/2014/03/projeto-alianca-pela-agroecologia/" >
-          <img src="<?php bloginfo('stylesheet_directory'); ?>/images/sidebar_partiners/alizanza.png" alt="parceiro: Alianza por la Agroecologia"/>
-        </a>
-        <a href="http://www.agroecologiaemrede.org.br/" >
-          <img src="<?php bloginfo('stylesheet_directory'); ?>/images/sidebar_partiners/agroecologia-em-rede.png" alt="parceiro: Agroecologia em Rede"/>
-        </a>
-        <a href="http://www6.ufrgs.br/abaagroeco" >
-          <img src="<?php bloginfo('stylesheet_directory'); ?>/images/sidebar_partiners/aba.png" alt="parceiro: aba Agroecologia"/>
-        </a>
+      <div class="logo_partiners text-center" >
+        <div class="row">
+          <a href="http://aspta.org.br/2014/03/projeto-alianca-pela-agroecologia/" >
+            <img src="<?php bloginfo('stylesheet_directory'); ?>/images/sidebar_partiners/alizanza.png" alt="parceiro: Alianza por la Agroecologia"/>
+          </a>
+        </div>
+        <div class="row">
+          <a href="http://www.agroecologiaemrede.org.br/" >
+            <img src="<?php bloginfo('stylesheet_directory'); ?>/images/sidebar_partiners/agroecologia-em-rede.png" alt="parceiro: Agroecologia em Rede"/>
+          </a>
+        </div>
+        <div class="row">
+          <a href="http://www6.ufrgs.br/abaagroeco" >
+            <img src="<?php bloginfo('stylesheet_directory'); ?>/images/sidebar_partiners/aba.png" alt="parceiro: aba Agroecologia"/>
+          </a>
+        </div>
       </div>
     </div>
     <?php
