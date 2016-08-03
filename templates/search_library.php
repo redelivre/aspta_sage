@@ -16,7 +16,7 @@
 	</div>
         <div class="clearfix"></div>
 	<form method="get" action="<?php echo get_site_url() ?>/biblioteca">
-	<div class="library-box tipos-de-materiais col-md-11">
+	<div class="library-box tipos-de-materiais">
 	  <h4>Tipos de Materiais</h4>
 	  <div class="opcoes duas-colunas">
 	    <?php $terms = get_terms( 'category', array( 'hide_empty' => false ) );
