@@ -41,7 +41,7 @@
 	  </div>
         </div>
         <div class="clearfix"></div>
-	<div class="library-box temas-de-intervencao col-md-11">
+	<div class="library-box temas-de-intervencao">
 	  <h4>Temas de intervenção</h4>
 	  <div class="opcoes duas-colunas">
 	    <?php $terms = get_terms( 'temas-de-intervencao', array( 'hide_empty' => false ) );
@@ -64,7 +64,7 @@
 	  </div>
         </div>
 	<div class="clearfix"></div>
-	<div class="library-box revista-agriculturas col-md-11">
+	<div class="library-box revista-agriculturas">
 	  <h4>Revista Agriculturas</h4>
 	  <div class="opcoes">
 	    <div class="input-group">
@@ -164,7 +164,7 @@
 	  </div>
         </div>
         <div class="clearfix"></div>
-        <div class="library-box programas col-md-11">
+        <div class="library-box programas">
           <h4>Programas</h4>
           <div class="opcoes">
           <?php 
