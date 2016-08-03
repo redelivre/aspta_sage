@@ -155,4 +155,3 @@ echo paginate_links( array(
 ) );
 ?>
 </div>
-</div>
