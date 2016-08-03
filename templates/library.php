@@ -117,7 +117,6 @@ if ( $the_query->have_posts() ) {
          ?>"/>
       </a>
     </div>
-    <div class="col-md-8">
       <div>
         <strong><?php foreach (wp_get_post_categories(get_the_ID()) as $category){ echo the_category($category);}?></strong>
       </div>
@@ -126,7 +125,6 @@ if ( $the_query->have_posts() ) {
       </div>
       <?= the_excerpt(); ?>
       <time class="updated" datetime="<?= get_post_time('c', true); ?>"><?= get_the_date(); ?></time>
-    </div>
     </div>
     <hr>
   <?php endwhile;
