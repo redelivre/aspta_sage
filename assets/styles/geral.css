@@ -232,8 +232,10 @@ to be fill the entire space of the .navbar */
 
 /* Seções */
 .aspta-content {
- 	margin: 0 auto 340px;
- 	height: 100%;
+
+}
+.wrap {
+ 	margin: 0 auto 280px;
 	background: url('../images/back_content.jpg');
 }
 
@@ -429,9 +431,15 @@ to be fill the entire space of the .navbar */
 .boletim-campanha h4 {
 	padding: 20px 10px;
 	font-weight: bold;
-	color: #003e2d;
-	text-decoration: underline;
 	border-bottom: 2px solid #286919;	
+}
+.boletim-campanha h4 a {
+	color: #003e2d;
+	text-decoration: underline;	
+}
+.boletim-campanha h4 a:hover {
+	color: #fff;
+	text-decoration: none;
 }
 .boletim-campanha .sem-borda,
 .blog-pratos-limpos .sem-borda {
@@ -456,7 +464,7 @@ to be fill the entire space of the .navbar */
 }
 .boletim-campanha .btn-enviar,
 .boletim-campanha .btn-enviar:hover {
-	margin-top: -55px;
+	margin-top: -45px;
 	color: #a7b739;
 }
 
@@ -468,17 +476,20 @@ to be fill the entire space of the .navbar */
 	color: #e97200;
 	border-bottom: 3px solid #e97200;
 }
-.blog-pratos-limpos h4 {
+.blog-pratos-limpos h4,
+.blog-pratos-limpos h5 {
 	margin-left: 20px;
 	padding: 15px 0;
 	font-weight: bold;
 	border-bottom: 2px solid #e97200;		
 }
-.blog-pratos-limpos h4 a {
+.blog-pratos-limpos h4 a,
+.blog-pratos-limpos h5 a {
 	color: #003e2d;
 	text-decoration: underline;
 }	
-.blog-pratos-limpos h4 a:hover {
+.blog-pratos-limpos h4 a:hover,
+.blog-pratos-limpos h5 a:hover {
 	color: #e97200;
 	text-decoration: none;
 }
@@ -491,16 +502,25 @@ to be fill the entire space of the .navbar */
 
 
 #redes-e-parcerias {
+	margin-bottom: 40px;
 	background-color: #fff;
 }
-.parcerias-title h3 {
+.parcerias-title h3,
+.parcerias h3 {
 	padding: 30px;
 	font-weight: bold;
 	color: #e97200;
 	border-right: 3px solid #e97200;
 }
+.parcerias h3 {
+	border: none;
+}
+.parcerias a img {
+	margin: 20px auto;
+}
 /* Biblioteca */
-#biblioteca .titulo {
+#biblioteca .titulo,
+#noticias .titulo {
 	color: #003e2d;
 	font-weight: bold;
 }
