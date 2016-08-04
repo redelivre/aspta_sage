@@ -99,18 +99,15 @@ class LibraryWidget extends WP_Widget {
   </p>
   <p>
     <label>Edição</label>
-<?php
-// Create a new Query
+<?php // Create a new Query
 $args = array(
          'post_type' => 'revista',
          'fields' => 'ids',
-       'post_status' => 'publish',
-       's' => 'V',
-       'posts_per_page' => -1
-  );
-$the_query = new WP_Query( $args );
- 
-// The Loop
+         'post_status' => 'publish',
+         's' => 'V',
+         'posts_per_page' => -1
+ );
+$the_query = new WP_Query( $args ); // The Loop
 ?>
 <select name ="edition">
 <option value="">Nenhuma edição Selecionada!</option>
