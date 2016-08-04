@@ -17,7 +17,7 @@
 		<?php wp_head(); ?>
 	</head>
 			
-	<body>
+	<body <?php body_class(); ?>>
 		<header class="header">
 			<div class="container">
 				<div class="row">
@@ -71,5 +71,3 @@
 			<div class="clearfix"></div>
 			
 		</header><!-- /.header -->
-
-		<section class="aspta-content">

@@ -1,3 +1,4 @@
+		<section class="aspta-content">
 			<aside id="destaques">
 				<div class="container hidden-xs">
 					<div class="row">
@@ -115,7 +116,6 @@
 						</div><!-- /.home-news-list -->
 						
 						<?php endwhile;
-
 						/* If no posts, then serve error message */
 						else: ?>
 						<div class="col-md-12 noticia center-block home-news-list">
@@ -141,7 +141,6 @@
 							<h3>Programas Locais</h3>
 							<?php
 							$programs = get_terms("programas");
-
                                                         foreach($programs as $program){
                                                           ?>
 							  <div class="programa">
@@ -174,65 +173,61 @@
 					<div class="row">
 						<div class="col-md-4 col-sm-10 boletim-campanha">
 							<h3 class="text-uppercase branco">Brasil livre de transgênicos e agrotóxicos</h3>
-                                                        <?php
-                                                        $args = array(
-                                                          'post_type' => 'campanha',
-                                                          'post_status' => 'publish',
-                                                          'orderby' => 'date',
-                                                          'order'   => 'DESC',
-                                                          'posts_per_page' => 3,
-                                                          'tax_query' => array(
-                                                        		array(
-                                                        			'taxonomy' => 'itens-de-campanha',
-                                                        			'field'    => 'slug',
-                                                        			'terms'    => 'campanha-transgenicos',
-                                                        		),
-                                                        	),
-                                                        );
-                                                        
-                                                        $the_query = new WP_Query( $args );
-                                                        $i = 0; 
-                                                        while ( $the_query->have_posts() ):
-                                                          $the_query->the_post(); $i++;
-                                                          if( $i != 3 ){
-                                                          ?>
-                                                            <h4><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title() ?></a>
-                                                          <?php
-							  }else{
-                                                          ?>
-                                                            <h4 class="sem-borda" ><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title() ?></a>
-                                                          <?php
-                                                          }
-                                                        endWhile;
-                                                        ?>
-					<h4 class="text-uppercase branco assine">Assine o Boletim da Campanha</h4>
-					<form method="post" action="http://boletimtransgenicos.campanhasdemkt.net/recebeForm.php">
-				          <input type="hidden" name="uniqid" value="1095113343500058" />
-				          <input type="hidden" name="senha" value="6073f5c62f95697a09c68b2546e7c50a" />
-				          <input type="hidden" name="id_sender_email" value="2179" />
-				          <input type="hidden" name="urlredir" value="http://aspta.org.br/campanha/inscrever/" />
-				          <input type="hidden" name="subscribe[1597]" value="1" />
-				          <div class="form-group">
-					  <input type="text" class="form-control" placeholder="Digite seu e-mail e aperte enter">
-				          </div>
-				          <button type="submit" class="btn btn-lg btn-enviar">enviar</button>
-					</form>
+	                            <?php
+	                            $args = array(
+	                              'post_type' => 'campanha',
+	                              'post_status' => 'publish',
+	                              'orderby' => 'date',
+	                              'order'   => 'DESC',
+	                              'posts_per_page' => 3,
+	                              'tax_query' => array(
+	                            		array(
+	                            			'taxonomy' => 'itens-de-campanha',
+	                            			'field'    => 'slug',
+	                            			'terms'    => 'campanha-transgenicos',
+	                            		),
+	                            	),
+	                            );
+	                            
+	                            $the_query = new WP_Query( $args );
+	                            $i = 0; 
+	                            while ( $the_query->have_posts() ):
+	                              $the_query->the_post(); $i++;
+	                              if( $i != 3 ){ ?>
+	                                <h4><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title() ?></a>
+	                              <?php }else{ ?>
+	                                <h4 class="sem-borda" ><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title() ?></a>
+	                              <?php } endWhile; ?>
+                                                          
+							<h4 class="text-uppercase branco assine">Assine o Boletim da Campanha</h4>
+							<form method="post" action="http://boletimtransgenicos.campanhasdemkt.net/recebeForm.php">
+						          <input type="hidden" name="uniqid" value="1095113343500058" />
+						          <input type="hidden" name="senha" value="6073f5c62f95697a09c68b2546e7c50a" />
+						          <input type="hidden" name="id_sender_email" value="2179" />
+						          <input type="hidden" name="urlredir" value="http://aspta.org.br/campanha/inscrever/" />
+						          <input type="hidden" name="subscribe[1597]" value="1" />
+						          <div class="form-group">
+							  <input type="text" class="form-control" placeholder="Digite seu e-mail e aperte enter">
+						          </div>
+						          <button type="submit" class="btn btn-lg btn-enviar">enviar</button>
+							</form>
 						</div>
+						
 						<div class="col-md-4 col-sm-10 blog-pratos-limpos">
 							<h3 class="text-uppercase">Blog Em Pratos Limpos</h3>
-							<?php
-							$rss = fetch_feed('http://pratoslimpos.org.br/?feed=rss2');
+							<?php $rss = fetch_feed('http://pratoslimpos.org.br/?feed=rss2');
 							if (!is_wp_error( $rss ) ) :
 								$maxitems = $rss->get_item_quantity(6);
 								$rss_items = $rss->get_items(0, $maxitems);
 							endif;
 							if ($maxitems == 0){ ?><li><?php _e("Não há itens no blog."); ?></li><?php }
-							else
-							$numItems = count($rss_items);
-							$i = 0;
-							foreach ( $rss_items as $item ) : ?>
-							<p><strong><h4 class="<?php if( ++$i === $numItems ) echo "sem-borda"; ?>" ><a href='<?php echo esc_url( $item->get_permalink() ); ?>' title='<?php echo esc_html( $item->get_title() ); ?>' target="_blank"><?php echo esc_html( $item->get_title()); ?></a></h4></strong></p>
-							<?php endforeach; ?>
+							else {
+								$numItems = count($rss_items);
+								$i = 0;
+								foreach ( $rss_items as $item ) : ?>
+									<p><strong><h4 class="<?php if( ++$i === $numItems ) echo "sem-borda"; ?>" ><a href='<?php echo esc_url( $item->get_permalink() ); ?>' title='<?php echo esc_html( $item->get_title() ); ?>' target="_blank"><?php echo esc_html( $item->get_title()); ?></a></h4></strong></p>
+								<?php endforeach;
+							} ?>
 						</div>
 						
 						<div class="col-md-4 col-sm-10 campanhas">
