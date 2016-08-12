@@ -229,6 +229,75 @@ to be fill the entire space of the .navbar */
 	border-right: 0;
 }
 
+.navbar-nav ul li.has-sub:hover > a:after {
+	top: 0;
+	bottom: 0;
+}
+.navbar-nav > ul > li.has-sub > a:before {
+	content: '';
+	position: absolute;
+	top: 18px;
+	right: 6px;
+	border: 5px solid transparent;
+	border-top: 5px solid #ffffff;
+}
+.navbar-nav > ul > li.has-sub:hover > a:before {
+	top: 19px;
+}
+.navbar-nav ul li.has-sub:hover > a {
+	background: #3f3f3f;
+	border-color: #3f3f3f;
+	padding-bottom: 13px;
+	padding-top: 13px;
+	top: -1px;
+	z-index: 999;
+}
+.navbar-nav ul li.has-sub:hover > ul,
+.navbar-nav ul li.has-sub:hover > div {
+	display: block;
+}
+.navbar-nav ul li.has-sub > a:hover {
+	background: #3f3f3f;
+	border-color: #3f3f3f;
+}
+.navbar-nav ul li > ul,
+.navbar-nav ul li > div {
+	display: none;
+	width: auto;
+	position: absolute;
+	top: 38px;
+	padding: 10px 0;
+	background: #3f3f3f;
+	border-radius: 0 0 5px 5px;
+	z-index: 999;
+}
+.navbar-nav ul li > ul {
+	width: 200px;
+}
+.navbar-nav ul li > ul li {
+	display: block;
+	list-style: inside none;
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+.navbar-nav ul li > ul li a {
+	outline: none;
+	display: block;
+	position: relative;
+	margin: 0;
+	padding: 8px 20px;
+	font: 10pt Arial, Helvetica, sans-serif;
+	color: #ffffff;
+	text-decoration: none;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+.navbar-nav ul ul a:hover {
+	color: #ffffff;
+}
+.navbar-nav > ul > li.has-sub > a:hover:before {
+	border-top: 5px solid #ffffff;
+}
 
 /* Seções */
 .aspta-content {
