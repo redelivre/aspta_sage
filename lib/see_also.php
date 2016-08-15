@@ -1,9 +1,16 @@
 <?php
 namespace Roots\Sage\Widget;
 use WP_Widget;
+
 /**
- * Footer widget
+ * See Also widget
+ *
+ * @package WordPress
+ * @subpackage AS-PTA
+ * @since AS-PTA 0.2
  */
+ 
+
 class SeeAlsoWidget extends WP_Widget {
   /**
    * Sets up the widgets name etc
@@ -23,9 +30,9 @@ class SeeAlsoWidget extends WP_Widget {
    */
   public function widget( $args, $instance ) {
     ?>
-    <div class="sidebar-module parcerias">
+    <div class="sidebar-module parcerias col-sm-12">
     <h3 class="text-uppercase">Consulte Também</h3>
-      <div class="logo_partiners text-center" >
+      <div class="logo_partners text-center" >
         <div class="parceria">
           <a href="http://aspta.org.br/2014/03/projeto-alianca-pela-agroecologia/" target="_blank">
             <img class="img-responsive" src="<?php bloginfo('template_url'); ?>/assets/images/sidebar_partiners/alizanza.png" alt="parceiro: Alianza por la Agroecologia"/>

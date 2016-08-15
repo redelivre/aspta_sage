@@ -5,8 +5,13 @@ namespace Roots\Sage\Setup;
 use Roots\Sage\Assets;
 
 /**
- * Theme setup
+ * Theme Setup
+ *
+ * @package WordPress
+ * @subpackage AS-PTA
+ * @since AS-PTA 0.2
  */
+
 function setup() {
 	// Enable features from Soil when plugin is activated
 	// https://roots.io/plugins/soil/
@@ -36,6 +41,12 @@ function setup() {
 	// http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size
 	// http://codex.wordpress.org/Function_Reference/add_image_size
 	add_theme_support('post-thumbnails');
+	set_post_thumbnail_size('640', '', true);
+	add_image_size('slide', '1140', '400', true);
+	add_image_size('destaque-pagina', '750', '', true);
+	add_image_size('destaque', '360', '258', true);
+	add_image_size('medio', '200', '200', true);
+	add_image_size('pequeno', '150', '150', true);
 
 	// Enable post formats
 	// http://codex.wordpress.org/Post_Formats
@@ -48,14 +59,6 @@ function setup() {
 	// Use main stylesheet for visual editor
 	// To add custom styles edit /assets/styles/layouts/_tinymce.scss
 	add_editor_style(Assets\asset_path('styles/main.css'));
-
-	// Habilita suporte a thumbnails e define tamanhos.
-	add_theme_support('post-thumbnails');
-	set_post_thumbnail_size(640, '', true);
-	add_image_size('slide', 1140, 400, true);
-	add_image_size('destaque', 360, 258, true);
-	add_image_size('medio', 200, 200, true);
-	add_image_size('pequeno', 150, 150, true);
 
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
@@ -112,14 +115,6 @@ function widgets_init() {
   	'after_widget'  => '</section>',
   	'before_title'  => '<h3>',
   	'after_title'   => '</h3>'
-  ]);
-  register_sidebar([
-  	'name'          => __('Home Video Embed', 'aspta'),
-  	'id'            => 'sidebar-home-video-embed',
-  	'before_widget' => '<div class="box-video">',
-  	'after_widget'  => '</div>',
-  	'before_title'  => '<h4>',
-  	'after_title'   => '</h4>'
   ]);
 }
 add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');

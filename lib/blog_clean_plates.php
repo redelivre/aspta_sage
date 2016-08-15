@@ -1,9 +1,15 @@
 <?php
 namespace Roots\Sage\Widget;
 use WP_Widget;
+
 /**
  * Blog_Clean_Plates Widget
+ *
+ * @package WordPress
+ * @subpackage AS-PTA
+ * @since AS-PTA 0.2
  */
+ 
 class BlogCleanPlatesWidget extends WP_Widget {
 	/**
 	* Sets up the widgets name etc
@@ -22,14 +28,14 @@ class BlogCleanPlatesWidget extends WP_Widget {
 	* @param array $instance
 	*/
 	public function widget( $args, $instance ) { ?>
-		<div class="sidebar-module blog-pratos-limpos">
+		<div class="sidebar-module blog-pratos-limpos col-md-12 col-sm-6">
 			<h3 class="text-uppercase">Blog em Pratos Limpos</h3>
 			<?php $rss = fetch_feed('http://pratoslimpos.org.br/?feed=rss2');
 				if (!is_wp_error( $rss ) ) :
 					$maxitems = $rss->get_item_quantity(6);
 					$rss_items = $rss->get_items(0, $maxitems);
 				endif;
-				if ($maxitems == 0){ ?> <li><?php _e("Não há itens no blog."); ?></li> <?php }
+				if ($maxitems == 0){ ?> <li class="sem-borda"><?php _e("Não há itens no blog."); ?></li> <?php }
 				else {
 					foreach ( $rss_items as $item ) : ?>
   						<p><strong><h5><a href="<?php echo esc_url( $item->get_permalink() ); ?>" title="<?php echo esc_html( $item->get_title() ); ?>"><?php echo esc_html( $item->get_title() ); ?></h5></a></strong></p>

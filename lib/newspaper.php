@@ -1,9 +1,15 @@
 <?php
 namespace Roots\Sage\Widget;
 use WP_Widget;
+
 /**
- * Footer widget
+ * NewsPaper widget
+ *
+ * @package WordPress
+ * @subpackage AS-PTA
+ * @since AS-PTA 0.2
  */
+ 
 class NewsPaperWidget extends WP_Widget {
 	/**
 	* Sets up the widgets name etc
@@ -22,8 +28,8 @@ class NewsPaperWidget extends WP_Widget {
 	* @param array $instance
 	*/
 	public function widget( $args, $instance ) { ?>
-	    <div class="sidebar-module revista">
-		    <h3>Revista Agriculturas</h3>
+	    <div class="sidebar-module revista col-md-12 col-sm-6">
+		    <h3 class="text-uppercase">Revista Agriculturas</h3>
 		    <?php query_posts( array (
 		    	'post_type'      => 'revista',
 		    	'post_parent'    => 0,
@@ -31,7 +37,7 @@ class NewsPaperWidget extends WP_Widget {
 		    ));
 		    if ( have_posts() ) :
 		    	while ( have_posts() ) : the_post()?>
-		    		<a class="img-responsive" href="<?php echo get_permalink( get_the_ID() ); ?> "><?php the_revista_thumbnail( 'large' ); ?></a>
+		    		<a class="img-responsive text-center" href="<?php echo get_permalink( get_the_ID() ); ?> "><?php the_revista_thumbnail( 'large' ); ?></a>
 		    	<?php endwhile;
 		    endif; ?>
 	    </div>

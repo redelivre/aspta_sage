@@ -28,7 +28,7 @@ add_filter('body_class', __NAMESPACE__ . '\\body_class');
  * Clean up the_excerpt()
  */
 function excerpt_more() {
-  return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'aspta') . '</a>';
+  return ' &hellip; <a href="' . get_permalink() . '">' . __('Leia mais', 'aspta') . '</a>';
 }
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 
@@ -36,7 +36,7 @@ add_filter('sage/wrap_base', __NAMESPACE__ . '\\aspta_add_static_page'); // Add 
 
 function aspta_add_static_page($templates) {
   global $wp_query;
-  if(array_key_exists('newspaper', $wp_query->query_vars) ){
+  if(array_key_exists('newspaper', $wp_query->query_vars) || array_key_exists('library', $wp_query->query_vars)){
      array_unshift($templates, 'base-aspta.php'); // Shift the template to the front of the array
   }
   return $templates; // Return our modified array with base-$cpt.php at the front of the queue
