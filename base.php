@@ -17,7 +17,7 @@ use Roots\Sage\Wrapper;
           <?php get_template_part('templates/' . $type); ?>
           <?php 
           	if (Setup\display_sidebar()) : ?>
-        	<aside class="sidebar col-md-4">
+        	<aside class="sidebar col-md-4 col-sm-12 hidden-xs">
         		<?php include Wrapper\sidebar_path(); ?>
         	</aside><!-- /.sidebar -->
         	<?php endif; ?>
