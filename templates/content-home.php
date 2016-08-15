@@ -90,7 +90,7 @@
 						$news_ids = array();
 						if($news->have_posts()) : while ( $news->have_posts() ) : $news->the_post();
 						$news_ids[] = get_the_ID(); ?>
-						<div class="col-md-4 col-sm-4 noticia center-block home-news-list">
+						<div class="col-md-4 col-sm-12 col-xs-12 noticia center-block home-news-list">
 							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 								<div class="entry-meta">
 									<?php $category = get_the_category(); ?>
@@ -137,7 +137,7 @@
 			<aside id="prog-midias">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-4 col-sm-10 programas-locais">
+						<div class="col-md-4 col-sm-6 col-xs-12 programas-locais">
 							<h3>Programas Locais</h3>
 							<?php
 							$programs = get_terms("programas");
@@ -153,12 +153,12 @@
 							?>
 						</div><!-- /.programas-locais -->
 						
-						<div class="col-md-4 col-sm-10 video-da-semana">
+						<div class="col-md-4 col-sm-6 col-xs-12 video-da-semana">
 							<h3>Vídeo da Semana</h3>
 							<?php dynamic_sidebar('sidebar-home-video-embed'); ?> 
 						</div><!-- /.video-da-semana -->
 						
-						<div class="col-md-4 col-sm-10 revista">
+						<div class="col-md-4 col-sm-12 col-xs-12 revista">
 							<h3>Revista Agriculturas</h3>
 							<a href="revistas/aspta"><img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-revista.jpg" alt="Revista Agriculturas"></a>
 						</div>
@@ -171,7 +171,7 @@
 			<aside id="camp-blog">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-4 col-sm-10 boletim-campanha">
+						<div class="col-md-4 col-sm-12 col-xs-12 boletim-campanha">
 							<h3 class="text-uppercase branco">Brasil livre de transgênicos e agrotóxicos</h3>
 	                            <?php
 	                            $args = array(
@@ -213,14 +213,14 @@
 							</form>
 						</div>
 						
-						<div class="col-md-4 col-sm-10 blog-pratos-limpos">
+						<div class="col-md-4 col-sm-6 col-xs-12 blog-pratos-limpos">
 							<h3 class="text-uppercase">Blog Em Pratos Limpos</h3>
 							<?php $rss = fetch_feed('http://pratoslimpos.org.br/?feed=rss2');
 							if (!is_wp_error( $rss ) ) :
 								$maxitems = $rss->get_item_quantity(6);
 								$rss_items = $rss->get_items(0, $maxitems);
 							endif;
-							if ($maxitems == 0){ ?><li><?php _e("Não há itens no blog."); ?></li><?php }
+							if ($maxitems == 0){ ?><li class="sem-borda"><?php _e("Não há itens no blog."); ?></li><?php }
 							else {
 								$numItems = count($rss_items);
 								$i = 0;
@@ -230,7 +230,7 @@
 							} ?>
 						</div>
 						
-						<div class="col-md-4 col-sm-10 campanhas">
+						<div class="col-md-4 col-sm-6 col-xs-12 campanhas">
 							<h3 class="text-uppercase">Campanhas</h3>
 							<a href="<?php get_site_url(); ?>/programas/programa-paraiba/" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-polo-da-borborema.jpg" alt="Polo da Borborema" /></a>
 							<a href="<?php get_site_url(); ?>/programas/programa-do-contestado/" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-coletivo-triunfo.jpg" alt="Coletivo triunfo" /></a>

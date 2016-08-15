@@ -1,11 +1,12 @@
 <?php
 /**
- * Template Name: Biblioteca
+ * Template Name: Biblioteca Lista
  *
  * @package WordPress
  * @subpackage AS-PTA
  * @since AS-PTA 0.2
  */
+ 
 // data declaration
 $material = array();
 $theme = array();
@@ -94,36 +95,47 @@ if (isset($_GET["material"]) || isset($_GET["theme"]) || isset($_GET["program"])
  
 }
 ?>
-					<aside id="biblioteca" class="col-md-8">
-						<div><h1 class="titulo">Biblioteca</h1></div>
+					<aside id="lista" class="col-md-8">
+						<div class="titulo-pagina"><h1><?php the_title(); ?></h1></div>
 						<?php // The Query
 						$the_query = new WP_Query( $args ); // The Loop
 						if ( $the_query->have_posts() ) {
 							while ( $the_query->have_posts() ) : ?>
 								<?php $the_query->the_post(); ?>
-								<div class="row" >
-									<div class="col-md-4">
-										<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><img class="img-responsive" src="<?php wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())) ? the_post_thumbnail_url('medium') : get_template_directory_uri().'/assets/images/aspta-no-thumb.jpg'; ?>" /></a>
+								<div id="post-<?php the_ID(); ?>" class="row lista-post">
+									<div class="col-md-4 lista-img">
+										<a id="featured-thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="nofollow">
+											<?php if ( has_post_thumbnail() ) {
+												the_post_thumbnail('destaque');
+												} else { ?>
+											<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/aspta-no-thumb.jpg">
+											<?php } ?>
+										</a>
 									</div>
-									<div class="col-md-8">
-										<div>
-											<strong><?php foreach (wp_get_post_categories(get_the_ID()) as $category){ echo the_category($category);}?></strong>
+									<div class="col-md-8 lista-conteudo">
+										<div class="lista-categoria">
+											<a href="<?php get_permalink(); ?>" rel="nofollow"><?php the_category(); ?></a>
+											<?php $category = get_the_category(); ?>
+											<?php echo $category[0]->cat_name; ?>
 										</div>
-										<div>
-											<h4><a href="<?php get_permalink(); ?>"><?php get_the_title(); ?></a></h4>
+										<div class="lista-titulo">
+											<h4><a href="<?php the_permalink(); ?>" rel="nofollow"><?php the_title(); ?></a></h4>
 										</div>
-										<?php the_excerpt(); ?>
-										<time class="updated" datetime="<?php get_post_time('c', true); ?>"><?php get_the_date(); ?></time>
+										<div class="lista-resumo">
+											<?php the_excerpt(); ?>
+										</div>
+										<div class="lista-meta-time">
+											<time class="updated" datetime="<?php get_post_time('c', true); ?>"><?php the_date(); ?></time>
+										</div>
 									</div>
 								</div>
-								<hr>
 								<?php endwhile; /* Restore original Post Data */
 								wp_reset_postdata();
 								} else { // no posts found
-									_e("No posts...", "aspta");
+									_e("Sem publicações...", "aspta");
 								} ?>
 								
-								<div class="col-md-8 text-center">
+								<div class="col-md-8 text-center paginacao">
 									<?php $big = 999999999; // need an unlikely integer
 									echo paginate_links( array(
 										'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),

@@ -34,7 +34,7 @@
 				        	<div class="clearfix"></div>
 				        	
 				        	<div class="library-box temas-de-intervencao">
-				        		<h4>Temas de intervenção</h4>
+				        		<h4>Temas de Intervenção</h4>
 				        		<div class="opcoes duas-colunas">
 				        		<?php $terms = get_terms( 'temas-de-intervencao', array( 'hide_empty' => false ) );
 				        			foreach($terms as $term){ ?>
@@ -54,7 +54,7 @@
 				        		<h4>Revista Agriculturas</h4>
 				        		<div class="opcoes">
 				        			<div class="input-group">
-				        				<span class="input-group-addon"><label>Titúlo de artigo</label></span>
+				        				<span class="input-group-addon"><label>Título de artigo</label></span>
 				        				<input type="text" class="form-control" name="article_title" value="<?php echo isset($_GET['article_title'])?$_GET['article_title']:"" ?>" />  	
 				        			</div>						  
 				        			<div class="input-group">
