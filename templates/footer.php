@@ -27,7 +27,7 @@
 			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 			<!-- Include all compiled plugins (below), or include individual files as needed -->
-			<script src="<?php bloginfo('template_url'); ?>/assets/scripts/bootstrap.min.js"></script>
+			<!--script src="<?php bloginfo('template_url'); ?>/assets/scripts/bootstrap.min.js"></script-->
 			<script src="<?php bloginfo('template_url'); ?>/assets/scripts/classie.js"></script>
 			<script src="<?php bloginfo('template_url'); ?>/assets/scripts/uisearch.js"></script>
 			<script src="<?php bloginfo('template_url'); ?>/assets/scripts/jquery.cycle2.min.js"></script>
