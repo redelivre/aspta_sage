@@ -8,7 +8,7 @@ use Roots\Sage\Wrapper;
     ?>
     <div class="wrap" role="document">
       <div class="content container">
-        <main class="main row">
+        <main class="row">
           <?php 
           	include Wrapper\template_path();
           	global $wp;
