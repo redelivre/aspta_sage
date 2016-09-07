@@ -5,49 +5,61 @@ namespace Roots\Sage\Setup;
 use Roots\Sage\Assets;
 
 /**
- * Theme setup
+ * Theme Setup
+ *
+ * @package WordPress
+ * @subpackage AS-PTA
+ * @since AS-PTA 0.2
  */
+
 function setup() {
-  // Enable features from Soil when plugin is activated
-  // https://roots.io/plugins/soil/
-  // comented because we dont use soils plugin
-  // add_theme_support('soil-clean-up');
-  // add_theme_support('soil-nav-walker');
-  // add_theme_support('soil-nice-search');
-  // add_theme_support('soil-jquery-cdn');
-  // add_theme_support('soil-relative-urls');
+	// Enable features from Soil when plugin is activated
+	// https://roots.io/plugins/soil/
+	// comented because we dont use soils plugin
+	// add_theme_support('soil-clean-up');
+	// add_theme_support('soil-nav-walker');
+	// add_theme_support('soil-nice-search');
+	// add_theme_support('soil-jquery-cdn');
+	// add_theme_support('soil-relative-urls');
 
-  // Make theme available for translation
-  // Community translations can be found at https://github.com/roots/sage-translations
-  load_theme_textdomain('sage', get_template_directory() . '/lang');
+	// Make theme available for translation
+	// Community translations can be found at https://github.com/roots/sage-translations
+	load_theme_textdomain('aspta', get_template_directory() . '/lang');
 
-  // Enable plugins to manage the document title
-  // http://codex.wordpress.org/Function_Reference/add_theme_support#Title_Tag
-  add_theme_support('title-tag');
+	// Enable plugins to manage the document title
+	// http://codex.wordpress.org/Function_Reference/add_theme_support#Title_Tag
+	add_theme_support('title-tag');
 
-  // Register wp_nav_menu() menus
-  // http://codex.wordpress.org/Function_Reference/register_nav_menus
-  register_nav_menus([
-    'primary_navigation' => __('Primary Navigation', 'sage')
-  ]);
+	// Register wp_nav_menu() menus
+	// http://codex.wordpress.org/Function_Reference/register_nav_menus
+	register_nav_menus([
+	'primary_navigation' => __('Menu Principal', 'aspta')
+	]);
 
-  // Enable post thumbnails
-  // http://codex.wordpress.org/Post_Thumbnails
-  // http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size
-  // http://codex.wordpress.org/Function_Reference/add_image_size
-  add_theme_support('post-thumbnails');
+	// Enable post thumbnails
+	// http://codex.wordpress.org/Post_Thumbnails
+	// http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size
+	// http://codex.wordpress.org/Function_Reference/add_image_size
+	add_theme_support('post-thumbnails');
+	set_post_thumbnail_size('640', '', true);
+	add_image_size('slide', '1140', '400', true);
+	add_image_size('destaque-pagina', '750', '', true);
+	add_image_size('destaque', '360', '258', true);
+	add_image_size('medio', '200', '200', true);
+	add_image_size('pequeno', '150', '150', true);
 
-  // Enable post formats
-  // http://codex.wordpress.org/Post_Formats
-  add_theme_support('post-formats', ['aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio']);
+	// Enable post formats
+	// http://codex.wordpress.org/Post_Formats
+	add_theme_support('post-formats', ['aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio']);
 
-  // Enable HTML5 markup support
-  // http://codex.wordpress.org/Function_Reference/add_theme_support#HTML5
-  add_theme_support('html5', ['caption', 'comment-form', 'comment-list', 'gallery', 'search-form']);
+	// Enable HTML5 markup support
+	// http://codex.wordpress.org/Function_Reference/add_theme_support#HTML5
+	add_theme_support('html5', ['caption', 'comment-form', 'comment-list', 'gallery', 'search-form']);
 
-  // Use main stylesheet for visual editor
-  // To add custom styles edit /assets/styles/layouts/_tinymce.scss
-  add_editor_style(Assets\asset_path('styles/main.css'));
+	// Use main stylesheet for visual editor
+	// To add custom styles edit /assets/styles/layouts/_tinymce.scss
+	add_editor_style(Assets\asset_path('styles/main.css'));
+
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
 
@@ -56,7 +68,7 @@ add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
  */
 function widgets_init() {
   register_sidebar([
-    'name'          => __('Primary', 'sage'),
+    'name'          => __('Primary', 'aspta'),
     'id'            => 'sidebar-primary',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
@@ -64,7 +76,7 @@ function widgets_init() {
     'after_title'   => '</h3>'
   ]);
   register_sidebar([
-    'name'          => __('Logo and text on Footer', 'sage'),
+    'name'          => __('Logo and text on Footer', 'aspta'),
     'id'            => 'sidebar-logo-text-footer',
     'before_widget' => '<section class="widget col-sm-4 %1$s %2$s">',
     'after_widget'  => '</section>',
@@ -72,7 +84,7 @@ function widgets_init() {
     'after_title'   => '</h3>'
   ]);
   register_sidebar([
-    'name'          => __('Footer', 'sage'),
+    'name'          => __('Footer', 'aspta'),
     'id'            => 'sidebar-footer',
     'before_widget' => '<section class="widget col-sm-1 %1$s %2$s">',
     'after_widget'  => '</section>',
@@ -80,7 +92,7 @@ function widgets_init() {
     'after_title'   => '</h3>'
   ]);
   register_sidebar([
-  	'name'          => __('Home Session 1', 'sage'),
+  	'name'          => __('Home Session 1', 'aspta'),
   	'id'            => 'sidebar-home-session-1',
   	'before_widget' => '<section class="widget col-sm-3 %1$s %2$s">',
   	'after_widget'  => '</section>',
@@ -89,7 +101,7 @@ function widgets_init() {
   ]);
   
   register_sidebar([
-  	'name'          => __('Home Session 2', 'sage'),
+  	'name'          => __('Home Session 2', 'aspta'),
   	'id'            => 'sidebar-home-session-2',
   	'before_widget' => '<section class="widget col-sm-3 %1$s %2$s">',
   	'after_widget'  => '</section>',
@@ -97,7 +109,7 @@ function widgets_init() {
   	'after_title'   => '</h3>'
   ]);
   register_sidebar([
-  	'name'          => __('Home Session Banners', 'sage'),
+  	'name'          => __('Home Session Banners', 'aspta'),
   	'id'            => 'sidebar-home-session-banners',
   	'before_widget' => '<section class="widget col-sm-3 %1$s %2$s">',
   	'after_widget'  => '</section>',
@@ -129,8 +141,7 @@ function display_sidebar() {
  */
 function assets() {
   wp_enqueue_style('sage/css', Assets\asset_path('styles/main.css'), false, null);
-  wp_enqueue_style('search_componet_css', get_template_directory_uri() . '/assets/styles/component.css', false, null);
-  wp_enqueue_style('search_defaut_css', get_template_directory_uri() . '/assets/tyles/default.css', false, null);
+  wp_enqueue_style('defaut_css', get_template_directory_uri() . '/assets/styles/geral.css', false, null);
  
   if (is_single() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
@@ -140,7 +151,7 @@ function assets() {
   wp_enqueue_script('jquery-cycle2', get_template_directory_uri() . '/assets/scripts/jquery.cycle2.min.js', array('jquery'), null, true);
   wp_enqueue_script('jquery-cycle2-carousel', get_template_directory_uri() . '/assets/scripts/jquery.cycle2.carousel.min.js', array('jquery-cycle2'), null, true);
   wp_enqueue_script('jquery-cycle2-swipe', get_template_directory_uri() . '/assets/scripts/jquery.cycle2.swipe.min.js', array('jquery-cycle2'), null, true);
-  wp_enqueue_script('jquery-cycle2-center', get_template_directory_uri() . '/assets/scripts/jquery.cycle2.center.min', array('jquery-cycle2'), null, true);
+  wp_enqueue_script('jquery-cycle2-center', get_template_directory_uri() . '/assets/scripts/jquery.cycle2.center.min.js', array('jquery-cycle2'), null, true);
   wp_enqueue_script('jquery-slider-scroller', get_template_directory_uri() . '/assets/scripts/jquery.slider.scroller.js', array('jquery-cycle2'), null, true);
  
   wp_enqueue_script('search_modernizr', get_template_directory_uri() . '/assets/scripts/modernizr.custom.js', array('jquery'), null, true);

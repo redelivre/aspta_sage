@@ -10,19 +10,19 @@
  * @link https://github.com/roots/sage/pull/1042
  */
 $sage_includes = [
-  'lib/assets.php',    // Scripts and stylesheets
-  'lib/extras.php',    // Custom functions
-  'lib/setup.php',     // Theme setup
-  'lib/titles.php',    // Page titles
-  'lib/wrapper.php',   // Theme wrapper class
-  'lib/customizer.php', // Theme customizer
-  'lib/bootstrap-nav-walker.php', // nav walker class
-  'lib/hacklab_post2home/hacklab_post2home.php', // hacklab fetured posts
-  'lib/footer.php', // footer widget
-  'lib/newspaper.php', // newspaper as-pta widget
-  'lib/blog_clean_plates.php', // blog clean plates widget
-  'lib/see_also.php', // see also about as-pta widget
-  'lib/library.php' // library as-pta widget
+  'lib/assets.php',									// Scripts and Stylesheets
+  'lib/blog_clean_plates.php',						// Blog Clean Plates Widget
+  'lib/customizer.php',								// Theme Customizer
+  'lib/extras.php',									// Custom Functions
+  'lib/footer.php',									// Footer Widget
+  'lib/hacklab_post2home/hacklab_post2home.php',	// Hacklab Fetured Posts
+  'lib/library.php',								// Library AS-PTA Widget
+  'lib/newspaper.php',								// Newspaper AS-PTA Widget
+  'lib/see_also.php',								// See also about AS-PTA Widget
+  'lib/setup.php',									// Theme Setup
+  'lib/titles.php',									// Page Titles
+  'lib/wp_bootstrap_navwalker.php',					// Nav Walker Class
+  'lib/wrapper.php',								// Theme Wrapper Class
 ];
 
 foreach ($sage_includes as $file) {
@@ -102,12 +102,12 @@ function aspta_build_taxonomies() {
 
 add_action( 'init', 'aspta_build_taxonomies', 0 );
 
-/** mau functions
-the ideia is insert functions on extras but dont works now... :(
-**/
+/** Mau Alert
+    The ideia is insert functions on extras but dont works now... :(
 
-// get selected mark for options on newspaper edition select
-// but this is usable for ...
+    get selected mark for options on newspaper edition select
+    but this is usable for ...
+**/
 
 function is_selected($value, $get, $name) {
     if (isset($get[$name]) && $value == $get[$name])
@@ -117,7 +117,6 @@ function is_selected($value, $get, $name) {
 // Create the query var so that WP catches the custom /member/username url
 add_filter('query_vars', function($vars){
   $vars[] = 'newspaper';
-  $vars[] = 'library';
   return $vars;
 } , 100);
 
@@ -125,8 +124,6 @@ add_filter('query_vars', function($vars){
 add_action( 'init', function(){
   add_rewrite_tag('%newspaper%', '([^&]+)');
   add_rewrite_rule('^revistas/([^/]*)?', 'index.php?newspaper=$matches[1]', 'top');
-  add_rewrite_tag('%library%', '([^&]+)');
-  add_rewrite_rule('^biblioteca?', 'index.php?library=aspta', 'top');
 });
 
 add_action( 'init', function(){
@@ -149,16 +146,3 @@ add_action( 'init', function(){
     }
   }
 });
-
-
-add_filter( 'wp_nav_menu_items', function($items, $args){
-	if( $args->menu->name == 'aspta' ){
-		$class = "nav navbar_nav";
-		$items .= '<li class="' . $class . '" id="quem-somos"><a href="' . get_site_url() . '/quem-somos/" title="quem-somos">Quem Somos</a></li>';
-		$items .= '<li class="' . $class . '" id="biblioteca"><a href="' . get_site_url() . '/biblioteca/aspta" title="biblioteca">Biblioteca</a></li>';
-	    $items .= '<li class="' . $class . '" id="revista"><a href="' . get_site_url() . '/revistas/V13, N1" title="revistas">Revistas Agriculturas</a></li>';
-	    $items .= '<li class="' . $class . '" id="feed"><a href="' . get_site_url() . '?feed=rss2" title="feed">Assine o feed</a></li>';
-	}
-	
-    return $items;
-}, 10, 2 );

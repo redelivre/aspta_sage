@@ -1,7 +1,12 @@
 <?php
 /*
  * Template Name: Edições Anteriores
+ *
+ * @package WordPress
+ * @subpackage AS-PTA
+ * @since AS-PTA 0.2
  */
+
 query_posts( array (
       'post_type'   => 'revista',
       'post_parent' => 0,
