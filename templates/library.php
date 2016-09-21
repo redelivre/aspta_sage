@@ -81,6 +81,7 @@ if (isset($_GET["material"]) || isset($_GET["theme"]) || isset($_GET["program"])
     'posts_per_page' => 5,
     'post_status' => 'publish',
     'tax_query' => $tax_query,
+    'paged' => get_query_var('paged'),
   ); 
 }else{
   // revista
@@ -91,6 +92,7 @@ if (isset($_GET["material"]) || isset($_GET["theme"]) || isset($_GET["program"])
     'post_status' => 'publish',
     'author' => $author,
     'date_query' => array( 'year' => $_year),
+    'paged' => get_query_var('paged'),
   );
  
 }
@@ -115,8 +117,10 @@ if (isset($_GET["material"]) || isset($_GET["theme"]) || isset($_GET["program"])
 									<div class="col-md-8 lista-conteudo">
 										<div class="lista-categoria">
 											<a href="<?php get_permalink(); ?>" rel="nofollow"><?php the_category(); ?></a>
-											<?php $category = get_the_category(); ?>
-											<?php echo $category[0]->cat_name; ?>
+											<?php if (get_the_category()) : ?> 
+												<?php $category = get_the_category(); ?>
+												<?php echo $category?$category[0]->cat_name:""; ?>
+											<?php endif; ?>
 										</div>
 										<div class="lista-titulo">
 											<h4><a href="<?php the_permalink(); ?>" rel="nofollow"><?php the_title(); ?></a></h4>

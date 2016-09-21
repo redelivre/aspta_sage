@@ -34,7 +34,7 @@
 				        	<div class="clearfix"></div>
 				        	
 				        	<div class="library-box temas-de-intervencao">
-				        		<h4>Temas de Intervenção</h4>
+				        		<h4>Temas de IntervenÃ§Ã£o</h4>
 				        		<div class="opcoes duas-colunas">
 				        		<?php $terms = get_terms( 'temas-de-intervencao', array( 'hide_empty' => false ) );
 				        			foreach($terms as $term){ ?>
@@ -54,7 +54,7 @@
 				        		<h4>Revista Agriculturas</h4>
 				        		<div class="opcoes">
 				        			<div class="input-group">
-				        				<span class="input-group-addon"><label>Título de artigo</label></span>
+				        				<span class="input-group-addon"><label>TÃ­tulo de artigo</label></span>
 				        				<input type="text" class="form-control" name="article_title" value="<?php echo isset($_GET['article_title'])?$_GET['article_title']:"" ?>" />  	
 				        			</div>						  
 				        			<div class="input-group">
@@ -73,7 +73,7 @@
 				        				</select>
 				        			</div>
 				        			<div class="input-group">
-				        				<span class="input-group-addon"><label>Edição</label></span>
+				        				<span class="input-group-addon"><label>EdiÃ§Ã£o</label></span>
 				        				<?php // Create a new Query
 				        					$args = array(
 				        						'post_type' => 'revista',
@@ -85,7 +85,7 @@
 				        					$the_query = new WP_Query( $args ); // The Loop
 				        				?>
 				        				<select class="form-control" name ="edition">
-				        					<option value="">Nenhuma edição Selecionada</option>
+				        					<option value="">Nenhuma ediÃ§Ã£o Selecionada</option>
 				        					<?php while ( $the_query->have_posts() ):
 				        					$the_query->the_post();
 				        					$target = get_the_title();
