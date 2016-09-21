@@ -68,7 +68,7 @@ add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
  */
 function widgets_init() {
   register_sidebar([
-    'name'          => __('Primary', 'aspta'),
+    'name'          => __('Menu Primário', 'aspta'),
     'id'            => 'sidebar-primary',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
@@ -76,7 +76,7 @@ function widgets_init() {
     'after_title'   => '</h3>'
   ]);
   register_sidebar([
-    'name'          => __('Logo and text on Footer', 'aspta'),
+    'name'          => __('Logo e texto do Rodapé', 'aspta'),
     'id'            => 'sidebar-logo-text-footer',
     'before_widget' => '<section class="widget col-sm-4 %1$s %2$s">',
     'after_widget'  => '</section>',
@@ -84,7 +84,7 @@ function widgets_init() {
     'after_title'   => '</h3>'
   ]);
   register_sidebar([
-    'name'          => __('Footer', 'aspta'),
+    'name'          => __('Rodapé', 'aspta'),
     'id'            => 'sidebar-footer',
     'before_widget' => '<section class="widget col-sm-1 %1$s %2$s">',
     'after_widget'  => '</section>',
@@ -92,7 +92,7 @@ function widgets_init() {
     'after_title'   => '</h3>'
   ]);
   register_sidebar([
-  	'name'          => __('Home Session 1', 'aspta'),
+  	'name'          => __('Home Seção 1', 'aspta'),
   	'id'            => 'sidebar-home-session-1',
   	'before_widget' => '<section class="widget col-sm-3 %1$s %2$s">',
   	'after_widget'  => '</section>',
@@ -101,7 +101,7 @@ function widgets_init() {
   ]);
   
   register_sidebar([
-  	'name'          => __('Home Session 2', 'aspta'),
+  	'name'          => __('Home Seção 2', 'aspta'),
   	'id'            => 'sidebar-home-session-2',
   	'before_widget' => '<section class="widget col-sm-3 %1$s %2$s">',
   	'after_widget'  => '</section>',
@@ -109,7 +109,7 @@ function widgets_init() {
   	'after_title'   => '</h3>'
   ]);
   register_sidebar([
-  	'name'          => __('Home Session Banners', 'aspta'),
+  	'name'          => __('Home Seção Banners', 'aspta'),
   	'id'            => 'sidebar-home-session-banners',
   	'before_widget' => '<section class="widget col-sm-3 %1$s %2$s">',
   	'after_widget'  => '</section>',
@@ -118,7 +118,7 @@ function widgets_init() {
   ]);
 
   register_sidebar([
-  	'name'          => __('gm-sidebar', 'aspta'),
+  	'name'          => __('Campanha Transgênicos', 'aspta'),
   	'id'            => 'gm-sidebar',
   	'before_widget' => '<section class="widget col-sm-3 %1$s %2$s">',
   	'after_widget'  => '</section>',
@@ -127,7 +127,7 @@ function widgets_init() {
   ]);
 
   register_sidebar([
-  	'name'          => __('who_we_are', 'aspta'),
+  	'name'          => __('Quem Somos', 'aspta'),
   	'id'            => 'who_we_are',
   	'before_widget' => '<section class="widget col-sm-3 %1$s %2$s">',
   	'after_widget'  => '</section>',
