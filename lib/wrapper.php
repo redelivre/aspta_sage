@@ -21,6 +21,10 @@ function sidebar_gm_campaign() {
   return new SageWrapping('templates/sidebar-gmcampaign.php');
 }
 
+function sidebar_who_we_are() {
+  return new SageWrapping('templates/sidebar-who_we_are.php');
+}
+
 class SageWrapping {
   // Stores the full path to the main template file
   public static $main_template;

@@ -1,3 +1,12 @@
+<?php
+/**
+ * Template Name: Quem Somos
+ *
+ * @package WordPress
+ * @subpackage AS-PTA
+ * @since AS-PTA 0.2
+ */
+?>
 <aside id="pagina" class="col-md-8">
 	<?php while (have_posts()) : the_post(); ?>
 	<article class="pagina-conteudo" <?php post_class(); ?>>
