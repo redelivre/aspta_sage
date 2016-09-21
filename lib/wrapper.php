@@ -29,6 +29,11 @@ function sidebar_library() {
   return new SageWrapping('templates/sidebar-library.php');
 }
 
+function sidebar_newspaper_new() {
+  return new SageWrapping('templates/sidebar-newspaper_new.php');
+}
+
+
 class SageWrapping {
   // Stores the full path to the main template file
   public static $main_template;

@@ -18,9 +18,9 @@ class SeeAlsoWidget extends WP_Widget {
   public function __construct() {
     $widget_ops = array( 
       'classname' => 'see_also_widget',
-      'description' => __('See also about AS-PTA'),
+      'description' => __('Veja mais sobre AS-PTA'),
     );
-    parent::__construct( 'see_also_widget', __('See also AS-PTA'), $widget_ops );
+    parent::__construct( 'see_also_widget', __('veja Mais AS-PTA'), $widget_ops );
   }
   /**
    * Outputs the content of the widget
