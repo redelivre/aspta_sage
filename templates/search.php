@@ -1,5 +1,5 @@
 <article <?php post_class(); ?>>
-  <div class="entry-summary">
+  <div id="lista" class="entry-summary">
     <?php 
       $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', get_the_content(), $matches);
   	  $first_img = $matches[1];

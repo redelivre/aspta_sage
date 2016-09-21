@@ -97,7 +97,7 @@ if (isset($_GET["material"]) || isset($_GET["theme"]) || isset($_GET["program"])
  
 }
 ?>
-					<aside id="lista" class="col-md-8">
+					<div id="lista">
 						<div class="titulo-pagina"><h1><?php the_title(); ?></h1></div>
 						<?php // The Query
 						$the_query = new WP_Query( $args ); // The Loop
@@ -149,4 +149,4 @@ if (isset($_GET["material"]) || isset($_GET["theme"]) || isset($_GET["program"])
 										'prev_next' => false,
 									) ); ?>
 								</div>
-					</aside> <!-- /#biblioteca -->
+					</div> <!-- /#biblioteca -->

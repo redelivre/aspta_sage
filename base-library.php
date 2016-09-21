@@ -15,12 +15,14 @@ use Roots\Sage\Wrapper;
             <?php include Wrapper\sidebar_library(); ?>
           </aside><!-- /.sidebar -->
           <?php endif; ?>
+          <aside id="lista" class="col-md-8">
           <?php 
           	include Wrapper\template_path();
           	global $wp;
 			      $type = key($wp->query_vars);
 		      ?>
           <?php get_template_part('templates/' . $type); ?>
+          </aside>
         </main><!-- /.main -->
       </div><!-- /.content -->
     </div><!-- /.wrap -->

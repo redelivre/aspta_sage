@@ -7,7 +7,6 @@
  * @since AS-PTA 0.2
  */
 ?>
-<aside class="col-md-8">
 <div><h1 class="titulo"><?= the_title(); ?></h1></div>
 <div class="clearfix"></div>
 <?php
@@ -62,4 +61,3 @@ echo paginate_links( array(
 	'total' => $the_query->max_num_pages
 ) );
 ?>
-</aside>
