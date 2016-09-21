@@ -14,11 +14,11 @@ use Roots\Sage\Wrapper;
           	global $wp;
 			$type = key($wp->query_vars);
 		  ?>
-          <?php get_template_part('templates/sidebar_newspaper_new' . $type); ?>
+          <?php get_template_part('templates/' . $type); ?>
           <?php 
           	if (Setup\display_sidebar()) : ?>
         	<aside class="sidebar col-md-4 col-sm-12 hidden-xs">
-        		<?php include Wrapper\sidebar_path(); ?>
+        		<?php include Wrapper\sidebar_newspaper_new(); ?>
         	</aside><!-- /.sidebar -->
         	<?php endif; ?>
         </main><!-- /.main -->
