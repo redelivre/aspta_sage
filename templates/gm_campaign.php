@@ -1,15 +1,15 @@
 <?php
 /**
- * Template Name: Campanha Transgênicos
+ * Template Name: Campanha TransgÃªnicos
  *
  * @package WordPress
  * @subpackage AS-PTA
  * @since AS-PTA 0.2
  */
 ?>
-
-<h1><?= the_title(); ?></h1>
-<hr>
+<aside class="col-md-8">
+<div><h1 class="titulo"><?= the_title(); ?></h1></div>
+<div class="clearfix"></div>
 <?php
 // The Query
 $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
@@ -21,7 +21,7 @@ $the_query = new WP_Query(
               	'orderby' => 'date',
               	'order' => 'DESC',
               	'post_type' => 'campanha',
-              	'post_status' => 'publish',
+              	'post_status' => 'any',
               	'tax_query' => array(
               		array(
               			'taxonomy' => 'itens-de-campanha',
@@ -30,7 +30,10 @@ $the_query = new WP_Query(
                     	),
                 	),
             	)
-			);
+		);
+?>
+
+<?php 
 // The Loop
 if ( $the_query->have_posts() ) {
   while ( $the_query->have_posts() ) : ?>
@@ -59,3 +62,4 @@ echo paginate_links( array(
 	'total' => $the_query->max_num_pages
 ) );
 ?>
+</aside>
