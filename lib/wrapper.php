@@ -25,6 +25,10 @@ function sidebar_who_we_are() {
   return new SageWrapping('templates/sidebar-who_we_are.php');
 }
 
+function sidebar_library() {
+  return new SageWrapping('templates/sidebar-library.php');
+}
+
 class SageWrapping {
   // Stores the full path to the main template file
   public static $main_template;

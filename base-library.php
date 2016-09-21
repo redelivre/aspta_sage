@@ -10,17 +10,17 @@ use Roots\Sage\Wrapper;
       <div class="content container">
         <main class="row">
           <?php 
+            if (Setup\display_sidebar()) : ?>
+          <aside class="sidebar col-md-4 col-sm-12 hidden-xs">
+            <?php include Wrapper\sidebar_library(); ?>
+          </aside><!-- /.sidebar -->
+          <?php endif; ?>
+          <?php 
           	include Wrapper\template_path();
           	global $wp;
-			$type = key($wp->query_vars);
-		  ?>
+			      $type = key($wp->query_vars);
+		      ?>
           <?php get_template_part('templates/' . $type); ?>
-          <?php 
-          	if (Setup\display_sidebar()) : ?>
-        	<aside class="sidebar col-md-4 col-sm-12 hidden-xs">
-        		<?php include Wrapper\sidebar_library(); ?>
-        	</aside><!-- /.sidebar -->
-        	<?php endif; ?>
         </main><!-- /.main -->
       </div><!-- /.content -->
     </div><!-- /.wrap -->
