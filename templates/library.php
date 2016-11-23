@@ -97,7 +97,7 @@ if (isset($_GET["material"]) || isset($_GET["theme"]) || isset($_GET["program"])
  
 }
 ?>
-					<div id="lista">
+					<div class="lista">
 						<div class="titulo-pagina"><h1><?php the_title(); ?></h1></div>
 						<?php // The Query
 						$the_query = new WP_Query( $args ); // The Loop

@@ -8,7 +8,7 @@
  */
 ?>
 
-<aside id="biblioteca" >
+<section id="biblioteca">
 	<div><h1 class="titulo">Biblioteca</h1></div>
     <div class="clearfix"></div>
     
@@ -137,6 +137,6 @@
     	<div class="clearfix"></div>
     	
     </form>
-</aside><!-- /#biblioteca -->
+</section><!-- /#biblioteca -->
 
 <?php wp_reset_query(); ?>

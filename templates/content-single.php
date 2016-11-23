@@ -1,4 +1,4 @@
-<aside id="pagina" class="col-md-8">
+<section id="pagina">
 	<?php while (have_posts()) : the_post(); ?>
 	<article class="pagina-conteudo" <?php post_class(); ?>>
 		<?php if ( has_post_thumbnail() ) : ?>
@@ -17,13 +17,13 @@
 	    	<?php the_content(); ?>
 	    </div>
 	    <div class="pagina-meta">
-	    	<div class="pagina-programa">
+	    	<!--div class="pagina-programa">
 	    		<span>Programa: <?php // $program; ?></span>
 	    	</div>
 	    	<div class="pagina-tema">
 	    		<span>Tema: <?php // $theme; ?></span>
 	    		
-	    	</div>
+	    	</div-->
 	    	<div class="pagina-tags">
 	    		<span><?php the_tags(); ?></span>
 	    	</div>
@@ -46,4 +46,4 @@
 	</div>
     
 	  <?php endwhile; ?>
-</aside>
+</section>
