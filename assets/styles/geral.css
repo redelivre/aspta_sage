@@ -556,7 +556,7 @@ aside .titulo {
 	padding: 30px;
 	background-color: #ebebeb;
 }
-#biblioteca .sidebar .opcoes {
+#biblioteca .library-sidebar .opcoes {
 	padding: 30px 0;
 }
 #biblioteca .duas-colunas {
@@ -579,7 +579,7 @@ aside .titulo {
 #biblioteca .form-control {
 	width: 60%;
 }
-#biblioteca .sidebar .form-control {
+#biblioteca .library-sidebar .form-control {
 	width: 95%;
 }
 #biblioteca .library-box .opcoes a,
