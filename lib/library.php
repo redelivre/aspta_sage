@@ -33,44 +33,38 @@ class LibraryWidget extends WP_Widget {
 
       <div class="library-box tipos-de-materiais">
         <h4>Tipos de Materiais</h4>
-        <?php 
-        $terms = get_terms( 'category', array( 'hide_empty' => false ) );
-        foreach($terms as $term){
-
-          if ($term->slug !== "sem-categoria"){
-            ?>
-            <input type='checkbox' name="material[]" 
-            <?php echo isset($_GET["material"]) ? (in_array($term->term_id, $_GET["material"])?"checked":""):"" ?> 
-            value="<?php echo $term->term_id ?>" />
-            <a href="<?php echo get_term_link($term) ?>"><label for="material[]"><?php echo $term->name ?></label></a>
-            <br />
-            <?php
-          }
-        }
-        
+        <div class="opcoes">
+        <?php $terms = get_terms( 'category', array( 'hide_empty' => false ) );
+          foreach($terms as $term){
+            if ($term->slug !== "sem-categoria"){
         ?>
+          <div class="input-group">
+            <span class="input-group-addon">
+              <input type='checkbox' name="material[]" <?php echo isset($_GET["material"]) ? (in_array($term->term_id, $_GET["material"])?"checked":""):"" ?> value="<?php echo $term->term_id ?>" />
+              <br />
+              <a href="<?php echo get_term_link($term) ?>"><label for="material[]"><?php echo $term->name ?></label></a>
+            </span>
+          </div>
+          <?php } 
+          } ?>
+        </div>
       </div><!-- /.tipos-de-materiais -->
         
       <div class="clearfix"></div>
         
       <div class="library-box menu-sanfona">
         <h4>Temas de intervenção</h4>
-        <?php
-        
-        $terms = get_terms( 'temas-de-intervencao', array( 'hide_empty' => false ) );
-        
-        foreach($terms as $term){
-
-          // arrumar o $_GET sendo obtido direto isso vai dar problema... :(
-          ?>
-            <input type='checkbox' name="theme[]" 
-            <?php echo isset($_GET["theme"])? (in_array($term->term_id, $_GET["theme"])?"checked":""): ""; ?> 
-            value="<?php echo $term->term_id ?>" />
-            <a href="<?php echo get_term_link($term) ?>"><label for="theme[]"><?php echo $term->name ?></label></a>
-            <br />
-            <?php
-        }
-        ?>
+        <div class="opcoes">
+        <?php $terms = get_terms( 'temas-de-intervencao', array( 'hide_empty' => false ) );
+          foreach($terms as $term){ ?>
+          <div class="input-group">
+            <span class="input-group-addon">
+              <input type='checkbox' name="theme[]" <?php echo isset($_GET["theme"])? (in_array($term->term_id, $_GET["theme"])?"checked":""): ""; ?> value="<?php echo $term->term_id ?>" />
+              <a href="<?php echo get_term_link($term) ?>"><label for="theme[]"><?php echo $term->name ?></label></a>
+            </span>
+          </div>
+          <?php } ?>
+        </div>
       </div><!-- /.temas-de-intervencao -->
         
       <div class="clearfix"></div>
