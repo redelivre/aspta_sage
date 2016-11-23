@@ -231,8 +231,12 @@ to be fill the entire space of the .navbar */
 
 
 /* Seções */
-.aspta-content {
-
+aside {
+	margin-top: 20px;
+}
+aside .page-header,
+aside .titulo {
+	margin-top: 0;
 }
 .wrap {
  	margin: 0 auto 280px;
@@ -508,6 +512,7 @@ to be fill the entire space of the .navbar */
 #redes-e-parcerias {
 	margin-bottom: 40px;
 	background-color: #fff;
+	min-width: 100%;
 }
 .parcerias-title h3,
 .parcerias h3 {
@@ -528,14 +533,11 @@ to be fill the entire space of the .navbar */
 	margin: 30px auto;
 }
 
-/* Biblioteca */
-.titulo-pagina h1 {
-	margin: 20px 0;
-	padding-bottom: 20px;
-	font-weight: bold;
-	color: #e97200;
-	border-bottom: 3px solid #e97200;
+.parceria-banner {
+	float: left;
 }
+
+/* Biblioteca */
 #biblioteca .titulo,
 #noticias .titulo {
 	color: #003e2d;
@@ -553,6 +555,9 @@ to be fill the entire space of the .navbar */
 	margin-bottom: 40px;
 	padding: 30px;
 	background-color: #ebebeb;
+}
+#biblioteca .sidebar .opcoes {
+	padding: 30px 0;
 }
 #biblioteca .duas-colunas {
 	-moz-column-count: 2;
@@ -574,6 +579,9 @@ to be fill the entire space of the .navbar */
 #biblioteca .form-control {
 	width: 60%;
 }
+#biblioteca .sidebar .form-control {
+	width: 95%;
+}
 #biblioteca .library-box .opcoes a,
 #biblioteca .library-box .opcoes label {
 	font-weight: bold;
@@ -590,7 +598,13 @@ to be fill the entire space of the .navbar */
 	color: #a7b739;
 }
 
-
+#lista .titulo-pagina h1 {
+	margin: 0 0 20px 0;
+	padding-bottom: 20px;
+	font-weight: bold;
+	color: #e97200;
+	border-bottom: 3px solid #e97200;
+}
 #lista .lista-post {
 	margin-bottom: 20px;
 	padding-bottom: 20px;
