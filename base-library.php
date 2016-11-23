@@ -11,7 +11,7 @@ use Roots\Sage\Wrapper;
         <main class="row">
           <?php if (Setup\display_sidebar()) : ?>
           <aside id="biblioteca" class="col-md-4 col-sm-12 hidden-xs">
-            <div class="sidebar">
+            <div class="library-sidebar">
               <?php include Wrapper\sidebar_library(); ?>
             </div>
           </aside><!-- /.sidebar -->
