@@ -5,8 +5,6 @@
 					                      $first_img = $matches[1];
 					                      if ( !empty($first_img) ) :?>
 					                        <a id="featured-thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="nofollow"><div class="image_search_post img-responsive" style="height:230px; width:100%; background-image: url('<?php echo $first_img[0]; ?>')"></div></a>
-					                    <?php else; ?>
-					                    	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><img class="img-responsive" src="<?php wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())) ? the_post_thumbnail_url('medium') : get_template_directory_uri().'/assets/images/aspta-no-thumb.jpg'; ?>" /></a>
 					                    <?php endif; ?>
 									</div>
 									<div class="col-md-8 lista-conteudo">
