@@ -20,7 +20,9 @@ $the_query = new WP_Query( $search_query );
 ?>
 
 
-<h1>Resutados para: <?php echo $search_query['s']; ?></h1>
+<div id="lista">
+	<div class="titulo-pagina"><h1>Resutados para: <?php echo $search_query['s']; ?></h1></div>
+</div>
 
 <?php if (!$the_query->have_posts()) : ?>
   <div class="alert alert-warning">
