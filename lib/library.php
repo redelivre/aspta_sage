@@ -41,7 +41,6 @@ class LibraryWidget extends WP_Widget {
           <div class="input-group">
             <span class="input-group-addon">
               <input type='checkbox' name="material[]" <?php echo isset($_GET["material"]) ? (in_array($term->term_id, $_GET["material"])?"checked":""):"" ?> value="<?php echo $term->term_id ?>" />
-              <br />
               <a href="<?php echo get_term_link($term) ?>"><label for="material[]"><?php echo $term->name ?></label></a>
             </span>
           </div>
