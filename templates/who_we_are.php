@@ -24,34 +24,18 @@
     <div class="entry-content">
     	<?php the_content(); ?>
     </div>
-    <div class="pagina-meta">
-    	<div class="pagina-programa">
-    		<span>Programa: <?php // $program; ?></span>
-    	</div>
-    	<div class="pagina-tema">
-    		<span>Tema: <?php // $theme; ?></span>
-    		
-    	</div>
-    	<div class="pagina-tags">
-    		<span><?php the_tags(); ?></span>
-    	</div>
-    </div>
 </article>
+<?php endwhile; ?>
 
-<article class="pagina-conteudo">
-	<div class="noticias-relacionadas">
-		<h3 class="text-uppercase">Notícias Relacionadas</h3>
-	</div>
-</article>
-
-<div class="pagina-compartilhamento">
-	<span>Compartilhe esse conteúdo</span><br /><br />
-	<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/redes_sociais.png" />
+<div id="menu-quem-somos" class="col-md-8">
+	<a class="btn btn-default btn-lg btn-block btn-quem-somos" href="" role="button">Conselho Administrativo</a>
+	<a class="btn btn-default btn-lg btn-block btn-quem-somos" href="" role="button">Equpe Executiva</a>
+	<a class="btn btn-default btn-lg btn-block btn-quem-somos" href="" role="button">Agências Parceiras</a>
+	<a class="btn btn-default btn-lg btn-block btn-quem-somos" href="" role="button">Planos Trienais</a>
+	<a class="btn btn-default btn-lg btn-block btn-quem-somos" href="" role="button">Relatórios de Atividades</a>
+	<a class="btn btn-default btn-lg btn-block btn-quem-somos" href="" role="button">Estatutos e Atas</a>
+	<a class="btn btn-default btn-lg btn-block btn-quem-somos" href="" role="button">Demonstrações Financeiras</a>
+	<a class="btn btn-default btn-lg btn-block btn-quem-somos" href="" role="button">Certidões e Títulos</a>
+	<a class="btn btn-default btn-lg btn-block btn-quem-somos" href="" role="button">Licitações</a>
+	<a class="btn btn-default btn-lg btn-block btn-quem-somos" href="" role="button">Apoiadores</a>
 </div>
-
-<div class="pagina-comentarios">
-	<?php comments_template('/templates/comments.php'); ?>
-</div>
-
-  <?php endwhile; ?>
-

@@ -106,21 +106,15 @@ if (isset($_GET["material"]) || isset($_GET["theme"]) || isset($_GET["program"])
 								<?php $the_query->the_post(); ?>
 								<div id="post-<?php the_ID(); ?>" class="row lista-post">
 									<div class="col-md-4 lista-img">
-										<a id="featured-thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="nofollow">
-											<?php if ( has_post_thumbnail() ) {
-												the_post_thumbnail('destaque');
-												} else { ?>
-											<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/aspta-no-thumb.jpg">
-											<?php } ?>
-										</a>
+					                    <?php $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', get_the_content(), $matches);
+					                      $first_img = $matches[1];
+					                      if ( !empty($first_img) ) :?>
+					                        <a id="featured-thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="nofollow"><div class="image_search_post img-responsive" style="height:230px; width:100%; background-image: url('<?php echo $first_img[0]; ?>')"></div></a>
+					                    <?php endif; ?>
 									</div>
 									<div class="col-md-8 lista-conteudo">
 										<div class="lista-categoria">
 											<a href="<?php get_permalink(); ?>" rel="nofollow"><?php the_category(); ?></a>
-											<?php if (get_the_category()) : ?> 
-												<?php $category = get_the_category(); ?>
-												<?php echo $category?$category[0]->cat_name:""; ?>
-											<?php endif; ?>
 										</div>
 										<div class="lista-titulo">
 											<h4><a href="<?php the_permalink(); ?>" rel="nofollow"><?php the_title(); ?></a></h4>
