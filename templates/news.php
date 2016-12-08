@@ -8,7 +8,7 @@
  */
 ?>
 
-					<aside id="lista" class="col-md-8">
+					<aside id="lista">
 						<div class="titulo-pagina"><h1><?php the_title(); ?></h1></div>
 				        <div class="clearfix"></div>
 				        <?php // The Query
