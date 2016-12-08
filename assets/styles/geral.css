@@ -614,6 +614,13 @@ aside .titulo {
 	color: #003e2d;
 	font-weight: bold;
 }
+#lista .lista-categoria ul {
+	padding: 0;
+}
+#lista .lista-categoria ul li {
+	list-style: none;
+	padding: 0;
+}
 #lista .lista-categoria a,
 #lista .lista-meta-time {
 	color: #003e2d;
@@ -745,6 +752,19 @@ aside .titulo {
 #pagina .pagina-comentarios h3 {
 	font-size: 14px;
 	font-weight: bold;
+}
+
+/*Quem Somos*/
+#menu-quem-somos {
+	margin: 20px 0;
+}
+#menu-quem-somos .btn {
+	color: #fff;
+	font-weight: bold;
+	background-color: #b6c259;
+}
+#menu-quem-somos .btn:hover {
+	background-color: #eb8b2c;
 }
 
 .sidebar {
