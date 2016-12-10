@@ -754,8 +754,13 @@ aside .titulo {
 	text-decoration: none;
 }
 #pagina .pagina-compartilhamento {
-	padding: 30px 0;
+	padding: 30px 0 60px;
 	border-bottom: 2px solid #003e2d;
+}
+#pagina .pagina-compartilhamento .btn-share {
+	margin: 0;
+	float: left;
+	max-width: 250px;
 }
 #pagina .pagina-comentarios {
 	margin: 30px 0;
