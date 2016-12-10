@@ -10,11 +10,51 @@ use WP_Customize_Image_Control;
  */
 function customize_register($wp_customize) {
   $wp_customize->get_setting('blogname')->transport = 'postMessage';
+
+  $wp_customize->add_panel( 'aspta_sage_theme_options', array(
+    'title' => __( 'Theme Options' ),
+    'description' => 'Theme Options', 
+    'priority' => 160, 
+  ) );
+
+// network icons section
+
+  $wp_customize->add_section('aspta_sage_network_icons', array(
+  	'title'    => __('Network icons', 'aspta_sage'),
+  	'description' => '',
+  	'priority' => 140,
+        'panel' => 'aspta_sage_theme_options',
+  ));
+//facebook
+  $wp_customize->add_setting('aspta_sage_facebook', array(
+  	'capability'        => 'edit_theme_options',
+  	'default'           => false,
+  ));
   
+  $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'aspta_sage_facebook', array(
+  	'label'    => __('Upload facebook icon', 'aspta_sage'),
+  	'section'  => 'aspta_sage_network_icons',
+  	'settings' => 'aspta_sage_facebook',
+  )));
+//twitter
+  $wp_customize->add_setting('aspta_sage_twitter', array(
+  	'capability'        => 'edit_theme_options',
+  	'default'           => false,
+  ));
+  
+  $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'aspta_sage_twitter', array(
+  	'label'    => __('Upload twitter icon', 'aspta_sage'),
+  	'section'  => 'aspta_sage_network_icons',
+  	'settings' => 'aspta_sage_twitter',
+  )));
+
+// header section
+
   $wp_customize->add_section('aspta_sage_logo', array(
   	'title'    => __('Header', 'aspta_sage'),
   	'description' => '',
   	'priority' => 120,
+        'panel' => 'aspta_sage_theme_options',
   ));
   $wp_customize->add_setting('aspta_sage_upload_logo', array(
   	'capability'        => 'edit_theme_options',
@@ -37,6 +77,22 @@ function customize_register($wp_customize) {
   	'section'  => 'aspta_sage_logo',
   	'settings' => 'aspta_sage_header_background',
   )));
+
+// Footer
+//
+//  $wp_customize->add_section( 'aspta_sage_footer' , array(
+//    'title' => __( 'Footer', 'aspta_sage' ),
+//    'priority' => 105, // Before Widgets.
+//  ) );
+//  $wp_customize->add_setting('aspta_sage_image', array(
+//  	'capability'        => 'edit_theme_options',
+//  	'default'           => false,
+//  ));
+//  $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'aspta_sage_image', array(
+//  	'label'    => __('hahahaah', 'aspta_sage'),
+//  	'section'  => 'aspta_sage_footer',
+//  	'settings' => 'aspta_sage_image',
+//  )));
 }
 add_action('customize_register', __NAMESPACE__ . '\\customize_register');
 
