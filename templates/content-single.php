@@ -1,11 +1,9 @@
 <section id="pagina">
 	<?php while (have_posts()) : the_post(); ?>
 	<article class="pagina-conteudo" <?php post_class(); ?>>
-		<?php if ( has_post_thumbnail() ) : ?>
 		<div class="pagina-img">
-			<?php  the_post_thumbnail('destaque-pagina');  ?>
+			<img class="img-responsive" src="<?php wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())) ? the_post_thumbnail_url('destaque-pagina') : get_template_directory_uri().'/assets/images/aspta-no-thumb.jpg'; ?>" />
 		</div>
-		<?php endif; ?>
 		<div class="pagina-data">
 			<time class="updated" datetime="<?php get_post_time('c', true); ?>"><?php the_date(); ?></time>
 		</div>
@@ -17,13 +15,6 @@
 	    	<?php the_content(); ?>
 	    </div>
 	    <div class="pagina-meta">
-	    	<!--div class="pagina-programa">
-	    		<span>Programa: <?php // $program; ?></span>
-	    	</div>
-	    	<div class="pagina-tema">
-	    		<span>Tema: <?php // $theme; ?></span>
-	    		
-	    	</div-->
 	    	<div class="pagina-tags">
 	    		<span><?php the_tags(); ?></span>
 	    	</div>
@@ -33,6 +24,25 @@
 	<article class="pagina-conteudo">
 		<div class="noticias-relacionadas">
 			<h3 class="text-uppercase">Notícias Relacionadas</h3>
+			<?php $categories = get_the_category($post->ID);  
+			if ($categories) {  $category_ids = array();  
+				foreach($categories as $individual_category)  
+					$category_ids[] = $individual_category->term_id; 
+		 
+				$args=array( 
+					'category__in' => $category_ids, 
+					'post__not_in' => array($post->ID), 
+					'showposts'=>3, // Number of related posts that will be shown. 
+					'caller_get_posts'=>1 
+				); 
+				$my_query = new wp_query($args); 
+				if( $my_query->have_posts() ) {
+					while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
+			        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+				    <?php endwhile;
+				    wp_reset_postdata();
+				} 
+			} ?>
 		</div>
 	</article>
 	
