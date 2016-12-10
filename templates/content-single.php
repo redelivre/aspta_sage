@@ -48,7 +48,21 @@
 	
 	<div class="pagina-compartilhamento">
 		<span>Compartilhe esse conteúdo</span><br /><br />
-		<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/redes_sociais.png" />
+		<div class="btn-share">
+			<a href="http://www.facebook.com/share.php?u=<?php the_permalink(); ?>&t=<?php the_title_attribute(); ?>" target="_blank">
+				<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook-share.png" />
+			</a>
+		</div>
+		<div class="btn-share">
+			<a href="https://plus.google.com/share?url=<?php the_permalink(); ?>" target="_blank">
+				<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/google-share.png" />
+			</a>
+		</div>
+		<div class="btn-share">
+			<a href="#" target="_blank">
+				<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/youtube-share.png" />
+			</a>
+		</div>
 	</div>
 
 	<div class="pagina-comentarios">
