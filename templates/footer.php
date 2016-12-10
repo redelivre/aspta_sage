@@ -5,7 +5,10 @@
 						<?php dynamic_sidebar('sidebar-logo-text-footer'); ?>
 					</div><!-- /.footer-assinatura -->
     	<div class="col-md-8 footer-menu hidden-xs hidden-sm">
-    	  <?php dynamic_sidebar('sidebar-footer'); ?>
+    	  <?php dynamic_sidebar('sidebar-footer-one'); ?>
+    	  <?php dynamic_sidebar('sidebar-footer-two'); ?>
+    	  <?php dynamic_sidebar('sidebar-footer-three'); ?>
+    	  <?php dynamic_sidebar('sidebar-footer-four'); ?>
         </div>
     </div>
   </div>

@@ -78,21 +78,6 @@ function customize_register($wp_customize) {
   	'settings' => 'aspta_sage_header_background',
   )));
 
-// Footer
-//
-//  $wp_customize->add_section( 'aspta_sage_footer' , array(
-//    'title' => __( 'Footer', 'aspta_sage' ),
-//    'priority' => 105, // Before Widgets.
-//  ) );
-//  $wp_customize->add_setting('aspta_sage_image', array(
-//  	'capability'        => 'edit_theme_options',
-//  	'default'           => false,
-//  ));
-//  $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'aspta_sage_image', array(
-//  	'label'    => __('hahahaah', 'aspta_sage'),
-//  	'section'  => 'aspta_sage_footer',
-//  	'settings' => 'aspta_sage_image',
-//  )));
 }
 add_action('customize_register', __NAMESPACE__ . '\\customize_register');
 

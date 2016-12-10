@@ -84,8 +84,32 @@ function widgets_init() {
     'after_title'   => '</h3>'
   ]);
   register_sidebar([
-    'name'          => __('Rodapé', 'aspta'),
-    'id'            => 'sidebar-footer',
+    'name'          => __('Rodapé 1', 'aspta'),
+    'id'            => 'sidebar-footer-one',
+    'before_widget' => '<section class="widget col-sm-1 %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>'
+  ]);
+  register_sidebar([
+    'name'          => __('Rodapé 2', 'aspta'),
+    'id'            => 'sidebar-footer-two',
+    'before_widget' => '<section class="widget col-sm-1 %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>'
+  ]);
+  register_sidebar([
+    'name'          => __('Rodapé 3', 'aspta'),
+    'id'            => 'sidebar-footer-three',
+    'before_widget' => '<section class="widget col-sm-1 %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>'
+  ]);
+  register_sidebar([
+    'name'          => __('Rodapé 4', 'aspta'),
+    'id'            => 'sidebar-footer-four',
     'before_widget' => '<section class="widget col-sm-1 %1$s %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',
