@@ -680,6 +680,9 @@ aside .titulo {
 	height: 400px;
 	overflow: hidden;
 }
+#pagina .pagina-img img {
+	width: 100%;
+}
 #pagina .pagina-data {
 	min-height: 30px;
 	border-bottom: 2px solid #003e2d;
@@ -735,8 +738,16 @@ aside .titulo {
 	color: #e97200;
 }
 #pagina .noticias-relacionadas a {
+	margin: 20px 0 0 20px;
+	padding-bottom: 20px;
+	display: block;
+	font-weight: bold;
 	color: #003e2d;
-	text-decoration: underline;	
+	text-decoration: underline;
+	border-bottom: 1px solid #e97200;
+}
+#pagina .noticias-relacionadas a:last-child {
+	border-bottom: none;
 }
 #pagina .noticias-relacionadas a:hover {
 	color: #e97200;
