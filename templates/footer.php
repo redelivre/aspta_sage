@@ -1,18 +1,16 @@
+
 		<footer class="footer clearfix">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-4 col-sm-6 footer-assinatura">
+					<div class="col-md-3 col-sm-6 footer-assinatura">
 						<?php dynamic_sidebar('sidebar-logo-text-footer'); ?>
 					</div><!-- /.footer-assinatura -->
-    	<div class="col-md-8 footer-menu hidden-xs hidden-sm">
-    	  <?php dynamic_sidebar('sidebar-footer-one'); ?>
-    	  <?php dynamic_sidebar('sidebar-footer-two'); ?>
-    	  <?php dynamic_sidebar('sidebar-footer-three'); ?>
-    	  <?php dynamic_sidebar('sidebar-footer-four'); ?>
-        </div>
-    </div>
-  </div>
-  <div class="footer-redes-sociais">
+			    	<div class="col-md-9 footer-menu hidden-xs hidden-sm">
+			    	  <?php dynamic_sidebar('sidebar-menu-footer'); ?>
+			        </div>
+			    </div>
+			  </div>
+  			<div class="footer-redes-sociais">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
