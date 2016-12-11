@@ -106,7 +106,7 @@ function widgets_init() {
   register_sidebar([
     'name'          => __('Quem Somos', 'aspta'),
     'id'            => 'who_we_are',
-    'before_widget' => '<section class="widget %1$s %2$s">',
+    'before_widget' => '<section class="menu-quem-somos widget %1$s %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',
     'after_title'   => '</h3>'
