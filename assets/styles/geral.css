@@ -770,20 +770,8 @@ aside .titulo {
 	font-weight: bold;
 }
 
-/*Quem Somos*/
-#menu-quem-somos {
-	margin: 20px 0;
-}
-#menu-quem-somos .btn {
-	color: #fff;
-	font-weight: bold;
-	background-color: #b6c259;
-}
-#menu-quem-somos .btn:hover {
-	background-color: #eb8b2c;
-}
-
-.sidebar {
+.sidebar,
+.sidebar-module {
 	margin-bottom: 40px;
 }
 .sidebar .revista {
@@ -795,6 +783,40 @@ aside .titulo {
 	border-bottom: 3px solid #e97200;
 }
 
+/*Quem Somos*/
+.menu-quem-somos {
+	padding: 0 15px;
+}
+.menu-quem-somos h3 {
+	margin: 20px 0 0 20px;
+	padding-bottom: 20px;
+	font-weight: bold;
+	color: #e97200;
+	border-bottom: 3px solid #e97200;
+	text-transform: uppercase;
+}
+.menu-quem-somos div {
+	margin-left: 20px;
+}
+.menu-quem-somos ul {
+	padding: 0;
+}
+.menu-quem-somos .menu-item {
+	margin: 5px 0;
+	padding: 10px 16px;
+	font-size: 18px;
+	line-height: 1.3333333;
+	border-radius: 6px;
+	list-style: none;
+	background-color: #b6c259;
+}
+.menu-quem-somos .menu-item:hover {
+	background-color: #eb8b2c;
+}
+.menu-quem-somos .menu-item a {
+	color: #fff;
+	font-weight: bold;
+}
 
 /* Footer */
 .footer {
