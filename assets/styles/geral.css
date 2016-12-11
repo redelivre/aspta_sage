@@ -817,17 +817,31 @@ aside .titulo {
 }
 .footer-descricao {
 	text-align: justify;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
 }
 .footer-menu {
 	margin-top: 40px;
 }
+.footer-menu ul {
+	padding: 0;
+}
 .footer-menu .menu-item {
+    display: inline-table;
     font-weight: bold;
     list-style: none;
-    width: 200px;
+    width: 13%;
 }
-.footer-menu .laranja {
-	color: #e97200 !important;
+.footer-menu .menu-item a:hover {
+	color: #e97200;
+}
+.footer-menu .menu-item .sub-menu li {
+	margin-top: 10px;
+	display: block;
+	font-weight: normal;
+	width: 100%;
 }
 .footer-redes-sociais {
 	margin-top: 100px;
@@ -1046,7 +1060,7 @@ aside .titulo {
 	.wrap {
     	margin-bottom: 205px;
 	}
-.programas-locais,
+	.programas-locais,
 	.video-da-semana {
 		padding: 0;
 	}
