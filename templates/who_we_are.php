@@ -26,16 +26,3 @@
     </div>
 </article>
 <?php endwhile; ?>
-
-<div id="menu-quem-somos" class="col-md-8">
-	<a class="btn btn-default btn-lg btn-block btn-quem-somos" href="" role="button">Conselho Administrativo</a>
-	<a class="btn btn-default btn-lg btn-block btn-quem-somos" href="" role="button">Equpe Executiva</a>
-	<a class="btn btn-default btn-lg btn-block btn-quem-somos" href="" role="button">Agências Parceiras</a>
-	<a class="btn btn-default btn-lg btn-block btn-quem-somos" href="" role="button">Planos Trienais</a>
-	<a class="btn btn-default btn-lg btn-block btn-quem-somos" href="" role="button">Relatórios de Atividades</a>
-	<a class="btn btn-default btn-lg btn-block btn-quem-somos" href="" role="button">Estatutos e Atas</a>
-	<a class="btn btn-default btn-lg btn-block btn-quem-somos" href="" role="button">Demonstrações Financeiras</a>
-	<a class="btn btn-default btn-lg btn-block btn-quem-somos" href="" role="button">Certidões e Títulos</a>
-	<a class="btn btn-default btn-lg btn-block btn-quem-somos" href="" role="button">Licitações</a>
-	<a class="btn btn-default btn-lg btn-block btn-quem-somos" href="" role="button">Apoiadores</a>
-</div>
