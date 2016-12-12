@@ -993,6 +993,10 @@ aside .titulo {
 	.btn-saibamais {
 		width: 39%;
 	}
+	
+	.sidebar {
+		width: 100%;
+	}
 }
 
 @media only screen and (max-width : 981px) {
@@ -1031,6 +1035,11 @@ aside .titulo {
 	.revista {
 	    padding: 0;
 	}
+
+	.sidebar {
+		width: 100%;
+	}
+
 	.footer {
 		height: 308px;
 	}
@@ -1096,6 +1105,10 @@ aside .titulo {
 	}
 	.parcerias-title h3 {
 		border: none;
+	}
+
+	.sidebar {
+		width: 100%;
 	}
 	
 	.footer {
