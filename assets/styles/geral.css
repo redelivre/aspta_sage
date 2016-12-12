@@ -667,7 +667,7 @@ aside .titulo {
 	background-color: #003e2d;
 }
 
-
+/*Páginas*/
 #pagina {
 	margin: 20px 0;
 }
@@ -770,6 +770,40 @@ aside .titulo {
 	font-weight: bold;
 }
 
+/*Página Temas de Intervenção*/
+.temas-de-intervencao .titulo-pagina h1 {
+	margin: 0 0 40px;
+	color: #012b09;
+	font-weight: bold;
+}
+.tema-card .tema-box {
+	margin-bottom: 30px;
+	min-height: 230px;
+	background-color: #e97200;
+}
+.tema-card .tema-box-verde {
+	margin-bottom: 30px;
+	min-height: 230px;
+	background-color: #9d9f00;
+}
+.tema-card .tema-icone img {
+	position: absolute;
+	right: 15px;
+	height: 150px;
+	width: 150px;
+}
+.tema-card .tema-titulo {
+	position: absolute;
+	left: 30px;
+	bottom: 40px;
+	color: #012b09;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: normal;
+	max-width: 70%;
+}
+
+/*Sidebar*/
 .sidebar,
 .sidebar-module {
 	margin-bottom: 40px;
@@ -783,7 +817,7 @@ aside .titulo {
 	border-bottom: 3px solid #e97200;
 }
 
-/*Quem Somos*/
+/*Menu Quem Somos*/
 .menu-quem-somos {
 	padding: 0 15px;
 }
