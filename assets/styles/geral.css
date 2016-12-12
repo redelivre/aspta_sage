@@ -993,10 +993,6 @@ aside .titulo {
 	.btn-saibamais {
 		width: 39%;
 	}
-	
-	.sidebar {
-		width: 100%;
-	}
 }
 
 @media only screen and (max-width : 981px) {
@@ -1036,10 +1032,6 @@ aside .titulo {
 	    padding: 0;
 	}
 
-	.sidebar {
-		width: 100%;
-	}
-
 	.footer {
 		height: 308px;
 	}
@@ -1048,6 +1040,11 @@ aside .titulo {
 	}
 }
 
+@media only screen and (min-width : 768px) {
+	.sidebar {
+		width: 100%;
+	}
+}
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
 	header {
@@ -1105,10 +1102,6 @@ aside .titulo {
 	}
 	.parcerias-title h3 {
 		border: none;
-	}
-
-	.sidebar {
-		width: 100%;
 	}
 	
 	.footer {
