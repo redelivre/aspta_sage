@@ -46,7 +46,7 @@
 												<a href="<?php echo get_category_link( $category[0]->term_id ); ?>"><?php echo $category[0]->cat_name; ?></a>
 												<?php } ?>
 											</div>
-											<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php echo substr(the_title($before = '', $after = '', FALSE), 0, 70).'...'; ?></a></h3>
+											<div class="entry-title"><a href="<?php the_permalink(); ?>"><?php echo substr(the_title($before = '', $after = '', FALSE), 0, 250); ?></a></div>
 											<div class="btn-saibamais"><a href="<?php the_permalink(); ?>" class="btn btn-lg" role="button">saiba mais</a></div>
 											<div class="entry-summary">
 												<?php the_excerpt(); ?>
@@ -250,12 +250,12 @@
 						<h3>redes e parcerias</h3>
 					</div>
 					<div class="col-md-10">
-						<a href="http://www6.ufrgs.br/abaagroeco" ><img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-aba.jpg" /></a>
-						<a href="http://alianzaagroecologia.redelivre.org.br/" ><img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-alianza.jpg" /></a>
-						<a href="http://www.agroecologiaemrede.org.br/" ><img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-agroecologia-em-rede.jpg" /></a>
-						<a href="http://www.agroecologia.org.br/" ><img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-ana.jpg" /></a>
-						<a href="http://www.agriculturesnetwork.org/" ><img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-agriculture-network.jpg" /></a>
-						<a href="http://www.asabrasil.org.br/" ><img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-asa.jpg" /></a>
+						<img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-aba.jpg" />
+						<img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-alianza.jpg" />
+						<img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-agroecologia-em-rede.jpg" />
+						<img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-ana.jpg" />
+						<img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-agriculture-network.jpg" />
+						<img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-asa.jpg" />
 					</div>
 				</div>
 			</div>
