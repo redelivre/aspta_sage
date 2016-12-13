@@ -34,7 +34,7 @@ function setup() {
   // http://codex.wordpress.org/Function_Reference/add_image_size
   add_theme_support('post-thumbnails');
   set_post_thumbnail_size('640', '', true);
-  add_image_size('slide', '1140', '400', true);
+  add_image_size('slide', '1140', '550', true);
   add_image_size('destaque-pagina', '750', '400', true);
   add_image_size('destaque', '360', '258', true);
   add_image_size('medio', '200', '200', true);
@@ -106,7 +106,7 @@ function widgets_init() {
   register_sidebar([
     'name'          => __('Quem Somos', 'aspta'),
     'id'            => 'who_we_are',
-    'before_widget' => '<section class="menu-quem-somos widget %1$s %2$s">',
+    'before_widget' => '<section class="menu-inner-page widget %1$s %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',
     'after_title'   => '</h3>'
@@ -123,7 +123,7 @@ function widgets_init() {
   register_sidebar([
     'name'          => __('Nova Revista', 'aspta'),
     'id'            => 'newspaper_new',
-    'before_widget' => '<section class="widget %1$s %2$s">',
+    'before_widget' => '<section class="menu-inner-page widget %1$s %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',
     'after_title'   => '</h3>'
