@@ -205,7 +205,8 @@ to be fill the entire space of the .navbar */
 .navbar-nav > .active > a,
 .navbar-nav > .active > a:hover,
 .navbar-nav > .active > a:focus {
-	background-image: none;
+	color: #003e2d;
+  background-image: none;
 	background-color: #a7b739;
 }
 .navbar-nav > li:last-child > a {
