@@ -173,7 +173,7 @@ header {
 .menu-topo {
 	height: 80px;
 	text-transform: uppercase;
-	background: url(../images/back_menu.jpg);
+	background: url(../images/back_footer.jpg);
 }
 .caret {
 	display: none;
@@ -191,13 +191,16 @@ to be fill the entire space of the .navbar */
 	margin-bottom: 0;
 	font-size: 16px;
 	font-weight: bold;
-	color: #003e2d;
+	color: #a7b739;
 	max-width: 170px;
 	text-align: center;
 	white-space: normal;
 	display: flex;
     justify-content: center;
     flex-direction: column-reverse;
+}
+.navbar-nav > li > a:hover {
+	color: #003e2d;
 }
 .navbar-nav > .active > a,
 .navbar-nav > .active > a:hover,
@@ -219,9 +222,9 @@ to be fill the entire space of the .navbar */
 	min-height: 80px;
 }
 .navbar-nav > li > a {
-	border-right: 2px solid #d6dbb5;
-	border-left: 2px solid #fff;
+	border-right: 1px solid #d6dbb5;
 }
+
 .navbar-nav > li:first-child > a {
 	border-left: 0;
 }
@@ -239,16 +242,16 @@ aside .titulo {
 	margin-top: 0;
 }
 .wrap {
- 	margin: 0 auto 280px;
+ 	margin: 80px auto 280px;
 	background: url('../images/back_content.jpg');
 }
 
 .destaques-slides {
-	margin: 40px 0;
+	margin: 0;
 	z-index: 2;
 }
 .cycle-slideshow {
-	height: 500px;
+	height: 550px;
 	width: 100%;
 	overflow: hidden;
 }
@@ -270,15 +273,15 @@ aside .titulo {
 .cycle-slideshow li img {
 	display: block;
 	height: auto;
-	min-height: 400px;
+	min-height: 550px;
 	width: 100%;
 	min-width: 1140px;
 }
 .cycle-slideshow .bd {
 	position: absolute;
-	top: 400px;
+	top: 430px;
 	padding: 10px 10px 10px 20px;
-	height: 100px;
+	height: 120px;
 	width: 100%;
 	background-color: #a7b739;
 }
@@ -296,6 +299,8 @@ aside .titulo {
 }
 .cycle-slideshow .entry-title {
 	margin-top: 10px;
+	font-size: 22px;
+	width: 70%;
 }
 .cycle-slideshow .entry-title a {
 	font-weight: bold;
@@ -372,14 +377,15 @@ aside .titulo {
 	background: rgba(153, 153, 153, 0.2);
 }
 .programas-locais {
-	padding: 20px 0;
 }
 .programas-locais h3,
 .revista h3 {
-	margin: 20px 0;
 	font-weight: bold;
 	color: #e97200;
 	text-transform: uppercase;
+}
+.revista h3 {
+	text-align: center;
 }
 .programa {
 	padding: 0 15px;
@@ -405,7 +411,6 @@ aside .titulo {
 
 .video-da-semana,
 .revista {
-	padding: 20px;
 }
 .video-da-semana h3 {
 	margin: 20px 0;
@@ -440,7 +445,6 @@ aside .titulo {
 }
 .boletim-campanha h4 a {
 	color: #003e2d;
-	text-decoration: underline;	
 }
 .boletim-campanha h4 a:hover {
 	color: #fff;
@@ -494,7 +498,6 @@ aside .titulo {
 .blog-pratos-limpos li {
 	color: #003e2d;
 	list-style: none;
-	text-decoration: underline;
 }	
 .blog-pratos-limpos h4 a:hover,
 .blog-pratos-limpos h5 a:hover {
@@ -888,7 +891,7 @@ aside .titulo {
     display: inline-table;
     font-weight: bold;
     list-style: none;
-    width: 13%;
+    width: 103px;
 }
 .footer-menu .menu-item a:hover {
 	color: #e97200;
