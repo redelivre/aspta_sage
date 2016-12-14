@@ -59,7 +59,7 @@
 			</a>
 		</div>
 		<div class="btn-share">
-			<a href="https://twitter.com/share" class="twitter-share-button" data-via="aspta" data-dnt="true">
+			<a href="https://twitter.com/share" data-via="aspta" data-dnt="true">
 				<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/twitter-share.png" />
 			</a>
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
