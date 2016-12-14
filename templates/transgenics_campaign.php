@@ -26,7 +26,7 @@
         </a>
       </div>
       <div class="tema-card">
-        <a href="<?php get_site_url(); ?>/itens-de-campanha/gm-free-brasil/">
+        <a href="<?php get_site_url(); ?>/itens-de-campanha/gm-free-brazil/">
           <div class="tema-box-verde">
              <div class="tema-descricao">
               <p>Find here information about the ongoing situation of GMOs and biosafety politics in Brazil. Subscribe to monthly AS-PTA s Update from the GM-Free Brazil Campaign emailing boletim@aspta.org.br</p>
@@ -48,18 +48,18 @@
         </a>
       </div>
       <div class="tema-card">
-        <a href="<?php get_site_url(); ?>/itens-de-campanha/monitoramento-da-transicao-agroecologica/">
+        <a href="<?php get_site_url(); ?>/itens-de-campanha/monitoramento-ctnbio/">
           <div class="tema-box-verde">
             <div class="tema-descricao">
               <p>A Comissão Técnica Nacional de Biossegurança é o órgão do Governo Federal responsável pela análise das liberações de transgênicos. Confira nesta seção votos, relatórios e pareceres de especialistas que discordaram das decisões da CTNBio.</p>
             </div>
-            <div class="tema-icone"><img class="image-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/monitoramento-da-transicao-agroecologica.png"></div>
+            <div class="tema-icone"><img class="image-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/monitoramento-da-ctnbio.png"></div>
             <div class="tema-titulo">Monitoramento da CTNBio</div>
           </div>
         </a>
       </div>
       <div class="tema-card">
-        <a href="<?php get_site_url(); ?>/itens-de-campanha/transgenicos/">
+        <a href="<?php get_site_url(); ?>/itens-de-campanha/campanha-transgenicos/">
           <div class="tema-box">
             <div class="tema-descricao">
               <p>Contrariando os planos da indústria, os transgênicos se tornaram tema de debate público. Confira aqui artigos, notícias e documentos publicados nos últimos dez anos.</p>
