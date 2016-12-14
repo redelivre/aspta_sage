@@ -245,17 +245,19 @@
 	<aside>
 		<div class="container">
 			<div class="row">
-				<div id="redes-e-parcerias" class="col-md-12">
+				<div id="redes-e-parcerias" class="col-md-12 col-sm-12 col-xs-12">
 					<div class="col-md-2 parcerias-title">
 						<h3>redes e parcerias</h3>
 					</div>
 					<div class="col-md-10">
-						<img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-aba.jpg" />
-						<img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-alianza.jpg" />
-						<img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-agroecologia-em-rede.jpg" />
-						<img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-ana.jpg" />
-						<img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-agriculture-network.jpg" />
-						<img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-asa.jpg" />
+						<div class="logo_partners">
+							<img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-aba.jpg" />
+							<img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-alianza.jpg" />
+							<img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-agroecologia-em-rede.jpg" />
+							<img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-ana.jpg" />
+							<img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-agriculture-network.jpg" />
+							<img class="parceria-banner img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-asa.jpg" />
+						</div>
 					</div>
 				</div>
 			</div>
