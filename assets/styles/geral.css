@@ -935,7 +935,7 @@ aside .titulo {
 }
 .footer-icones {
 	margin: 0 auto;
-	width: 300px;
+	width: 280px;
 }
 .footer-icones ul {
 	margin: 0;
@@ -960,7 +960,7 @@ aside .titulo {
 }
 .footer-icones a .icon-twitter {
 	background: url('../images/icon-twitter.png') no-repeat;
-	width: 65px;
+	width: 60px;
 }
 .footer-icones a .icon-twitter:hover {
 	background: url('../images/icon-twitter-hover.png') no-repeat;
@@ -974,7 +974,7 @@ aside .titulo {
 }
 .footer-icones a .icon-youtube {
 	background: url('../images/icon-youtube.png') no-repeat;
-	width: 65px;
+	width: 60px;
 }
 .footer-icones a .icon-youtube:hover {
 	background: url('../images/icon-youtube-hover.png') no-repeat;
@@ -1087,12 +1087,16 @@ aside .titulo {
 	.btn-saibamais {
 		width: 36%;
 	}
+	.revista {
+	    padding: 0;
+	}
 	.parcerias-title h3 {
 	    border: none;
 	    text-align: center;
 	}
-	.revista {
-	    padding: 0;
+	.parceria-banner {
+		min-width: 230px;
+		padding: 0 5px;
 	}
 	.footer {
 		height: 308px;
@@ -1160,7 +1164,7 @@ aside .titulo {
 	.parcerias-title h3 {
 		border: none;
 	}
-	
+
 	.footer {
 		height: 300px;
 	}
@@ -1197,6 +1201,11 @@ aside .titulo {
 		height: 300px;
 		width: 100%;
 	}
+	.parceria-banner {
+		min-width: 275px;
+		padding: 0 5px;
+	}
+
 	.footer-redes-sociais {
 		margin-top: 67px;
 	}
@@ -1215,12 +1224,15 @@ aside .titulo {
 	}
 	.boletim-campanha h3 {
 	    padding: 20px;
-	}
-	
+	}	
 	.btn-saibamais,
 	.btn-enviar {
 	    margin: 0 0 10px 60%;
 	    width: 45%;
+	}
+	.parceria-banner {
+		min-width: 195px;
+		padding: 0 5px;
 	}
 	.footer-redes-sociais {
 		margin-top: 74px;
@@ -1249,6 +1261,10 @@ aside .titulo {
 	.wrap {
     	margin-bottom: 185px;
 	}
+	.parceria-banner {
+		min-width: 270px;
+		padding: 0;
+	}
 	.footer-redes-sociais {
 		margin-top: 59px;
 	}
@@ -1258,6 +1274,10 @@ aside .titulo {
 @media only screen and (max-width : 320px) {
 	.menu-topo {
 	    margin-top: 9px;
+	}
+	.parceria-banner {
+		min-width: 240px;
+		padding: 0;
 	}
 	.footer-redes-sociais {
 		margin-top: 46px;
