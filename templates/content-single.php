@@ -59,10 +59,25 @@
 			</a>
 		</div>
 		<div class="btn-share">
-			<a href="https://twitter.com/share" data-via="aspta" data-dnt="true">
+			<a href="https://twitter.com/share?text=<?php the_title(); ?>&?url=<?php the_permalink(); ?>&via=aspta" data-dnt="true" target="_blank">
 				<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/twitter-share.png" />
 			</a>
-			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			<script>window.twttr = (function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0],
+			    t = window.twttr || {};
+			  if (d.getElementById(id)) return t;
+			  js = d.createElement(s);
+			  js.id = id;
+			  js.src = "https://platform.twitter.com/widgets.js";
+			  fjs.parentNode.insertBefore(js, fjs);
+
+			  t._e = [];
+			  t.ready = function(f) {
+			    t._e.push(f);
+			  };
+
+			  return t;
+			}(document, "script", "twitter-wjs"));</script>
 		</div>
 	</div>
 

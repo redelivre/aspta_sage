@@ -7,6 +7,8 @@
 		
 		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>">
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/styles/font-awesome.min.css">
+		<link rel="me" href="https://twitter.com/aspta">
+		<link rel="canonical" href="/web/tweet-button">
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
