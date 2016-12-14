@@ -206,7 +206,7 @@ to be fill the entire space of the .navbar */
 .navbar-nav > .active > a:hover,
 .navbar-nav > .active > a:focus {
 	color: #003e2d;
-  background-image: none;
+	background-image: none;
 	background-color: #a7b739;
 }
 .navbar-nav > li:last-child > a {
@@ -774,8 +774,9 @@ aside .titulo {
 	font-weight: bold;
 }
 
-/*Página Temas de Intervenção*/
-.temas-de-intervencao .titulo-pagina h1 {
+/*Páginas Temas de Intervenção e Campanha Transgênicos*/
+.temas-de-intervencao .titulo-pagina h1,
+.campanha-transgenicos .titulo-pagina h1 {
 	margin: 0 0 40px;
 	color: #012b09;
 	font-weight: bold;
@@ -790,13 +791,19 @@ aside .titulo {
 	min-height: 230px;
 	background-color: #9d9f00;
 }
-.tema-card .tema-icone img {
+.temas-de-intervencao .tema-card .tema-icone img {
 	position: absolute;
 	right: 15px;
 	height: 150px;
 	width: 150px;
 }
-.tema-card .tema-titulo {
+.campanha-transgenicos .tema-card .tema-icone img {
+	position: absolute;
+	left: 30px;
+	height: 150px;
+	width: 150px;
+}
+.temas-de-intervencao .tema-card .tema-titulo {
 	position: absolute;
 	left: 30px;
 	bottom: 40px;
@@ -805,6 +812,22 @@ aside .titulo {
 	font-weight: bold;
 	line-height: normal;
 	max-width: 70%;
+}
+.campanha-transgenicos .tema-card .tema-titulo {
+	padding: 165px 0 0 30px;
+	color: #012b09;
+	font-size: 22px;
+	font-weight: bold;
+	line-height: normal;
+	max-width: 30%;
+}
+.campanha-transgenicos .tema-card .tema-descricao {
+	padding: 20px;
+	float: right;
+	color: #012b09;
+	font-size: 16px;
+	text-align: justify;
+	width: 70%;
 }
 
 /*Sidebar*/
