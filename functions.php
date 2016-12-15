@@ -96,7 +96,7 @@ function aspta_build_taxonomies() {
 	  	'show_in_nav_menus' => false,
 	    'query_var' 		=> true,
 	  	'capabilities'      => array('edit_terms' => false,'manage_terms' => false),
-	    'rewrite' 			=> array( 'slug' => 'aspta-programas' ),
+	    'rewrite' 			=> array( 'slug' => 'programas' ),
 	  ));
 }
 
@@ -146,12 +146,3 @@ add_action( 'init', function(){
     }
   }
 });
-
-function aspta_sage_tag_query( $query ) {
-    if ( $query->is_tag() && $query->is_main_query() ) {
-        $query->set( 'posts_per_page', 5 );
-    }
-}
-add_action( 'pre_get_posts', 'aspta_sage_tag_query' );
-
-
