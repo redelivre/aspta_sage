@@ -38,30 +38,30 @@ unset($file, $filepath);
 /*
  * newspaper Agriculturas e Campanha
  * 
- * Inclui os arquivos relacionados com estas duas áreas do site
+ * Inclui os arquivos relacionados com estas duas Ã¡reas do site
  */
 include( plugin_dir_path( __FILE__ ).'functions-revista.php' );
 include( plugin_dir_path( __FILE__ ).'functions-campanha.php' );
 
 /*
  * Custom Taxonomies
- * Criando as taxonomias personalizadas 'Temas de intervenção' / 'Programas'
+ * Criando as taxonomias personalizadas 'Temas de intervenÃ§Ã£o' / 'Programas'
  */
 function aspta_build_taxonomies() {
 
-	// Temas de intervenção
+	// Temas de intervenÃ§Ã£o
 	  $labels = array(
-	    'name' 				=> 'Temas de intervenção',
-	    'singular_name'	 	=> 'Tema de intervenção',
+	    'name' 				=> 'Temas de intervenÃ§Ã£o',
+	    'singular_name'	 	=> 'Tema de intervenÃ§Ã£o',
 	    'search_items' 		=> 'Pesquisar temas',
 	    'all_items' 		=> 'Todos os temas',
 	    'parent_item' 		=> 'Tema pai',
 	    'parent_item_colon' => 'Tema pai: ',
 	    'edit_item' 		=> 'Editar tema', 
 	    'update_item' 		=> 'Atualizar tema',
-	    'add_new_item' 		=> 'Adicionar Novo Tema de intervenção',
+	    'add_new_item' 		=> 'Adicionar Novo Tema de intervenÃ§Ã£o',
 	    'new_item_name' 	=> 'Novo tema',
-	    'menu_name' 		=> 'Temas de intervenção'
+	    'menu_name' 		=> 'Temas de intervenÃ§Ã£o'
 	  ); 	
 	
 	  register_taxonomy( 'temas-de-intervencao', 'post', array(
@@ -71,7 +71,7 @@ function aspta_build_taxonomies() {
 	  	'show_in_nav_menus' => false,
 	    'query_var' 		=> true,
 	  	'capabilities'      => array('edit_terms' => false,'manage_terms' => false),
-	    'rewrite' 			=> array( 'slug' => 'aspta-temas-de-intervencao' ),
+	    'rewrite' 			=> array( 'slug' => 'temas-de-intervencao' ),
 	  ));
 
 	  // Programas
