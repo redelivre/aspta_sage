@@ -145,7 +145,7 @@
                     ?>
 					<div class="programa">
                       <h3 class="prog-title"><?php $program->name; ?></h3>
-				      <p class="prog-desc"><?php echo substr($program->description($before = '', $after = '', FALSE), 0, 60).'...'; ?></p>
+				      <p class="prog-desc"><?php substr($program->description($before = '', $after = '', FALSE), 0, 60).'...'; ?></p>
 				      <div class="btn-saibamais"><a class="btn btn-lg" role="button" href="<?php get_term_link($program); ?>">saiba mais</a></div>
 					</div>
                     <?php
