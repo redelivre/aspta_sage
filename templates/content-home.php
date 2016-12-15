@@ -127,15 +127,15 @@
 			</div>
 
 			<div class="row">
-				<div class="btn-noticias"><a class="btn btn-lg" href="<?= get_site_url(); ?>/noticias" role="button">ver todas as notícias</a></div>
+				<div class="btn-noticias"><a class="btn btn-lg" href="<?php get_site_url(); ?>/noticias" role="button">ver todas as notícias</a></div>
 			</div>
 		</div>
 	</aside><!-- /.noticias -->
 	
 	<div class="clearfix"></div>
 	
-	<aside id="prog-midias">
-		<div class="container">
+	<aside>
+		<div id="prog-midias" class="container">
 			<div class="row">
 				<div class="col-md-4 col-sm-6 col-xs-12 programas-locais">
 					<h3>Programas Locais</h3>
@@ -144,10 +144,9 @@
                     foreach($programs as $program){
                     ?>
 					<div class="programa">
-                      <h3 class="prog-title" ><?= $program->name; ?></h3>
-				      <h4 class="prog-desc"><?= $program->description; ?></h4>
-				      <div class="btn-saibamais"><a class="btn btn-lg" role="button" href="
-				      <?= get_term_link($program); ?>">saiba mais</a></div>
+                      <h3 class="prog-title"><?php $program->name; ?></h3>
+				      <p class="prog-desc"><?php echo substr($program->description($before = '', $after = '', FALSE), 0, 60).'...'; ?></p>
+				      <div class="btn-saibamais"><a class="btn btn-lg" role="button" href="<?php get_term_link($program); ?>">saiba mais</a></div>
 					</div>
                     <?php
                     }
@@ -156,7 +155,8 @@
 				
 				<div class="col-md-4 col-sm-6 col-xs-12 video-da-semana">
 					<h3>Vídeo da Semana</h3>
-					<?php dynamic_sidebar('sidebar-home-video-embed'); ?> 
+					<p class="video-chamada">Assista aos vídeos da AS-PTA</p>
+					<?php dynamic_sidebar('sidebar-home-session-1'); ?> 
 				</div><!-- /.video-da-semana -->
 				
 				<div class="col-md-4 col-sm-12 col-xs-12 revista">
