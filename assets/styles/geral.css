@@ -385,18 +385,24 @@ aside .titulo {
 	color: #e97200;
 	text-transform: uppercase;
 }
-.revista h3 {
-	text-align: center;
-}
 .programa {
 	padding: 0 15px;
 	border-top: 3px solid #286919;
 }
-.programa .prog-title,
-.programa .prog-desc {
+.programa .prog-title {
 	font-weight: bold;
 	color: #003e2d;
 	text-transform: none;
+}
+.programa .prog-desc,
+.video-da-semana .video-chamada {
+	color: #003e2d;
+	font-weight: normal;
+}
+.programa a,
+.programa a:hover {
+	color: #a7b739;
+	padding: 10px 10px;
 }
 .btn-saibamais,
 .btn-enviar {
@@ -404,14 +410,6 @@ aside .titulo {
 	background-color: #003e2d;
 	width: 33.3%;
 	text-align: center;
-}
-.programa a,
-.programa a:hover {
-	color: #a7b739;
-}
-
-.video-da-semana,
-.revista {
 }
 .video-da-semana h3 {
 	margin: 20px 0;
@@ -426,6 +424,13 @@ aside .titulo {
 	margin: 20px 0 40px;
 	font-weight: bold;
 	color: #003e2d;
+}
+.revista h3 {
+	text-align: center;
+}
+.revista a img {
+	height: 400px;
+	width: 300px;
 }
 
 #camp-blog {
