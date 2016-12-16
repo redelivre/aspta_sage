@@ -395,8 +395,7 @@ aside .titulo {
 	color: #003e2d;
 	text-transform: none;
 }
-.programa .prog-desc,
-.video-da-semana .video-chamada {
+.programa .prog-desc {
 	color: #003e2d;
 	font-weight: normal;
 }
@@ -419,7 +418,7 @@ aside .titulo {
 	padding-left: 15px;
 	border-top: 3px solid #e97200;	
 }
-.video-da-semana .video h4 {
+.video-da-semana .video-chamada {
 	margin: 20px 0 40px;
 	font-weight: bold;
 	color: #003e2d;
