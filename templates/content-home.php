@@ -139,18 +139,15 @@
 			<div class="row">
 				<div class="col-md-4 col-sm-6 col-xs-12 programas-locais">
 					<h3>Programas Locais</h3>
-					<?php
+                    <?php 
 					$programs = get_terms("programas");
-                    foreach($programs as $program){
-                    ?>
-					<div class="programa">
-                      <h3 class="prog-title"><?php $program->name; ?></h3>
-				      <p class="prog-desc"><?php $program->description; ?></p>
-				      <div class="btn-saibamais"><a class="btn btn-lg" role="button" href="<?php get_term_link($program); ?>">saiba mais</a></div>
-					</div>
-                    <?php
-                    }
-					?>
+                    foreach($programs as $program){ ?>
+						<div class="programa">
+	                      <h3 class="prog-title"><?php the_terms($program->name); ?><?php the_title(); ?></h3>
+					      <p class="prog-desc"><?php the_terms($program->description); ?></p>
+					      <div class="btn-saibamais"><a class="btn btn-lg" role="button" href="<?php get_term_link($program); ?>">saiba mais</a></div>
+						</div>
+					<?php } ?>
 				</div><!-- /.programas-locais -->
 				
 				<div class="col-md-4 col-sm-6 col-xs-12 video-da-semana">
@@ -250,12 +247,24 @@
 						<h3>redes e parcerias</h3>
 					</div>
 					<div class="col-md-10">
-						<div class="parceria-banner"><img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-aba.jpg" /></div>
-						<div class="parceria-banner"><img class="mg-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-alianza.jpg" /></div>
-						<div class="parceria-banner"><img class="img-responsive center-block" center-block src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-agroecologia-em-rede.jpg" /></div>
-						<div class="parceria-banner"><img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-ana.jpg" /></div>
-						<div class="parceria-banner"><img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-agriculture-network.jpg" /></div>
-						<div class="parceria-banner"><img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-asa.jpg" /></div>
+						<div class="parceria-banner">
+							<a href="http://www6.ufrgs.br/abaagroeco" target="_blank"><img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-aba.jpg" /></a>
+						</div>
+						<div class="parceria-banner">
+							<a href="http://alianzaagroecologia.redelivre.org.br/" target="_blank"><img class="mg-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-alianza.jpg" /></a>
+						</div>
+						<div class="parceria-banner">
+							<a href="http://www.agroecologiaemrede.org.br/" target="_blank"><img class="img-responsive center-block" center-block src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-agroecologia-em-rede.jpg" /></a>
+						</div>
+						<div class="parceria-banner">
+							<a href="http://www.agroecologia.org.br/" target="_blank"><img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-ana.jpg" /></a>
+						</div>
+						<div class="parceria-banner">
+							<a href="http://www.agriculturesnetwork.org/" target="_blank"><img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-agriculture-network.jpg" /></a>
+						</div>
+						<div class="parceria-banner">
+							<a href="http://www.asabrasil.org.br/" target="_blank"><img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-asa.jpg" /></a>
+						</div>
 					</div>
 				</div>
 			</div>
