@@ -835,6 +835,26 @@ aside .titulo {
 	width: 70%;
 }
 
+/*Página Revista Agriculturas*/
+.issuem-featured-article-thumb .issuem-featured-thumb-title,
+.issuem-featured-article-thumb .featured-thumb-content,
+.issuem_articles_shortcode {
+	display: none;
+}
+.issuem-featured-article-thumb {
+    width: 25%;
+}
+.issuem-featured-thumbs-img img {
+	opacity: 0.8; 
+	-moz-opacity: 0.8;
+	Filter: Alpha(Opacity=80)
+}
+.issuem-featured-thumbs-img img:hover {
+	opacity: 1; 
+	-moz-opacity: 1;
+	Filter: Alpha(Opacity=100)
+}
+
 /*Sidebar*/
 .sidebar,
 .sidebar-module {
