@@ -1188,6 +1188,12 @@ aside .titulo {
 		border: none;
 	}
 
+	.issuem-featured-thumbs-img img {
+		opacity: 1; 
+		-moz-opacity: 1;
+		Filter: Alpha(Opacity=100)
+	}
+
 	.footer {
 		height: 300px;
 	}
@@ -1229,6 +1235,10 @@ aside .titulo {
 		padding: 0 5px;
 	}
 
+	.issuem-featured-article-thumb {
+	    width: 33%;
+	}
+
 	.footer-redes-sociais {
 		margin-top: 67px;
 	}
@@ -1256,6 +1266,9 @@ aside .titulo {
 	.parceria-banner {
 		min-width: 195px;
 		padding: 0 5px;
+	}
+	.issuem-featured-article-thumb {
+	    width: 100%;
 	}
 	.footer-redes-sociais {
 		margin-top: 74px;
