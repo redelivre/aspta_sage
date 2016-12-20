@@ -97,7 +97,7 @@
       </a>
     </div>
     <div class="tema-card col-md-4">
-      <a href="<?php get_site_url(); ?>/temas-de-intervencao/mulheres-e-agroecologia/">
+      <a href="<?php get_site_url(); ?>/temas-de-intervencao/mulheres-relacoes-sociais-de-genero-e-de-geracao/">
         <div class="tema-box">
           <div class="tema-icone"><img class="image-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/mulheres-e-agroecologia.png"></div>
           <div class="tema-titulo">Mulheres e Agroecologia</div>
