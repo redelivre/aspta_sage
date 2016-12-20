@@ -89,7 +89,7 @@
       </a>
     </div>
     <div class="tema-card col-md-4">
-      <a href="<?php get_site_url(); ?>/temas-de-intervencao/monitoramento-da-transicao-agroecologica/">
+      <a href="<?php get_site_url(); ?>/temas-de-intervencao/monitoramento-da-transicao-agroecologica-2/">
         <div class="tema-box-verde">
           <div class="tema-icone"><img class="image-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/monitoramento-da-transicao-agroecologica.png"></div>
           <div class="tema-titulo">Monitoramento da Transição Agroecológica</div>
