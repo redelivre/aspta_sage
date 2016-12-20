@@ -140,12 +140,12 @@
 				<div class="col-md-4 col-sm-6 col-xs-12 programas-locais">
 					<h3>Programas Locais</h3>
                     <?php 
-					$programs = get_terms("programas");
+		    $programs = get_terms("programas",array('hide_empty' => false,));
                     foreach($programs as $program){ ?>
 						<div class="programa">
-	                      <h3 class="prog-title"><?php $program->name; ?><?php the_title(); ?></h3>
-					      <p class="prog-desc"><?php $program->description; ?></p>
-					      <div class="btn-saibamais"><a class="btn btn-lg" role="button" href="<?php get_term_link($program); ?>">saiba mais</a></div>
+	                      <h3 class="prog-title"><?php $program->name; ?><?=$program->name ?></h3>
+					      <p class="prog-desc"><?=$program->description; ?></p>
+					      <div class="btn-saibamais"><a class="btn btn-lg" role="button" href="<?= get_term_link($program); ?>">saiba mais</a></div>
 						</div>
 					<?php } ?>
 				</div><!-- /.programas-locais -->
