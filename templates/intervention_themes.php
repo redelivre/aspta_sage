@@ -7,6 +7,7 @@
  * @since AS-PTA 0.2
  */
 ?>
+<?php dynamic_sidebar('sidebar-primary'); ?>
 <section class="temas-de-intervencao">
 
   <div class="titulo-pagina">
