@@ -1,12 +1,13 @@
 <?php
 /**
- * Template Name: Brasil Livre de Transgênicos
+ * Template Name: Campanha Transgênicos
  *
  * @package WordPress
  * @subpackage AS-PTA
  * @since AS-PTA 0.2
  */
 ?>
+<?php dynamic_sidebar('gm-sidebar'); ?>
 <section class="campanha-transgenicos">
 
   <div class="titulo-pagina">
