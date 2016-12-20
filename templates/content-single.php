@@ -79,6 +79,11 @@
 			  return t;
 			}(document, "script", "twitter-wjs"));</script>
 		</div>
+		<div class="btn-share">
+			<a href="whatsapp://send?text=<?php the_title(); ?>: <?php the_permalink(); ?>" data-dnt="true" target="_blank">
+				<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/twitter-share.png" />
+			</a>
+		</div>
 	</div>
 
 	<div class="pagina-comentarios">
