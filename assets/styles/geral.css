@@ -377,8 +377,6 @@ aside .titulo {
 	padding-bottom: 40px;
 	background: rgba(153, 153, 153, 0.2);
 }
-.programas-locais {
-}
 .programas-locais h3,
 .video-da-semana h3,
 .revista h3 {
@@ -387,17 +385,24 @@ aside .titulo {
 	text-transform: uppercase;
 }
 .programa {
+	margin-bottom: 20px;
 	padding: 0 15px;
-	border-top: 3px solid #286919;
 }
 .programa .prog-title {
+	padding-top: 15px;
+	font-size: 18px;
 	font-weight: bold;
 	color: #003e2d;
 	text-transform: none;
+	border-top: 3px solid #286919;
 }
 .programa .prog-desc {
 	color: #003e2d;
+	font-size: 12px;
 	font-weight: normal;
+	line-height: unset;
+	text-align: justify;
+	min-height: 155px;
 }
 .programa a,
 .programa a:hover {
@@ -413,21 +418,29 @@ aside .titulo {
 }
 .video-da-semana h3 {
 	margin: 20px 0;
-}
-.video-da-semana .video {
-	padding-left: 15px;
-	border-top: 3px solid #e97200;	
-}
-.video-da-semana .video-chamada {
-	margin: 20px 0 40px;
-	font-weight: bold;
-	color: #003e2d;
-}
-.revista h3 {
 	text-align: center;
 }
+.video-da-semana .video {
+	padding: 15px 0;
+	text-align: center;
+	border-top: 3px solid #e97200;
+}
+.video-da-semana .video-chamada {
+	margin: 10px 0 5px;
+	font-weight: bold;
+	color: #003e2d;
+	display: none;
+}
+.revista h3 {
+	padding-bottom: 10px;
+	text-align: center;
+}
+.revista .issuem_active_list_widget {
+	padding: 15px 0;
+	border-top: 3px solid #e97200;
+}
 .revista a img {
-	height: 370px;
+	height: 360px;
 	width: 260px;
 }
 
@@ -1124,8 +1137,15 @@ aside .titulo {
 	.post-title {
 		min-height: 80px;
 	}
+	.programa .prog-desc {
+		min-height: 100%;
+	}
 	.btn-saibamais {
 		width: 36%;
+	}
+	.video-da-semana .video,
+	.revista .issuem_active_list_widget {
+	    border-top: none;
 	}
 	.revista {
 	    padding: 0;
