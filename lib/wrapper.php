@@ -33,6 +33,10 @@ function sidebar_newspaper_new() {
   return new SageWrapping('templates/sidebar-newspaper_new.php');
 }
 
+function sidebar_program_paraiba() {
+  return new SageWrapping('templates/sidebar-program_paraiba.php');
+}
+
 
 class SageWrapping {
   // Stores the full path to the main template file

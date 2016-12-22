@@ -137,8 +137,40 @@ function widgets_init() {
     'after_title'   => '</h3>'
   ]);
   register_sidebar([
-    'name'          => __('Menu de Rodapé', 'aspta'),
+    'name'          => __('menu de rodapé', 'aspta'),
     'id'            => 'sidebar-menu-footer',
+    'before_widget' => '<section class="widget %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>'
+  ]);
+  register_sidebar([
+    'name'          => __('Programa Paraiba', 'aspta'),
+    'id'            => 'sidebar-program-paraiba',
+    'before_widget' => '<section class="widget %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>'
+  ]);
+  register_sidebar([
+    'name'          => __('Programa Agricultura Urbana', 'aspta'),
+    'id'            => 'sidebar-program-urbam-agriculture',
+    'before_widget' => '<section class="widget %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>'
+  ]);
+  register_sidebar([
+    'name'          => __('Programa Contestado', 'aspta'),
+    'id'            => 'sidebar-program-contestado',
+    'before_widget' => '<section class="widget %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>'
+  ]);
+  register_sidebar([
+    'name'          => __('Programa Paraiba', 'aspta'),
+    'id'            => 'sidebar-program-paraiba',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',
