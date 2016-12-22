@@ -766,11 +766,28 @@ aside .titulo {
 	padding: 30px 0 60px;
 	border-bottom: 2px solid #003e2d;
 }
-#pagina .pagina-compartilhamento .btn-share {
+.btn-share {
 	margin: 0;
 	float: left;
-	max-width: 250px;
+	width: 250px;
 }
+.facebook-share,
+.google-share,
+.twitter-share {
+	display: table-cell;
+	width: 250px;
+	height: 35px;
+}
+.facebook-share {
+	background: url('../images/facebook-share.png') no-repeat;
+}
+.google-share {
+	background: url('../images/google-share.png') no-repeat;
+}
+.twitter-share {
+	background: url('../images/twitter-share.png') no-repeat;
+}
+
 #pagina .pagina-comentarios {
 	margin: 30px 0;
 }
@@ -847,12 +864,12 @@ aside .titulo {
 .issuem-featured-thumbs-img img {
 	opacity: 0.8; 
 	-moz-opacity: 0.8;
-	Filter: Alpha(Opacity=80)
+	Filter: Alpha(Opacity=80);
 }
 .issuem-featured-thumbs-img img:hover {
 	opacity: 1; 
 	-moz-opacity: 1;
-	Filter: Alpha(Opacity=100)
+	Filter: Alpha(Opacity=100);
 }
 
 /*Sidebar*/
@@ -1121,6 +1138,29 @@ aside .titulo {
 		min-width: 230px;
 		padding: 0 5px;
 	}
+	.btn-share {
+		width: 180px;
+	}
+	.facebook-share,
+	.google-share,
+	.twitter-share,
+	.whatsapp-share {
+		display: table-cell;
+		width: 180px;
+		height: 35px;
+	}
+	.facebook-share {
+		background: url('../images/facebook-share-peq.png') no-repeat;
+	}
+	.google-share {
+		background: url('../images/google-share-peq.png') no-repeat;
+	}
+	.twitter-share {
+		background: url('../images/twitter-share-peq.png') no-repeat;
+	}
+	.whatsapp-share {
+		background: url('../images/whatsapp-share-peq.png') no-repeat;
+	}
 	.footer {
 		height: 308px;
 	}
@@ -1191,7 +1231,7 @@ aside .titulo {
 	.issuem-featured-thumbs-img img {
 		opacity: 1; 
 		-moz-opacity: 1;
-		Filter: Alpha(Opacity=100)
+		Filter: Alpha(Opacity=100);
 	}
 
 	.footer {
@@ -1239,6 +1279,30 @@ aside .titulo {
 	    width: 33%;
 	}
 
+	.btn-share {
+		width: 152px;
+	}
+	.facebook-share,
+	.google-share,
+	.twitter-share,
+	.whatsapp-share {
+		display: table-cell;
+		width: 152px;
+		height: 35px;
+	}
+	.facebook-share {
+		background: url('../images/facebook-share-peq.png') no-repeat center;
+	}
+	.google-share {
+		background: url('../images/google-share-peq.png') no-repeat center;
+	}
+	.twitter-share {
+		background: url('../images/twitter-share-peq.png') no-repeat center;
+	}
+	.whatsapp-share {
+		background: url('../images/whatsapp-share-peq.png') no-repeat center;
+	}
+
 	.footer-redes-sociais {
 		margin-top: 67px;
 	}
@@ -1270,6 +1334,34 @@ aside .titulo {
 	.issuem-featured-article-thumb {
 	    width: 100%;
 	}
+	#pagina .pagina-compartilhamento {
+		padding-bottom: 130px;
+	}
+	.btn-share {
+		margin: 10px 15px;
+		width: 180px;
+	}
+	.facebook-share,
+	.google-share,
+	.twitter-share,
+	.whatsapp-share {
+		display: table-cell;
+		width: 180px;
+		height: 35px;
+	}
+	.facebook-share {
+		background: url('../images/facebook-share-peq.png') no-repeat center;
+	}
+	.google-share {
+		background: url('../images/google-share-peq.png') no-repeat center;
+	}
+	.twitter-share {
+		background: url('../images/twitter-share-peq.png') no-repeat center;
+	}
+	.whatsapp-share {
+		background: url('../images/whatsapp-share-peq.png') no-repeat center;
+	}
+
 	.footer-redes-sociais {
 		margin-top: 74px;
 	}
@@ -1301,6 +1393,12 @@ aside .titulo {
 		min-width: 270px;
 		padding: 0;
 	}
+	#pagina .pagina-compartilhamento {
+		padding-bottom: 220px;
+	}
+	.btn-share {
+		margin: 5px 75px;
+	}
 	.footer-redes-sociais {
 		margin-top: 59px;
 	}
@@ -1315,6 +1413,8 @@ aside .titulo {
 		min-width: 240px;
 		padding: 0;
 	}
+	.btn-share {
+		margin: 5px 60px;
 	.footer-redes-sociais {
 		margin-top: 46px;
 	}
