@@ -52,17 +52,17 @@
 		<span>Compartilhe esse conteúdo</span><br /><br />
 		<div class="btn-share">
 			<a href="http://www.facebook.com/share.php?u=<?php the_permalink(); ?>&t=<?php the_title_attribute(); ?>" target="_blank">
-				<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook-share.png" />
+				<div class="facebook-share"></div>
 			</a>
 		</div>
 		<div class="btn-share">
 			<a href="https://plus.google.com/share?url=<?php the_permalink(); ?>" target="_blank">
-				<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/google-share.png" />
+				<div class="google-share"></div>
 			</a>
 		</div>
 		<div class="btn-share">
 			<a href="https://twitter.com/share?text=<?php the_title(); ?>&?url=<?php the_permalink(); ?>&via=aspta" data-dnt="true" target="_blank">
-				<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/twitter-share.png" />
+				<div class="twitter-share"></div>
 			</a>
 			<script>window.twttr = (function(d, s, id) {
 			  var js, fjs = d.getElementsByTagName(s)[0],
@@ -72,18 +72,16 @@
 			  js.id = id;
 			  js.src = "https://platform.twitter.com/widgets.js";
 			  fjs.parentNode.insertBefore(js, fjs);
-
 			  t._e = [];
 			  t.ready = function(f) {
 			    t._e.push(f);
 			  };
-
 			  return t;
 			}(document, "script", "twitter-wjs"));</script>
 		</div>
-		<div class="btn-share">
+		<div class="btn-share visible-xs visible-sm">
 			<a href="whatsapp://send?text=<?php the_title(); ?>: <?php the_permalink(); ?>" data-dnt="true" target="_blank">
-				<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/twitter-share.png" />
+				<div class="whatsapp-share"></div>
 			</a>
 		</div>
 	</div>
