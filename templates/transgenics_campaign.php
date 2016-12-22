@@ -7,8 +7,7 @@
  * @since AS-PTA 0.2
  */
 ?>
-<?php dynamic_sidebar('gm-sidebar'); ?>
-<section class="campanha-transgenicos">
+<article class="campanha-transgenicos">
 
   <div class="titulo-pagina">
       <h1><?php the_title(); ?></h1>
@@ -72,4 +71,4 @@
       </div>
     </div>
   </div>
-</section>
+</article>

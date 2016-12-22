@@ -37,6 +37,18 @@ function sidebar_program_paraiba() {
   return new SageWrapping('templates/sidebar-program_paraiba.php');
 }
 
+function sidebar_program_urbam_agriculture() {
+  return new SageWrapping('templates/sidebar-program_urbam_agriculture.php');
+}
+
+function sidebar_program_contestado() {
+  return new SageWrapping('templates/sidebar-program_contestado.php');
+}
+
+function sidebar_transgenics_campaign() {
+  return new SageWrapping('templates/sidebar-transgenics_campaign.php');
+}
+
 
 class SageWrapping {
   // Stores the full path to the main template file

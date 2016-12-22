@@ -9,7 +9,7 @@ use Roots\Sage\Wrapper;
     <div class="wrap" role="document">
       <div class="content container">
         <main class="row">
-          <aside id="pagina" class="col-md-8">
+          <aside id="todos" class="col-md-8">
           <?php 
           	include Wrapper\template_path();
           	global $wp;
@@ -20,7 +20,7 @@ use Roots\Sage\Wrapper;
           <?php 
           	if (Setup\display_sidebar()) : ?>
         	<aside class="sidebar col-md-4 col-sm-12 hidden-xs">
-        		<?php include Wrapper\sidebar_program_urbam_agriculture(); ?>
+        		<?php include Wrapper\sidebar_transgenics_campaign(); ?>
         	</aside><!-- /.sidebar -->
         	<?php endif; ?>
         </main><!-- /.main -->
