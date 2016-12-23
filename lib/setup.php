@@ -33,7 +33,7 @@ function setup() {
   // http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size
   // http://codex.wordpress.org/Function_Reference/add_image_size
   add_theme_support('post-thumbnails');
-  set_post_thumbnail_size('640', '', true);
+  set_post_thumbnail_size('1280', '960', true);
   add_image_size('slide', '1140', '550', true);
   add_image_size('destaque-pagina', '750', '400', true);
   add_image_size('destaque', '360', '258', true);
