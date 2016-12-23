@@ -1,6 +1,6 @@
 <section class="aspta-content">
 	<aside id="destaques">
-		<div class="container hidden-xs">
+		<div class="container">
 			<div class="row">
 				<div class="col-md-12 destaques-slides">
 					<?php
@@ -149,7 +149,7 @@
 						</div>
 					<?php } ?>
 				</div><!-- /.programas-locais -->
-				<div class="col-md-4 col-sm-6 col-xs-12 video-da-semana">
+				<div class="col-md-4 col-sm-12 col-xs-12 video-da-semana">
 					<h3>Vídeo da Semana</h3>
 					<p class="video-chamada">Assista aos vídeos da AS-PTA</p>
 					<div class="video"><?php dynamic_sidebar('sidebar-home-session-1'); ?></div>
