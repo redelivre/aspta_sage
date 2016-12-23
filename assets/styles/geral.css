@@ -891,7 +891,7 @@ aside .titulo {
 .sidebar,
 .sidebar-module {
 	margin-bottom: 40px;
-  width: 100%;
+	width: 100%;
 }
 .sidebar .revista {
 	padding: 0 15px;
@@ -1093,10 +1093,10 @@ aside .titulo {
 		z-index: 9999;
 	}
 	.navbar-justified .navbar-toggle {
-	    border-color: #003e2d;
+	    border-color: #e97200;
 	}
 	.navbar-justified .navbar-toggle .icon-bar {
-	    background-color: #003e2d;
+	    background-color: #e97200;
 	}
 
 	.cycle-slideshow {
@@ -1120,19 +1120,32 @@ aside .titulo {
 	}
 	.menu-topo {
 	    height: 55px;
+	    background-image: none;
 	}
 	.wrap {
-		margin-bottom: 205px;
+		margin: 0 0 205px;
 	}
 	.cycle-slideshow {
 		height: 350px;
 	}
+	.cycle-slideshow li img {
+	    height: 200px;
+	    min-width: 750px;
+	}
 	.cycle-slideshow .bd {
 		top: 270px;
+		width: 720px
+	}
+	.cycle-slideshow .entry-meta {
+		width: 20%;
 	}
 	.cycle-slideshow .entry-title {
-		font-size: 16px;
-	    width: 60%;
+		margin-top: 5px;
+		font-size: 14px;
+	    width: 100%;
+	}
+	.cycle-slideshow .btn-saibamais {
+		display: none;
 	}
 	.noticia {
 		margin-bottom: 20px;
@@ -1275,6 +1288,15 @@ aside .titulo {
 	.wrap {
     	margin-bottom: 205px;
 	}
+
+	.cycle-slideshow li img {
+	    height: 200px;
+	    min-width: 610px;
+	}
+	.cycle-slideshow .bd {
+		width: 580px
+	}
+
 	.programas-locais,
 	.video-da-semana {
 		padding: 0;
@@ -1338,7 +1360,22 @@ aside .titulo {
 	.menu-topo {
 		height: 50px;
 	}
-	
+
+	.cycle-slideshow li img {
+	    height: 200px;
+	    width: 480px;
+	}
+	.cycle-slideshow .bd {
+		width: 450px
+	}
+	.cycle-slideshow .entry-meta {
+		width: 30%;
+	}
+	.cycle-slideshow .entry-title {
+		font-size: 12px;
+	    width: 95%;
+	}
+
 	#prog-midias, #camp-blog {
 	    padding: 10px;
 	}
@@ -1412,6 +1449,20 @@ aside .titulo {
 	.wrap {
     	margin-bottom: 185px;
 	}
+	.cycle-slideshow li img {
+	    height: 120px;
+	    width: 360px;
+	}
+	.cycle-slideshow .bd {
+		width: 330px
+	}
+	.cycle-slideshow .entry-meta {
+    width: 40%;
+	}
+	.cycle-slideshow .entry-title {
+		font-size: 10px;
+		width: 90%;
+	}
 	.parceria-banner {
 		min-width: 270px;
 		padding: 0;
@@ -1431,6 +1482,13 @@ aside .titulo {
 @media only screen and (max-width : 320px) {
 	.menu-topo {
 	    margin-top: 9px;
+	}
+	.cycle-slideshow li img {
+	    height: 100px;
+	    width: 320px;
+	}
+	.cycle-slideshow .bd {
+		width: 290px
 	}
 	.parceria-banner {
 		min-width: 240px;
