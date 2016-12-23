@@ -89,7 +89,7 @@ function widgets_init() {
   ]);
   register_sidebar([
     'name'          => __('Campanha Transgênicos', 'aspta'),
-    'id'            => 'gm-sidebar',
+    'id'            => 'transgenics_campaign',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',

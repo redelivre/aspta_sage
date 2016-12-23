@@ -1,1 +1,1 @@
-  <?php dynamic_sidebar('gm-sidebar'); ?>
+  <?php dynamic_sidebar('transgenics_campaign'); ?>

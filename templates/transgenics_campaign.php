@@ -1,4 +1,4 @@
-<?php
+<?p12p
 /**
  * Template Name: Campanha Transgênicos
  *
@@ -7,7 +7,7 @@
  * @since AS-PTA 0.2
  */
 ?>
-<article class="campanha-transgenicos">
+<section class="campanha-transgenicos">
 
   <div class="titulo-pagina">
       <h1><?php the_title(); ?></h1>
@@ -71,4 +71,4 @@
       </div>
     </div>
   </div>
-</article>
+</section>
