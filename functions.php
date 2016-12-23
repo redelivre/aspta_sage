@@ -19,6 +19,12 @@ $sage_includes = [
   'lib/library.php',								// Library AS-PTA Widget
   'lib/newspaper.php',								// Newspaper AS-PTA Widget
   'lib/see_also.php',								// See also about AS-PTA Widget
+  'lib/program_contestado_library.php',
+  'lib/program_contestado_menu.php',
+  'lib/program_paraiba_library.php',
+  'lib/program_paraiba_menu.php',
+  'lib/program_urbam_agriculture_library.php',
+  'lib/program_urbam_agriculture_menu.php',
   'lib/setup.php',									// Theme Setup
   'lib/titles.php',									// Page Titles
   'lib/wp_bootstrap_navwalker.php',					// Nav Walker Class

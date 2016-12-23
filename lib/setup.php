@@ -222,4 +222,10 @@ add_action( 'widgets_init', function(){
      register_widget( 'Roots\Sage\Widget\NewsPaperWidget' );
      register_widget( 'Roots\Sage\Widget\BlogCleanPlatesWidget' );
      register_widget( 'Roots\Sage\Widget\SeeAlsoWidget' );
+     register_widget( 'Roots\Sage\Widget\ProgramParaibaMenuWidget' );
+     register_widget( 'Roots\Sage\Widget\ProgramConstestadoMenuWidget' );
+     register_widget( 'Roots\Sage\Widget\ProgramUrbamAgricultureMenuWidget' );
+     register_widget( 'Roots\Sage\Widget\ProgramParaibaLibraryWidget' );
+     register_widget( 'Roots\Sage\Widget\ProgramConstestadoLibraryWidget' );
+     register_widget( 'Roots\Sage\Widget\ProgramUrbamAgricultureLibraryWidget' );
 });
