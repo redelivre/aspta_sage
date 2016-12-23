@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Programa Contestado
+ * Template Name: Programa Paraiba
  *
  * @package WordPress
  * @subpackage AS-PTA
