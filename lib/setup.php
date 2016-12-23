@@ -147,7 +147,7 @@ function widgets_init() {
   register_sidebar([
     'name'          => __('Programa Paraiba', 'aspta'),
     'id'            => 'sidebar-program-paraiba',
-    'before_widget' => '<section class="widget %1$s %2$s">',
+    'before_widget' => '<section class="menu-inner-page widget %1$s %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',
     'after_title'   => '</h3>'
@@ -155,7 +155,7 @@ function widgets_init() {
   register_sidebar([
     'name'          => __('Programa Agricultura Urbana', 'aspta'),
     'id'            => 'sidebar-program-urbam-agriculture',
-    'before_widget' => '<section class="widget %1$s %2$s">',
+    'before_widget' => '<section class="menu-inner-page widget %1$s %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',
     'after_title'   => '</h3>'
@@ -163,15 +163,7 @@ function widgets_init() {
   register_sidebar([
     'name'          => __('Programa Contestado', 'aspta'),
     'id'            => 'sidebar-program-contestado',
-    'before_widget' => '<section class="widget %1$s %2$s">',
-    'after_widget'  => '</section>',
-    'before_title'  => '<h3>',
-    'after_title'   => '</h3>'
-  ]);
-  register_sidebar([
-    'name'          => __('Programa Paraiba', 'aspta'),
-    'id'            => 'sidebar-program-paraiba',
-    'before_widget' => '<section class="widget %1$s %2$s">',
+    'before_widget' => '<section class="menu-inner-page widget %1$s %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',
     'after_title'   => '</h3>'
