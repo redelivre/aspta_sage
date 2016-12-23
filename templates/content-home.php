@@ -137,21 +137,19 @@
 	<aside>
 		<div id="prog-midias" class="container">
 			<div class="row">
-				<div class="col-md-12 col-sm-12 col-xs-12 programas-locais">
+				<div class="col-md-4 col-sm-12 col-xs-12 programas-locais">
 					<h3>Programas Locais</h3>
                     <?php 
 		    		$programs = get_terms("programas",array('hide_empty' => false,));
                     foreach($programs as $program){ ?>
-						<div class="programa col-md-4">
-	                      <h3 class="prog-title"><?php $program->name; ?><?=$program->name ?></h3>
+						<div class="programa">
+	                      <h3 class="prog-title"><a href="<?= get_term_link($program); ?>"><?php //$program->name; ?><?=$program->name ?></a></h3>
 					      <p class="prog-desc"><?=$program->description; ?></p>
-					      <div class="btn-saibamais"><a class="btn btn-lg" role="button" href="<?= get_term_link($program); ?>">saiba mais</a></div>
+					      <!--div class="btn-saibamais"><a class="btn btn-lg" role="button" href="<?= get_term_link($program); ?>">saiba mais</a></div-->
 						</div>
 					<?php } ?>
 				</div><!-- /.programas-locais -->
-			</div>
-			<div class="row">
-				<div class="col-md-8 col-sm-6 col-xs-12 video-da-semana">
+				<div class="col-md-4 col-sm-6 col-xs-12 video-da-semana">
 					<h3>Vídeo da Semana</h3>
 					<p class="video-chamada">Assista aos vídeos da AS-PTA</p>
 					<div class="video"><?php dynamic_sidebar('sidebar-home-session-1'); ?></div>
