@@ -18,8 +18,8 @@ use Roots\Sage\Wrapper;
             <?php get_template_part('templates/' . $type); ?>
           </aside>
           <?php if (Setup\display_sidebar()) : ?>
-          <aside id="page-sidebar">
-            <div class="sidebar col-md-4 col-sm-12 hidden-xs">
+          <aside id="page-sidebar" class="col-md-4 col-sm-12 hidden-xs">
+            <div class="sidebar-gm_campaign">
           		<?php include Wrapper\sidebar_gm_campaign(); ?>
             </div>
         	</aside><!-- /.sidebar -->
