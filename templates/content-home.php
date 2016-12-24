@@ -13,7 +13,7 @@
 						));
 					$feature_ids = array();
 					if($feature->have_posts()) { ?>
-					<div class="cycle-slideshow highlights">
+					<div class="cycle-slideshow highlights" data-cycle-center-horz="true" data-cycle-center-vert="true">
 						<ul class="slides">
 							<div class="cycle-pager"></div>
 							<div class="cycle-prev"></div>
@@ -34,7 +34,7 @@
 												<!--img class="img-responsive" src="<?php echo $thumb[0]; ?>" /-->
 											</div>
 											<?php } else { ?>
-											<div class="highlights-image"><img class="img-responsive" src="http://placehold.it/1140x550/"></div>
+											<div class="highlights-image"><img class="img-responsive" src="http://placehold.it/1140/ccc/fff.png"></div>
 											<?php } ?>
 										</div>
 										<?php endif; ?>
