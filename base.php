@@ -19,7 +19,7 @@ use Roots\Sage\Wrapper;
           </aside>
           <?php if (Setup\display_sidebar()) : ?>
         	<aside id="page-sidebar" class="col-md-4 col-sm-12 hidden-xs">
-            <div class="sidebar">
+            <div class="sidebar-page">
         		  <?php include Wrapper\sidebar_path(); ?>
             </div>
         	</aside><!-- /.sidebar -->
