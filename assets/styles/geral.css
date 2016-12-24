@@ -233,7 +233,7 @@ to be fill the entire space of the .navbar */
 	border-right: 0;
 }
 
-/*Navegação por posts*/
+/*Navegação por posts padrão*/
 .posts-navigation .screen-reader-text {
 	display: none;
 }
@@ -255,6 +255,24 @@ to be fill the entire space of the .navbar */
 }
 .nav-links a:hover {
 	color: #a7b739;
+}
+/*Navegação por posts customizada*/
+.paginacao {
+	margin: 30px auto;
+	font-size: 20px;
+	font-weight: bold;
+	width: 100%;	
+}
+.paginacao .page-numbers {
+	padding: 5px 10px;
+	color: #e97200;
+	background-color: #fff;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+}
+.paginacao .current {
+	background-color: #003e2d;
 }
 
 /* Seções */
@@ -706,23 +724,6 @@ aside .titulo {
 	color: #003e2d;
 	font-weight: bold;
 }
-.paginacao {
-	margin: 30px auto;
-	font-size: 20px;
-	font-weight: bold;
-	width: 100%;	
-}
-.paginacao .page-numbers {
-	padding: 5px 10px;
-	color: #e97200;
-	background-color: #fff;
-	border-radius: 50%;
-	-moz-border-radius: 50%;
-	-webkit-border-radius: 50%;
-}
-.paginacao .current {
-	background-color: #003e2d;
-}
 
 /*Páginas*/
 #pagina {
@@ -898,6 +899,9 @@ aside .titulo {
 	font-size: 16px;
 	text-align: justify;
 	width: 70%;
+}
+.itens-de-campanha-boletim .lista-meta-time {
+	display: none;
 }
 
 /*Página Revista Agriculturas*/
