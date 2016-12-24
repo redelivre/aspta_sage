@@ -233,6 +233,29 @@ to be fill the entire space of the .navbar */
 	border-right: 0;
 }
 
+/*Navegação por posts*/
+.posts-navigation .screen-reader-text {
+	display: none;
+}
+.posts-navigation {
+	padding-bottom: 50px;
+}
+.nav-links {
+	margin: 0 auto;
+	width: 55%;
+}
+.nav-links .nav-previous a {
+	margin-right: 50px;
+}
+.nav-links a {
+	float: left;
+	font-size: 14px;
+	font-weight: bold;
+	color: #003e2d;
+}
+.nav-links a:hover {
+	color: #a7b739;
+}
 
 /* Seções */
 aside {
@@ -622,12 +645,22 @@ aside .titulo {
 	color: #a7b739;
 }
 
-#lista .titulo-pagina h1 {
+#lista .titulo-pagina h1,
+#lista .titulo-pagina .post-categories a {
 	margin: 0 0 20px 0;
 	padding-bottom: 20px;
 	font-weight: bold;
 	color: #e97200;
 	border-bottom: 3px solid #e97200;
+}
+#lista .titulo-pagina ul {
+	padding-left: 0;
+}
+#lista .titulo-pagina .post-categories a {
+	border-bottom: none;
+}
+#lista .titulo-pagina .post-categories li {
+	list-style: none;
 }
 #lista .lista-post {
 	margin-bottom: 20px;
