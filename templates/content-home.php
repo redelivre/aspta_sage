@@ -143,7 +143,8 @@
 		    		$programs = get_terms("programas",array('hide_empty' => false,));
                     foreach($programs as $program){ ?>
 						<div class="programa">
-	                      <h3 class="prog-title"><a href="<?= get_term_link($program); ?>"><?php //$program->name; ?><?=$program->name ?></a></h3>
+	                      <h3 class="prog-title"><a href="<?= get_site_url()."/".$program->slug ?>"><?php //$program->name; ?><?=$program->name ?></a></h3>
+                                              
 					      <p class="prog-desc"><?=$program->description; ?></p>
 					      <!--div class="btn-saibamais"><a class="btn btn-lg" role="button" href="<?= get_term_link($program); ?>">saiba mais</a></div-->
 						</div>
