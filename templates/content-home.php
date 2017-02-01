@@ -9,7 +9,8 @@
 							'posts_per_page' => 5,
 							'ignore_sticky_posts' => 1,
 							'meta_key' => '_home',
-							'meta_value' => 1
+							'meta_value' => 1,
+							'category_name' => 'noticias'
 						));
 					$feature_ids = array();
 					if($feature->have_posts()) { ?>
@@ -72,19 +73,19 @@
 			</div>
 		</div>
 	</aside><!-- /.destaques -->
-	
+
 	<div class="clearfix"></div>
-	
+
 	<aside id="noticias">
 		<div class="container">
 			<div class="row">
-				<?php 
+				<?php
 				$news = new WP_Query(
 					array(
 						'posts_per_page' => 3,
 						'ignore_sticky_posts' => 1,
-						'orderby' => 'date', 
-						'order' => 'DESC', 
+						'orderby' => 'date',
+						'order' => 'DESC',
 						'post__not_in' => $feature_ids // Remove highlighted posts
 					));
 				$news_ids = array();
@@ -96,7 +97,7 @@
 							<?php $category = get_the_category(); ?>
 							<div class="cat-title">
 								<h5><a href="<?php echo get_category_link( $category[0]->term_id ); ?>"><?php echo $category[0]->cat_name; ?></a></h5>
-							</div> 
+							</div>
 						</div><!-- /.entry-meta -->
 						<div class="home-news">
 							<a id="featured-thumbnail" href="<?php the_permalink(); ?>" rel="nofollow">
@@ -114,7 +115,7 @@
 						</div><!-- /.home-news -->
 					</article><!-- /article -->
 				</div><!-- /.home-news-list -->
-				
+
 				<?php endwhile;
 				/* If no posts, then serve error message */
 				else: ?>
@@ -131,40 +132,53 @@
 			</div>
 		</div>
 	</aside><!-- /.noticias -->
-	
+
 	<div class="clearfix"></div>
-	
+
 	<aside>
 		<div id="prog-midias" class="container">
 			<div class="row">
 				<div class="col-md-4 col-sm-12 col-xs-12 programas-locais">
 					<h3>Programas Locais</h3>
-                    <?php 
+<<<<<<< HEAD
+                    <?php
 		    		$programs = get_terms("programas",array('hide_empty' => false,));
+=======
+                    <?php
+					$programs = get_terms("programas");
+>>>>>>> filter carroucel for show only notices
                     foreach($programs as $program){ ?>
 						<div class="programa">
 	                      <h3 class="prog-title"><a href="<?= get_site_url()."/".$program->slug ?>"><?php //$program->name; ?><?=$program->name ?></a></h3>
-                                              
+
 					      <p class="prog-desc"><?=$program->description; ?></p>
 					      <!--div class="btn-saibamais"><a class="btn btn-lg" role="button" href="<?= get_term_link($program); ?>">saiba mais</a></div-->
 						</div>
 					<?php } ?>
 				</div><!-- /.programas-locais -->
+<<<<<<< HEAD
 				<div class="col-md-4 col-sm-12 col-xs-12 video-da-semana">
 					<h3>Vídeo da Semana</h3>
 					<p class="video-chamada">Assista aos vídeos da AS-PTA</p>
 					<div class="video"><?php dynamic_sidebar('sidebar-home-session-1'); ?></div>
+=======
+
+				<div class="col-md-4 col-sm-6 col-xs-12 video-da-semana">
+					<h3>Vídeo da Semana</h3>
+					<p class="video-chamada">Assista aos vídeos da AS-PTA</p>
+					<?php dynamic_sidebar('sidebar-home-session-1'); ?>
+>>>>>>> filter carroucel for show only notices
 				</div><!-- /.video-da-semana -->
-				
+
 				<div class="col-md-4 col-sm-12 col-xs-12 revista">
 					  <?php dynamic_sidebar('agricultures_newspaper_home'); ?>
 				</div>
 			</div>
 		</div>
 	</aside><!-- /.prog-midias -->
-	
+
 	<div class="clearfix"></div>
-	
+
 	<aside id="camp-blog">
 		<div class="container">
 			<div class="row">
@@ -185,9 +199,9 @@
                         		),
                         	),
                         );
-                        
+
                         $the_query = new WP_Query( $args );
-                        $i = 0; 
+                        $i = 0;
                         while ( $the_query->have_posts() ):
                           $the_query->the_post(); $i++;
                           if( $i != 3 ){ ?>
@@ -195,7 +209,7 @@
                           <?php }else{ ?>
                             <h4 class="sem-borda" ><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title() ?></a>
                           <?php } endWhile; ?>
-                                                  
+
 					<h4 class="text-uppercase branco assine">Assine o Boletim da Campanha</h4>
 					<form method="post" action="http://boletimtransgenicos.campanhasdemkt.net/recebeForm.php">
 				          <input type="hidden" name="uniqid" value="1095113343500058" />
@@ -209,7 +223,7 @@
 				          <button type="submit" class="btn btn-lg btn-enviar">enviar</button>
 					</form>
 				</div>
-				
+
 				<div class="col-md-4 col-sm-6 col-xs-12 blog-pratos-limpos">
 					<h3 class="text-uppercase">Blog Em Pratos Limpos</h3>
 					<?php $rss = fetch_feed('http://pratoslimpos.org.br/?feed=rss2');
@@ -226,7 +240,7 @@
 						<?php endforeach;
 					} ?>
 				</div>
-				
+
 				<div class="col-md-4 col-sm-6 col-xs-12 campanhas">
 					<h3 class="text-uppercase">Campanhas</h3>
 					<a href="https://www.facebook.com/polodaborborema/?fref=ts" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-polo-da-borborema.jpg" alt="Polo da Borborema" /></a>
@@ -236,9 +250,9 @@
 			</div>
 		</div>
 	</aside><!-- /.camp-blog -->
-	
+
 	<div class="clearfix"></div>
-	
+
 	<aside>
 		<div class="container">
 			<div class="row">
@@ -270,7 +284,6 @@
 			</div>
 		</div>
 	</aside>
-	
+
 	<div class="clearfix"></div>
-	
 </section>
