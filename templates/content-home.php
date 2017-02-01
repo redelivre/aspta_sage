@@ -179,7 +179,7 @@
                           'post_status' => 'publish',
                           'orderby' => 'date',
                           'order'   => 'DESC',
-                          'posts_per_page' => 3,
+                          'posts_per_page' => 6,
                           'tax_query' => array(
                         		array(
                         			'taxonomy' => 'itens-de-campanha',
@@ -193,13 +193,12 @@
                         $i = 0;
                         while ( $the_query->have_posts() ):
                           $the_query->the_post(); $i++;
-                          if( $i != 3 ){ ?>
+                          if( $i != 7 ){ ?>
                             <h4><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title() ?></a>
                           <?php }else{ ?>
                             <h4 class="sem-borda" ><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title() ?></a>
                           <?php } endWhile; ?>
-
-					<h4 class="text-uppercase branco assine">Assine o Boletim da Campanha</h4>
+					<!--h4 class="text-uppercase branco assine">Assine o Boletim da Campanha</h4>
 					<form method="post" action="http://boletimtransgenicos.campanhasdemkt.net/recebeForm.php">
 				          <input type="hidden" name="uniqid" value="1095113343500058" />
 				          <input type="hidden" name="senha" value="6073f5c62f95697a09c68b2546e7c50a" />
@@ -210,7 +209,7 @@
 					  <input type="text" class="form-control" placeholder="Digite seu e-mail e aperte enter">
 				          </div>
 				          <button type="submit" class="btn btn-lg btn-enviar">enviar</button>
-					</form>
+					</form-->
 				</div>
 
 				<div class="col-md-4 col-sm-6 col-xs-12 blog-pratos-limpos">
