@@ -140,13 +140,9 @@
 			<div class="row">
 				<div class="col-md-4 col-sm-12 col-xs-12 programas-locais">
 					<h3>Programas Locais</h3>
-<<<<<<< HEAD
-                    <?php
-		    		$programs = get_terms("programas",array('hide_empty' => false,));
-=======
+
                     <?php
 					$programs = get_terms("programas");
->>>>>>> filter carroucel for show only notices
                     foreach($programs as $program){ ?>
 						<div class="programa">
 	                      <h3 class="prog-title"><a href="<?= get_site_url()."/".$program->slug ?>"><?php //$program->name; ?><?=$program->name ?></a></h3>
@@ -156,18 +152,11 @@
 						</div>
 					<?php } ?>
 				</div><!-- /.programas-locais -->
-<<<<<<< HEAD
 				<div class="col-md-4 col-sm-12 col-xs-12 video-da-semana">
 					<h3>Vídeo da Semana</h3>
 					<p class="video-chamada">Assista aos vídeos da AS-PTA</p>
 					<div class="video"><?php dynamic_sidebar('sidebar-home-session-1'); ?></div>
-=======
 
-				<div class="col-md-4 col-sm-6 col-xs-12 video-da-semana">
-					<h3>Vídeo da Semana</h3>
-					<p class="video-chamada">Assista aos vídeos da AS-PTA</p>
-					<?php dynamic_sidebar('sidebar-home-session-1'); ?>
->>>>>>> filter carroucel for show only notices
 				</div><!-- /.video-da-semana -->
 
 				<div class="col-md-4 col-sm-12 col-xs-12 revista">
