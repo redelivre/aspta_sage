@@ -179,7 +179,7 @@
                           'post_status' => 'publish',
                           'orderby' => 'date',
                           'order'   => 'DESC',
-                          'posts_per_page' => 6,
+                          'posts_per_page' => 4,
                           'tax_query' => array(
                         		array(
                         			'taxonomy' => 'itens-de-campanha',
@@ -193,7 +193,7 @@
                         $i = 0;
                         while ( $the_query->have_posts() ):
                           $the_query->the_post(); $i++;
-                          if( $i != 7 ){ ?>
+                          if( $i != 5 ){ ?>
                             <h4><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title() ?></a>
                           <?php }else{ ?>
                             <h4 class="sem-borda" ><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title() ?></a>
