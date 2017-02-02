@@ -24,7 +24,7 @@ html {
 }
 *,
 *:after,
-*:before { 
+*:before {
 	-webkit-box-sizing: inherit;
 	-moz-box-sizing: inherit;
 	box-sizing: inherit;
@@ -39,7 +39,7 @@ body {
 
 /* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
 .clearfix:before,
-.clearfix:after { 
+.clearfix:after {
 	content: " ";
 	display: table;
 }
@@ -54,7 +54,7 @@ a:hover {
 
 /* Header */
 header {
-	height: 381px;
+	height: 228px;
 	background: url(../images/back_header.jpg) no-repeat;
 	background-size: cover;
 }
@@ -165,7 +165,7 @@ header {
 
 /* Logo */
 .logo {
-	margin: 142px 0;
+	margin: 66px 0;
 }
 
 
@@ -179,7 +179,7 @@ header {
 	display: none;
 }
 
-/* Customize the nav-justified links 
+/* Customize the nav-justified links
 to be fill the entire space of the .navbar */
 .nav-justified {
 	align-items: center;
@@ -261,7 +261,7 @@ to be fill the entire space of the .navbar */
 	margin: 30px auto;
 	font-size: 20px;
 	font-weight: bold;
-	width: 100%;	
+	width: 100%;
 }
 .paginacao .page-numbers {
 	padding: 5px 10px;
@@ -501,7 +501,7 @@ aside .titulo {
 .boletim-campanha h4 {
 	padding: 20px 10px;
 	font-weight: bold;
-	border-bottom: 2px solid #286919;	
+	border-bottom: 2px solid #286919;
 }
 .boletim-campanha h4 a {
 	color: #003e2d;
@@ -551,14 +551,14 @@ aside .titulo {
 	margin-left: 20px;
 	padding: 15px 0;
 	font-weight: bold;
-	border-bottom: 2px solid #e97200;		
+	border-bottom: 2px solid #e97200;
 }
 .blog-pratos-limpos h4 a,
 .blog-pratos-limpos h5 a,
 .blog-pratos-limpos li {
 	color: #003e2d;
 	list-style: none;
-}	
+}
 .blog-pratos-limpos h4 a:hover,
 .blog-pratos-limpos h5 a:hover {
 	color: #e97200;
@@ -683,7 +683,7 @@ aside .titulo {
 #lista .lista-post {
 	margin-bottom: 20px;
 	padding-bottom: 20px;
-	border-bottom: 1px solid #e97200;	
+	border-bottom: 1px solid #e97200;
 }
 #lista .lista-conteudo {
 	color: #003e2d;
@@ -703,7 +703,7 @@ aside .titulo {
 	min-height: 16px;
 }
 #lista .lista-titulo {
-	min-height: 70px;	
+	min-height: 70px;
 }
 #lista .lista-titulo h4 a {
 	color: #003e2d;
@@ -914,12 +914,12 @@ aside .titulo {
     width: 25%;
 }
 .issuem-featured-thumbs-img img {
-	opacity: 0.8; 
+	opacity: 0.8;
 	-moz-opacity: 0.8;
 	Filter: Alpha(Opacity=80);
 }
 .issuem-featured-thumbs-img img:hover {
-	opacity: 1; 
+	opacity: 1;
 	-moz-opacity: 1;
 	Filter: Alpha(Opacity=100);
 }
@@ -1110,7 +1110,7 @@ aside .titulo {
 	    float: none;
 	}
 	/* since 3.1.0 */
-	.navbar-justified .navbar-collapse.collapse.in { 
+	.navbar-justified .navbar-collapse.collapse.in {
 	    display: block!important;
 	}
 	.navbar-justified .collapsing {
@@ -1141,7 +1141,7 @@ aside .titulo {
 	.cycle-slideshow .bd {
 		top: 350px;
 	}
-	
+
 	.post-title {
 		min-height: 110px;
 	}
@@ -1256,7 +1256,7 @@ aside .titulo {
 	.logo {
 	    margin: 50px 0;
 	}
-	
+
 	.menu-topo {
 	    height: 60px;
 	}
@@ -1279,7 +1279,7 @@ aside .titulo {
 	    float: none;
 	    width: 190px;
 	}
-	
+
 	#prog-midias,
 	#camp-blog {
 		padding-bottom: 40px;
@@ -1301,7 +1301,7 @@ aside .titulo {
 	}
 
 	.issuem-featured-thumbs-img img {
-		opacity: 1; 
+		opacity: 1;
 		-moz-opacity: 1;
 		Filter: Alpha(Opacity=100);
 	}
@@ -1417,7 +1417,7 @@ aside .titulo {
 	}
 	.boletim-campanha h3 {
 	    padding: 20px;
-	}	
+	}
 	.btn-saibamais,
 	.btn-enviar {
 	    margin: 0 0 10px 60%;
@@ -1514,7 +1514,7 @@ aside .titulo {
 	}
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (max-width : 320px) {
 	.menu-topo {
 	    margin-top: 9px;
