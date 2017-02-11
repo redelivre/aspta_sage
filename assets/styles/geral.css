@@ -940,11 +940,20 @@ aside .titulo {
 .sidebar .revista {
 	padding: 0 15px;
 }
-.sidebar .revista h3,
-.issuem_active_issue h3{
+.sidebar .revista h3 {
 	padding-bottom: 20px;
 	margin-left: 20px;
 	border-bottom: 3px solid #e97200;
+}
+.sidebar-page .issuem_active_issue {
+	padding: 0 15px 20px;
+	margin-left: 20px;
+	border-bottom: 3px solid #e97200;
+}
+.issuem_active_issue h3  {
+	font-weight: bold;
+	color: #e97200;
+	text-transform: uppercase;
 }
 
 /*Menu Página Interna*/
