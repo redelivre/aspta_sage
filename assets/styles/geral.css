@@ -946,11 +946,13 @@ aside .titulo {
 }
 .sidebar-page .issuem_active_issue h3 {
 	padding-bottom: 20px;
-	margin-left: 40px;
+  margin-bottom: 40px;
+	margin-left: 35px;
 	font-weight: bold;
 	color: #e97200;
 	text-transform: uppercase;
 	border-bottom: 3px solid #e97200;
+  max-width: 310px;
 }
 
 /*Menu Página Interna*/
