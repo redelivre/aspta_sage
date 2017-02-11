@@ -276,6 +276,9 @@ to be fill the entire space of the .navbar */
 }
 
 /* Seções */
+#page-sidebar {
+	margin-top: 0;
+}
 aside {
 	margin-top: 20px;
 }
@@ -392,6 +395,7 @@ aside .titulo {
 }
 #noticias .post-title {
 	padding: 10px 10px 15px 10px;
+	min-height: 130px;
 	text-align: justify;
 	border-bottom: 5px solid #a7b739;
 }
@@ -502,6 +506,9 @@ aside .titulo {
 	padding: 20px 10px;
 	font-weight: bold;
 	border-bottom: 2px solid #286919;
+}
+.boletim-campanha h4:last-child {
+	border-bottom: none;
 }
 .boletim-campanha h4 a {
 	color: #003e2d;
@@ -932,7 +939,8 @@ aside .titulo {
 .sidebar .revista {
 	padding: 0 15px;
 }
-.sidebar .revista h3 {
+.sidebar .revista h3,
+.sidebar-module .issuem_active_issue h3{
 	padding-bottom: 20px;
 	margin-left: 20px;
 	border-bottom: 3px solid #e97200;
