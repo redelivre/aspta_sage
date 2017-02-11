@@ -276,10 +276,6 @@ to be fill the entire space of the .navbar */
 }
 
 /* Seções */
-#page-sidebar,
-.sidebar-page {
-	margin-top: 0;
-}
 aside {
 	margin-top: 20px;
 }
@@ -933,6 +929,9 @@ aside .titulo {
 }
 
 /*Sidebar*/
+.sidebar-page {
+	margin-top: -40px;
+}
 .sidebar,
 .sidebar-module {
 	margin-bottom: 40px;
@@ -945,15 +944,13 @@ aside .titulo {
 	margin-left: 20px;
 	border-bottom: 3px solid #e97200;
 }
-.sidebar-page .issuem_active_issue {
-	padding: 0 15px 20px;
-	margin-left: 20px;
-	border-bottom: 3px solid #e97200;
-}
-.issuem_active_issue h3  {
+.sidebar-page .issuem_active_issue h3 {
+	padding-bottom: 20px;
+	margin-left: 40px;
 	font-weight: bold;
 	color: #e97200;
 	text-transform: uppercase;
+	border-bottom: 3px solid #e97200;
 }
 
 /*Menu Página Interna*/
