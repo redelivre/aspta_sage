@@ -33,12 +33,11 @@ function setup() {
   // http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size
   // http://codex.wordpress.org/Function_Reference/add_image_size
   add_theme_support('post-thumbnails');
-  set_post_thumbnail_size('1280', '960', true);
-  add_image_size('slide', '1140', '550', true);
-  add_image_size('destaque-pagina', '750', '400', true);
-  add_image_size('destaque', '360', '258', true);
-  add_image_size('medio', '200', '200', true);
-  add_image_size('pequeno', '150', '150', true);
+  set_post_thumbnail_size(750, 400);
+  add_image_size('slide', 1140, 550);
+  add_image_size('destaque-pagina', 750, 400);
+  add_image_size('destaque', 360, 258);
+  add_image_size('lista-categoria', 230, 230);
   // Enable post formats
   // http://codex.wordpress.org/Post_Formats
   add_theme_support('post-formats', ['aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio']);
@@ -188,7 +187,7 @@ function display_sidebar() {
  * Theme assets
  */
 function assets() {
-  wp_enqueue_style('sage/css', Assets\asset_path('styles/main.css'), false, null);
+  wp_enqueue_style('sage/css', Assets\asset_path('styles/main.scss'), false, null);
   wp_enqueue_style('defaut_css', get_template_directory_uri() . '/assets/styles/geral.css', false, null);
  
   if (is_single() && comments_open() && get_option('thread_comments')) {
