@@ -32,7 +32,6 @@
 											if(is_array($thumb)) {?>
 											<div class="highlights-image">
 												<?php the_post_thumbnail('slide'); ?>
-												<!--img class="img-responsive" src="<?php echo $thumb[0]; ?>" /-->
 											</div>
 											<?php } else { ?>
 											<div class="highlights-image"><img class="img-responsive" src="http://placehold.it/1140/ccc/fff.png"></div>
@@ -110,7 +109,7 @@
 								</div>
 							</a>
 							<div class="entry-title post-title">
-								<a href="<?php the_permalink(); ?>"><h4><?php echo substr(the_title($before = '', $after = '', FALSE), 0, 60).'...'; ?></h4></a>
+								<a href="<?php the_permalink(); ?>"><h4><?php echo the_title(); /*substr(the_title($before = '', $after = '', FALSE), 0, 60).'...';*/ ?></h4></a>
 							</div>
 						</div><!-- /.home-news -->
 					</article><!-- /article -->
@@ -188,7 +187,6 @@
                         		),
                         	),
                         );
-
                         $the_query = new WP_Query( $args );
                         $i = 0;
                         while ( $the_query->have_posts() ):
