@@ -37,7 +37,7 @@ function setup() {
   add_image_size('slide', 1140, 550);
   add_image_size('destaque-pagina', 750, 400);
   add_image_size('destaque', 360, 258);
-  add_image_size('lista-categoria', 230, 230);
+  add_image_size('lista-categoria', 230, 230, array('center','center'));
   // Enable post formats
   // http://codex.wordpress.org/Post_Formats
   add_theme_support('post-formats', ['aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio']);
