@@ -299,7 +299,7 @@ aside .titulo {
 }
 .cycle-slideshow .cycle-pager {
 	position: absolute;
-	top: 450px;
+	top: 550px;
 	right: 10px;
 	font-size: 80px;
 	color: #fff;
@@ -315,13 +315,14 @@ aside .titulo {
 .cycle-slideshow li img {
 	display: block;
 	height: auto;
+	margin-top: -100px;
 	min-height: 650px;
 	width: 100%;
 	min-width: 1140px;
 }
 .cycle-slideshow .bd {
 	position: absolute;
-	top: 530px;
+	top: 630px;
 	padding: 10px 10px 10px 20px;
 	height: 120px;
 	width: 100%;
@@ -743,6 +744,7 @@ aside .titulo {
 	overflow: hidden;
 }
 #pagina .pagina-img img {
+	margin-top:  -100px;
 	width: 100%;
 }
 #pagina .pagina-data {
