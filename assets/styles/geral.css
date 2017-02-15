@@ -959,7 +959,7 @@ aside .titulo {
 	max-width: 310px;
 }
 
-/*Menu Página Interna*/
+/*Menu Página Interna e Widget Recent Posts*/
 .menu-inner-page {
 	padding: 0 15px;
 	margin-bottom: 40px;
@@ -972,7 +972,8 @@ aside .titulo {
 	border-bottom: 3px solid #e97200;
 	text-transform: uppercase;
 }
-.menu-inner-page div {
+.menu-inner-page div,
+.widget_recent_entries ul {
 	margin-left: 20px;
 }
 .menu-inner-page ul {
@@ -993,6 +994,27 @@ aside .titulo {
 .menu-inner-page .menu-item a {
 	color: #fff;
 	font-weight: bold;
+}
+
+.widget_recent_entries h3 {
+	text-transform: uppercase;
+}
+.widget_recent_entries li {
+	padding: 15px 0;
+	font-weight: bold;
+	list-style: none;
+	border-bottom: 2px solid #e97200;
+}
+.widget_recent_entries li:last-child {
+	border-bottom: none;
+}
+
+.widget_recent_entries li a {
+	color: #003e2d;
+}
+.widget_recent_entries li a:hover {
+	color: #e97200;
+	text-decoration: none;
 }
 
 /* Footer */
