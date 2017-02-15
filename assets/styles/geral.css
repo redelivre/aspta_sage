@@ -964,7 +964,8 @@ aside .titulo {
 	padding: 0 15px;
 	margin-bottom: 40px;
 }
-.menu-inner-page h3 {
+.menu-inner-page h3,
+.widget_recent_entries h3 {
 	margin: 0 0 0 20px;
 	padding-bottom: 20px;
 	font-weight: bold;
@@ -996,9 +997,6 @@ aside .titulo {
 	font-weight: bold;
 }
 
-.widget_recent_entries h3 {
-	text-transform: uppercase;
-}
 .widget_recent_entries li {
 	padding: 15px 0;
 	font-weight: bold;
