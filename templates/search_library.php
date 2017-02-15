@@ -11,8 +11,8 @@
 <section id="biblioteca">
 	<div><h1 class="titulo">Biblioteca</h1></div>
     <div class="clearfix"></div>
-    
-    <form method="get" action="<?php echo get_site_url() ?>/biblioteca">
+
+    <form method="get" action="<?php echo get_site_url() ?>/biblioteca-lista">
     	<div class="library-box tipos-de-materiais">
     		<h4>Tipos de Materiais</h4>
     		<div class="opcoes duas-colunas">
@@ -26,13 +26,13 @@
     					<a href="<?php echo get_term_link($term) ?>"><label for="material[]"><?php echo $term->name ?></label></a>
     				</span>
     			</div>
-    			<?php } 
+    			<?php }
     			} ?>
     		</div>
     	</div><!-- /.tipos-de-materiais -->
-    	
+
     	<div class="clearfix"></div>
-    	
+
     	<div class="library-box temas-de-intervencao">
     		<h4>Temas de Intervenção</h4>
     		<div class="opcoes duas-colunas">
@@ -47,16 +47,16 @@
     			<?php } ?>
     		</div>
     	</div><!-- /.temas-de-intervencao -->
-    	
+
     	<div class="clearfix"></div>
-    	
+
     	<div class="library-box revista-agriculturas">
     		<h4>Revista Agriculturas</h4>
     		<div class="opcoes">
     			<div class="input-group">
     				<span class="input-group-addon"><label>Título de artigo</label></span>
-    				<input type="text" class="form-control" name="article_title" value="<?php echo isset($_GET['article_title'])?$_GET['article_title']:"" ?>" />  	
-    			</div>						  
+    				<input type="text" class="form-control" name="article_title" value="<?php echo isset($_GET['article_title'])?$_GET['article_title']:"" ?>" />
+    			</div>
     			<div class="input-group">
     				<span class="input-group-addon"><label>Autor</label></span>
     				<?php  $args = array(
@@ -92,7 +92,7 @@
     					preg_match("/V\d{1,3},\sN\d{1,3}/", $target , $keyword);
     					if (!empty($keyword)){ ?>
     					<option value="<?php echo $keyword[0]; ?>" <?php is_selected($keyword[0],$_GET, "edition"); ?>><?php echo $keyword[0]; ?></option>
-    					<?php } 
+    					<?php }
     					endWhile; ?>
     				</select>
     				<?php  wp_reset_query(); // Restore original Query ?>
@@ -110,9 +110,9 @@
     			</div>
     		</div>
     	</div><!-- /.revista-agriculturas -->
-    	
+
     	<div class="clearfix"></div>
-    	
+
     	<div class="library-box programas">
     		<h4>Programas</h4>
     		<div class="opcoes">
@@ -127,15 +127,15 @@
     			<?php } ?>
     		</div>
     	</div><!-- /.programas -->
-    	
+
     	<div class="clearfix"></div>
-    	
+
     	<div class="pesquisar">
     		<button type="submit" id="submit" class="btn btn-lg btn-enviar" value="Pesquisar">Pesquisar</button>
     	</div><!-- /.pesquisar -->
-    	
+
     	<div class="clearfix"></div>
-    	
+
     </form>
 </section><!-- /#biblioteca -->
 
