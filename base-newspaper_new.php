@@ -19,8 +19,10 @@ use Roots\Sage\Wrapper;
           </aside>
           <?php 
           	if (Setup\display_sidebar()) : ?>
-        	<aside class="sidebar col-md-4 col-sm-12 hidden-xs">
-        		<?php include Wrapper\sidebar_newspaper_new(); ?>
+        	<aside id="page-sidebar" class="col-md-4 col-sm-12 hidden-xs">
+            <div class="sidebar-newspapaper_new">
+              <?php include Wrapper\sidebar_newspaper_new(); ?>
+            </div>
         	</aside><!-- /.sidebar -->
         	<?php endif; ?>
         </main><!-- /.main -->
