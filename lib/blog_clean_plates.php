@@ -28,7 +28,7 @@ class BlogCleanPlatesWidget extends WP_Widget {
 	* @param array $instance
 	*/
 	public function widget( $args, $instance ) { ?>
-		<div class="sidebar-module blog-pratos-limpos col-md-12 col-sm-6">
+		<div class="sidebar-module blog-pratos-limpos">
 			<h3 class="text-uppercase">Blog em Pratos Limpos</h3>
 			<?php $rss = fetch_feed('http://pratoslimpos.org.br/?feed=rss2');
 				if (!is_wp_error( $rss ) ) :
