@@ -109,7 +109,7 @@
 								</div>
 							</a>
 							<div class="entry-title post-title">
-								<a href="<?php the_permalink(); ?>"><h4><?php echo the_title(); /*substr(the_title($before = '', $after = '', FALSE), 0, 60).'...';*/ ?></h4></a>
+								<a href="<?php the_permalink(); ?>"><h4><?php echo the_title(); ?></h4></a>
 							</div>
 						</div><!-- /.home-news -->
 					</article><!-- /article -->
@@ -145,22 +145,23 @@
                     foreach($programs as $program){ ?>
 						<div class="programa">
 	                      <h3 class="prog-title"><a href="<?= get_site_url()."/".$program->slug ?>"><?php //$program->name; ?><?=$program->name ?></a></h3>
-
 					      <p class="prog-desc"><?=$program->description; ?></p>
-					      <!--div class="btn-saibamais"><a class="btn btn-lg" role="button" href="<?= get_term_link($program); ?>">saiba mais</a></div-->
 						</div>
 					<?php } ?>
 				</div><!-- /.programas-locais -->
-				<div class="col-md-4 col-sm-12 col-xs-12 video-da-semana">
+				<div class="col-md-4 col-sm-6 col-xs-12 video-da-semana">
 					<h3>Vídeo da Semana</h3>
-					<p class="video-chamada">Assista aos vídeos da AS-PTA</p>
+					<h4 class="video-chamada">Assista aos vídeos da AS-PTA</h4>
 					<div class="video"><?php dynamic_sidebar('sidebar-home-session-1'); ?></div>
 
 				</div><!-- /.video-da-semana -->
 
-				<div class="col-md-4 col-sm-12 col-xs-12 revista">
-					  <?php dynamic_sidebar('agricultures_newspaper_home'); ?>
-				</div>
+				<div class="col-md-4 col-sm-6 col-xs-12 revista">
+					<?php dynamic_sidebar('agricultures_newspaper_home'); ?>
+					<div class="row">
+						<div class="btn-assine"><a class="btn btn-lg" href="<?php get_site_url(); ?>/revista-agriculturas/mobilize/" role="button">assine</a></div>
+					</div>
+				</div><!-- /.revista -->
 			</div>
 		</div>
 	</aside><!-- /.prog-midias -->
