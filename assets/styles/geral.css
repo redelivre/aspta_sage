@@ -471,9 +471,10 @@ aside .titulo {
 	text-align: center;
 }
 .video-da-semana .video-chamada {
-	margin: 20px 0;
+	margin: 35px 0;
 	font-weight: bold;
 	color: #003e2d;
+	text-align: center;
 }
 .video-da-semana .video {
 	padding: 15px 0;
@@ -489,6 +490,16 @@ aside .titulo {
 .revista a img {
 	height: 430px;
 	width: 300px;
+}
+.revista .btn-assine {
+	margin: 15px auto;
+	text-align: center;
+	width: 300px;
+	background-color: #003e2d;
+}
+.revista .btn-assine a {
+	font-weight: bold;
+    color: #a7b739;
 }
 
 #camp-blog {
@@ -1227,7 +1238,7 @@ aside .titulo {
 	    min-width: 750px;
 	}
 	.cycle-slideshow .bd {
-		top: 270px;
+		top: 330px;
 		width: 720px
 	}
 	.cycle-slideshow .entry-meta {
@@ -1243,6 +1254,20 @@ aside .titulo {
 	}
 	.noticia {
 		margin-bottom: 20px;
+		width: 33.3%;
+	}
+	#noticias .cat-title {
+		width: 50%;
+	}
+	#noticias .entry-image {
+		height: 175px;
+	}
+	#noticias .entry-image img {
+		min-height: 175px;
+	}
+	#noticias .post-title a h4 {
+		font-size: 14px;
+		font-weight: normal;
 	}
 	.post-title {
 		min-height: 80px;
@@ -1259,6 +1284,14 @@ aside .titulo {
 	}
 	.revista {
 	    padding: 0;
+	}
+	.revista a img {
+	    height: 315px;
+	    width: 260px;
+	}
+	.blog-pratos-limpos h3,
+	.blog-pratos-limpos h4 {
+		margin-left: 0;
 	}
 	.parcerias-title h3 {
 	    border: none;
@@ -1337,9 +1370,9 @@ aside .titulo {
 	.cycle-slideshow {
 		height: 336px;
 	}
-	.cycle-slideshow .bd {
+	/*.cycle-slideshow .bd {
 		top: 250px;
-	}
+	}*/
 
 	#noticias {
 		padding-top: 40px;
@@ -1402,10 +1435,35 @@ aside .titulo {
 	.cycle-slideshow .bd {
 		width: 580px
 	}
+	.noticia {
+		width: 100%;
+	}
+	#noticias .cat-title {
+		width: 33.3%;
+	}
+	#noticias .post-title {
+		float: right;
+		min-height: 175px;
+		width: 315px;
+	}
+	#noticias .entry-image {
+		height: 175px;
+		width: 260px;
+		float: left
+	}
+	#noticias .post-title a h4 {
+		font-size: 18px;
+		font-weight: bold;
+	}
 
-	.programas-locais,
+	.programas-locais {
+		padding: 0 15px;
+	}
 	.video-da-semana {
 		padding: 0;
+	}
+	.revista .btn-assine {
+		width: 265px;
 	}
 	.blog-pratos-limpos h3,
 	.campanhas h3 {
@@ -1480,6 +1538,17 @@ aside .titulo {
 	.cycle-slideshow .entry-title {
 		font-size: 12px;
 	    width: 95%;
+	}
+	#noticias .post-title {
+		width: 215px;
+	}
+	#noticias .entry-image {
+		width: 200px;
+		float: left
+	}
+	#noticias .post-title a h4 {
+		font-size: 16px;
+		font-weight: normal;
 	}
 
 	#prog-midias, #camp-blog {
@@ -1569,6 +1638,14 @@ aside .titulo {
 		font-size: 10px;
 		width: 90%;
 	}
+	#noticias .post-title {
+		min-height: 120px;
+		width: 100%;
+	}
+	#noticias .entry-image {
+		display: none;
+	}
+
 	.parceria-banner {
 		min-width: 270px;
 		padding: 0;
@@ -1595,6 +1672,9 @@ aside .titulo {
 	}
 	.cycle-slideshow .bd {
 		width: 290px
+	}
+	#noticias .cat-title {
+	    width: 40.3%;
 	}
 	.parceria-banner {
 		min-width: 240px;
