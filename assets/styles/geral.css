@@ -933,52 +933,68 @@ aside .titulo {
 }
 
 /*Sidebar*/
-.sidebar-module {
-	margin-bottom: 20px;
+.sidebar-module,
+#page-sidebar {
+	margin-bottom: 40px;
 }
 #page-sidebar .blog-pratos-limpos h3,
 #page-sidebar .parcerias h3 {
 		margin-top: 0;
 	}
-.sidebar .revista {
+
+#page-sidebar .parcerias {
+	padding: 0;
+}
+#page-sidebar .parcerias h3 {
+	padding: 0 0 30px 20px;
+}
+#page-sidebar .parcerias .logo_partners {
+	margin-left: 20px;
+	width: 94%;
+}
+
+#page-sidebar .revista {
 	padding: 0 15px;
 }
-.sidebar .revista h3 {
+#page-sidebar .revista h3 {
 	padding-bottom: 20px;
 	margin-left: 20px;
 	border-bottom: 3px solid #e97200;
 }
-.sidebar-page .issuem_active_issue h3 {
-	padding-bottom: 20px;
-	margin-bottom: 40px;
-	margin-left: 35px;
-	font-weight: bold;
-	color: #e97200;
-	text-transform: uppercase;
-	border-bottom: 3px solid #e97200;
-	max-width: 310px;
-}
+
 
 /*Menu Página Interna e Widget Recent Posts*/
 .menu-inner-page {
 	padding: 0 15px;
 	margin-bottom: 40px;
 }
+#page-sidebar .issuem_active_issue,
+.widget_recent_entries {
+	padding: 0;
+}
+#page-sidebar .blog-pratos-limpos h3,
+#page-sidebar .issuem_active_issue h3,
 .menu-inner-page h3,
 .widget_recent_entries h3 {
 	margin: 0 0 0 20px;
-	padding-bottom: 20px;
+	padding-bottom: 25px;
 	font-weight: bold;
 	color: #e97200;
 	border-bottom: 3px solid #e97200;
 	text-transform: uppercase;
 }
-.menu-inner-page div,
-.widget_recent_entries ul {
+#page-sidebar .issuem_widget_issue_cover_image {
+	margin: 40px 0;
+}
+
+.menu-inner-page div {
 	margin-left: 20px;
 }
 .menu-inner-page ul {
 	padding: 0;
+}
+.widget_recent_entries ul {
+	padding-left: 20px;
 }
 .menu-inner-page .menu-item {
 	margin: 5px 0;
@@ -1254,6 +1270,18 @@ aside .titulo {
 	}
 	.btn-share {
 		width: 180px;
+	}
+	#page-sidebar .blog-pratos-limpos h3,
+	.menu-inner-page h3,
+	.widget_recent_entries h3 {
+		margin-left: 0;
+	}
+	#page-sidebar .parcerias h3 {
+		padding-left: 0;
+	}
+	#page-sidebar .parcerias .logo_partners {
+		margin-left: 0;
+		width: 100%;
 	}
 	.facebook-share,
 	.google-share,
