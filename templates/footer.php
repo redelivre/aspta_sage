@@ -33,6 +33,8 @@
 			<!--script src="<?php bloginfo('template_url'); ?>/assets/scripts/bootstrap.min.js"></script-->
 			<script src="<?php bloginfo('template_url'); ?>/assets/scripts/classie.js"></script>
 			<script src="<?php bloginfo('template_url'); ?>/assets/scripts/uisearch.js"></script>
+			<!--script src="<?php bloginfo('template_url'); ?>/assets/scripts/jquery.cycle2.min.js"></script>
+			<script src="<?php bloginfo('template_url'); ?>/assets/scripts/jquery.cycle2.center.min.js"></script-->
 			<script>
 				new UISearch( document.getElementById( 'sb-search' ) );
 			</script>
