@@ -37,7 +37,7 @@ unset($file, $filepath);
 
 /*
  * newspaper Agriculturas e Campanha
- * 
+ *
  * Inclui os arquivos relacionados com estas duas áreas do site
  */
 include( plugin_dir_path( __FILE__ ).'functions-revista.php' );
@@ -57,13 +57,13 @@ function aspta_build_taxonomies() {
 	    'all_items' 		=> 'Todos os temas',
 	    'parent_item' 		=> 'Tema pai',
 	    'parent_item_colon' => 'Tema pai: ',
-	    'edit_item' 		=> 'Editar tema', 
+	    'edit_item' 		=> 'Editar tema',
 	    'update_item' 		=> 'Atualizar tema',
 	    'add_new_item' 		=> 'Adicionar Novo Tema de intervenção',
 	    'new_item_name' 	=> 'Novo tema',
 	    'menu_name' 		=> 'Temas de intervenção'
-	  ); 	
-	
+	  );
+
 	  register_taxonomy( 'temas-de-intervencao', 'post', array(
 	    'hierarchical'		=> true,
 	    'labels' 			=> $labels,
@@ -82,13 +82,13 @@ function aspta_build_taxonomies() {
 	    'all_items' 		=> 'Todos os programas',
 	    'parent_item' 		=> 'Programa pai',
 	    'parent_item_colon' => 'Programa pai: ',
-	    'edit_item' 		=> 'Editar programa', 
+	    'edit_item' 		=> 'Editar programa',
 	    'update_item' 		=> 'Atualizar programa',
 	    'add_new_item' 		=> 'Adicionar Novo Programa',
 	    'new_item_name' 	=> 'Novo programa',
 	    'menu_name' 		=> 'Programas'
-	  ); 	
-	
+	  );
+
 	  register_taxonomy( 'programas', 'post', array(
 	    'hierarchical'		=> true,
 	    'labels' 			=> $labels,
@@ -146,3 +146,86 @@ add_action( 'init', function(){
     }
   }
 });
+
+// Custom Post Type for pdf newspaper
+
+add_action('init', 'create_newspaper_pdf');
+function create_newspaper_pdf() {
+ $labels = array(
+    'name'               => esc_html__( 'PDF Revista', 'aspta_sage' ),
+    'singular_name'      => esc_html__( 'PDF Revista', 'aspta_sage' ),
+    'add_new'            => esc_html__( 'Adicionar Novo', 'aspta_sage' ),
+    'add_new_item'       => esc_html__( 'Adicionar Novo PDF Revista', 'aspta_sage' ),
+    'edit_item'          => esc_html__( 'Editar PDF Revista', 'aspta_sage' ),
+    'new_item'           => esc_html__( 'Novo PDF Revista', 'aspta_sage' ),
+    'all_items'          => esc_html__( 'Todos os PDF\'s de Revistas', 'aspta_sage' ),
+    'view_item'          => esc_html__( 'Visualizar PDF Revista', 'aspta_sage' ),
+    'search_items'       => esc_html__( 'Buscar PDF Revista', 'aspta_sage' ),
+    'not_found'          => esc_html__( 'Nada Encontrado', 'aspta_sage' ),
+    'not_found_in_trash' => esc_html__( 'Nada encontrado na Lixeira', 'aspta_sage' ),
+    'parent_item_colon'  => '',
+  );
+
+  $args = array(
+    'labels'             => $labels,
+    'publicly_queryable' => true,
+    'show_ui'            => true,
+    'can_export'         => true,
+    'show_in_nav_menus'  => true,
+    'query_var'          => true,
+    'has_archive'        => true,
+    'capability_type'    => 'post',
+    'hierarchical'       => false,
+    'menu_position'      => null,
+    'supports'           => array( 'title', 'thumbnail' ),
+    'menu_icon'          =>  'dashicons-media-document',
+  );
+
+  register_post_type( 'pdf_newspaper', $args );
+}
+
+
+add_action('add_meta_boxes', 'add_custom_meta_boxes');
+function add_custom_meta_boxes() {
+  add_meta_box('pdf_newspaper-meta-box', __('Anexar PDF', 'aspta_sage'), 'display_pdf_box', 'pdf_newspaper', 'normal', 'high');
+}
+
+function display_pdf_box(){
+  $html = '<p class="description">';
+  $html .= 'Upload your PDF here.';
+  $html .= '</p>';
+  $html .= '<input type="file" id="wp_custom_attachment" name="wp_custom_attachment" value="" size="25">';
+  echo $html;
+
+  global $post;
+  $pdf = get_post_meta( $post->ID, "wp_custom_attachment", true);
+  echo "<p>";
+  echo '<a src="' . $pdf["url"] . '">Link para o pdf</a>';
+  echo "</p>";
+}
+
+add_action('save_post', 'save_custom_meta_data');
+function save_custom_meta_data($id) {
+    if(!empty($_FILES['wp_custom_attachment']['name'])) {
+        $supported_types = array('application/pdf');
+        $arr_file_type = wp_check_filetype(basename($_FILES['wp_custom_attachment']['name']));
+        $uploaded_type = $arr_file_type['type'];
+
+        if(in_array($uploaded_type, $supported_types)) {
+            $upload = wp_upload_bits($_FILES['wp_custom_attachment']['name'], null, file_get_contents($_FILES['wp_custom_attachment']['tmp_name']));
+            if(isset($upload['error']) && $upload['error'] != 0) {
+                wp_die('There was an error uploading your file. The error is: ' . $upload['error']);
+            } else {
+                update_post_meta($id, 'wp_custom_attachment', $upload);
+            }
+        }
+        else {
+            wp_die("The file type that you've uploaded is not a PDF.");
+        }
+    }
+}
+
+add_action('post_edit_form_tag', 'update_edit_form');
+function update_edit_form() {
+    echo ' enctype="multipart/form-data"';
+}

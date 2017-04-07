@@ -1,28 +1,15 @@
 <?php
 /*
- * 
+ *
  * Revista Agriculturas
- * 
+ *
  * Funções relacionadas com a Revista: criação de post type, registro de taxonomias e cadastro de meta boxes
- * 
+ *
  */
-
-function teste_henrique(){
-    $query = new WP_Query(array(
-            /*'post_type' => 'revista',*/
-            'tax_query' => array(array(
-                    'taxonomy' => 'post_tag',
-                    'field' => 'slug',
-                    'terms' => array('revista')
-                ))
-        ));
-
-    return $query;
-}
-
+ 
 // Cria o post type 'revista'
 function revista_create_post_type() {
-	
+
 	$args = array(
 		'labels' => array(
 			'name' 			=> 'Revista Agriculturas',
@@ -32,15 +19,15 @@ function revista_create_post_type() {
 			'edit_item'		=> 'Editar Revista ou Publicação',
 			'view_item'		=> 'Visualizar'
 		),
-	
+
 		'menu_position'		=> 5,
 		'public' 			=> true,
 		'has_archive'		=> true,
 		'supports'			=> array( 'title', 'author', 'editor', 'excerpt', 'comments','page-attributes' ),
 		'hierarchical'		=> true,
-        'taxonomies'        => array('post_tag'),	
-	);	
-	
+        'taxonomies'        => array('post_tag'),
+	);
+
 	register_post_type( 'revista', $args );
 }
 
@@ -55,12 +42,12 @@ function revista_build_taxonomies() {
 	    'singular_name'	 	=> 'Publicação',
 	    'search_items' 		=> 'Pesquisar publicações',
 	    'all_items' 		=> 'Todas as publicações',
-	    'edit_item' 		=> 'Editar publicação', 
+	    'edit_item' 		=> 'Editar publicação',
 	    'update_item' 		=> 'Atualizar publicação',
 	    'add_new_item' 		=> 'Adicionar Nova Publicação',
 	    'new_item_name' 	=> 'Nova publicação',
-	  ); 	
-	
+	  );
+
 	  register_taxonomy( 'publicacoes', 'revista', array(
 	    'hierarchical'		=> true,
 	    'labels' 			=> $labels,
@@ -93,18 +80,18 @@ function aspta_post_filter( $query ) {
 
   return $query;
 }
-//add_filter( 'pre_get_posts' , 'aspta_post_filter' ); 
+//add_filter( 'pre_get_posts' , 'aspta_post_filter' );
 
 
 
 /*
  * Meta boxes
- * 
+ *
  * Adiciona novas meta boxes para:
- * 
+ *
  * 1. Atributos de página: retira o meta box padrão e adiciona um que apenas mostre as páginas mãe
  * 2. Envio de arquivo através do media uploader nativo do WordPress
- *  
+ *
  */
 
 
@@ -120,10 +107,10 @@ add_action( 'admin_head', 'my_meta_uploader_script' );
 
 
 function my_meta_boxes()
-{ 
+{
     // Box para upload
 	add_meta_box( 'my_meta_uploader', 'Upload de arquivo', 'my_meta_uploader_setup', 'revista', 'normal', 'high' );
-	
+
 	// Box para definir a página mãe do artigo
 //    add_meta_box( 'my_meta_page', 'Página mãe', 'my_meta_page_setup', 'revista', 'side', 'low' );
 
@@ -133,14 +120,14 @@ function my_meta_boxes()
 // Adiciona os campos para a meta box da revista
 function my_meta_page_setup($post) {
 	$post_type_object = get_post_type_object( $post->post_type );
-	
+
     if ( $post_type_object->hierarchical ) {
         $pages = wp_dropdown_pages( array( 'post_type' => $post->post_type, 'depth' => 1, 'exclude_tree' => $post->ID, 'selected' => $post->post_parent, 'name' => 'parent_id', 'show_option_none' => __( '(no parent)' ), 'sort_column'=> 'menu_order, post_title', 'echo' => 0 ) );
         if ( ! empty($pages) ) { ?>
 			<p>Apenas selecione uma página mãe caso esteja cadastrando um artigo. Se estiver cadastrando uma Revista, deixe este campo em branco.</p>
 			<label class="screen-reader-text" for="parent_id"><?php _e('Parent') ?></label>
 			<?php
-			echo $pages; 
+			echo $pages;
         }
     }
 }
@@ -150,10 +137,10 @@ function my_meta_page_setup($post) {
 function my_meta_uploader_setup()
 {
 	global $post;
- 
+
 	$meta = get_post_meta( $post->ID, 'upload_file', true );
 	?>
-	
+
 	<p>
 		Clique no botão para fazer o upload de um documento. Após o término do upload, clique em <em>Inserir no post</em>.
 	</p>
@@ -161,19 +148,19 @@ function my_meta_uploader_setup()
 		<input id="upload_file" type="text" size="80" name="upload_file" style="width: 85%;" value="<?php if(!empty($meta)) echo $meta; ?>" />
 		<input id="upload_file_button" type="button" class="button" value="Fazer upload" />
 	</p>
-	
-	<?php 
+
+	<?php
 }
 
 function my_meta_uploader_save( $post_id ) {
-	
+
 	if ( ! current_user_can( 'edit_post', $post_id ) ) return $post_id;
- 
-	$current_data = get_post_meta( $post_id, 'upload_file', true );	
- 
+
+	$current_data = get_post_meta( $post_id, 'upload_file', true );
+
 	$new_data = isset($_POST['upload_file'])?$_POST['upload_file']:"";
- 
-	if ( $current_data ) 
+
+	if ( $current_data )
 	{
 		if ( is_null( $new_data ) )
 			delete_post_meta( $post_id, 'upload_file' );
@@ -184,7 +171,7 @@ function my_meta_uploader_save( $post_id ) {
 	{
 		add_post_meta( $post_id, 'upload_file', $new_data, true);
 	}
- 
+
 	return $post_id;
 }
 
@@ -194,26 +181,26 @@ function my_meta_uploader_save( $post_id ) {
 function my_meta_uploader_script() { ?>
 	<script type="text/javascript">
 		jQuery(document).ready(function() {
-	
+
 			var formfield;
 			var header_clicked = false;
-	
+
 			jQuery( '#upload_file_button' ).click( function() {
 				formfield = jQuery( '#upload_file' ).attr( 'name' );
 				tb_show( '', 'media-upload.php?TB_iframe=true' );
 				header_clicked = true;
-				
+
 				return false;
 			});
-	
-	
+
+
 			/*
 			user inserts file into post. only run custom if user started process using the above process
 			window.send_to_editor(html) is how wp would normally handle the received data
 			*/
-	
+
 			window.original_send_to_editor = window.send_to_editor;
-	
+
 			// Override send_to_editor function from original script. Writes URL into the textbox. Note: If header is not clicked, we use the original function.
 			window.send_to_editor = function( html ) {
 				if ( header_clicked ) {
@@ -227,10 +214,10 @@ function my_meta_uploader_script() { ?>
 			  		window.original_send_to_editor( html );
 			  	}
 			}
-	
+
 		});
   </script>
-<?php 
+<?php
 }
 
 
@@ -238,16 +225,16 @@ function my_meta_uploader_script() { ?>
 
 /*
  * Download do arquivo
- * 
+ *
  * Adiciona um parágrafo com um link para o arquivo do meta box de upload
  */
 
 function revista_add_pdf( $content ) {
-	
+
 	global $post;
-	
+
 	$meta = get_post_meta( $post->ID, 'upload_file', true );
-	
+
 	if ( is_singular( 'revista' ) && $meta != '' ) {
 		$content .= '<p class="download-revista">';
 		$content .= '<a href="' . $meta . '" title="Clique para fazer o download do arquivo">';
@@ -256,41 +243,41 @@ function revista_add_pdf( $content ) {
 		$content .= '</p>';
 	}
 	/*
-	 * 
-	 * O problema se mantem no link de download (signature) 
-	 * 
-	 * 
+	 *
+	 * O problema se mantem no link de download (signature)
+	 *
+	 *
 	elseif ( is_singular( 'revista' ) && $post->post_parent == 0 ) {
 		$documentid = get_post_meta( $post->ID, '_issu_documentid', true );
 
 		if ( $documentid ) {
 			$content .= '<p class="download-revista">';
 			$content .= '<a href="http://document.issuu.com/';
-			$content .= $documentid;	
+			$content .= $documentid;
 			$content .= '/original.file?AWSAccessKeyId=AKIAJY7E3JMLFKPAGP7A&Expires=1305227539&Signature=wK9eQ4h7PsKZL3VWBmVEk5CoggI%3D';
 			$content .= '" title="Clique para fazer o download da revista completa">';
 			$content .= 'Faça o download da revista';
-			$content .= '</a>'; 
+			$content .= '</a>';
 			$content .= '</p>';
 		}
-		
+
 	}
-	
-	
+
+
 	//http://document.issuu.com/110406203056-24a89312c2f64724879a1c7e5dfd112f/original.file?AWSAccessKeyId=AKIAJY7E3JMLFKPAGP7A&Expires=1305228895&Signature=wK9eQ4h7PsKZL3VWBmVEk5CoggI%3D
 	//http://document.issuu.com/110406203056-24a89312c2f64724879a1c7e5dfd112f/original.file?AWSAccessKeyId=AKIAJY7E3JMLFKPAGP7A&Expires=1305227539&Signature=mavOQ2%2B2evxz9pdn4AiF7WyWZvc%3D
-	 * 
+	 *
 	 */
-	
+
 	return $content;
-	
+
 }
 add_filter( 'the_content', 'revista_add_pdf' );
 
-	
+
 /*
  * Issuu Embed
- * 
+ *
  * Gera o embed do Issuu sem usar o plugin, o que facilita a definição de campos default para o usuário
  */
 
@@ -326,7 +313,7 @@ function issuu_switcher($matches)
 function issuu_reader_1($matches)
 {
 	global $documentid;
-        global $post;	
+        global $post;
     $folderid = getValueWithDefault('/folderid=([\S]*)/i', $matches[1], '');
     $documentid = getValueWithDefault('/documentid=([\S]*)/i', $matches[1], '');
     $username = getValueWithDefault('/username=([\S]*)/i', $matches[1], '');
@@ -349,23 +336,23 @@ function issuu_reader_1($matches)
     //$logooffsetx = getValueWithDefault('/logooffsetx=([\S]*)/i', $matches[1], 0);
     $logooffsety = getValueWithDefault('/logooffsety=([\S]*)/i', $matches[1], 0);
 	//$showhtmllink = getValueWithDefault('/showhtmllink=([\S]*)/i', $matches[1], 'false');
-    
+
     $viewerurl = "http://static.issuu.com/webembed/viewers/style1/v1/IssuuViewer.swf";
     $standaloneurl = "http://issuu.com/$username/docs/$docname?mode=embed";
     $moreurl = "http://issuu.com/search?q=$tag";
-    
+
     /*
      * Criando os padrões para a Revista Agriculturas
-     */ 
+     */
     $loadinginfotext = get_post( $post->ID )->post_title;
     $backgroundcolor = 'FFFFFF';
     $height = 400;
     $width = 610;
     $logo = get_bloginfo( 'stylesheet_directory' ) . '/images/logo-revista.png';
     $logooffsetx = 10;
-    $logooffsety = 35; 
+    $logooffsety = 35;
     $showhtmllink = 'false';
-    
+
     $flashvars = "mode=embed";
     if ($folderid) {
         // load folder parameters
@@ -420,15 +407,15 @@ function issuu_reader_1($matches)
         $flashvars = "$flashvars&amp;logo=$logo&amp;logoOffsetX=$logooffsetx&amp;logoOffsetY=$logooffsety";
         $standaloneurl = "$standaloneurl&amp;logo=$logo&amp;logoOffsetX=$logooffsetx&amp;logoOffsetY=$logooffsety";
     }
-    
-    return ( ($showhtmllink == 'true') ? '<div>' : '') . 
-           '<object style="width:' . $width . $unit . ';height:' . $height . $unit. '" ><param name="movie" value="' . $viewerurl . '?' . $flashvars . '" />' . 
-           '<param name="allowfullscreen" value="true"/><param name="menu" value="false"/>' . 
+
+    return ( ($showhtmllink == 'true') ? '<div>' : '') .
+           '<object style="width:' . $width . $unit . ';height:' . $height . $unit. '" ><param name="movie" value="' . $viewerurl . '?' . $flashvars . '" />' .
+           '<param name="allowfullscreen" value="true"/><param name="menu" value="false"/>' .
            '<embed src="' . $viewerurl . '" type="application/x-shockwave-flash" style="width:' . $width . $unit . ';height:' . $height . $unit . '" flashvars="' .
-           $flashvars . '" allowfullscreen="true" menu="false" /></object>' . 
-           ( ($showhtmllink == 'true') ? ( '<div style="width:' . $width . $unit . ';text-align:left;">' . 
-           ( $folderid ? '' : ('<a href="' . $standaloneurl . '" target="_blank">Open publication</a> - ') ) . 
-           'Free <a href="http://issuu.com" target="_blank">publishing</a>' . 
+           $flashvars . '" allowfullscreen="true" menu="false" /></object>' .
+           ( ($showhtmllink == 'true') ? ( '<div style="width:' . $width . $unit . ';text-align:left;">' .
+           ( $folderid ? '' : ('<a href="' . $standaloneurl . '" target="_blank">Open publication</a> - ') ) .
+           'Free <a href="http://issuu.com" target="_blank">publishing</a>' .
            ( $folderid ? '' : ( $tag ? (' - <a href="' . $moreurl. '" target="_blank">More ' . urldecode($tag) . '</a>') : '' ) ) . '</div></div>' ) : '');
 }
 
@@ -466,13 +453,13 @@ function issuu_reader_2($matches)
     $tag = getValueWithDefault('/[\s]+tag=([\S]*)/i', $matches[1], '');
     $scriptAccessEnabled = getValueWithDefault('/[\s]+scriptAccessEnabled=([\S]*)/i', $matches[1], 'false');
     $id = getValueWithDefault('/[\s]+id=([\S]*)/i', $matches[1], '');
-    
+
     $domain = 'issuu.com';
-    
+
     $readerUrl = 'http://static.' . $domain . '/webembed/viewers/style1/v2/IssuuReader.swf';
     $openUrl = 'http://' . $domain . '/' . $username . '/docs/' . $name . '?mode=embed';
     $moreUrl = 'http://' . $domain . '/search?q=' . $tag;
-    
+
     $flashVars = 'mode=mini';
     // ****** embed options ******
     // layout
@@ -554,21 +541,21 @@ function issuu_reader_2($matches)
     if ($documentId) {
         $flashVars = $flashVars . '&amp;documentId=' . $documentId;
     }
-    
+
     return ( ($showHtmlLink == 'true') ? '<div>' : '' ) .
-           '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" style="width:' . $width . $unit . ';height:' . $height . $unit. '" ' . 
-           ( ($id) ? ('id="' . $id . '" ') : '' ) . '><param name="movie" value="' . $readerUrl . '?' . $flashVars . '" />' . 
-           '<param name="allowfullscreen" value="true"/>' . 
-           ( ($linkTarget == '_blank' && $scriptAccessEnabled == 'false') ? '' : '<param name="allowscriptaccess" value="always"/>' ) . 
-           '<param name="menu" value="false"/><param name="wmode" value="transparent"/>' . 
+           '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" style="width:' . $width . $unit . ';height:' . $height . $unit. '" ' .
+           ( ($id) ? ('id="' . $id . '" ') : '' ) . '><param name="movie" value="' . $readerUrl . '?' . $flashVars . '" />' .
+           '<param name="allowfullscreen" value="true"/>' .
+           ( ($linkTarget == '_blank' && $scriptAccessEnabled == 'false') ? '' : '<param name="allowscriptaccess" value="always"/>' ) .
+           '<param name="menu" value="false"/><param name="wmode" value="transparent"/>' .
            '<embed src="' . $readerUrl . '" type="application/x-shockwave-flash" style="width:' . $width . $unit . ';height:' . $height . $unit . '" flashvars="' .
-           $flashVars . '" allowfullscreen="true" ' . 
-           ( ($linkTarget == '_blank' && $scriptAccessEnabled == 'false') ? '' : 'allowscriptaccess="always" ' ) . 
-           'menu="false" wmode="transparent" /></object>' . 
-           ( ($showHtmlLink == 'true') ? ( '<div style="width:' . $width . $unit . ';text-align:left;">' . 
-           '<a href="' . $openUrl . '" target="_blank">Open publication</a> - ' . 
-           'Free <a href="http://' . $domain . '" target="_blank">publishing</a>' . 
-           '</div>' . 
+           $flashVars . '" allowfullscreen="true" ' .
+           ( ($linkTarget == '_blank' && $scriptAccessEnabled == 'false') ? '' : 'allowscriptaccess="always" ' ) .
+           'menu="false" wmode="transparent" /></object>' .
+           ( ($showHtmlLink == 'true') ? ( '<div style="width:' . $width . $unit . ';text-align:left;">' .
+           '<a href="' . $openUrl . '" target="_blank">Open publication</a> - ' .
+           'Free <a href="http://' . $domain . '" target="_blank">publishing</a>' .
+           '</div>' .
            ( $tag ? (' - <a href="' . $moreUrl. '" target="_blank">More ' . urldecode($tag) . '</a>') : '' ) . '</div></div>' ) : '');
 }
 
@@ -576,36 +563,36 @@ add_filter( 'the_content', 'issuu_parser' );
 
 
 /*
- * 
+ *
  * Revista - Thumbnail
- * 
+ *
  * Adiciona um custom field com o id da revista para mostrar automaticamente as capas
- * 
+ *
  */
 function set_revista_thumbnail( $post_id ) {
 	global $post;
-	
+
 	// Procura o id da revista
 	preg_match('/documentid=([\S]*)/i', $_POST['content'], $matches );
-	
-	
-	$current_data = get_post_meta( $post_id, '_issu_documentid', true );	
+
+
+	$current_data = get_post_meta( $post_id, '_issu_documentid', true );
 	$new_data = $matches[1];
-	
-	
- 
-	if ( $current_data ) 
+
+
+
+	if ( $current_data )
 	{
 		if ( is_null( $new_data ) )
 			delete_post_meta( $post_id, '_issu_documentid' );
-		else 
+		else
 			update_post_meta( $post_id, '_issu_documentid', $new_data );
 	}
 	elseif ( ! is_null( $new_data ) )
 	{
 		add_post_meta( $post_id, '_issu_documentid', $new_data, true);
 	}
-	
+
 }
 
 add_action( 'publish_revista', 'set_revista_thumbnail' );
@@ -613,17 +600,17 @@ add_action( 'publish_revista', 'set_revista_thumbnail' );
 
 /**
  * Mostra o thumbnail da revista
- * 
+ *
  * @param $size O tamanho da imagem [large | medium | small]
  */
 function the_revista_thumbnail( $size = 'small' ) {
-	
+
 	global $post;
-	
+
 	$documentid = get_post_meta( $post->ID, '_issu_documentid', true );
-	
+
 	if ( $documentid ) {
-	
+
 		$imgurl = '<img src=http://image.issuu.com/';
 		$imgurl .= $documentid;
 		$imgurl .= '/jpg/page_1_thumb_';
@@ -631,17 +618,17 @@ function the_revista_thumbnail( $size = 'small' ) {
 		$imgurl .= ' title="' . get_the_title( $post->ID ) . '"';
 		$imgurl .= ' alt="' . get_the_title( $post->ID ) . '"';
 		$imgurl .= ' />';
-		
+
 	}
 	else {
 
 		$imgsrc = get_bloginfo( 'stylesheet_directory' ) . '/images/revista-miniatura.png';
 		$imgurl = '<img src="' . $imgsrc . '" alt="' . get_the_title( $post->ID ) . '" />';
-		
+
 	}
-	
+
 	echo $imgurl;
-		
+
 }
 
 ?>
