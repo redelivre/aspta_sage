@@ -158,12 +158,12 @@ function create_newspaper_pdf() {
     'add_new_item'       => esc_html__( 'Adicionar Novo PDF Revista', 'aspta_sage' ),
     'edit_item'          => esc_html__( 'Editar PDF Revista', 'aspta_sage' ),
     'new_item'           => esc_html__( 'Novo PDF Revista', 'aspta_sage' ),
-    'all_items'          => esc_html__( 'Todos os PDF\'s de Revistas', 'aspta_sage' ),
+    'all_items'          => esc_html__( 'Cadastrar Revista do histórico', 'aspta_sage' ),
     'view_item'          => esc_html__( 'Visualizar PDF Revista', 'aspta_sage' ),
     'search_items'       => esc_html__( 'Buscar PDF Revista', 'aspta_sage' ),
     'not_found'          => esc_html__( 'Nada Encontrado', 'aspta_sage' ),
     'not_found_in_trash' => esc_html__( 'Nada encontrado na Lixeira', 'aspta_sage' ),
-    'parent_item_colon'  => '',
+    'parent_item_colon'  => ''
   );
 
   $args = array(
@@ -179,11 +179,20 @@ function create_newspaper_pdf() {
     'menu_position'      => null,
     'supports'           => array( 'title', 'thumbnail' ),
     'menu_icon'          =>  'dashicons-media-document',
+    'show_in_menu' => 'edit.php?post_type=article'
   );
 
   register_post_type( 'pdf_newspaper', $args );
 }
 
+
+add_action("admin_menu", "update_menu");
+
+function update_menu() {
+  global $menu;
+
+  $menu[26][0] = "Revista Agriculturas";
+}
 
 add_action('add_meta_boxes', 'add_custom_meta_boxes');
 function add_custom_meta_boxes() {
