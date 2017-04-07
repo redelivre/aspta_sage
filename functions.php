@@ -199,9 +199,11 @@ function display_pdf_box(){
 
   global $post;
   $pdf = get_post_meta( $post->ID, "wp_custom_attachment", true);
-  echo "<p>";
-  echo '<a src="' . $pdf["url"] . '">Link para o pdf</a>';
-  echo "</p>";
+  if($pdf){
+    echo "<p>";
+    echo '<a src="' . $pdf["url"] . '">Link para o pdf</a>';
+    echo "</p>";
+  }
 }
 
 add_action('save_post', 'save_custom_meta_data');
