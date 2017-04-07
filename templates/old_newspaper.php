@@ -11,7 +11,7 @@ $plugin = "issuem/issuem.php";
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 if ( is_plugin_active($plugin) ){
   // plugin esta ativo
-
+  echo do_shortcode('[issuem_articles posts_per_page="6" order="ASC"]');
 } else {
   echo "<p><strong>Você precisa habilitar o plugin IssueM</strong></p>";
 }
