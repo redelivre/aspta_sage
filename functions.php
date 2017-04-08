@@ -179,8 +179,15 @@ function create_newspaper_pdf() {
     'menu_position'      => null,
     'supports'           => array( 'title', 'thumbnail' ),
     'menu_icon'          =>  'dashicons-media-document',
-    'show_in_menu' => 'edit.php?post_type=article'
   );
+
+
+  $plugin = "issuem/issuem.php";
+
+  include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+  if ( is_plugin_active($plugin) ){
+    $args['show_in_menu'] = 'edit.php?post_type=article';
+  }
 
   register_post_type( 'pdf_newspaper', $args );
 }
@@ -225,13 +232,13 @@ function save_custom_meta_data($id) {
         if(in_array($uploaded_type, $supported_types)) {
             $upload = wp_upload_bits($_FILES['wp_custom_attachment']['name'], null, file_get_contents($_FILES['wp_custom_attachment']['tmp_name']));
             if(isset($upload['error']) && $upload['error'] != 0) {
-                wp_die('There was an error uploading your file. The error is: ' . $upload['error']);
+                wp_die('Aconteceu um erro ao tentar fazer o upload do seu arquivo. O erro foi: ' . $upload['error']);
             } else {
                 update_post_meta($id, 'wp_custom_attachment', $upload);
             }
         }
         else {
-            wp_die("The file type that you've uploaded is not a PDF.");
+            wp_die("O arquivo que você esta tentando enviar não é um PDF.");
         }
     }
 }
