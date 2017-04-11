@@ -10,12 +10,18 @@
 $plugin = "issuem/issuem.php";
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 if ( is_plugin_active($plugin) ){
-  // plugin esta ativo
-  echo do_shortcode('[issuem_articles posts_per_page="6" order="ASC"]');
-} else {
-  echo "<p><strong>Você precisa habilitar o plugin IssueM</strong></p>";
-}
 
+  the_widget( 'IssueM_Active_Issue', array(
+    'display_issue_cover' => true,
+    'display_issue_name' => false,
+    'display_pdf_link' => true)
+  );
+
+  $issuem_settings = get_issuem_settings();
+
+  the_widget('IssueM_Article_List' , array('article_format' => '%CATEGORY[1]% %TITLE% %BYLINE%'));
+  
+}
 echo "<h1>Numeros Anteriores</h1>";
 
 $args = array('post_type' => 'pdf_newspaper');
