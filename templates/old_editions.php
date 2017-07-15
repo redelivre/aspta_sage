@@ -16,11 +16,15 @@ query_posts( array (
 
 ?>
 <h4>Edições anteriores</h4>
-<div id="revistas-anteriores">
+<div id="revistas-anteriores" style="position:relative; float:left; clear:both">
 <?php
 if ( have_posts() ) :
   while ( have_posts() ) : the_post()?>
   <a href="<?php echo get_permalink( get_the_ID() ); ?> "><?php the_revista_thumbnail( 'medium' ); ?></a>
+  <?php
+    if (preg_match_all('#\bhttps?://[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/))#', get_the_content(), $match))
+      echo '<br><a href="'.$match[0][0].'">Download PDF</a>';
+  ?>
   <?php
   endwhile;
   endif;
