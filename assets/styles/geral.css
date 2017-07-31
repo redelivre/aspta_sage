@@ -499,7 +499,7 @@ aside .titulo {
 }
 .revista .btn-assine a {
 	font-weight: bold;
-    color: #a7b739;
+  color: #a7b739;
 }
 
 #camp-blog {
@@ -924,15 +924,23 @@ aside .titulo {
 }
 
 /*Página Revista Agriculturas*/
-.issuem-featured-article-thumb .issuem-featured-thumb-title,
-.issuem-featured-article-thumb .featured-thumb-content,
-.issuem_articles_shortcode {
+#issuem-featured-article-thumbs-wrap {
+  margin-bottom: 60px;
+}
+.issuem-featured-article-thumb .featured-thumb-content {
 	display: none;
 }
+.issuem-featured-article-thumb:first-child {
+    padding-left: 0px;
+}
+.issuem-featured-article-thumb:last-child {
+    padding-right: 0px;
+}
 .issuem-featured-article-thumb {
-    width: 25%;
+    width: 33.3%;
 }
 .issuem-featured-thumbs-img img {
+  width: 100%;
 	opacity: 0.8;
 	-moz-opacity: 0.8;
 	Filter: Alpha(Opacity=80);
@@ -942,6 +950,63 @@ aside .titulo {
 	-moz-opacity: 1;
 	Filter: Alpha(Opacity=100);
 }
+.issuem-featured-article-thumb .issuem-featured-thumb-title a {
+  font-size: 14px;
+	font-weight: bold;
+	color: #003e2d;
+}
+.issuem_articles_shortcode .issuem_article {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e97200;
+}
+.issuem_articles_shortcode p {
+    text-align: justify;
+}
+.issuem_articles_shortcode .issuem_article_link {
+  margin-bottom: 10px;
+  display: block;
+  color: #003e2d;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  min-height: 70px;
+}
+.issuem_articles_shortcode .issuem_article_content {
+  font-size: 14px;
+  font-weight: normal;
+  min-height: 55px;
+}
+.issuem_articles_shortcode .issuem_article_content a {
+  color: #003e2d;
+  font-weight: bold;
+}
+.issuem_articles_shortcode .issuem_article_byline {
+  display: none;
+}
+
+/*Página Revistas Anteriores*/
+.issuem_archive {
+	margin: 0px 10px;
+}
+.issuem_archive a {
+	font-weight: bold;
+	color: #003e2d;
+}
+.issuem_archive a img {
+	margin-bottom: 5px;
+}
+.issuem_archive a img {
+	opacity: 0.5;
+	-moz-opacity: 0.5;
+	Filter: Alpha(Opacity=50);
+}
+.issuem_archive a img:hover {
+	opacity: 1;
+	-moz-opacity: 1;
+	Filter: Alpha(Opacity=100);
+}
+
 
 /*Sidebar*/
 .sidebar-module,
@@ -1515,6 +1580,11 @@ aside .titulo {
 	.footer-redes-sociais {
 		margin-top: 67px;
 	}
+  .issuem_archive {
+    margin: 0px;
+    padding: 0px;
+  }
+
 }
 
 @media only screen and (max-width : 480px) {
@@ -1659,6 +1729,10 @@ aside .titulo {
 	.footer-redes-sociais {
 		margin-top: 59px;
 	}
+  .issuem_archive {
+    margin: 0px 20%;
+  }
+
 }
 
 /* Custom, iPhone Retina */
@@ -1682,7 +1756,12 @@ aside .titulo {
 	}
 	.btn-share {
 		margin: 5px 60px;
+  }
 	.footer-redes-sociais {
 		margin-top: 46px;
 	}
+  .issuem_archive {
+    margin: 0px 15%;
+  }
+
 }
