@@ -871,7 +871,7 @@ aside .titulo {
 	color: #012b09;
 	font-weight: bold;
 }
-.tema-card .tema-box {
+.tema-card .tema-box-laranja {
 	margin-bottom: 30px;
 	min-height: 230px;
 	background-color: #e97200;
@@ -1549,6 +1549,10 @@ aside .titulo {
 		padding: 0 5px;
 	}
 
+  .campanha-transgenicos .tema-card .tema-descricao {
+    font-size: 14px;
+  }
+
 	.issuem-featured-article-thumb {
 	    width: 33%;
 	}
@@ -1584,7 +1588,6 @@ aside .titulo {
     margin: 0px;
     padding: 0px;
   }
-
 }
 
 @media only screen and (max-width : 480px) {
@@ -1636,6 +1639,26 @@ aside .titulo {
 		min-width: 195px;
 		padding: 0 5px;
 	}
+  .tema-card #tema-box-01 {
+    min-height: 230px;
+  }
+  .tema-card .tema-box-laranja,
+  .tema-card .tema-box-verde {
+    min-height: 160px;
+  }
+
+  .campanha-transgenicos .tema-card .tema-icone img {
+    height: 120px;
+    width: 120px;
+  }
+  .campanha-transgenicos .tema-card .tema-titulo {
+    padding-top: 175px;
+    font-size: 16px;
+    max-width: 250px;
+  }
+  .campanha-transgenicos .tema-card .tema-descricao {
+    font-size: 12px;
+  }
 	.issuem-featured-article-thumb {
 	    width: 100%;
 	}
@@ -1679,6 +1702,17 @@ aside .titulo {
 	.footer {
 	    height: 285px;
 	}
+  .tema-card #tema-box-01 {
+    min-height: 300px;
+  }
+  .tema-card .tema-box-laranja,
+  .tema-card .tema-box-verde {
+    min-height: 220px;
+  }
+  .campanha-transgenicos .tema-card .tema-icone img {
+      height: 100px;
+      width: 100px;
+  }
 }
 
 @media only screen and (max-width : 375px) {
@@ -1732,7 +1766,6 @@ aside .titulo {
   .issuem_archive {
     margin: 0px 20%;
   }
-
 }
 
 /* Custom, iPhone Retina */
@@ -1760,8 +1793,24 @@ aside .titulo {
 	.footer-redes-sociais {
 		margin-top: 46px;
 	}
+ .tema-card #tema-box-01 {
+    min-height: 370px;
+  }
+  #tema-box-01 .tema-titulo {
+    padding: 100px 0 0 25px;
+    width: 100%;
+  }
+  .tema-card .tema-box-laranja {
+    min-height: 210px;
+  }
+  .tema-card .tema-box-verde {
+    min-height: 250px;
+  }
+  .campanha-transgenicos .tema-card .tema-icone img {
+    height: 90px;
+    width: 90px;
+  }
   .issuem_archive {
     margin: 0px 15%;
   }
-
 }

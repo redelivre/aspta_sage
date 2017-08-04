@@ -17,7 +17,7 @@
 
   <div class="tema-card">
     <a href="<?php get_site_url(); ?>/itens-de-campanha/boletim/">
-      <div class="tema-box">
+      <div id="tema-box-01" class="tema-box-laranja">
         <div class="tema-descricao">
           <p>Desde 1999 a AS-PTA produz semanalmente o boletim "Por Um Brasil Livre de Transgênicos", que traz, a partir de um ponto de vista independente, a situação do Brasil e de outros países em relação aos organismos transgênicos. Por meio do Boletim você acompanha uma análise do que é noticiado na imprensa e ainda conhece experiências em agroecologia que mostram porque os transgênicos não são solução para a agricultura. Participe! Envie informações, divulgações de eventos e sugestões para boletim@aspta.org.br</p>
         </div>
@@ -39,7 +39,7 @@
   </div>
   <div class="tema-card">
     <a href="<?php get_site_url(); ?>/itens-de-campanha/materiais-de-campanha/">
-      <div class="tema-box">
+      <div class="tema-box-laranja">
         <div class="tema-descricao">
           <p>Aqui você encontra materiais de comunicação e formação sobre os transgênicos e seus impactos. São todos de livre uso.</p>
         </div>
@@ -61,7 +61,7 @@
   </div>
   <div class="tema-card">
     <a href="<?php get_site_url(); ?>/itens-de-campanha/campanha-transgenicos/">
-      <div class="tema-box">
+      <div class="tema-box-laranja">
         <div class="tema-descricao">
           <p>Contrariando os planos da indústria, os transgênicos se tornaram tema de debate público. Confira aqui artigos, notícias e documentos publicados nos últimos dez anos.</p>
         </div>
