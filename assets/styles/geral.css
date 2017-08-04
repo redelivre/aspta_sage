@@ -781,10 +781,14 @@ aside .titulo {
 #pagina .pagina-categoria li a,
 #pagina .pagina-categoria li a:hover,
 #pagina .pagina-meta span,
-#pagina .pagina-compartilhamento span {
+#pagina .pagina-compartilhamento span,
+#pagina p a {
 	color: #003e2d;
 	font-weight: bold;
 	text-decoration: none;
+}
+#pagina p a:hover {
+	color: #e9770a;
 }
 #pagina .entry-content {
 	margin-top: 15px;

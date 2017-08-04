@@ -33,8 +33,6 @@
 											<div class="highlights-image">
 												<?php the_post_thumbnail('slide'); ?>
 											</div>
-											<?php } else { ?>
-											<div class="highlights-image"><img class="img-responsive" src="http://placehold.it/1140/ccc/fff.png"></div>
 											<?php } ?>
 										</div>
 										<?php endif; ?>
@@ -103,9 +101,7 @@
 								<div class="entry-image">
 									<?php if ( has_post_thumbnail() ) {
 										the_post_thumbnail('destaque');
-									} else { ?>
-									<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/aspta-no-thumb.jpg">
-									<?php } ?>
+									} ?>
 								</div>
 							</a>
 							<div class="entry-title post-title">
