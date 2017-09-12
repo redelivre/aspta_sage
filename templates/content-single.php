@@ -22,31 +22,64 @@
 	    	</div>
 	    </div>
 	</article>
-	
-	<article class="pagina-conteudo">
-		<div class="noticias-relacionadas">
-			<h3 class="text-uppercase">Notícias Relacionadas</h3>
-			<?php $categories = get_the_category($post->ID);  
-			if ($categories) {  $category_ids = array();  
-				foreach($categories as $individual_category)  
-					$category_ids[] = $individual_category->term_id; 
-		 
-				$args=array( 
-					'category__in' => $category_ids, 
-					'post__not_in' => array($post->ID), 
-					'showposts'=>3, // Number of related posts that will be shown. 
-					'ignore_sticky_posts'=>1 
-				); 
-				$my_query = new wp_query($args); 
-				if( $my_query->have_posts() ) {
-					while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
-			        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-				    <?php endwhile;
-				    wp_reset_postdata();
-				} 
-			} ?>
-		</div>
-	</article>
+
+
+	<?php if (get_post_type( $post ) != 'revista') { ?>
+		<article class="pagina-conteudo">
+			<div class="noticias-relacionadas">
+				<h3 class="text-uppercase">Notícias Relacionadas</h3>
+				<?php $categories = get_the_category($post->ID);  
+				if ($categories) {  $category_ids = array();  
+					foreach($categories as $individual_category)  
+						$category_ids[] = $individual_category->term_id; 
+			 
+					$args=array( 
+						'category__in' => $category_ids, 
+						'post__not_in' => array($post->ID), 
+						'showposts'=>3, // Number of related posts that will be shown. 
+						'ignore_sticky_posts'=>1 
+					); 
+					$my_query = new wp_query($args); 
+					if( $my_query->have_posts() ) {
+						while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
+				        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+					    <?php endwhile;
+					    wp_reset_postdata();
+					} 
+				} ?>
+			</div>
+		</article>
+
+	<?php }
+		else if (get_post_type( $post ) == 'revista') {
+	?>
+		<article class="pagina-conteudo">
+			<div class="noticias-relacionadas">
+				<h3 class="text-uppercase">Artigos Relacionados</h3>
+				<?php
+
+				$args = array(
+				    'post_type'      => 'revista',
+				    'posts_per_page' => -1,
+				    'post_parent'    => $post->ID,
+				    'order'          => 'ASC',
+				    'orderby'        => 'menu_order'
+				 );
+				$parent = new WP_Query( $args );
+				if ( $parent->have_posts() ) : ?>
+				    <?php while ( $parent->have_posts() ) : $parent->the_post(); ?>
+				        <div id="parent-<?php the_ID(); ?>" class="parent-page">
+				            <p><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></p>
+				        </div>
+				    <?php endwhile; ?>
+				<?php endif; wp_reset_query(); ?>
+			</div>
+		</article>
+	<?php
+		}
+
+
+	 ?>
 	
 	<div class="pagina-compartilhamento">
 		<span>Compartilhe esse conteúdo</span><br /><br />
