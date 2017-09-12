@@ -52,12 +52,6 @@
 
 	<?php }
 		else if (get_post_type( $post ) == 'revista') {
-	?>
-		<article class="pagina-conteudo">
-			<div class="noticias-relacionadas">
-				<h3 class="text-uppercase">Artigos Relacionados</h3>
-				<?php
-
 				$args = array(
 				    'post_type'      => 'revista',
 				    'posts_per_page' => -1,
@@ -67,7 +61,12 @@
 				 );
 				$parent = new WP_Query( $args );
 				if ( $parent->have_posts() ) : ?>
-				    <?php while ( $parent->have_posts() ) : $parent->the_post(); ?>
+				?>
+				<article class="pagina-conteudo">
+					<div class="noticias-relacionadas">
+						<h3 class="text-uppercase">Artigos Relacionados</h3>
+						<?php
+				       while ( $parent->have_posts() ) : $parent->the_post(); ?>
 				        <div id="parent-<?php the_ID(); ?>" class="parent-page">
 				            <p><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></p>
 				        </div>
