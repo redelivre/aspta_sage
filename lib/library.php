@@ -29,7 +29,7 @@ class LibraryWidget extends WP_Widget {
    * @param array $instance
    */
   public function widget( $args, $instance ) { ?>
-    <form method="get" action="<?php echo get_site_url() ?>/biblioteca">
+    <form method="get" action="<?php echo get_site_url() ?>/biblioteca-lista">
 
       <div class="library-box tipos-de-materiais">
         <h4>Tipos de Materiais</h4>
