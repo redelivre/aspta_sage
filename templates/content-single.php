@@ -61,7 +61,6 @@
 				 );
 				$parent = new WP_Query( $args );
 				if ( $parent->have_posts() ) : ?>
-				?>
 				<article class="pagina-conteudo">
 					<div class="noticias-relacionadas">
 						<h3 class="text-uppercase">Artigos Relacionados</h3>
