@@ -197,8 +197,8 @@ add_action("admin_menu", "update_menu");
 
 function update_menu() {
   global $menu;
-
-  $menu[26][0] = "Revista Agriculturas";
+  remove_menu_page('edit.php?post_type=article');
+  add_menu_page( "Revista Agriculturas", "Revista Agriculturas", "edit_articles", "edit.php?post_type=article","", "/wp-content/plugins/issuem/images/issuem-16x16.png" );
 }
 
 add_action('add_meta_boxes', 'add_custom_meta_boxes');
