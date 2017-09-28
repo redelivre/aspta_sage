@@ -134,7 +134,7 @@
 		<div id="prog-midias" class="container">
 			<div class="row">
 				<div class="col-md-4 col-sm-12 col-xs-12 programas-locais">
-					<h3>Programas Locais</h3>
+					<h3 style="padding-bottom: 95px;text-align: center" >Programas Locais</h3>
 
                     <?php
 					$programs = get_terms("programas");

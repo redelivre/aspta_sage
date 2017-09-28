@@ -54,7 +54,7 @@ add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
  */
 function widgets_init() {
   register_sidebar([
-    'name'          => __('Menu Primário', 'aspta'),
+    'name'          => __('Padrão das Paginas - Menu Lateral', 'aspta'),
     'id'            => 'sidebar-primary',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
@@ -62,7 +62,7 @@ function widgets_init() {
     'after_title'   => '</h3>'
   ]);
   register_sidebar([
-    'name'          => __('Home Seção 1', 'aspta'),
+    'name'          => __('Video do Youtube - Home', 'aspta'),
     'id'            => 'sidebar-home-session-1',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
@@ -71,7 +71,7 @@ function widgets_init() {
   ]);
 
   register_sidebar([
-    'name'          => __('Home Seção 2', 'aspta'),
+    'name'          => __('Seção Abaixo do Video - Home', 'aspta'),
     'id'            => 'sidebar-home-session-2',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
@@ -95,7 +95,7 @@ function widgets_init() {
     'after_title'   => '</h3>'
   ]);
   register_sidebar([
-    'name'          => __('Home Seção Banners', 'aspta'),
+    'name'          => __('Seção Banners - Home', 'aspta'),
     'id'            => 'sidebar-home-session-banners',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
@@ -103,7 +103,7 @@ function widgets_init() {
     'after_title'   => '</h3>'
   ]);
   register_sidebar([
-    'name'          => __('Quem Somos', 'aspta'),
+    'name'          => __('Quem Somos - Menu Lateral', 'aspta'),
     'id'            => 'who_we_are',
     'before_widget' => '<section class="menu-inner-page widget %1$s %2$s">',
     'after_widget'  => '</section>',
@@ -112,7 +112,7 @@ function widgets_init() {
   ]);
 
   register_sidebar([
-    'name'          => __('Biblioteca Lista', 'aspta'),
+    'name'          => __('Biblioteca - Lista de Resultados', 'aspta'),
     'id'            => 'library_list',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
@@ -120,7 +120,7 @@ function widgets_init() {
     'after_title'   => '</h3>'
   ]);
   register_sidebar([
-    'name'          => __('Nova Revista', 'aspta'),
+    'name'          => __('Revista - Menu Lateral', 'aspta'),
     'id'            => 'newspaper_new',
     'before_widget' => '<section class="menu-inner-page widget %1$s %2$s">',
     'after_widget'  => '</section>',
@@ -128,7 +128,7 @@ function widgets_init() {
     'after_title'   => '</h3>'
   ]);
   register_sidebar([
-    'name'          => __('Logo e texto do Rodapé', 'aspta'),
+    'name'          => __('Logo e Texto - Rodapé', 'aspta'),
     'id'            => 'sidebar-logo-text-footer',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
@@ -136,7 +136,7 @@ function widgets_init() {
     'after_title'   => '</h3>'
   ]);
   register_sidebar([
-    'name'          => __('menu de rodapé', 'aspta'),
+    'name'          => __('Menus - Rodapé', 'aspta'),
     'id'            => 'sidebar-menu-footer',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
@@ -152,7 +152,7 @@ function widgets_init() {
     'after_title'   => '</h3>'
   ]);
   register_sidebar([
-    'name'          => __('Programa Agricultura Urbana', 'aspta'),
+    'name'          => __('Programa Agricultura Urbana - Menu Lateral', 'aspta'),
     'id'            => 'sidebar-program-urbam-agriculture',
     'before_widget' => '<section class="menu-inner-page widget %1$s %2$s">',
     'after_widget'  => '</section>',
@@ -160,7 +160,7 @@ function widgets_init() {
     'after_title'   => '</h3>'
   ]);
   register_sidebar([
-    'name'          => __('Programa Contestado', 'aspta'),
+    'name'          => __('Programa Contestado - Menu Lateral', 'aspta'),
     'id'            => 'sidebar-program-contestado',
     'before_widget' => '<section class="menu-inner-page widget %1$s %2$s">',
     'after_widget'  => '</section>',
@@ -169,7 +169,7 @@ function widgets_init() {
   ]);
 
   register_sidebar([
-    'name'          => __('Artigos Revista', 'aspta'),
+    'name'          => __('Artigos Revista - Menu Lateral', 'aspta'),
     'id'            => 'sidebar-articles-newspaper',
     'before_widget' => '<section class="menu-inner-page widget %1$s %2$s">',
     'after_widget'  => '</section>',

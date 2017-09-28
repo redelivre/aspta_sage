@@ -428,6 +428,8 @@ aside .titulo {
 	font-weight: bold;
 	color: #e97200;
 	text-transform: uppercase;
+	padding-bottom: 74px;
+	text-align: center;
 }
 .programa {
 	margin-bottom: 20px;
@@ -480,10 +482,7 @@ aside .titulo {
 	padding: 15px 0;
 	text-align: center;
 }
-.revista h3 {
-	padding-bottom: 10px;
-	text-align: center;
-}
+
 .revista .issuem_active_list_widget {
 	padding: 15px 0;
 }
