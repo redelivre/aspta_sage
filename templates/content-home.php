@@ -146,13 +146,13 @@
 					<?php } ?>
 				</div><!-- /.programas-locais -->
 				<div class="col-md-4 col-sm-6 col-xs-12 video-da-semana">
-					<h3>Vídeo da Semana</h3>
+					<h3 style="padding-bottom:10px" >Vídeo da Semana</h3>
 					<h4 class="video-chamada">Assista aos vídeos da AS-PTA</h4>
 					<div class="video"><?php dynamic_sidebar('sidebar-home-session-1'); ?></div>
 
 				</div><!-- /.video-da-semana -->
 
-				<div class="col-md-4 col-sm-6 col-xs-12 revista">
+				<div class="col-md-4 col-sm-6 col-xs-12 revista" style="padding-bottom: 64px">
 					<?php dynamic_sidebar('agricultures_newspaper_home'); ?>
 					<div class="row">
 						<div class="btn-assine"><a class="btn btn-lg" href="<?php get_site_url(); ?>/revista-agriculturas/mobilize/" role="button">assine</a></div>
