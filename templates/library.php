@@ -105,14 +105,28 @@ if (isset($_GET["material"]) || isset($_GET["theme"]) || isset($_GET["program"])
 							while ( $the_query->have_posts() ) : ?>
 								<?php $the_query->the_post(); ?>
 								<div id="post-<?php the_ID(); ?>" class="row lista-post">
-									<div class="col-md-4 lista-img">
-					                    <?php $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', get_the_content(), $matches);
-					                      $first_img = $matches[1];
-					                      if ( !empty($first_img) ) :?>
-					                        <a id="featured-thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="nofollow"><div class="image_search_post img-responsive" style="height:230px; width:100%; background-image: url('<?php echo $first_img[0]; ?>')"></div></a>
-					                    <?php endif; ?>
-									</div>
-									<div class="col-md-8 lista-conteudo">
+									
+	              <?php 
+
+	                $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', get_the_content(), $matches);
+	                $first_img = $matches[1];
+
+	                if (empty($first_img)){
+	                	$first_img =  get_the_post_thumbnail_url();
+	                	//var_dump($first_img);
+	                }
+
+	                else {
+	                	$first_img = $first_img[0];
+	                }
+
+	                if ( !empty($first_img) ) :?>
+
+	                <div class="col-md-4 lista-img">
+	                  <a id="featured-thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="nofollow"><div class="image_search_post img-responsive" style="height:230px; width:100%; background-image: url('<?php echo $first_img; ?>')"></div></a>
+	                </div>
+
+	                <div class="col-md-8 lista-conteudo">
 										<div class="lista-categoria">
 											<a href="<?php get_permalink(); ?>" rel="nofollow"><?php the_category(); ?></a>
 										</div>
@@ -126,6 +140,26 @@ if (isset($_GET["material"]) || isset($_GET["theme"]) || isset($_GET["program"])
 											<time class="updated" datetime="<?php get_post_time('c', true); ?>"><?php the_date(); ?></time>
 										</div>
 									</div>
+	              <?php 
+	              else:
+	              ?>
+	               <div class="col-md-12 lista-conteudo">
+										<div class="lista-categoria">
+											<a href="<?php get_permalink(); ?>" rel="nofollow"><?php the_category(); ?></a>
+										</div>
+										<div class="lista-titulo">
+											<h4><a href="<?php the_permalink(); ?>" rel="nofollow"><?php the_title(); ?></a></h4>
+										</div>
+										<div class="lista-resumo">
+											<?php the_excerpt(); ?>
+										</div>
+										<div class="lista-meta-time">
+											<time class="updated" datetime="<?php get_post_time('c', true); ?>"><?php the_date(); ?></time>
+										</div>
+									</div>
+									<?php
+								  endif;
+								  ?>
 								</div>
 								<?php endwhile; /* Restore original Post Data */
 								wp_reset_postdata();
