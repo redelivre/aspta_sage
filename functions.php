@@ -247,3 +247,26 @@ add_action('post_edit_form_tag', 'update_edit_form');
 function update_edit_form() {
     echo ' enctype="multipart/form-data"';
 }
+
+function aspta_get_post_thumbnail() {
+    if ( has_post_thumbnail() ) {
+        the_post_thumbnail('destaque');
+    } else {
+        global $post;
+        $size = 'post-thumbnail';
+        // No post thumbnail, try attachments instead.
+        $images = get_posts(
+            array(
+                'post_type'      => 'attachment',
+                'post_mime_type' => 'image',
+                'post_parent'    => $post->ID,
+                'posts_per_page' => 1, /* Save memory, only need one */
+            )
+            );
+        
+        if ( $images ) {
+            $size = apply_filters( 'post_thumbnail_size', $size, $post->ID );
+            echo wp_get_attachment_image($images[0]->ID, $size, false, '');
+        }
+    }
+}

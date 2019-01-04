@@ -292,6 +292,11 @@ aside .titulo {
 	margin: 0;
 	z-index: 2;
 }
+
+.cycles-slide.cycle-slide {
+    margin-top: 0 !important;
+}
+
 .cycle-slideshow {
 	height: 650px;
 	width: 100%;
@@ -299,12 +304,13 @@ aside .titulo {
 }
 .cycle-slideshow .cycle-pager {
 	position: absolute;
-	top: 550px;
+	top: 480px;
 	right: 10px;
 	font-size: 80px;
 	color: #fff;
 	z-index: 200;
 	cursor: pointer;
+	text-shadow: -1px 0 #ccc, 0 1px #ccc, 1px 0 #ccc, 0 -1px #ccc;
 }
 
 .cycle-slideshow .cycle-pager .cycle-pager-active {
@@ -316,15 +322,13 @@ aside .titulo {
 }
 .cycle-slideshow li img {
 	display: block;
-	height: auto;
-	margin-top: -100px;
-	min-height: 650px;
+	height: 550px;
 	width: 100%;
 	min-width: 1140px;
 }
 .cycle-slideshow .bd {
 	position: absolute;
-	top: 630px;
+	top: 550px;
 	padding: 10px 10px 10px 20px;
 	height: 120px;
 	width: 100%;
@@ -336,6 +340,8 @@ aside .titulo {
 	text-align: center;
 	background-color: #003e2d;
 	width: 10%;
+	position: absolute;
+	top: 0;
 }
 .cycle-slideshow .entry-meta a {
 	font-weight: bold;
@@ -343,18 +349,19 @@ aside .titulo {
 	text-decoration: none;
 }
 .cycle-slideshow .entry-title {
-	margin-top: 10px;
+	margin-top: 24px;
 	font-size: 22px;
-	width: 70%;
+	width: 80%;
 }
 .cycle-slideshow .entry-title a {
 	font-weight: bold;
 	color: #003e2d;
 }
 .cycle-slideshow .btn-saibamais {
-	margin-top: -50px;
-	float: right;
 	width: 17%;
+	position: absolute;
+	right: 1em;
+	bottom: 2em;
 }
 .cycle-slideshow .btn-saibamais a {
 	font-weight: bold;

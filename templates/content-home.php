@@ -99,9 +99,7 @@
 						<div class="home-news">
 							<a id="featured-thumbnail" href="<?php the_permalink(); ?>" rel="nofollow">
 								<div class="entry-image">
-									<?php if ( has_post_thumbnail() ) {
-										the_post_thumbnail('destaque');
-									} ?>
+									<?php aspta_get_post_thumbnail(); ?>
 								</div>
 							</a>
 							<div class="entry-title post-title">
