@@ -488,7 +488,7 @@ aside .titulo {
 	text-align: center;
 }
 .revista h3 {
-	padding-bottom: 74px;
+	/*padding-bottom: 74px;*/
 	text-align: center;
 }
 .revista .issuem_active_list_widget {
@@ -764,7 +764,7 @@ aside .titulo {
 	overflow: hidden;
 }
 #pagina .pagina-img img {
-	margin-top:  -100px;
+	/*margin-top:  -100px;*/
 	width: 100%;
 }
 #pagina .pagina-data {
