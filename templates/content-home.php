@@ -131,79 +131,6 @@
 	<aside>
 		<div id="prog-midias" class="container">
 			<div class="row">
-				<div class="col-md-4 col-sm-12 col-xs-12 programas-locais">
-					<h3 style="padding-bottom: 95px;text-align: center" >Programas Locais</h3>
-
-                    <?php
-					$programs = get_terms("programas");
-                    foreach($programs as $program){ ?>
-						<div class="programa">
-	                      <h3 class="prog-title"><a href="<?= get_site_url()."/".$program->slug ?>"><?php //$program->name; ?><?=$program->name ?></a></h3>
-					      <p class="prog-desc"><?=$program->description; ?></p>
-						</div>
-					<?php } ?>
-				</div><!-- /.programas-locais -->
-				<div class="col-md-4 col-sm-6 col-xs-12 video-da-semana">
-					<h3>Vídeo da Semana</h3>
-					<h4 class="video-chamada">Assista aos vídeos da AS-PTA</h4>
-					<div class="video"><?php dynamic_sidebar('sidebar-home-session-1'); ?></div>
-				</div><!-- /.video-da-semana -->
-
-				<div class="col-md-4 col-sm-6 col-xs-12 revista">
-					<?php dynamic_sidebar('agricultures_newspaper_home'); ?>
-					<div class="row">
-						<div class="btn-assine"><a class="btn btn-lg" href="<?php get_site_url(); ?>/revista-agriculturas/mobilize/" role="button">assine</a></div>
-					</div>
-				</div><!-- /.revista -->
-			</div>
-		</div>
-	</aside><!-- /.prog-midias -->
-
-	<div class="clearfix"></div>
-
-	<aside id="camp-blog">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4 col-sm-12 col-xs-12 boletim-campanha">
-					<h3 class="text-uppercase branco">Brasil livre de transgênicos e agrotóxicos</h3>
-                        <?php
-                        $args = array(
-                          'post_type' => 'campanha',
-                          'post_status' => 'publish',
-                          'orderby' => 'date',
-                          'order'   => 'DESC',
-                          'posts_per_page' => 4,
-                          'tax_query' => array(
-                        		array(
-                        			'taxonomy' => 'itens-de-campanha',
-                        			'field'    => 'slug',
-                        			'terms'    => 'campanha-transgenicos',
-                        		),
-                        	),
-                        );
-                        $the_query = new WP_Query( $args );
-                        $i = 0;
-                        while ( $the_query->have_posts() ):
-                          $the_query->the_post(); $i++;
-                          if( $i != 5 ){ ?>
-                            <h4><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title() ?></a>
-                          <?php }else{ ?>
-                            <h4 class="sem-borda" ><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title() ?></a>
-                          <?php } endWhile; ?>
-					<!--h4 class="text-uppercase branco assine">Assine o Boletim da Campanha</h4>
-					<form method="post" action="http://boletimtransgenicos.campanhasdemkt.net/recebeForm.php">
-				          <input type="hidden" name="uniqid" value="1095113343500058" />
-				          <input type="hidden" name="senha" value="6073f5c62f95697a09c68b2546e7c50a" />
-				          <input type="hidden" name="id_sender_email" value="2179" />
-				          <input type="hidden" name="urlredir" value="http://aspta.org.br/campanha/inscrever/" />
-				          <input type="hidden" name="subscribe[1597]" value="1" />
-				          <div class="form-group">
-					  <input type="text" class="form-control" placeholder="Digite seu e-mail e aperte enter">
-				          </div>
-				          <button type="submit" class="btn btn-lg btn-enviar">enviar</button>
-					</form-->
-				</div>
-
 				<div class="col-md-4 col-sm-6 col-xs-12 blog-pratos-limpos">
 					<h3 class="text-uppercase">Blog Em Pratos Limpos</h3>
 					<?php $rss = fetch_feed('http://pratoslimpos.org.br/?feed=rss2');
@@ -221,15 +148,22 @@
 					} ?>
 				</div>
 
+				<div class="col-md-4 col-sm-6 col-xs-12 revista">
+					<?php dynamic_sidebar('agricultures_newspaper_home'); ?>
+					<div class="row">
+						<div class="btn-assine"><a class="btn btn-lg" href="<?php get_site_url(); ?>/revista-agriculturas/mobilize/" role="button">assine</a></div>
+					</div>
+				</div><!-- /.revista -->
+				
 				<div class="col-md-4 col-sm-6 col-xs-12 campanhas">
 					<h3 class="text-uppercase">Campanhas</h3>
-					<a href="https://www.facebook.com/polodaborborema/?fref=ts" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-polo-da-borborema.jpg" alt="Polo da Borborema" /></a>
-					<a href="https://www.facebook.com/ColetivoTriunfo/?fref=ts" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-coletivo-triunfo.jpg" alt="Coletivo triunfo" /></a>
-					<a href="<?php get_site_url(); ?>/2014/03/17/conheca-os-produtos-da-gente/" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-produtos-da-gente.jpg" alt="Produtos da Gente" /></a>
+					<a href="<?php get_site_url(); ?>/tag/sementes-crioulas/" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner_site.jpg" alt="Sementes Crioulas" /></a>
+					<a href="<?php get_site_url(); ?>/2015/05/metodo/" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner_lume.jpg" alt="Lume" /></a>
+					<a href="<?php get_site_url(); ?>/2014/03/17/conheca-os-produtos-da-gente/" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner_alimentos.jpg" alt="Alimentos Saudáveis" /></a>
 				</div>
 			</div>
 		</div>
-	</aside><!-- /.camp-blog -->
+	</aside><!-- /.prog-midias -->
 
 	<div class="clearfix"></div>
 
