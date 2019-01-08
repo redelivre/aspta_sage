@@ -1239,7 +1239,11 @@ img.aligncenter {
     margin-right: auto;
 }
 
-
+.image_search_post.img-responsive {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
 
 /*==================================================
 =            Bootstrap 3 Media Queries             =

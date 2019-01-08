@@ -248,9 +248,14 @@ function update_edit_form() {
     echo ' enctype="multipart/form-data"';
 }
 
-function aspta_get_post_thumbnail() {
+function aspta_get_post_thumbnail($echo = true) {
     if ( has_post_thumbnail() ) {
-        the_post_thumbnail('destaque');
+        if($echo) {
+            the_post_thumbnail('destaque');
+            return true;
+        } else {
+            return get_the_post_thumbnail_url(null, 'destaque');
+        }
     } else {
         global $post;
         $size = 'post-thumbnail';
@@ -262,11 +267,19 @@ function aspta_get_post_thumbnail() {
                 'post_parent'    => $post->ID,
                 'posts_per_page' => 1, /* Save memory, only need one */
             )
-            );
+        );
         
         if ( $images ) {
             $size = apply_filters( 'post_thumbnail_size', $size, $post->ID );
-            echo wp_get_attachment_image($images[0]->ID, $size, false, '');
+            $image = wp_get_attachment_image($images[0]->ID, $size, false, '');
+            if($echo) {
+                echo $image;
+                return true;
+            }
+            else {
+                return wp_get_attachment_image_url($images[0]->ID, $size, false);;
+            }
         }
     }
+    return false;
 }
