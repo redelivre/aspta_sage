@@ -79,10 +79,10 @@
 
 	 ?>
 	
-	<div class="pagina-compartilhamento">
+	<!-- <div class="pagina-compartilhamento">
 		<span>Compartilhe esse conteúdo</span><br /><br />
 		<div class="btn-share">
-			<a href="http://www.facebook.com/share.php?u=<?php the_permalink(); ?>&t=<?php the_title_attribute(); ?>" target="_blank">
+			<a href="http://www.facebook.com/share.php?u=<?php /* the_permalink(); ?>&t=<?php the_title_attribute(); ?>" target="_blank">
 				<div class="facebook-share"></div>
 			</a>
 		</div>
@@ -111,11 +111,11 @@
 			}(document, "script", "twitter-wjs"));</script>
 		</div>
 		<div class="btn-share visible-xs visible-sm">
-			<a href="whatsapp://send?text=<?php the_title(); ?>: <?php the_permalink(); ?>" data-dnt="true" target="_blank">
+			<a href="whatsapp://send?text=<?php the_title(); ?>: <?php the_permalink(); */?>" data-dnt="true" target="_blank">
 				<div class="whatsapp-share"></div>
 			</a>
 		</div>
-	</div>
+	</div>-->
 
 	<div class="pagina-comentarios">
 		<?php comments_template('/templates/comments.php'); ?>
