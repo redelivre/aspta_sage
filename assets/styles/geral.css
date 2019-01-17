@@ -1245,6 +1245,11 @@ img.aligncenter {
 	background-size: contain;
 }
 
+.addtoany_share_save_container {
+    border-top: 2px solid #003e2d;
+    padding-top: 16px;
+}
+
 /*==================================================
 =            Bootstrap 3 Media Queries             =
 ==================================================*/
