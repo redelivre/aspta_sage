@@ -3,7 +3,7 @@ jQuery(document).ready(function(){
 	speed: 600,
     manualSpeed: 100,
 	slides: ".cycles-slide",
-    
+	paused: true,
     carouselFluid: true,
     next:".cycle-next",
     prev:".cycle-prev"    
