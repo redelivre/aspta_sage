@@ -595,7 +595,7 @@ function set_revista_thumbnail( $post_id ) {
 
 }
 
-add_action( 'publish_revista', 'set_revista_thumbnail' );
+add_action( 'save_post_revista', 'set_revista_thumbnail' );
 
 
 /**
