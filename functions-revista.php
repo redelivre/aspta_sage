@@ -572,27 +572,60 @@ add_filter( 'the_content', 'issuu_parser' );
 function set_revista_thumbnail( $post_id ) {
 	global $post;
 
-	// Procura o id da revista
-	preg_match('/documentid=([\S]*)/i', $_POST['content'], $matches );
-
-
 	$current_data = get_post_meta( $post_id, '_issu_documentid', true );
-	$new_data = $matches[1];
-
-
-
-	if ( $current_data )
-	{
-		if ( is_null( $new_data ) )
-			delete_post_meta( $post_id, '_issu_documentid' );
-		else
-			update_post_meta( $post_id, '_issu_documentid', $new_data );
+	
+	// Procura o id da revista
+	if( preg_match('/documentid=([\w|-]*)/i', $_POST['content'], $matches ) && count($matches) > 1 ) {
+        $new_data = $matches[1];
+    	if ( $current_data )
+    	{
+    		if ( is_null( $new_data ) )
+    			delete_post_meta( $post_id, '_issu_documentid' );
+    		else
+    			update_post_meta( $post_id, '_issu_documentid', $new_data );
+    	}
+    	elseif ( ! is_null( $new_data ) )
+    	{
+    		add_post_meta( $post_id, '_issu_documentid', $new_data, true);
+    	}
 	}
-	elseif ( ! is_null( $new_data ) )
+	else
 	{
-		add_post_meta( $post_id, '_issu_documentid', $new_data, true);
+	    /*if( preg_match('/src=\"([\S]*)\"|src=\\\"([\S]*)\\\"/i', $_POST['content'], $matches) )
+	    {
+	        $url = '';
+	        if( !empty($matches[1]) )
+	        {
+	           $url = $matches[1];
+	        }
+	        elseif( count($matches) > 2 && !empty($matches[2]) )
+	        {
+	           $url = $matches[2];
+	        }
+	        else
+	        {
+	            return false;
+	        }
+	        
+	        if(substr($url, 0, 5) != 'http:')
+	        {
+	            $url = 'http:'.$url;
+	        }
+	        
+	        //  Turn off errors, loads the URL as an object and then turn errors on again
+	        libxml_use_internal_errors(true);
+	        $dom = new DOMDocument();
+	        $dom->loadHTMLFile($url);
+	        libxml_use_internal_errors(false);
+	        
+	        //  DomXPath helps find like <meta property="og:video" content="http://hereyoucanfindthedocumentid?documentId=xxxxx-xxxxxxx"/>
+	        $finder = new DOMXPath($dom);
+	        $classname = "share-dropdown__input";
+	        $nodes = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
+	        var_dump($matches);var_dump($nodes);var_dump($dom);die();
+	    }
+	    var_dump($matches);var_dump($_POST['content']);die();*/
 	}
-
 }
 
 add_action( 'save_post_revista', 'set_revista_thumbnail' );
@@ -601,7 +634,7 @@ add_action( 'save_post_revista', 'set_revista_thumbnail' );
 /**
  * Mostra o thumbnail da revista
  *
- * @param $size O tamanho da imagem [large | medium | small]
+ * @param $size string O tamanho da imagem [large | medium | small]
  */
 function the_revista_thumbnail( $size = 'small' ) {
 
