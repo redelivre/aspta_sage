@@ -21,6 +21,7 @@
 									<a href="http://plus.google.com" target="_blank"><li class="icone icon-gplus"></li></a>
 									<a href="http://www.youtube.com/channel/UCfRvRTdz58FkPVese6OzQmA" target="_blank"><li class="icone icon-youtube"></li></a>
 									<a href="http://vimeo.com/user7077452" target="_blank"><li class="icone icon-vimeo"></li></a>
+									<a href="https://www.instagram.com/agroecologiaaspta/" target="_blank"><li class="icone icon-instagram"></li></a>
 								</ul>
 							</div>
 						</div>

@@ -1187,42 +1187,45 @@ aside .titulo {
 	margin-top: 20px;
 	float: left;
 	height: 35px;
+	width: 16%;
 }
 .footer-icones a .icon-facebook {
 	background: url('../images/icon-facebook.png') no-repeat;
-	width: 50px;
 }
 .footer-icones a .icon-facebook:hover {
 	background: url('../images/icon-facebook-hover.png') no-repeat;
 }
 .footer-icones a .icon-twitter {
 	background: url('../images/icon-twitter.png') no-repeat;
-	width: 60px;
 }
 .footer-icones a .icon-twitter:hover {
 	background: url('../images/icon-twitter-hover.png') no-repeat;
 }
 .footer-icones a .icon-gplus {
 	background: url('../images/icon-gplus.png') no-repeat;
-	width: 45px;
 }
 .footer-icones a .icon-gplus:hover {
 	background: url('../images/icon-gplus-hover.png') no-repeat;
 }
 .footer-icones a .icon-youtube {
 	background: url('../images/icon-youtube.png') no-repeat;
-	width: 60px;
 }
 .footer-icones a .icon-youtube:hover {
 	background: url('../images/icon-youtube-hover.png') no-repeat;
 }
 .footer-icones a .icon-vimeo {
 	background: url('../images/icon-vimeo.png') no-repeat;
-	width: 65px;
 }
 .footer-icones a .icon-vimeo:hover {
 	background: url('../images/icon-vimeo-hover.png') no-repeat;
 }
+.footer-icones a .icon-instagram {
+	background: url('../images/icon-instagram.png') no-repeat;
+}
+.footer-icones a .icon-instagram:hover {
+	background: url('../images/icon-instagram-hover.png') no-repeat;
+}
+
 img.alignright {
 	float:right;
 	margin-left: 1em;
@@ -1249,6 +1252,33 @@ img.aligncenter {
     border-top: 2px solid #003e2d;
     padding-top: 16px;
 }
+
+/*==================================================
+=            Comment Form                          =
+==================================================*/
+
+.comment-form input, .comment-form textarea {
+    width: 100%;
+}
+
+.comment-form label {
+    display: none;
+}
+
+.comment-form .form-submit #submit {
+    width: auto;
+}
+
+#si_captcha_code_p span {
+    position: absolute;
+    left: 0;
+    padding-top: 1%;
+    color: red;
+}
+
+/*==================================================
+=            End Comment Form                      =
+==================================================*/
 
 /*==================================================
 =            Bootstrap 3 Media Queries             =
@@ -1532,10 +1562,11 @@ img.aligncenter {
 
 	.cycle-slideshow li img {
 	    height: 200px;
-	    min-width: 610px;
+	    min-width: 100%;
 	}
 	.cycle-slideshow .bd {
-		width: 580px
+		width: 100%;
+		top: 200px;
 	}
 	.noticia {
 		width: 100%;
@@ -1637,23 +1668,24 @@ img.aligncenter {
 
 	.cycle-slideshow li img {
 	    height: 200px;
-	    width: 480px;
+	    width: 100%;
 	}
 	.cycle-slideshow .bd {
-		width: 450px
+		width: 100%;
 	}
 	.cycle-slideshow .entry-meta {
-		width: 30%;
+		width: auto;
 	}
 	.cycle-slideshow .entry-title {
 		font-size: 12px;
-	    width: 95%;
+	    width: 100%;
+		margin-top: 2em;
 	}
 	#noticias .post-title {
-		width: 215px;
+		width: 100%;
 	}
 	#noticias .entry-image {
-		width: 200px;
+		width: 100%;
 		float: left
 	}
 	#noticias .post-title a h4 {
@@ -1673,8 +1705,11 @@ img.aligncenter {
 	    width: 45%;
 	}
 	.parceria-banner {
-		min-width: 195px;
+		min-width: 100%;
 		padding: 0 5px;
+	}
+	.parceria-banner a {
+	    margin: 0 auto;
 	}
   .tema-card #tema-box-01 {
     min-height: 230px;
@@ -1729,6 +1764,9 @@ img.aligncenter {
 
 	.footer-redes-sociais {
 		margin-top: 74px;
+	}
+	.footer-icones .icone {
+	    width: 16% !important;
 	}
 }
 

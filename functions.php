@@ -283,3 +283,8 @@ function aspta_get_post_thumbnail($echo = true) {
     }
     return false;
 }
+
+function aspta_scripts() {
+    wp_enqueue_script('aspta_comment_scripts', get_template_directory_uri() . '/js/comments.js', array('jquery'));
+}
+add_action('wp_enqueue_scripts', 'aspta_scripts');
