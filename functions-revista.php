@@ -591,7 +591,7 @@ function set_revista_thumbnail( $post_id ) {
 	}
 	else
 	{
-	    /*if( preg_match('/src=\"([\S]*)\"|src=\\\"([\S]*)\\\"/i', $_POST['content'], $matches) )
+	    if( preg_match('/src=\"([\S]*)\"|src=\\\"([\S]*)\\\"/i', $_POST['content'], $matches) )
 	    {
 	        $url = '';
 	        if( !empty($matches[1]) )
@@ -612,19 +612,55 @@ function set_revista_thumbnail( $post_id ) {
 	            $url = 'http:'.$url;
 	        }
 	        
-	        //  Turn off errors, loads the URL as an object and then turn errors on again
-	        libxml_use_internal_errors(true);
-	        $dom = new DOMDocument();
-	        $dom->loadHTMLFile($url);
-	        libxml_use_internal_errors(false);
+	        $embed_id = substr($url, strripos($url, '/') + 1);
+	        try
+	        {
+	            $file = file_get_contents("https://e.issuu.com/config/{$embed_id}.json");
+	        }
+	        catch (Exception $e)
+	        {
+	            return false;
+	        }
 	        
-	        //  DomXPath helps find like <meta property="og:video" content="http://hereyoucanfindthedocumentid?documentId=xxxxx-xxxxxxx"/>
-	        $finder = new DOMXPath($dom);
-	        $classname = "share-dropdown__input";
-	        $nodes = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
-	        var_dump($matches);var_dump($nodes);var_dump($dom);die();
+	        $embed_json = gzdecode($file);
+	        if($embed_json !== false)
+	        {
+    	        $embed_doc = json_decode($embed_json, true);
+    	        if($embed_doc)
+    	        {
+    	            try
+    	            {
+    	                $file = file_get_contents("https://reader3.isu.pub/{$embed_doc['ownerUsername']}/{$embed_doc['documentURI']}/reader3_4.json");
+    	            }
+    	            catch (Exception $e)
+    	            {
+    	                return false;
+    	            }
+    	            
+    	            
+    	            $json = gzdecode($file);
+    	            if($json !== false)
+    	            {
+            	        $doc_info = json_decode($json);
+            	        if($doc_info)
+            	        {
+                	        $documentId = "{$doc_info->document->revisionId}-{$doc_info->document->publicationId}";
+                	        if ( $current_data )
+                	        {
+                	            if ( is_null( $documentId ) )
+                	                delete_post_meta( $post_id, '_issu_documentid' );
+                	                else
+                	                    update_post_meta( $post_id, '_issu_documentid', $documentId );
+                	        }
+                	        elseif ( ! is_null( $documentId ) )
+                	        {
+                	            add_post_meta( $post_id, '_issu_documentid', $documentId, true);
+                	        }
+            	        }
+    	            }
+    	        }
+	        }
 	    }
-	    var_dump($matches);var_dump($_POST['content']);die();*/
 	}
 }
 
