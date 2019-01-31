@@ -193,13 +193,51 @@ function create_newspaper_pdf() {
 }
 
 
-add_action("admin_menu", "update_menu");
+/*add_action("admin_menu", "update_menu");
 
 function update_menu() {
   global $menu;
-  remove_menu_page('edit.php?post_type=article');
-  add_menu_page( "Revista Agriculturas", "Revista Agriculturas", "edit_articles", "edit.php?post_type=article","", "/wp-content/plugins/issuem/images/issuem-16x16.png" );
+  //remove_menu_page('edit.php?post_type=article');
+  //add_menu_page( "Revista Agriculturas", "Revista Agriculturas", "edit_articles", "edit.php?post_type=article","", "/wp-content/plugins/issuem/images/issuem-16x16.png" );
+}*/
+
+//$labels = apply_filters( "post_type_labels_{$post_type}", $labels );
+function aspta_replace_menu_labels($labels) {
+    $labels->name = 'Revista Agriculturas';
+    $labels->singular_name = 'Revista';
+    $labels->add_new = 'Adicionar nova Revista ou Publicação';
+    $labels->add_new_item = 'Adicionar nova Revista ou Publicação';
+    $labels->edit_item = 'Editar Revista ou Publicação';
+    $labels->view_item = 'Visualizar';
+    $labels->name = 'Articles';
+    $labels->singular_name = 'Revista';
+//     $labels->add_new = 'Add New Article';
+//     $labels->add_new_item = 'Add New Article';
+//     $labels->edit_item = 'Edit Article';
+    $labels->new_item = 'Nova Revista';
+//     $labels->view_item = 'View Article';
+    $labels->view_items = 'Ver Revistas';
+    $labels->search_items = 'Procurar Revistas';
+    $labels->not_found = 'Nenhuma Revista encontrada';
+    $labels->not_found_in_trash = 'Nenhuma Revista encontrada na lixeira';
+//     $labels->parent_item_colon = '';
+    $labels->all_items = 'Revistas';
+    $labels->archives = 'Revistas';
+    $labels->attributes = 'Atributos da Revista';
+    $labels->insert_into_item = 'Inserir na Revista';
+    $labels->uploaded_to_this_item = 'Anexadas a esta Revista';
+    $labels->featured_image = 'Imagem destacada da Revista';
+//    $labels->set_featured_image = 'Definir imagem destacada';
+//     $labels->remove_featured_image = 'Remover imagem destacada';
+//     $labels->use_featured_image = 'Usar como Imagem Destacada';
+    $labels->filter_items_list = 'Filtrar lista de Revistas';
+    $labels->items_list_navigation = 'Navegação da lista de Revistas';
+    $labels->items_list = 'Lista de Revistas';
+    $labels->menu_name = 'Revista Agriculturas';
+    $labels->name_admin_bar = 'Revista';
+    return $labels;
 }
+add_filter('post_type_labels_article', 'aspta_replace_menu_labels');
 
 add_action('add_meta_boxes', 'add_custom_meta_boxes');
 function add_custom_meta_boxes() {
