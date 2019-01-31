@@ -99,44 +99,27 @@ query_posts( array (
 ?>
 
 <?php
-if ( have_posts() ) :
-	?>
-	
-  <div class="issuem_archives_shortcode" >
-  <?php
-  while ( have_posts() ) : the_post()?>
-
-  
-  <?php
-    if (
-	    	  preg_match_all(
-	    	  	'#\bhttps?://[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/))#', get_the_content(), $match
-	    	  )
+if ( have_posts() ) :?>
+    <div class="issuem_archives_shortcode" >
+    <?php
+    while ( have_posts() ) : the_post();
+        if (
+            preg_match_all(
+                '#\bhttps?://[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/))#', get_the_content(), $match
+    	    )
         ):
         ?>
     		<div class="issuem_archive">
-				  <p>
-					  <a href="<?php echo get_permalink( get_the_ID() ); ?> " class="featured_archives_cover">
-					  	<?php the_revista_thumbnail( 'medium', '' ); ?>
-					  </a>
-		  			<?php
-			      // echo '<p style="width:100px">
-			      //         <a href="'.$match[0][0].'">'.get_the_title().'</a>
-			      //       </p>';
-			      echo '<p style="width:100px">
-			              <a href="'.$match[0][0].'">PDF</a>
-			            </p>';
-			      ?>
-		      </p>
-        </div>
-  <?php
-    endif;
-  ?>
-  
-
-  <?php
-
-  endwhile;
-	endif;
-  
-  ?>
+                <div>
+                	<a href="<?php echo get_permalink( get_the_ID() ); ?> " class="featured_archives_cover">
+                		<?php the_revista_thumbnail( 'medium', '' ); ?>
+                	</a>
+                	<p style="width:100px;">
+                        <a href="<?php echo $match[0][0]; ?>">PDF</a>
+                    </p>
+                </div>
+        	</div><?php
+        endif;
+    endwhile;?>
+	</div><?php
+endif;
