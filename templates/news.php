@@ -44,7 +44,6 @@
 									</div>
 				        		</div>
 				        	</div>
-					      <hr>
 					      <?php endwhile; /* Restore original Post Data */
 					      wp_reset_postdata();
 					      } else { // no posts found
