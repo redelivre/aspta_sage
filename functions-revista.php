@@ -700,4 +700,15 @@ function the_revista_thumbnail( $size = 'small' ) {
 
 }
 
+function has_resvista_documentid() {
+    global $post;
+    
+    $documentid = get_post_meta( $post->ID, '_issu_documentid', true );
+    
+    if ( $documentid ) {
+        return true;
+    }
+    return false;
+}
+
 ?>
