@@ -972,6 +972,9 @@ aside .titulo {
   padding-bottom: 20px;
   border-bottom: 1px solid #e97200;
 }
+.issuem_articles_shortcode .issuem_article:last-child {
+	border-bottom: none;
+}
 .issuem_articles_shortcode p {
     text-align: justify;
 }
@@ -998,6 +1001,12 @@ aside .titulo {
 }
 
 /*Página Revistas Anteriores*/
+.issuem_archives_shortcode {
+	display: flex;
+	display: -webkit-flex;
+	flex-flow: row wrap;
+	justify-content: start;
+}
 .issuem_archive {
 	margin: 0px 10px;
 }
@@ -1352,7 +1361,7 @@ img.aligncenter {
 	}
 }
 
-@media only screen and (max-width : 981px) {
+@media only screen and (max-width: 981px) {
 	header {
 		height: 399px;
 	}
@@ -1422,6 +1431,12 @@ img.aligncenter {
 	    height: 315px;
 	    width: 260px;
 	}
+	.issuem_archive a img,
+	.issuem-featured-thumbs-img img {
+		opacity: 1;
+		-moz-opacity: 1;
+		Filter: Alpha(Opacity=100);
+	}
 	.blog-pratos-limpos h3,
 	.blog-pratos-limpos h4 {
 		margin-left: 0;
@@ -1478,7 +1493,7 @@ img.aligncenter {
 }
 
 /* Small Devices, Tablets */
-@media only screen and (max-width : 768px) {
+@media only screen and (max-width: 768px) {
 	header {
 		height: 220px;
 	}
@@ -1536,12 +1551,6 @@ img.aligncenter {
 		border: none;
 	}
 
-	.issuem-featured-thumbs-img img {
-		opacity: 1;
-		-moz-opacity: 1;
-		Filter: Alpha(Opacity=100);
-	}
-
 	.footer {
 		height: 300px;
 	}
@@ -1553,7 +1562,7 @@ img.aligncenter {
 	}
 }
 
-@media only screen and (max-width : 640px) {
+@media only screen and (max-width: 640px) {
     header {
 		height: 250px;
 	}
@@ -1663,7 +1672,7 @@ img.aligncenter {
   }
 }
 
-@media only screen and (max-width : 480px) {
+@media only screen and (max-width: 480px) {
     header {
 		height: 246px;
 	}
@@ -1775,7 +1784,7 @@ img.aligncenter {
 	}
 }
 
-@media only screen and (max-width : 414px) {
+@media only screen and (max-width: 414px) {
 	header {
 	    height: 232px;
 	}
@@ -1795,13 +1804,13 @@ img.aligncenter {
   }
 }
 
-@media only screen and (max-width : 375px) {
+@media only screen and (max-width: 375px) {
 	header {
 	    height: 224px;
 	}
 }
 
-@media only screen and (max-width : 360px) {
+@media only screen and (max-width: 360px) {
 	header {
 	    height: 221px;
 	}
@@ -1849,7 +1858,7 @@ img.aligncenter {
 }
 
 /* Custom, iPhone Retina */
-@media only screen and (max-width : 320px) {
+@media only screen and (max-width: 320px) {
 	.menu-topo {
 	    margin-top: 9px;
 	}
