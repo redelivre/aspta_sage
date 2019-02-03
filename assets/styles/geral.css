@@ -1267,16 +1267,25 @@ img.aligncenter {
 =            Comment Form                          =
 ==================================================*/
 
-.comment-form input, .comment-form textarea {
-    width: 100%;
-}
-
 .comment-form label {
     display: none;
 }
 
-.comment-form .form-submit #submit {
-    width: auto;
+.comment-form input {
+	height: 2em;
+}
+
+.comment-form input,
+.comment-form textarea {
+	padding: 5px 5px 5px 10px;
+	background-color: #d7d7d7;
+	border: none;
+	width: 100%;
+}
+
+.comment-form input::placeholder,
+.comment-form textarea::placeholder {
+	font-weight: bold;
 }
 
 #si_captcha_code_p span {
@@ -1285,6 +1294,27 @@ img.aligncenter {
     padding-top: 1%;
     color: red;
 }
+
+.si_captcha_small {
+	float: right;
+}
+
+#si_captcha_code_p {
+	width: 50%;
+}
+
+.comment-form .form-submit #submit {
+	margin: 30px 0 10px 66.6%;
+	padding: 10px 16px;
+	font-size: 18px;
+	color: #a7b739;
+	background-color: #003e2d;
+	border: 1px solid transparent;
+	border-radius: 6px;
+	height: 46px;
+	width: 33.3%;
+}
+
 
 /*==================================================
 =            End Comment Form                      =
@@ -1714,9 +1744,13 @@ img.aligncenter {
 	    padding: 20px;
 	}
 	.btn-saibamais,
-	.btn-enviar {
+	.btn-enviar	{
 	    margin: 0 0 10px 60%;
 	    width: 45%;
+	}
+	.form-submit #submit {
+		margin: 30px 0 10px 49.6% !important;
+		width: 50% !important;
 	}
 	.parceria-banner {
 		min-width: 100%;
@@ -1802,11 +1836,22 @@ img.aligncenter {
       height: 100px;
       width: 100px;
   }
+  .form-submit #submit {
+	margin: 30px 0 10px 47.6% !important;
+	width: 52% !important;
+}
 }
 
 @media only screen and (max-width: 375px) {
 	header {
 	    height: 224px;
+	}
+	#si_captcha_code_p {
+		width: 45%;
+	}
+	.form-submit #submit {
+		margin: 30px 0 10px 39.6% !important;
+		width: 60% !important;
 	}
 }
 
@@ -1902,4 +1947,11 @@ img.aligncenter {
   .issuem_archive {
     margin: 0px 15%;
   }
+  .si_captcha_small {
+	  float: none;
+  }
+  .form-submit #submit {
+	margin: 30px 0 10px 31.6% !important;
+	width: 68% !important;
+}
 }
