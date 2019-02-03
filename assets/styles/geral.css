@@ -646,6 +646,11 @@ aside .titulo {
 	padding: 30px;
 	background-color: #ebebeb;
 }
+#biblioteca .opcoes input[type=text] {
+	background-color: #fff;
+	border: 1px solid #ccc;
+	height: 34px;
+}
 #biblioteca .library-sidebar .opcoes {
 	padding: 30px 0;
 }
@@ -1128,6 +1133,59 @@ aside .titulo {
 	text-decoration: none;
 }
 
+/*Formulários*/
+.comment-form label {
+    display: none;
+}
+
+form input[type=text] {
+	height: 2em;
+}
+
+form input[type=text],
+form textarea {
+	padding: 5px 5px 5px 10px;
+	background-color: #d7d7d7;
+	border: none;
+	width: 100%;
+}
+
+form input[type=text]::placeholder,
+form textarea::placeholder {
+	font-weight: bold;
+}
+
+#si_captcha_code_p span {
+    position: absolute;
+    left: 0;
+    padding-top: 1%;
+    color: red;
+}
+
+.si_captcha_small {
+	float: right;
+}
+
+#si_captcha_code_p {
+	width: 50%;
+}
+
+form input[type=submit] {
+	margin: 20px 0 10px 66.6%;
+	padding: 10px 16px;
+	font-size: 18px;
+	color: #a7b739;
+	background-color: #003e2d;
+	border: 1px solid transparent;
+	border-radius: 6px;
+	height: 46px;
+	width: 33.3%;
+}
+
+form .pesquisar {
+	margin-top: 20px;
+}
+
 /* Footer */
 .footer {
 	position: absolute;
@@ -1262,63 +1320,6 @@ img.aligncenter {
     border-top: 2px solid #003e2d;
     padding-top: 16px;
 }
-
-/*==================================================
-=            Comment Form                          =
-==================================================*/
-
-.comment-form label {
-    display: none;
-}
-
-.comment-form input {
-	height: 2em;
-}
-
-.comment-form input,
-.comment-form textarea {
-	padding: 5px 5px 5px 10px;
-	background-color: #d7d7d7;
-	border: none;
-	width: 100%;
-}
-
-.comment-form input::placeholder,
-.comment-form textarea::placeholder {
-	font-weight: bold;
-}
-
-#si_captcha_code_p span {
-    position: absolute;
-    left: 0;
-    padding-top: 1%;
-    color: red;
-}
-
-.si_captcha_small {
-	float: right;
-}
-
-#si_captcha_code_p {
-	width: 50%;
-}
-
-.comment-form .form-submit #submit {
-	margin: 30px 0 10px 66.6%;
-	padding: 10px 16px;
-	font-size: 18px;
-	color: #a7b739;
-	background-color: #003e2d;
-	border: 1px solid transparent;
-	border-radius: 6px;
-	height: 46px;
-	width: 33.3%;
-}
-
-
-/*==================================================
-=            End Comment Form                      =
-==================================================*/
 
 /*==================================================
 =            Bootstrap 3 Media Queries             =
@@ -1662,6 +1663,10 @@ img.aligncenter {
 		height: auto;
 		margin: 0;
 	}
+	#biblioteca .library-box .opcoes a,
+	#biblioteca .library-box .opcoes label {
+		font-size: 90%;
+	}
 	.campanha-transgenicos .tema-card .tema-descricao {
 		font-size: 14px;
 	}
@@ -1696,10 +1701,10 @@ img.aligncenter {
 	.footer-redes-sociais {
 		margin-top: 67px;
 	}
-  .issuem_archive {
-    margin: 0px;
-    padding: 0px;
-  }
+	.issuem_archive {
+		margin: 0px;
+		padding: 0px;
+	}
 }
 
 @media only screen and (max-width: 480px) {
@@ -1745,8 +1750,19 @@ img.aligncenter {
 	}
 	.btn-saibamais,
 	.btn-enviar	{
-	    margin: 0 0 10px 60%;
+	    margin: 0 0 10px 55%;
 	    width: 45%;
+	}
+	#biblioteca .duas-colunas {
+		column-count: 1;
+		column-gap: 0;
+	}
+	#biblioteca .library-box .opcoes a,
+	#biblioteca .library-box .opcoes label {
+		font-size: 100%;
+	}
+	#biblioteca .form-control {
+		width: 100%;
 	}
 	.form-submit #submit {
 		margin: 30px 0 10px 49.6% !important;
@@ -1825,21 +1841,25 @@ img.aligncenter {
 	.footer {
 	    height: 285px;
 	}
-  .tema-card #tema-box-01 {
-    min-height: 300px;
-  }
-  .tema-card .tema-box-laranja,
-  .tema-card .tema-box-verde {
-    min-height: 220px;
-  }
-  .campanha-transgenicos .tema-card .tema-icone img {
-      height: 100px;
-      width: 100px;
-  }
-  .form-submit #submit {
-	margin: 30px 0 10px 47.6% !important;
-	width: 52% !important;
-}
+	.tema-card #tema-box-01 {
+		min-height: 300px;
+	}
+	.tema-card .tema-box-laranja,
+	.tema-card .tema-box-verde {
+		min-height: 220px;
+	}
+	.campanha-transgenicos .tema-card .tema-icone img {
+		height: 100px;
+		width: 100px;
+	}
+	#biblioteca .library-box .opcoes a,
+	#biblioteca .library-box .opcoes label {
+		font-size: 90%;
+	}
+	.form-submit #submit {
+		margin: 30px 0 10px 47.6% !important;
+		width: 52% !important;
+	}
 }
 
 @media only screen and (max-width: 375px) {
@@ -1897,9 +1917,9 @@ img.aligncenter {
 	.footer-redes-sociais {
 		margin-top: 59px;
 	}
-  .issuem_archive {
-    margin: 0px 20%;
-  }
+	.issuem_archive {
+		margin: 0px 20%;
+	}
 }
 
 /* Custom, iPhone Retina */
@@ -1923,35 +1943,39 @@ img.aligncenter {
 	}
 	.btn-share {
 		margin: 5px 60px;
-  }
+	}
+	#biblioteca .library-box .opcoes a,
+	#biblioteca .library-box .opcoes label {
+		font-size: 85%;
+	}
 	.footer-redes-sociais {
 		margin-top: 46px;
 	}
- .tema-card #tema-box-01 {
-    min-height: 370px;
-  }
-  #tema-box-01 .tema-titulo {
-    padding: 100px 0 0 25px;
-    width: 100%;
-  }
-  .tema-card .tema-box-laranja {
-    min-height: 210px;
-  }
-  .tema-card .tema-box-verde {
-    min-height: 250px;
-  }
-  .campanha-transgenicos .tema-card .tema-icone img {
-    height: 90px;
-    width: 90px;
-  }
-  .issuem_archive {
-    margin: 0px 15%;
-  }
-  .si_captcha_small {
-	  float: none;
-  }
-  .form-submit #submit {
-	margin: 30px 0 10px 31.6% !important;
-	width: 68% !important;
-}
+ 	.tema-card #tema-box-01 {
+    	min-height: 370px;
+  	}
+  	#tema-box-01 .tema-titulo {
+		padding: 100px 0 0 25px;
+		width: 100%;
+	}
+	.tema-card .tema-box-laranja {
+		min-height: 210px;
+	}
+	.tema-card .tema-box-verde {
+		min-height: 250px;
+	}
+	.campanha-transgenicos .tema-card .tema-icone img {
+		height: 90px;
+		width: 90px;
+	}
+	.issuem_archive {
+		margin: 0px 15%;
+	}
+	.si_captcha_small {
+		float: none;
+	}
+	.form-submit #submit {
+		margin: 30px 0 10px 31.6% !important;
+		width: 68% !important;
+	}
 }
