@@ -1483,6 +1483,16 @@ img.aligncenter {
 	.btn-share {
 		width: 180px;
 	}
+
+	.tema-card {
+		float: left;
+		width: 33.33333333%;
+	}
+	.temas-de-intervencao .tema-card .tema-icone img {
+		height: 130px;
+		width: 130px;
+	}
+
 	#page-sidebar .blog-pratos-limpos h3,
 	.menu-inner-page h3,
 	.widget_recent_entries h3 {
@@ -1775,26 +1785,37 @@ img.aligncenter {
 	.parceria-banner a {
 	    margin: 0 auto;
 	}
-  .tema-card #tema-box-01 {
-    min-height: 230px;
-  }
-  .tema-card .tema-box-laranja,
-  .tema-card .tema-box-verde {
-    min-height: 160px;
-  }
 
-  .campanha-transgenicos .tema-card .tema-icone img {
-    height: 120px;
-    width: 120px;
-  }
-  .campanha-transgenicos .tema-card .tema-titulo {
-    padding-top: 175px;
-    font-size: 16px;
-    max-width: 250px;
-  }
-  .campanha-transgenicos .tema-card .tema-descricao {
-    font-size: 12px;
-  }
+	.tema-card {
+		width: 50%;
+	}
+	.temas-de-intervencao .tema-card .tema-icone img {
+		height: 85px;
+		width: 85px;
+	}
+	.temas-de-intervencao .tema-card .tema-titulo {
+		font-size: 16px;
+	}
+	.tema-card #tema-box-01 {
+		min-height: 230px;
+	}
+	.tema-card .tema-box-laranja,
+	.tema-card .tema-box-verde {
+		min-height: 160px;
+	}
+
+	.campanha-transgenicos .tema-card .tema-icone img {
+		height: 120px;
+		width: 120px;
+	}
+	.campanha-transgenicos .tema-card .tema-titulo {
+		padding-top: 175px;
+		font-size: 16px;
+		max-width: 250px;
+	}
+	.campanha-transgenicos .tema-card .tema-descricao {
+		font-size: 12px;
+	}
 	.issuem-featured-article-thumb {
 	    width: 100%;
 	}
@@ -1865,6 +1886,16 @@ img.aligncenter {
 @media only screen and (max-width: 375px) {
 	header {
 	    height: 224px;
+	}
+	.tema-card {
+		width: 100%;
+	}
+	.temas-de-intervencao .tema-card .tema-icone img {
+		height: 130px;
+		width: 130px;
+	}
+	.temas-de-intervencao .tema-card .tema-titulo {
+		font-size: 20px;
 	}
 	#si_captcha_code_p {
 		width: 45%;
