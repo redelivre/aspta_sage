@@ -20,7 +20,7 @@ $the_query = new WP_Query( $search_query );
 ?>
 
 
-<div id="lista">
+<div class="lista">
 	<div class="titulo-pagina"><h1>Resutados para: <?php echo $search_query['s']; ?></h1></div>
 </div>
 
@@ -32,7 +32,7 @@ $the_query = new WP_Query( $search_query );
 <?php endif; ?>
 
 <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-  <div id="lista">
+  <div class="lista">
   	<?php get_template_part('templates/search', 'search'); ?>
   </div>
 <?php endwhile; ?>

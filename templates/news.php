@@ -8,7 +8,7 @@
  */
 ?>
 
-					<aside id="lista">
+					<aside class="lista">
 						<div class="titulo-pagina"><h1><?php the_title(); ?></h1></div>
 				        <div class="clearfix"></div>
 				        <?php // The Query
@@ -27,7 +27,7 @@
 				        	<?php $the_query->the_post(); ?>
 				        	<div class="row lista-post">
 				        		<div class="col-md-4 lista-img">
-				        			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><img class="img-responsive" src="<?php wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())) ? the_post_thumbnail_url('medium') : get_template_directory_uri().'/assets/images/aspta-no-thumb.jpg'; ?>" /></a>
+				        			<?php aspta_get_post_thumbnail(); ?>
 				        		</div>
 				        		<div class="col-md-8 lista-conteudo">
 				        			<div class="lista-categoria">

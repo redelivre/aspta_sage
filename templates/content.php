@@ -1,18 +1,11 @@
-							<article id="lista" <?php post_class(); ?>>
+							<article <?php post_class('lista'); ?>>
                 <div class="row lista-post">
-                <?php if (has_post_thumbnail()) { ?>
+                <?php $thumb = aspta_get_post_thumbnail(false);
+                      if ($thumb !== false) { ?>
                   <div class="col-md-4 lista-img">
-                    <a id="featured-thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="nofollow">
+                    <a class="featured-thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="nofollow">
                       <div class="image_search_post">
-                        <?php if (has_post_thumbnail()) {
-                          the_post_thumbnail('lista-categoria');
-                        } else {
-                          $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', get_the_content(), $matches);
-                          $first_img = $matches[1];
-                          if ( !empty($first_img) ) { ?>
-                            <img class="img-responsive" src="<?php echo $first_img[0]; ?>" />
-                          <?php }
-                        }?>
+                        <?php aspta_get_post_thumbnail(); ?>
                       </div>
                     </a>
                   </div>

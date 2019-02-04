@@ -20,7 +20,7 @@ $the_query = new WP_Query( $search_query );
 ?>
 
 
-<div id="lista">
+<div class="lista">
 	<div class="titulo-pagina"><h1><?php echo the_category(); ?></h1></div>
 </div>
 
@@ -31,7 +31,7 @@ $the_query = new WP_Query( $search_query );
 <?php endif; ?>
 
 <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-  <div id="lista">
+  <div class="lista">
   	<?php get_template_part('templates/content', 'content'); ?>
   </div>
 <?php endwhile; ?>

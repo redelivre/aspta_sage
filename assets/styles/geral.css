@@ -688,64 +688,64 @@ aside .titulo {
 	color: #a7b739;
 }
 
-#lista .titulo-pagina h1,
-#lista .titulo-pagina .post-categories a {
+.lista .titulo-pagina h1,
+.lista .titulo-pagina .post-categories a {
 	margin: 0 0 20px 0;
 	padding-bottom: 20px;
 	font-weight: bold;
 	color: #e97200;
 	border-bottom: 3px solid #e97200;
 }
-#lista .titulo-pagina ul {
+.lista .titulo-pagina ul {
 	padding-left: 0;
 }
-#lista .titulo-pagina .post-categories a {
+.lista .titulo-pagina .post-categories a {
 	border-bottom: none;
 }
-#lista .titulo-pagina .post-categories li {
+.lista .titulo-pagina .post-categories li {
 	list-style: none;
 }
-#lista .lista-post {
+.lista .lista-post {
 	margin-bottom: 20px;
 	padding-bottom: 20px;
 	border-bottom: 1px solid #e97200;
 }
-#lista .lista-conteudo {
+.lista .lista-conteudo {
 	color: #003e2d;
 	font-weight: bold;
 }
-#lista .lista-categoria ul {
+.lista .lista-categoria ul {
 	padding: 0;
 }
-#lista .lista-categoria ul li {
+.lista .lista-categoria ul li {
 	list-style: none;
 	padding: 0;
 }
-#lista .lista-categoria a,
-#lista .lista-meta-time {
+.lista .lista-categoria a,
+.lista .lista-meta-time {
 	color: #003e2d;
 	font-size: 14px;
 	min-height: 16px;
 }
-#lista .lista-titulo {
+.lista .lista-titulo {
 	min-height: 70px;
 }
-#lista .lista-titulo h4 a {
+.lista .lista-titulo h4 a {
 	color: #003e2d;
 	font-size: 18px;
 	font-weight: bold;
 }
-#lista .lista-titulo h4 a:hover,
-#lista .lista-resumo p a:hover  {
+.lista .lista-titulo h4 a:hover,
+.lista .lista-resumo p a:hover  {
 	color: #a7b739;
 }
-#lista .lista-resumo {
+.lista .lista-resumo {
 	color: #327c3b;
 	font-size: 14px;
 	font-weight: normal;
 	min-height: 55px;
 }
-#lista .lista-resumo p a {
+.lista .lista-resumo p a {
 	color: #003e2d;
 	font-weight: bold;
 }
@@ -1247,6 +1247,11 @@ img.aligncenter {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: contain;
+}
+
+.lista-img img {
+    max-width: 100%;
+    height: auto;
 }
 
 .addtoany_share_save_container {

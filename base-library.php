@@ -16,7 +16,7 @@ use Roots\Sage\Wrapper;
             </div>
           </aside><!-- /.sidebar -->
           <?php endif; ?>
-          <aside id="lista" class="col-md-8">
+          <aside class="lista col-md-8">
           <?php 
           	include Wrapper\template_path();
           	global $wp;

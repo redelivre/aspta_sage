@@ -1,10 +1,7 @@
               <article <?php post_class(); ?>>
                 <div class="row lista-post">
                   <div class="col-md-4 lista-img">
-                  	<?php $image = aspta_get_post_thumbnail(false);
-                      if ( $image ) :?>
-                        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="nofollow"><div class="image_search_post img-responsive" style="height:230px; width:100%; background-image: url('<?php echo $image; ?>')"></div></a>
-                    <?php endif; ?>
+                  	<?php aspta_get_post_thumbnail(); ?>
                   </div>
                   <div class="col-md-8 lista-conteudo">
                     <div class="lista-categoria">

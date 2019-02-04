@@ -85,7 +85,7 @@
 
 ?>
 
-<div id="lista" class="page-header">
+<div class="lista page-header">
   <div class="titulo-pagina"><h1><?php echo get_the_title() ?></h1></div>
 </div>
 

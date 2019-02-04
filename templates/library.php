@@ -108,19 +108,9 @@ if (isset($_GET["material"]) || isset($_GET["theme"]) || isset($_GET["program"])
 									
 	              <?php 
 
-	                $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', get_the_content(), $matches);
-	                $first_img = $matches[1];
+	                $first_img = aspta_get_post_thumbnail(false);
 
-	                if (empty($first_img)){
-	                	$first_img =  get_the_post_thumbnail_url();
-	                	//var_dump($first_img);
-	                }
-
-	                else {
-	                	$first_img = $first_img[0];
-	                }
-
-	                if ( !empty($first_img) ) :?>
+	                if ( $first_img !== false ) :?>
 
 	                <div class="col-md-4 lista-img">
 	                  <a id="featured-thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="nofollow"><div class="image_search_post img-responsive" style="height:230px; width:100%; background-image: url('<?php echo $first_img; ?>')"></div></a>
