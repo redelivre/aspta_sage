@@ -36,6 +36,15 @@ body {
 	font-family: 'Droid Sans', sans-serif;
 	min-height: 100%;
 }
+ul li {
+	color: #003e2d;
+	list-style: none;
+	margin-bottom: 5px;
+}
+ul li a {
+	color: #003e2d;
+	font-weight: bold;
+}
 
 /* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
 .clearfix:before,
@@ -1077,7 +1086,8 @@ aside .titulo {
 #page-sidebar .blog-pratos-limpos h3,
 #page-sidebar .issuem_active_issue h3,
 .menu-inner-page h3,
-.widget_recent_entries h3 {
+.widget_recent_entries h3,
+.widget_nav_menu h3 {
 	margin: 0 0 0 20px;
 	padding-bottom: 25px;
 	font-weight: bold;
@@ -1089,16 +1099,19 @@ aside .titulo {
 	margin: 40px 0;
 }
 
-.menu-inner-page div {
+.menu-inner-page div,
+.menu-revista-container {
 	margin-left: 20px;
 }
-.menu-inner-page ul {
+.menu-inner-page ul,
+.menu-revista-container ul {
 	padding: 0;
 }
 .widget_recent_entries ul {
 	padding-left: 20px;
 }
-.menu-inner-page .menu-item {
+.menu-inner-page .menu-item,
+.menu-revista-container .menu-item {
 	margin: 5px 0;
 	padding: 10px 16px;
 	font-size: 18px;
@@ -1107,10 +1120,12 @@ aside .titulo {
 	list-style: none;
 	background-color: #b6c259;
 }
-.menu-inner-page .menu-item:hover {
+.menu-inner-page .menu-item:hover,
+.menu-revista-container .menu-item:hover {
 	background-color: #eb8b2c;
 }
-.menu-inner-page .menu-item a {
+.menu-inner-page .menu-item a,
+.menu-revista-container .menu-item a {
 	color: #fff;
 	font-weight: bold;
 }
@@ -1143,6 +1158,8 @@ form input[type=text] {
 }
 
 form input[type=text],
+form input[type=email],
+form input[type=url],
 form textarea {
 	padding: 5px 5px 5px 10px;
 	background-color: #d7d7d7;
