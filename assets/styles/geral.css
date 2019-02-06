@@ -724,6 +724,13 @@ aside .titulo {
 	padding-bottom: 20px;
 	border-bottom: 1px solid #e97200;
 }
+.lista .lista-post:last-child {
+	border-bottom: none;
+}
+.lista .lista-img {
+	max-height: 250px;
+	overflow-y: hidden;
+}
 .lista .lista-conteudo {
 	color: #003e2d;
 	font-weight: bold;
@@ -1210,7 +1217,7 @@ form .pesquisar {
 	color: #a7b739;
 	width: 100%;
 	/* Set the fixed height of the footer here */
-	height: 370px;
+	height: 380px;
 	background: url(../images/back_footer.jpg);
 	z-index: 3;
 }
@@ -1251,7 +1258,7 @@ form .pesquisar {
 	width: 100%;
 }
 .footer-redes-sociais {
-	margin-top: 100px;
+	margin-top: 90px;
 	height: 80px;
 	background-color: #003e2d;
 }
