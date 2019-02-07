@@ -1,5 +1,4 @@
-@import url('bootstrap.css');
-@import url('normalize.css');
+@import url('bootstrap.min.css');
 
 /* Fontes */
 @font-face {
@@ -35,6 +34,9 @@ body {
 	padding-bottom: 6rem;
 	font-family: 'Droid Sans', sans-serif;
 	min-height: 100%;
+}
+h1 {
+	font-size: 2em;
 }
 ul li {
 	color: #003e2d;
@@ -827,9 +829,6 @@ aside .titulo {
 	margin-bottom: 20px;
 	text-align: justify;
 }
-#pagina .entry-content p img {
-	/*display: none;*/
-}
 #pagina .pagina-programa,
 #pagina .pagina-tema,
 #pagina .pagina-tags {
@@ -892,9 +891,25 @@ aside .titulo {
 #pagina .pagina-comentarios {
 	margin: 30px 0;
 }
-#pagina .pagina-comentarios h3 {
+#pagina .pagina-comentarios h2 {
 	font-size: 14px;
 	font-weight: bold;
+}
+#pagina .pagina-comentarios ol li {
+	margin: 10px 0;
+	padding-bottom: 10px;
+	display: block;
+	color: #286919;
+	border-bottom: 1px solid #e97200;
+}
+#pagina .pagina-comentarios ol li a {
+	font-weight: bold;
+	color: #003e2d;
+	text-decoration: underline;
+}
+#pagina .pagina-comentarios ol li a:hover {
+	color: #e97200;
+	text-decoration: none;
 }
 
 /*Páginas Temas de Intervenção e Campanha Transgênicos*/
@@ -1258,9 +1273,11 @@ form .pesquisar {
 	width: 100%;
 }
 .footer-redes-sociais {
-	margin-top: 90px;
-	height: 80px;
+	position: absolute;
+	bottom: 0;
 	background-color: #003e2d;
+	height: 80px;
+	width: 100%;
 }
 .footer-icones {
 	margin: 0 auto;
@@ -1356,10 +1373,10 @@ img.aligncenter {
 
 @media only screen and (max-width: 1000px) {
 	header {
-		height: 415px;
+		height: 280px;
 	}
 	.menu-topo {
-	    height: 55px;
+		background: none;
 	}
 	/* Customize toggle navbar to 1000px screen */
 	.navbar {
@@ -1387,6 +1404,9 @@ img.aligncenter {
 	.navbar-justified .collapsing {
 	    overflow: hidden!important;
 	}
+	.nav > li {
+		margin-bottom: 0;
+	}
 	.navbar-nav > li > a,
 	.dropdown-menu > li > a {
 		padding-top: 10px;
@@ -1405,49 +1425,56 @@ img.aligncenter {
 	.navbar-justified .navbar-toggle .icon-bar {
 	    background-color: #e97200;
 	}
-
+	.wrap {
+		margin: 0 auto 300px;
+	}
 	.cycle-slideshow {
 		height: 438px;
+	}
+	.cycle-slideshow li img {
+		height: 434px;
+		min-width: 1000px;
 	}
 	.cycle-slideshow .bd {
 		top: 350px;
 	}
-
+	.cycle-slideshow .entry-title {
+		font-size: 20px;
+		width: 60%;
+	}
+	.cycle-slideshow .btn-saibamais {
+		right: 15em;
+	}
 	.post-title {
 		min-height: 110px;
 	}
 	.btn-saibamais {
 		width: 39%;
 	}
+	.footer {
+		height: 415px;
+	}
 }
 
 @media only screen and (max-width: 981px) {
 	header {
-		height: 399px;
-	}
-	.menu-topo {
-	    height: 55px;
-	    background-image: none;
+		height: 250px;
 	}
 	.wrap {
-		margin: 0 0 205px;
-	}
-	.cycle-slideshow {
-		height: 350px;
+		margin-bottom: 205px;
 	}
 	.cycle-slideshow li img {
-	    height: 200px;
 	    min-width: 750px;
 	}
 	.cycle-slideshow .bd {
-		top: 330px;
+		top: 350px;
 		width: 720px
 	}
 	.cycle-slideshow .entry-meta {
 		width: 20%;
 	}
 	.cycle-slideshow .entry-title {
-		margin-top: 5px;
+		margin-top: 25px;
 		font-size: 14px;
 	    width: 100%;
 	}
@@ -1512,8 +1539,7 @@ img.aligncenter {
 	.btn-share {
 		width: 180px;
 	}
-
-	.tema-card {
+	.temas-de-intervencao .tema-card {
 		float: left;
 		width: 33.33333333%;
 	}
@@ -1521,7 +1547,6 @@ img.aligncenter {
 		height: 130px;
 		width: 130px;
 	}
-
 	#page-sidebar .blog-pratos-limpos h3,
 	.menu-inner-page h3,
 	.widget_recent_entries h3 {
@@ -1557,9 +1582,6 @@ img.aligncenter {
 	.footer {
 		height: 308px;
 	}
-	.footer-redes-sociais {
-		margin-top: 80px;
-	}
 }
 
 /* Small Devices, Tablets */
@@ -1577,30 +1599,26 @@ img.aligncenter {
 	.logo {
 	    margin: 50px 0;
 	}
-
 	.menu-topo {
 	    height: 60px;
 	}
-
 	.wrap {
 		margin-bottom: 300px;
 	}
 	.cycle-slideshow {
-		height: 336px;
+		height: 434px;
 	}
-	/*.cycle-slideshow .bd {
-		top: 250px;
-	}*/
-
+	.cycle-slideshow .bd {
+		top: 340px;
+	}
 	#noticias {
 		padding-top: 40px;
 	}
 	.btn-noticias {
-	    margin: 0 auto 40px;
-	    float: none;
+	    margin: 0 16px 40px;
+	    float: right;
 	    width: 190px;
 	}
-
 	#prog-midias,
 	#camp-blog {
 		padding-bottom: 40px;
@@ -1613,22 +1631,11 @@ img.aligncenter {
 	.revista h3 {
 		text-align: center;
 	}
-
-	#redes-e-parcerias {
-		margin-bottom: -60px;
-	}
 	.parcerias-title h3 {
 		border: none;
 	}
-
 	.footer {
-		height: 300px;
-	}
-	.footer-redes-sociais {
-		height: 70px;
-	}
-	.footer-redes-sociais {
-		margin-top: 72px;
+		height: 395px;
 	}
 }
 
@@ -1639,14 +1646,16 @@ img.aligncenter {
 	.wrap {
     	margin-bottom: 205px;
 	}
-
+	.cycle-slideshow {
+		height: 300px;
+	}
 	.cycle-slideshow li img {
-	    height: 200px;
-	    min-width: 100%;
+		margin-top: -100px;
+	    height: 80%;
 	}
 	.cycle-slideshow .bd {
-		width: 100%;
-		top: 200px;
+		width: 580px;
+		top: 300px;
 	}
 	.noticia {
 		width: 100%;
@@ -1668,7 +1677,6 @@ img.aligncenter {
 		font-size: 18px;
 		font-weight: bold;
 	}
-
 	.programas-locais {
 		padding: 0 15px;
 	}
@@ -1712,7 +1720,10 @@ img.aligncenter {
 	.issuem-featured-article-thumb {
 	    width: 33%;
 	}
-
+	.issuem_archive {
+		margin: 0px;
+		padding: 0px;
+	}
 	.btn-share {
 		width: 152px;
 	}
@@ -1724,25 +1735,11 @@ img.aligncenter {
 		width: 152px;
 		height: 35px;
 	}
-	.facebook-share {
-		background: url('../images/facebook-share-peq.png') no-repeat center;
+	.footer {
+		height: 300px;
 	}
-	.google-share {
-		background: url('../images/google-share-peq.png') no-repeat center;
-	}
-	.twitter-share {
-		background: url('../images/twitter-share-peq.png') no-repeat center;
-	}
-	.whatsapp-share {
-		background: url('../images/whatsapp-share-peq.png') no-repeat center;
-	}
-
-	.footer-redes-sociais {
-		margin-top: 67px;
-	}
-	.issuem_archive {
-		margin: 0px;
-		padding: 0px;
+	.footer img {
+		width: 50%;
 	}
 }
 
@@ -1753,23 +1750,20 @@ img.aligncenter {
 	.menu-topo {
 		height: 50px;
 	}
-
-	.cycle-slideshow li img {
-	    height: 200px;
-	    width: 100%;
-	}
 	.cycle-slideshow .bd {
-		width: 100%;
+		top: 315px;
+		width: 480px;
 	}
 	.cycle-slideshow .entry-meta {
 		width: auto;
 	}
 	.cycle-slideshow .entry-title {
 		font-size: 12px;
-	    width: 100%;
+	    width: 400px;
 		margin-top: 2em;
 	}
 	#noticias .post-title {
+		min-height: 90px;
 		width: 100%;
 	}
 	#noticias .entry-image {
@@ -1780,7 +1774,6 @@ img.aligncenter {
 		font-size: 16px;
 		font-weight: normal;
 	}
-
 	#prog-midias, #camp-blog {
 	    padding: 10px;
 	}
@@ -1814,8 +1807,7 @@ img.aligncenter {
 	.parceria-banner a {
 	    margin: 0 auto;
 	}
-
-	.tema-card {
+	.temas-de-intervencao .tema-card {
 		width: 50%;
 	}
 	.temas-de-intervencao .tema-card .tema-icone img {
@@ -1832,7 +1824,6 @@ img.aligncenter {
 	.tema-card .tema-box-verde {
 		min-height: 160px;
 	}
-
 	.campanha-transgenicos .tema-card .tema-icone img {
 		height: 120px;
 		width: 120px;
@@ -1863,22 +1854,6 @@ img.aligncenter {
 		width: 180px;
 		height: 35px;
 	}
-	.facebook-share {
-		background: url('../images/facebook-share-peq.png') no-repeat center;
-	}
-	.google-share {
-		background: url('../images/google-share-peq.png') no-repeat center;
-	}
-	.twitter-share {
-		background: url('../images/twitter-share-peq.png') no-repeat center;
-	}
-	.whatsapp-share {
-		background: url('../images/whatsapp-share-peq.png') no-repeat center;
-	}
-
-	.footer-redes-sociais {
-		margin-top: 74px;
-	}
 	.footer-icones .icone {
 	    width: 16% !important;
 	}
@@ -1887,9 +1862,6 @@ img.aligncenter {
 @media only screen and (max-width: 414px) {
 	header {
 	    height: 232px;
-	}
-	.footer {
-	    height: 285px;
 	}
 	.tema-card #tema-box-01 {
 		min-height: 300px;
@@ -1902,6 +1874,9 @@ img.aligncenter {
 		height: 100px;
 		width: 100px;
 	}
+	.temas-de-intervencao .tema-card {
+		width: 100%;
+	}
 	#biblioteca .library-box .opcoes a,
 	#biblioteca .library-box .opcoes label {
 		font-size: 90%;
@@ -1910,14 +1885,14 @@ img.aligncenter {
 		margin: 30px 0 10px 47.6% !important;
 		width: 52% !important;
 	}
+	.footer {
+	    height: 301px;
+	}
 }
 
 @media only screen and (max-width: 375px) {
 	header {
 	    height: 224px;
-	}
-	.tema-card {
-		width: 100%;
 	}
 	.temas-de-intervencao .tema-card .tema-icone img {
 		height: 130px;
@@ -1942,10 +1917,6 @@ img.aligncenter {
 	.wrap {
     	margin-bottom: 185px;
 	}
-	.cycle-slideshow li img {
-	    height: 120px;
-	    width: 360px;
-	}
 	.cycle-slideshow .bd {
 		width: 330px
 	}
@@ -1953,7 +1924,7 @@ img.aligncenter {
     width: 40%;
 	}
 	.cycle-slideshow .entry-title {
-		font-size: 10px;
+		font-size: 12px;
 		width: 90%;
 	}
 	#noticias .post-title {
@@ -1963,7 +1934,6 @@ img.aligncenter {
 	#noticias .entry-image {
 		display: none;
 	}
-
 	.parceria-banner {
 		min-width: 270px;
 		padding: 0;
@@ -1974,11 +1944,11 @@ img.aligncenter {
 	.btn-share {
 		margin: 5px 75px;
 	}
-	.footer-redes-sociais {
-		margin-top: 59px;
-	}
 	.issuem_archive {
 		margin: 0px 20%;
+	}
+	.footer {
+	    height: 280px;
 	}
 }
 
@@ -1986,10 +1956,6 @@ img.aligncenter {
 @media only screen and (max-width: 320px) {
 	.menu-topo {
 	    margin-top: 9px;
-	}
-	.cycle-slideshow li img {
-	    height: 100px;
-	    width: 320px;
 	}
 	.cycle-slideshow .bd {
 		width: 290px
@@ -2007,9 +1973,6 @@ img.aligncenter {
 	#biblioteca .library-box .opcoes a,
 	#biblioteca .library-box .opcoes label {
 		font-size: 85%;
-	}
-	.footer-redes-sociais {
-		margin-top: 46px;
 	}
  	.tema-card #tema-box-01 {
     	min-height: 370px;
@@ -2037,5 +2000,8 @@ img.aligncenter {
 	.form-submit #submit {
 		margin: 30px 0 10px 31.6% !important;
 		width: 68% !important;
+	}
+	.footer-logo {
+		margin-top: 20px;
 	}
 }

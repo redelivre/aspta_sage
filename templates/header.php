@@ -6,7 +6,6 @@
 		<title><?php bloginfo('name'); ?><?php wp_title(); ?></title>
 		
 		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>">
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/styles/font-awesome.min.css">
 		<link rel="me" href="https://twitter.com/aspta">
 		<link rel="canonical" href="/web/tweet-button">
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -15,7 +14,6 @@
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
-		<script src="<?php bloginfo('template_url'); ?>/assets/scripts/modernizr.custom.js"></script>
 		<?php wp_head(); ?>
 	</head>
 			
@@ -53,8 +51,8 @@
 
 						        <?php
 						            wp_nav_menu( array(
-						                'menu'              => 'primary_navigation',
-						                'theme_location'    => 'primary_navigation',
+						                'menu'              => 'aspta',
+						                'theme_location'    => 'aspta',
 						                'depth'             => 2,
 						                'container'         => 'div',
 						                'container_class'   => 'collapse navbar-collapse',
