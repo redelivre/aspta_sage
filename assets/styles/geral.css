@@ -705,12 +705,20 @@ aside .titulo {
 }
 
 .lista .titulo-pagina h1,
-.lista .titulo-pagina .post-categories a {
+.lista .titulo-pagina .post-categories a,
+#mobilize-content h1 {
 	margin: 0 0 20px 0;
 	padding-bottom: 20px;
 	font-weight: bold;
 	color: #e97200;
 	border-bottom: 3px solid #e97200;
+}
+#mobilize-content h1 a {
+	font-weight: bold;
+	color: #003e2d;
+}
+#mobilize-content h1 a:hover {
+	color: #e97200;
 }
 .lista .titulo-pagina ul {
 	padding-left: 0;
@@ -1064,6 +1072,16 @@ aside .titulo {
 	Filter: Alpha(Opacity=100);
 }
 
+/*Página Revista Agriculturas/Mobilize*/
+#mobilize-content h6 {
+	color: #003e2d;
+	font-size: 18px;
+	font-weight: bold;
+	background: none;
+}
+#mobilize-sendto-form input[type="submit"] {
+    width: 33% !important;
+}
 
 /*Sidebar*/
 .sidebar-module,
