@@ -111,8 +111,8 @@ if ( have_posts() ) :?>
         ?>
     		<div class="issuem_archive">
                 <div>
-                	<a href="<?php echo get_permalink( get_the_ID() ); ?> " class="featured_archives_cover">
-                		<?php the_revista_thumbnail( 'medium', '' ); ?>
+                	<a href="<?php echo get_permalink( get_the_ID() ); ?>" class="featured_archives_cover" >
+                		<?php the_revista_thumbnail( 'medium' ); ?>
                 	</a>
                 	<p style="width:100px;">
                         <a href="<?php echo $match[0][0]; ?>">PDF</a>

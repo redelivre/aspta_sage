@@ -108,7 +108,7 @@ if (isset($_GET["material"]) || isset($_GET["theme"]) || isset($_GET["program"])
 									
 	              <?php 
 
-	                $first_img = aspta_get_post_thumbnail(false);
+	                $first_img = aspta_get_post_thumbnail(false, true);
 
 	                if ( $first_img !== false ) :?>
 
