@@ -286,7 +286,7 @@ function update_edit_form() {
     echo ' enctype="multipart/form-data"';
 }
 
-function aspta_get_post_thumbnail($echo = true) {
+function aspta_get_post_thumbnail($echo = true, $magazine = false) {
     if ( has_post_thumbnail() ) {
         if($echo) {
             the_post_thumbnail('destaque');
@@ -297,26 +297,48 @@ function aspta_get_post_thumbnail($echo = true) {
     } else {
         global $post;
         $size = 'post-thumbnail';
-        // No post thumbnail, try attachments instead.
-        $images = get_posts(
-            array(
-                'post_type'      => 'attachment',
-                'post_mime_type' => 'image',
-                'post_parent'    => $post->ID,
-                'posts_per_page' => 1, /* Save memory, only need one */
-            )
-        );
-        
-        if ( $images ) {
-            $size = apply_filters( 'post_thumbnail_size', $size, $post->ID );
-            $image = wp_get_attachment_image($images[0]->ID, $size, false, '');
-            if($echo) {
-                echo $image;
-                return true;
-            }
-            else {
-                return wp_get_attachment_image_url($images[0]->ID, $size, false);;
-            }
+        if($magazine && preg_match_all(
+				'#\bhttps?://[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/))#', get_the_content(), $match
+			)
+		) {
+			if($echo) {
+				?>
+	    		<div class="issuem_archive">
+	                <div>
+	                	<a href="<?php echo get_permalink( get_the_ID() ); ?> " class="featured_archives_cover">
+	                		<?php the_revista_thumbnail( 'large' ); ?>
+	                	</a>
+	                	<p style="width:100px;">
+	                        <a href="<?php echo $match[0][0]; ?>">PDF</a>
+	                    </p>
+	                </div>
+	        	</div><?php
+			}
+			else {
+				return the_revista_thumbnail( 'large', false );
+			}
+        } else {
+	        // No post thumbnail, try attachments instead.
+	        $images = get_posts(
+	            array(
+	                'post_type'      => 'attachment',
+	                'post_mime_type' => 'image',
+	                'post_parent'    => $post->ID,
+	                'posts_per_page' => 1, /* Save memory, only need one */
+	            )
+	        );
+	        
+	        if ( $images ) {
+	            $size = apply_filters( 'post_thumbnail_size', $size, $post->ID );
+	            $image = wp_get_attachment_image($images[0]->ID, $size, false, '');
+	            if($echo) {
+	                echo $image;
+	                return true;
+	            }
+	            else {
+	                return wp_get_attachment_image_url($images[0]->ID, $size, false);;
+	            }
+	        }
         }
     }
     return false;
