@@ -46,3 +46,4 @@ echo paginate_links( array(
 	'total' => $the_query->max_num_pages,
 	'prev_next' => false,
 ) ); ?>
+</div>
