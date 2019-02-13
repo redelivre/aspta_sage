@@ -574,8 +574,13 @@ function set_revista_thumbnail( $post_id ) {
 
 	$current_data = get_post_meta( $post_id, '_issu_documentid', true );
 	
+	$content = $post->post_content;
+	if( isset($_POST) && array_key_exists('content', $_POST)) {
+		$content = $_POST['content'];
+	}
+	
 	// Procura o id da revista
-	if( preg_match('/documentid=([\w|-]*)/i', $_POST['content'], $matches ) && count($matches) > 1 ) {
+	if( preg_match('/documentid=([\w|-]*)/i', $content, $matches ) && count($matches) > 1 ) {
         $new_data = $matches[1];
     	if ( $current_data )
     	{
@@ -591,7 +596,7 @@ function set_revista_thumbnail( $post_id ) {
 	}
 	else
 	{
-	    if( preg_match('/src=\"([\S]*)\"|src=\\\"([\S]*)\\\"/i', $_POST['content'], $matches) )
+		if( preg_match('/src=\"([\S]*)\"|src=\\\"([\S]*)\\\"/i', $content, $matches) )
 	    {
 	        $url = '';
 	        if( !empty($matches[1]) )
@@ -672,32 +677,43 @@ add_action( 'save_post_revista', 'set_revista_thumbnail' );
  *
  * @param $size string O tamanho da imagem [large | medium | small]
  */
-function the_revista_thumbnail( $size = 'small' ) {
+function the_revista_thumbnail( $size = 'small', $echo = true ) {
 
 	global $post;
 
 	$documentid = get_post_meta( $post->ID, '_issu_documentid', true );
+	$imgurl = false;
 
 	if ( $documentid ) {
-
-		$imgurl = '<img src=http://image.issuu.com/';
-		$imgurl .= $documentid;
-		$imgurl .= '/jpg/page_1_thumb_';
-		$imgurl .= $size . '.jpg';
-		$imgurl .= ' title="' . get_the_title( $post->ID ) . '"';
-		$imgurl .= ' alt="' . get_the_title( $post->ID ) . '"';
-		$imgurl .= ' />';
-
+		if($echo) {
+			$imgurl = '<img src="http://image.issuu.com/';
+			$imgurl .= $documentid;
+			$imgurl .= '/jpg/page_1_thumb_';
+			$imgurl .= $size . '.jpg"';
+			$imgurl .= ' title="' . get_the_title( $post->ID ) . '"';
+			$imgurl .= ' alt="' . get_the_title( $post->ID ) . '"';
+			$imgurl .= ' />';
+		} else {
+			$imgurl = 'http://image.issuu.com/';
+			$imgurl .= $documentid;
+			$imgurl .= '/jpg/page_1_thumb_';
+			$imgurl .= $size . '.jpg';
+		}
 	}
 	else {
 
 		$imgsrc = get_bloginfo( 'stylesheet_directory' ) . '/images/revista-miniatura.png';
-		$imgurl = '<img src="' . $imgsrc . '" alt="' . get_the_title( $post->ID ) . '" />';
+		if($echo) {
+			$imgurl = '<img src="' . $imgsrc . '" alt="' . get_the_title( $post->ID ) . '" />';
+		} else {
+			$imgurl = $imgsrc;
+		}
 
 	}
-
-	echo $imgurl;
-
+	
+	if($echo) echo $imgurl;
+	
+	return $imgurl;
 }
 
 function has_resvista_documentid() {
@@ -709,6 +725,29 @@ function has_resvista_documentid() {
         return true;
     }
     return false;
+}
+
+function check_revista_documentid() {
+	$args = [
+			'post_type' => 'revista',
+			'nopaging' => true,
+			'posts_per_page'=>-1
+	];
+	$query = new WP_Query($args);
+	if($query->have_posts()) {
+		global $post;
+		while($query->have_posts()) {
+			$query->the_post();
+			$documentid = get_post_meta( $post->ID, '_issu_documentid', true );
+			echo get_the_ID().'\n';
+			if(empty( $documentid ) ) {
+				set_revista_thumbnail($post->ID);
+				$documentid = get_post_meta( $post->ID, '_issu_documentid', true );
+				echo "setting document ID to :[$documentid] \n"; 
+			}
+		}
+		wp_reset_postdata();
+	}
 }
 
 ?>
