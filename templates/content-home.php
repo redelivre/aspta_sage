@@ -134,6 +134,8 @@
 				<div class="col-md-4 col-sm-6 col-xs-12 blog-pratos-limpos">
 					<h3 class="text-uppercase">Blog Em Pratos Limpos</h3>
 					<?php $rss = fetch_feed('http://pratoslimpos.org.br/?feed=rss2');
+					$maxitems = 0;
+					$rss_items = array();
 					if (!is_wp_error( $rss ) ) :
 						$maxitems = $rss->get_item_quantity(6);
 						$rss_items = $rss->get_items(0, $maxitems);
