@@ -31,6 +31,8 @@ class BlogCleanPlatesWidget extends WP_Widget {
 		<div class="sidebar-module blog-pratos-limpos">
 			<h3 class="text-uppercase">Blog em Pratos Limpos</h3>
 			<?php $rss = fetch_feed('http://pratoslimpos.org.br/?feed=rss2');
+				$maxitems = 0;
+				$rss_items = array();
 				if (!is_wp_error( $rss ) ) :
 					$maxitems = $rss->get_item_quantity(6);
 					$rss_items = $rss->get_items(0, $maxitems);
