@@ -96,7 +96,7 @@ function aspta_build_taxonomies() {
 	  	'show_in_nav_menus' => false,
 	    'query_var' 		=> true,
 	  	'capabilities'      => array('edit_terms' => false,'manage_terms' => false),
-	    'rewrite' 			=> array( 'slug' => 'programas' ),
+	  	'rewrite' 			=> array( 'slug' => 'programas/tag', 'with_front' => true),
 	  ));
 }
 
@@ -203,41 +203,123 @@ function update_menu() {
 
 //$labels = apply_filters( "post_type_labels_{$post_type}", $labels );
 function aspta_replace_menu_labels($labels) {
-    $labels->name = 'Revista Agriculturas';
-    $labels->singular_name = 'Revista';
-    $labels->add_new = 'Adicionar nova Revista ou Publicação';
-    $labels->add_new_item = 'Adicionar nova Revista ou Publicação';
-    $labels->edit_item = 'Editar Revista ou Publicação';
-    $labels->view_item = 'Visualizar';
+    $labels->name = 'Artigos';
+    $labels->singular_name = 'Artigo';
+    $labels->add_new = 'Adicionar Novo Artigo';
+    $labels->add_new_item = 'Adicionar Novo Artigo';
+    $labels->edit_item = 'Editar Artigo';
+    $labels->view_item = 'Visualizar Artigo';
     $labels->name = 'Articles';
-    $labels->singular_name = 'Revista';
+    $labels->singular_name = 'Artigo';
 //     $labels->add_new = 'Add New Article';
 //     $labels->add_new_item = 'Add New Article';
 //     $labels->edit_item = 'Edit Article';
-    $labels->new_item = 'Nova Revista';
+    $labels->new_item = 'Novo Artigo';
 //     $labels->view_item = 'View Article';
-    $labels->view_items = 'Ver Revistas';
-    $labels->search_items = 'Procurar Revistas';
-    $labels->not_found = 'Nenhuma Revista encontrada';
-    $labels->not_found_in_trash = 'Nenhuma Revista encontrada na lixeira';
+    $labels->view_items = 'Ver Artigos';
+    $labels->search_items = 'Procurar Artigos';
+    $labels->not_found = 'Nenhum Artigo encontrado';
+    $labels->not_found_in_trash = 'Nenhum Artigo encontrado na lixeira';
 //     $labels->parent_item_colon = '';
-    $labels->all_items = 'Revistas';
-    $labels->archives = 'Revistas';
-    $labels->attributes = 'Atributos da Revista';
-    $labels->insert_into_item = 'Inserir na Revista';
-    $labels->uploaded_to_this_item = 'Anexadas a esta Revista';
-    $labels->featured_image = 'Imagem destacada da Revista';
+    $labels->all_items = 'Artigos';
+    $labels->archives = 'Artigos';
+    $labels->attributes = 'Atributos do Artigo';
+    $labels->insert_into_item = 'Inserir no Artigo';
+    $labels->uploaded_to_this_item = 'Anexadas a este Artigo';
+    $labels->featured_image = 'Imagem destacada do Artigo';
 //    $labels->set_featured_image = 'Definir imagem destacada';
 //     $labels->remove_featured_image = 'Remover imagem destacada';
 //     $labels->use_featured_image = 'Usar como Imagem Destacada';
-    $labels->filter_items_list = 'Filtrar lista de Revistas';
-    $labels->items_list_navigation = 'Navegação da lista de Revistas';
-    $labels->items_list = 'Lista de Revistas';
+    $labels->filter_items_list = 'Filtrar lista de Artigos';
+    $labels->items_list_navigation = 'Navegação da lista de Artigos';
+    $labels->items_list = 'Lista de Artigos';
     $labels->menu_name = 'Revista Agriculturas';
-    $labels->name_admin_bar = 'Revista';
+    $labels->name_admin_bar = 'Revista Agriculturas';
     return $labels;
 }
 add_filter('post_type_labels_article', 'aspta_replace_menu_labels');
+
+function aspta_replace_issuem_issue_menu_labels($labels) {
+	$labels->name= 'Revistas';
+	$labels->singular_name= 'Revista';
+	$labels->search_items= 'Procurar Revistas';
+	$labels->popular_items= '';
+	$labels->all_items= 'Todas as Revistas';
+	$labels->parent_item= 'Revista mãe';
+	$labels->parent_item_colon= 'Revistas mãe:';
+	$labels->edit_item= 'Editar Revista';
+	$labels->view_item= 'Ver Revista';
+	$labels->update_item= 'Atualizar Revista';
+	$labels->add_new_item= 'Adicionar Nova Revista';
+	$labels->new_item_name= 'Nova Revista';
+	$labels->separate_items_with_commas= '';
+	$labels->add_or_remove_items= '';
+	$labels->choose_from_most_used= '';
+	$labels->not_found= 'Nenhuma revista foi encontrada.';
+	$labels->no_terms= 'Nenhuma revista';
+	$labels->items_list_navigation= 'Navegação da listas de Revistas';
+	$labels->items_list= 'Lista de Revistas';
+	$labels->menu_name= 'Revistas';
+	$labels->name_admin_bar= 'Revista';
+	$labels->archives= 'Todas as Revistas';
+	return $labels;
+}
+add_filter('taxonomy_labels_issuem_issue', 'aspta_replace_issuem_issue_menu_labels');
+
+function aspta_replace_issuem_issue_categories_menu_labels($labels) {
+	$labels->name= 'Categorias de Artigos';
+	$labels->singular_name= 'Categoria de Artigo';
+	$labels->search_items= 'Procurar Categorias de Artigos';
+	$labels->popular_items= '';
+	$labels->all_items= 'Todas as Categorias de Artigos';
+	$labels->parent_item= 'Categoria de Artigo mãe';
+	$labels->parent_item_colon= 'Categorias de Artigos mãe:';
+	$labels->edit_item= 'Editar Categoria de Artigo';
+	$labels->view_item= 'Ver Categoria de Artigo';
+	$labels->update_item= 'Atualizar Categoria de Artigo';
+	$labels->add_new_item= 'Adicionar Nova Categoria de Artigo';
+	$labels->new_item_name= 'Nova Categoria de Artigo';
+	$labels->separate_items_with_commas= '';
+	$labels->add_or_remove_items= '';
+	$labels->choose_from_most_used= '';
+	$labels->not_found= 'Nenhuma Categoria de Artigo foi encontrada.';
+	$labels->no_terms= 'Nenhuma Categoria de Artigo';
+	$labels->items_list_navigation= 'Navegação da listas de Categorias de Artigos';
+	$labels->items_list= 'Lista de Categorias de Artigos';
+	$labels->menu_name= 'Categorias de Artigos';
+	$labels->name_admin_bar= 'Categoria de Artigo';
+	$labels->archives= 'Todas as Categorias de Artigos';
+	return $labels;
+}
+add_filter('taxonomy_labels_issuem_issue_categories', 'aspta_replace_issuem_issue_categories_menu_labels');
+
+function aspta_replace_issuem_issue_tags_menu_labels($labels) {
+	$labels->name= 'Palavras-chave';
+	$labels->singular_name= 'Palavra-chave';
+	$labels->search_items= 'Procurar Palavras-chave';
+	$labels->popular_items= '';
+	$labels->all_items= 'Todas as Palavras-chave';
+	$labels->parent_item= 'Palavra-chave mãe';
+	$labels->parent_item_colon= 'Palavras-chave mãe:';
+	$labels->edit_item= 'Editar Palavra-chave';
+	$labels->view_item= 'Ver Palavra-chave';
+	$labels->update_item= 'Atualizar Palavra-chave';
+	$labels->add_new_item= 'Adicionar Nova Palavra-chave';
+	$labels->new_item_name= 'Nova Palavra-chave';
+	$labels->separate_items_with_commas= '';
+	$labels->add_or_remove_items= '';
+	$labels->choose_from_most_used= '';
+	$labels->not_found= 'Nenhuma Palavra-chave foi encontrada.';
+	$labels->no_terms= 'Nenhuma Palavra-chave';
+	$labels->items_list_navigation= 'Navegação da listas de Palavras-chave';
+	$labels->items_list= 'Lista de Palavras-chave';
+	$labels->menu_name= 'Palavras-chave';
+	$labels->name_admin_bar= 'Palavra-chave';
+	$labels->archives= 'Todas as Palavras-chave';
+	return $labels;
+}
+add_filter('taxonomy_labels_issuem_issue_tags', 'aspta_replace_issuem_issue_tags_menu_labels');
+
 
 add_action('add_meta_boxes', 'add_custom_meta_boxes');
 function add_custom_meta_boxes() {
