@@ -12,23 +12,26 @@ function revista_create_post_type() {
 
 	$args = array(
 		'labels' => array(
-			'name' 			=> 'Revista Agriculturas',
-			'singular_name' => 'Revista',
-			'add_new'		=> 'Adicionar nova Revista ou Publicação',
-			'add_new_item'	=> 'Adicionar nova Revista ou Publicação',
-			'edit_item'		=> 'Editar Revista ou Publicação',
-			'view_item'		=> 'Visualizar'
+			'name' 			=> 'Arquivo da Revista Agriculturas',
+			'singular_name' => 'Revista Arquivada',
+			'add_new'		=> 'Adicionar nova Revista ou Publicação Arquivada',
+			'add_new_item'	=> 'Adicionar nova Revista ou Publicação Arquivada',
+			'edit_item'		=> 'Editar Revista ou Publicação Arquivada',
+			'view_item'		=> 'Visualizar Revista ou Publicação Arquivada'
 		),
 
-		'menu_position'		=> 5,
+		//'menu_position'		=> 5,
 		'public' 			=> true,
 		'has_archive'		=> true,
 		'supports'			=> array( 'title', 'author', 'editor', 'excerpt', 'comments','page-attributes' ),
 		'hierarchical'		=> true,
         'taxonomies'        => array('post_tag'),
+		//'show_in_menu'		=> false
 	);
 
 	register_post_type( 'revista', $args );
+	
+	//add_submenu_page('edit.php?post_type=article', $args['labels']['name'], $args['labels']['name'], 'edit_posts', 'edit.php?post_type=revista' );
 }
 
 add_action( 'init', 'revista_create_post_type' );
@@ -573,7 +576,9 @@ function set_revista_thumbnail( $post_id ) {
 	global $post;
 
 	$current_data = get_post_meta( $post_id, '_issu_documentid', true );
-	
+	if(!is_object($post)) {
+		$post = get_post($post_id);
+	}
 	$content = $post->post_content;
 	if( isset($_POST) && array_key_exists('content', $_POST)) {
 		$content = $_POST['content'];
