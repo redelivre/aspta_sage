@@ -27,21 +27,44 @@ class NewsPaperWidget extends WP_Widget {
 	* @param array $args
 	* @param array $instance
 	*/
-	public function widget( $args, $instance ) { ?>
-	    <div class="sidebar-module revista col-md-12 col-sm-6">
-		    <h3 class="text-uppercase">Revista Agriculturas</h3>
-		    <?php query_posts( array (
-		    	'post_type'      => 'revista',
-		    	'post_parent'    => 0,
-		    	'posts_per_page' => 1
-		    ));
-		    if ( have_posts() ) :
-		    	while ( have_posts() ) : the_post()?>
-		    		<a class="img-responsive text-center" href="<?php echo get_permalink( get_the_ID() ); ?> "><?php the_revista_thumbnail( 'large' ); ?></a>
-		    	<?php endwhile;
-		    endif; ?>
-	    </div>
-    <?php }
+	public function widget( $args, $instance ) {
+		$cover_id = get_issuem_issue_cover();
+		if($cover_id) {
+			$issuem_settings = get_issuem_settings();
+			$issue = get_active_issuem_issue();
+			
+			if ( 0 == $issuem_settings['page_for_articles'] ) {
+				$article_page = get_bloginfo( 'wpurl' ) . '/' . apply_filters( 'issuem_page_for_articles', 'article/' );
+			} else {
+				$article_page = get_page_link( $issuem_settings['page_for_articles'] );
+			}
+			$issue_url = get_term_link( $issue, 'issuem_issue' );
+			if ( !empty( $issuem_settings['use_issue_tax_links'] ) || is_wp_error( $issue_url ) ) {
+				$issue_url = add_query_arg( 'issue', $issue, $article_page );
+			}
+			?>
+			<div class="sidebar-module revista col-md-12 col-sm-6">
+				<h3 class="text-uppercase">Revista Agriculturas</h3>
+	    		<a class="img-responsive text-center" href="<?php echo $issue_url; ?>"><?php echo wp_get_attachment_image( $cover_id, 'issuem-cover-image' ); ?></a>
+		    </div> <?php 
+		} else {
+			?>
+		    <div class="sidebar-module revista col-md-12 col-sm-6">
+			    <h3 class="text-uppercase">Revista Agriculturas</h3>
+			    <?php query_posts( array (
+			    	'post_type'      => 'revista',
+			    	'post_parent'    => 0,
+			    	'posts_per_page' => 1
+			    ));
+			    if ( have_posts() ) :
+			    	while ( have_posts() ) : the_post()?>
+			    		<a class="img-responsive text-center" href="<?php echo get_permalink( get_the_ID() ); ?> "><?php the_revista_thumbnail( 'large' ); ?></a>
+			    	<?php endwhile;
+			    endif; ?>
+		    </div>
+    <?php
+		}
+	}
 	/**
 	* Outputs the options form on admin
 	*
