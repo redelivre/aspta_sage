@@ -755,4 +755,135 @@ function check_revista_documentid() {
 	}
 }
 
+class AsptaNewspaper {
+	public static function get_newspaper($id = false, $startPost = true) {
+		$newspaper = get_active_issuem_issue();
+		return $newspaper;
+	}
+	
+	public static function get_issuem_archive($atts = array()) {
+		$issuem_settings = get_issuem_settings();
+		$defaults = array(
+		'orderby' 		=> 'issue_order',
+		'order'			=> 'DESC',
+		'limit'			=> 0,
+		'pdf_title'		=> $issuem_settings['pdf_title'],
+		'default_image'	=> $issuem_settings['default_issue_image'],
+		'args'			=> array( 'hide_empty' => 0 ),
+		);
+		extract( shortcode_atts( $defaults, $atts ) );
+		
+		if ( is_string( $args ) ) {
+			$args = str_replace( '&amp;', '&', $args );
+			$args = str_replace( '&#038;', '&', $args );
+		}
+		
+		$args = apply_filters( 'do_issuem_archives_get_terms_args', $args );
+		$issuem_issues = get_terms( 'issuem_issue', $args );
+		$issues = array();
+		$count = 0;
+		foreach ( $issuem_issues as $issue ) {
+			$issue_meta = get_option( 'issuem_issue_' . $issue->term_id . '_meta' );
+			// If issue is not a Draft, add it to the archive array;
+			if ( !empty( $issue_meta ) && !empty( $issue_meta['issue_status'] )
+			&& ( 'Live' === $issue_meta['issue_status'] || current_user_can( apply_filters( 'see_issuem_draft_issues', 'manage_issues' ) ) ) ) {
+				switch( $orderby ) {
+					case "issue_order":
+						if ( !empty( $issue_meta['issue_order'] ) )
+							$issues[ $issue_meta['issue_order'] ] = array('issue' => $issue, 'meta' => $issue_meta);
+							else
+								$issues[ '-' . ++$count ] = array('issue' => $issue, 'meta' => $issue_meta);
+								break;
+					case "name":
+						$issues[ $issue_meta['name'] ] = array('issue' => $issue, 'meta' => $issue_meta);
+						break;
+					case "term_id":
+						$issues[ $issue->term_id ] = array('issue' => $issue, 'meta' => $issue_meta);
+						break;
+				}
+			} else {
+				$issues[ '-' . ++$count ] = array('issue' => $issue, 'meta' => $issue_meta);
+			}
+		}
+		krsort( $issues );
+		return $issues;
+	}
+	
+	public static function get_issuem_archive_covers($atts = array(), $size = array(106,150)) {
+		$issues = self::get_issuem_archive($atts);
+		$issuem_settings = get_issuem_settings();
+		$defaults = array(
+				'orderby' 		=> 'issue_order',
+				'order'			=> 'DESC',
+				'limit'			=> 0,
+				'pdf_title'		=> $issuem_settings['pdf_title'],
+				'default_image'	=> $issuem_settings['default_issue_image'],
+				'args'			=> array( 'hide_empty' => 0 ),
+		);
+		extract( shortcode_atts( $defaults, $atts ) );
+		$covers = array();
+		foreach($issues as $issue){
+			$id = $issue['issue']->term_id;
+			//echo '<img src="'.get_site_url().'/wp-content/uploads/2017/06/'.basename(get_attached_file(get_issuem_issue_cover($issue))).'">';
+			$cover = wp_get_attachment_image(@get_issuem_issue_cover($id), $size);
+			
+			if ( empty( $cover ) ) {
+				if(is_array($size)) {
+					$cover = '<img src="' . $default_image . '" sizes="(max-width: '.$size[0].'px) 100vw, '.$size[0].'px" width="'.$size[0].'" height="'.$size[1].'" />';
+				} else {
+					$cover = '<img src="' . $default_image . '"  />';
+				}
+			}
+			$article_page = '';
+			if ( 0 == $issuem_settings['page_for_articles'] ) {
+				$article_page = get_bloginfo( 'wpurl' ) . '/' . apply_filters( 'issuem_page_for_articles', 'article/' );
+			} else {
+				$article_page = get_page_link( $issuem_settings['page_for_articles'] );
+			}
+				
+			$issue_url = get_term_link( $id, 'issuem_issue' );
+			if ( !empty( $issuem_settings['use_issue_tax_links'] ) || is_wp_error( $issue_url ) ) {
+				$issue_url = add_query_arg( 'issue', $issue['issue']->slug, $article_page );
+			}
+			
+			if ( !empty( $issue['meta']['pdf_version'] ) || !empty( $issue['meta']['external_pdf_link'] ) ) {
+				
+				$pdf_url = empty( $issue['meta']['external_pdf_link'] ) ? apply_filters( 'issuem_pdf_attachment_url', wp_get_attachment_url( $issue['meta']['pdf_version'] ), $issue['meta']['pdf_version'] ) : $issue['meta']['external_pdf_link'];
+				
+				$pdf_line = '<a href="' . $pdf_url . '" target="' . $issuem_settings['pdf_open_target'] . '">';
+				
+				if ( 'PDF Archive' == $issue['meta']['issue_status'] ) {
+					
+					$issue_url = $pdf_url;
+					$pdf_line .= empty( $pdf_only_title ) ? $issuem_settings['pdf_only_title'] : $pdf_only_title;
+					
+				} else {
+					
+					$pdf_line .= empty( $pdf_title ) ? $issuem_settings['pdf_title'] : $pdf_title;
+					
+				}
+				
+				$pdf_line .= '</a>';
+				
+			} else {
+				
+				$pdf_line = apply_filters( 'issuem_pdf_version', '&nbsp;', $pdf_title, $issue['issue'] );
+				
+			}
+			
+			if ( !empty( $issue['meta']['external_link'] ) )
+				$issue_url = apply_filters( 'archive_issue_url_external_link', $issue['meta']['external_link'], $issue_url );
+				
+			$covers[] = array(
+					'id' => $issue,
+					'cover' => $cover,
+					'pdf' => $pdf_line,
+					'url' => $issue_url
+			);
+			
+		}
+		return $covers;
+	}
+}
+
 ?>
