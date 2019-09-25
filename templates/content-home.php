@@ -160,7 +160,7 @@
 				<div class="col-md-4 col-sm-6 col-xs-12 campanhas">
 					<h3 class="text-uppercase">Campanhas</h3>
 					<a href="<?php get_site_url(); ?>/tag/sementes-crioulas/" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner_site.jpg" alt="Sementes Crioulas" /></a>
-					<a href="<?php get_site_url(); ?>/2015/05/metodo/" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner_lume.jpg" alt="Lume" /></a>
+					<a href="<?php get_site_url(); ?>/2015/05/metodo/" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner_lume.png" alt="Lume" /></a>
 					<a href="<?php get_site_url(); ?>/2014/03/17/conheca-os-produtos-da-gente/" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner_alimentos.jpg" alt="Alimentos Saudáveis" /></a>
 				</div>
 			</div>
