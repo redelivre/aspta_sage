@@ -801,8 +801,6 @@ class AsptaNewspaper {
 						$issues[ $issue->term_id ] = array('issue' => $issue, 'meta' => $issue_meta);
 						break;
 				}
-			} else {
-				$issues[ '-' . ++$count ] = array('issue' => $issue, 'meta' => $issue_meta);
 			}
 		}
 		krsort( $issues );
@@ -823,6 +821,7 @@ class AsptaNewspaper {
 		extract( shortcode_atts( $defaults, $atts ) );
 		$covers = array();
 		foreach($issues as $issue){
+			if($issue['meta']['issue_status'] != 'Live') continue;
 			$id = $issue['issue']->term_id;
 			//echo '<img src="'.get_site_url().'/wp-content/uploads/2017/06/'.basename(get_attached_file(get_issuem_issue_cover($issue))).'">';
 			$cover = wp_get_attachment_image(@get_issuem_issue_cover($id), $size);
