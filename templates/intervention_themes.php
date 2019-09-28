@@ -74,7 +74,7 @@
     </div>
     <div class="tema-card col-md-4">
       <a href="<?php get_site_url(); ?>/temas-de-intervencao/infancia/">
-        <div class="tema-box-laranja">
+        <div class="tema-box-verde">
           <div class="tema-icone"><img class="image-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/infancia-e-juventude.png"></div>
           <div class="tema-titulo">Infância</div>
         </div>

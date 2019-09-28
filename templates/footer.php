@@ -10,32 +10,20 @@
 			        </div>
 			    </div>
 			  </div>
-  			<div class="footer-redes-sociais">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="footer-icones">
-								<ul>
-									<a href="http://www.facebook.com/asptaagroecologia/" target="_blank"><li class="icone icon-facebook"></li></a>
-									<a href="http://www.twitter.com/aspta/" target="_blank"><li class="icone icon-twitter"></li></a>
-									<a href="http://plus.google.com" target="_blank"><li class="icone icon-gplus"></li></a>
-									<a href="http://www.youtube.com/channel/UCfRvRTdz58FkPVese6OzQmA" target="_blank"><li class="icone icon-youtube"></li></a>
-									<a href="http://vimeo.com/user7077452" target="_blank"><li class="icone icon-vimeo"></li></a>
-									<a href="https://www.instagram.com/agroecologiaaspta/" target="_blank"><li class="icone icon-instagram"></li></a>
-								</ul>
-							</div>
-						</div>
+  			<div class="footer-redes-sociais container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<ul class="footer-icones">
+							<a href="http://www.facebook.com/asptaagroecologia/" target="_blank"><li class="fa fa-facebook" aria-hidden="true"></li></a>
+							<a href="http://www.twitter.com/aspta/" target="_blank"><li class="fa fa-twitter" aria-hidden="true"></li></a>
+							<a href="http://plus.google.com" target="_blank"><li class="fa fa-google-plus" aria-hidden="true"></li></a>
+							<a href="http://www.youtube.com/channel/UCfRvRTdz58FkPVese6OzQmA" target="_blank"><li class="fa fa-youtube" aria-hidden="true"></li></a>
+							<a href="http://vimeo.com/user7077452" target="_blank"><li class="fa fa-vimeo" aria-hidden="true"></li></a>
+							<a href="https://www.instagram.com/agroecologiaaspta/" target="_blank"><li class="fa fa-instagram" aria-hidden="true"></li></a>
+						</ul>
 					</div>
 				</div>
 			</div>
-			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-			<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script-->
-			<!-- Include all compiled plugins (below), or include individual files as needed -->
-			<!--script src="<?php bloginfo('template_url'); ?>/assets/scripts/bootstrap.min.js"></script-->
-			<script src="<?php bloginfo('template_url'); ?>/assets/scripts/classie.js"></script>
-			<script src="<?php bloginfo('template_url'); ?>/assets/scripts/uisearch.js"></script>
-			<!--script src="<?php bloginfo('template_url'); ?>/assets/scripts/jquery.cycle2.min.js"></script>
-			<script src="<?php bloginfo('template_url'); ?>/assets/scripts/jquery.cycle2.center.min.js"></script-->
 			<script>
 				new UISearch( document.getElementById( 'sb-search' ) );
 			</script>

@@ -1,5 +1,3 @@
-@import url('bootstrap.min.css');
-
 /* Fontes */
 @font-face {
 	font-family: 'Droid Sans';
@@ -192,7 +190,7 @@ header {
 
 /* Customize the nav-justified links
 to be fill the entire space of the .navbar */
-.nav-justified {
+.navbar-justified {
 	align-items: center;
 }
 .navbar-nav > li > a,
@@ -206,9 +204,9 @@ to be fill the entire space of the .navbar */
 	max-width: 170px;
 	text-align: center;
 	white-space: normal;
-	display: flex;
-    justify-content: center;
-    flex-direction: column-reverse;
+	display: flex !important;
+	justify-content: center;
+	flex-direction: column-reverse;
 }
 .navbar-nav > li > a:hover {
 	color: #003e2d;
@@ -232,6 +230,7 @@ to be fill the entire space of the .navbar */
 .navbar-nav > li,
 .navbar-nav > li > a {
 	min-height: 80px;
+	min-width: 145px;
 }
 .navbar-nav > li > a {
 	border-right: 1px solid #d6dbb5;
@@ -287,6 +286,9 @@ to be fill the entire space of the .navbar */
 }
 
 /* Seções */
+.aspta-content {
+	margin-left: -15px;
+}
 aside {
 	margin-top: 20px;
 }
@@ -800,6 +802,7 @@ aside .titulo {
 	max-height: 100%;
 }
 #pagina .pagina-data {
+	margin-bottom: 10px;
 	min-height: 30px;
 	border-bottom: 2px solid #003e2d;
 	width: 100%;
@@ -814,7 +817,8 @@ aside .titulo {
 }
 
 #pagina .pagina-categoria li {
-	margin-top: 15px;
+	padding-right: 15px;
+	display: inline;
 	list-style: none;
 }
 #pagina .pagina-categoria li a,
@@ -898,6 +902,7 @@ aside .titulo {
 
 #pagina .pagina-comentarios {
 	margin: 30px 0;
+	padding-bottom: 30px;
 }
 #pagina .pagina-comentarios h2 {
 	font-size: 14px;
@@ -1293,13 +1298,18 @@ form .pesquisar {
 .footer-redes-sociais {
 	position: absolute;
 	bottom: 0;
+	display: flex;
+	justify-content: center;
 	background-color: #003e2d;
 	height: 80px;
 	width: 100%;
 }
 .footer-icones {
 	margin: 0 auto;
-	width: 280px;
+	padding-left: 0;
+	display: flex;
+	justify-content: space-around;
+	width: 300px;
 }
 .footer-icones ul {
 	margin: 0;
@@ -1307,50 +1317,15 @@ form .pesquisar {
     display: inline;
     list-style: none;
 }
-.footer-icones .icone:last-child {
-    margin-right:0;
-}
-.footer-icones a .icone {
+.footer-icones li {
 	margin-top: 20px;
 	float: left;
+	font-size: 3em;
+	color: #fff;
 	height: 35px;
-	width: 16%;
 }
-.footer-icones a .icon-facebook {
-	background: url('../images/icon-facebook.png') no-repeat;
-}
-.footer-icones a .icon-facebook:hover {
-	background: url('../images/icon-facebook-hover.png') no-repeat;
-}
-.footer-icones a .icon-twitter {
-	background: url('../images/icon-twitter.png') no-repeat;
-}
-.footer-icones a .icon-twitter:hover {
-	background: url('../images/icon-twitter-hover.png') no-repeat;
-}
-.footer-icones a .icon-gplus {
-	background: url('../images/icon-gplus.png') no-repeat;
-}
-.footer-icones a .icon-gplus:hover {
-	background: url('../images/icon-gplus-hover.png') no-repeat;
-}
-.footer-icones a .icon-youtube {
-	background: url('../images/icon-youtube.png') no-repeat;
-}
-.footer-icones a .icon-youtube:hover {
-	background: url('../images/icon-youtube-hover.png') no-repeat;
-}
-.footer-icones a .icon-vimeo {
-	background: url('../images/icon-vimeo.png') no-repeat;
-}
-.footer-icones a .icon-vimeo:hover {
-	background: url('../images/icon-vimeo-hover.png') no-repeat;
-}
-.footer-icones a .icon-instagram {
-	background: url('../images/icon-instagram.png') no-repeat;
-}
-.footer-icones a .icon-instagram:hover {
-	background: url('../images/icon-instagram-hover.png') no-repeat;
+.footer-icones li:hover {
+	color: #98ab28;
 }
 
 img.alignright {
@@ -1871,9 +1846,6 @@ img.aligncenter {
 		display: table-cell;
 		width: 180px;
 		height: 35px;
-	}
-	.footer-icones .icone {
-	    width: 16% !important;
 	}
 }
 
