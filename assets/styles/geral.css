@@ -932,14 +932,14 @@ aside .titulo {
 	color: #012b09;
 	font-weight: bold;
 }
-.tema-card .tema-box-laranja {
+.tema-card .tema-box {
 	margin-bottom: 30px;
 	min-height: 230px;
+}
+.tema-card:nth-child(odd) .tema-box {
 	background-color: #e97200;
 }
-.tema-card .tema-box-verde {
-	margin-bottom: 30px;
-	min-height: 230px;
+.tema-card:nth-child(even) .tema-box {
 	background-color: #9d9f00;
 }
 .temas-de-intervencao .tema-card .tema-icone img {
