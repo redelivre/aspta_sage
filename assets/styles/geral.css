@@ -992,6 +992,14 @@ aside .titulo {
 }
 
 /*Página Revista Agriculturas*/
+.newspaper-header .newspaper-cover {
+	max-width: 200px;
+	float: left;
+	margin-right: 15px;
+}
+.newspaper-header .newspaper-descricao {
+	text-align: justify;
+}
 #issuem-featured-article-thumbs-wrap {
   margin-bottom: 60px;
 }
