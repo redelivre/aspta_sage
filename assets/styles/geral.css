@@ -248,7 +248,10 @@ to be fill the entire space of the .navbar */
 	display: none;
 }
 .posts-navigation {
-	padding-bottom: 50px;
+    padding-bottom: 50px;
+    display: block;
+    position: relative;
+    overflow: auto;
 }
 .nav-links {
 	margin: 0 auto;
