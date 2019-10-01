@@ -34,7 +34,7 @@ body {
 	min-height: 100%;
 }
 h1 {
-	font-size: 2em;
+	font-size: 2em !important;
 }
 ul li {
 	color: #003e2d;
@@ -990,6 +990,10 @@ aside .titulo {
 }
 
 /*Página Revista Agriculturas*/
+.newspaper-header {
+	padding-bottom: 20px !important;
+	border-bottom: 2px solid #003e2d !important;
+}
 .newspaper-header .newspaper-cover {
 	max-width: 200px;
 	float: left;
@@ -1000,6 +1004,20 @@ aside .titulo {
 }
 #issuem-featured-article-thumbs-wrap {
   margin-bottom: 60px;
+}
+#issuem-featured-article-slideshowholder {
+	max-height: 400px;
+	overflow: hidden;
+	border: none;
+}
+#issuem-featured-article-slideshowholder .flex-direction-nav a {
+	top: 35%;
+}
+#issuem-featured-article-slideshowholder .flex-caption {
+	bottom: 150px;
+}
+#issuem-featured-article-slideshowholder .flex-caption .flex-caption-content .featured_slider_title {
+	text-align: center;
 }
 .issuem-featured-article-thumb .featured-thumb-content {
 	display: none;
@@ -1386,7 +1404,7 @@ img.aligncenter {
 	}
 	/* Customize toggle navbar to 1000px screen */
 	.navbar {
-	    height: 50px;
+		height: 50px;
 	    z-index: 9999;
 	}
 	.navbar-justified .navbar-nav {
@@ -1398,7 +1416,7 @@ img.aligncenter {
 		display: none !important;
 	}
 	.navbar-justified .navbar-toggle {
-	  display: block !important;
+		display: block !important;
 	}
 	.navbar-justified .navbar-header{
 	    float: none;
@@ -1456,6 +1474,15 @@ img.aligncenter {
 	}
 	.btn-saibamais {
 		width: 39%;
+	}
+	#issuem-featured-article-slideshowholder {
+		max-height: 300px;
+	}
+	#issuem-featured-article-slideshowholder .flex-direction-nav a {
+		top: 32%;
+	}
+	#issuem-featured-article-slideshowholder .flex-caption {
+		max-width: 617px !important;
 	}
 	.footer {
 		height: 415px;
@@ -1523,6 +1550,12 @@ img.aligncenter {
 	.revista a img {
 	    height: 315px;
 	    width: 260px;
+	}
+	#issuem-featured-article-slideshowholder {
+		max-height: 380px;
+	}
+	#issuem-featured-article-slideshowholder .flex-caption {
+		max-width: 720px !important;
 	}
 	.issuem_archive a img,
 	.issuem-featured-thumbs-img img {
@@ -1639,6 +1672,9 @@ img.aligncenter {
 	}
 	.parcerias-title h3 {
 		border: none;
+	}
+	#issuem-featured-article-slideshowholder {
+		display: none !important;
 	}
 	.footer {
 		height: 395px;
@@ -1887,6 +1923,8 @@ img.aligncenter {
 	.form-submit #submit {
 		margin: 30px 0 10px 47.6% !important;
 		width: 52% !important;
+	}.newspaper-header .newspaper-cover {
+		display: none;
 	}
 	.footer {
 	    height: 301px;
