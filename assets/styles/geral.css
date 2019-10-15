@@ -1352,6 +1352,9 @@ form .pesquisar {
 .footer-icones li:hover {
 	color: #98ab28;
 }
+.error404 .wrap { 
+	margin-bottom: 320px
+}
 
 img.alignright {
 	float:right;
