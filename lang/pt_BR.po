@@ -1,4 +1,3 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -12,41 +11,42 @@ msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "X-Generator: Poedit 2.0.6\n"
+"Last-Translator: \n"
+"Language: pt_BR\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ..\n"
 
 #: ../404.php:4
 msgid "Sorry, but the page you were trying to view does not exist."
-msgstr ""
+msgstr "Desculpe, mas a página que você está tentando vizualizar não existe."
 
 #: ../category.php:29
 msgid "Não há publicação ainda para essa categoria"
-msgstr ""
+msgstr "Não há publicação ainda para essa categoria"
 
 #: ../functions-revista.php:128
 msgid "(no parent)"
-msgstr ""
+msgstr "(sem pais)"
 
 #: ../functions-revista.php:131
 msgid "Parent"
-msgstr ""
+msgstr "Pai"
 
 #: ../functions.php:30
 #, php-format
 msgid "Error locating %s for inclusion"
-msgstr ""
+msgstr "Erro localizando %s para inclusão"
 
 #: ../functions.php:155 ../functions.php:156
 msgid "PDF Revista"
-msgstr ""
+msgstr "PDF Revista"
 
 #: ../functions.php:157
 msgid "Adicionar Novo"
-msgstr ""
+msgstr "Adicionar Novo"
 
 #: ../functions.php:158
 msgid "Adicionar Novo PDF Revista"
@@ -86,23 +86,23 @@ msgstr ""
 
 #: ../inc/extras.php:10
 msgid "Upload da imagem de Logo de topo"
-msgstr ""
+msgstr "Enviar da imagem de Logo de topo"
 
 #: ../inc/extras.php:42
 msgid "Continued"
-msgstr ""
+msgstr "Continuado"
 
 #: ../index.php:5
 msgid "Sorry, no results were found."
-msgstr ""
+msgstr "Desculpe, nenhum resultado encontrado."
 
 #: ../lib/blog_clean_plates.php:20
 msgid "Posts from blog Clean Plates AS-PTA"
-msgstr ""
+msgstr "Posts para o blog Pratos Limpos AS-PTA"
 
 #: ../lib/blog_clean_plates.php:22
 msgid "Posts Clean Plates AS-PTA"
-msgstr ""
+msgstr "Posts Pratos Limpo AS-PTA"
 
 #: ../lib/blog_clean_plates.php:40 ../templates/content-home.php:143
 msgid "Não há itens no blog."
@@ -110,31 +110,31 @@ msgstr ""
 
 #: ../lib/customizer.php:15
 msgid "Theme Options"
-msgstr ""
+msgstr "Opções do Tema"
 
 #: ../lib/customizer.php:23
 msgid "Network icons"
-msgstr ""
+msgstr "Icones de rede"
 
 #: ../lib/customizer.php:35
 msgid "Upload facebook icon"
-msgstr ""
+msgstr "enviar ícone do Facebook"
 
 #: ../lib/customizer.php:46
 msgid "Upload twitter icon"
-msgstr ""
+msgstr "enviar ícone do Twitter"
 
 #: ../lib/customizer.php:54
 msgid "Header"
-msgstr ""
+msgstr "Cabeçalho"
 
 #: ../lib/customizer.php:65
 msgid "Upload imagem de Logo"
-msgstr ""
+msgstr "Enviar imagem de logo"
 
 #: ../lib/customizer.php:76
 msgid "Header Background Image"
-msgstr ""
+msgstr "Imagen de fundo do cabeçalho"
 
 #: ../lib/extras.php:31
 msgid "Leia mais"
@@ -142,7 +142,7 @@ msgstr ""
 
 #: ../lib/footer.php:19
 msgid "Logo and text for footer AS-PTA"
-msgstr ""
+msgstr "Logo e texto do rodapé da AS-PTA"
 
 #: ../lib/footer.php:21
 msgid "Logo/Text AS-PTA"
@@ -150,19 +150,19 @@ msgstr ""
 
 #: ../lib/library.php:20
 msgid "Search Library AS-PTA"
-msgstr ""
+msgstr "Buscar na biblionta da AS-PTA"
 
 #: ../lib/library.php:22
 msgid "Search Library Widget"
-msgstr ""
+msgstr "Procurar na biblioteca de Widgets"
 
 #: ../lib/newspaper.php:20
 msgid "Last newspaper AS-PTA"
-msgstr ""
+msgstr "Última notícia da AS-PTA"
 
 #: ../lib/newspaper.php:22
 msgid "Last Newspaper AS-PTA"
-msgstr ""
+msgstr "Última notícia da AS-PTA"
 
 #: ../lib/see_also.php:21
 msgid "Veja mais sobre AS-PTA"
@@ -198,7 +198,7 @@ msgstr ""
 
 #: ../lib/setup.php:98
 msgid "Seção Banners - Home"
-msgstr ""
+msgstr "Seção Banners - Capa"
 
 #: ../lib/setup.php:106
 msgid "Quem Somos - Menu Lateral"
@@ -242,16 +242,16 @@ msgstr ""
 
 #: ../lib/titles.php:13
 msgid "Latest Posts"
-msgstr ""
+msgstr "Últimos Posts"
 
 #: ../lib/titles.php:18
 #, php-format
 msgid "Search Results for %s"
-msgstr ""
+msgstr "Resultado da busca por %s"
 
 #: ../lib/titles.php:20
 msgid "Not Found"
-msgstr ""
+msgstr "Não encontrado"
 
 #: ../search.php:29
 msgid "Nenhum resultado encontrado"
@@ -262,20 +262,20 @@ msgstr ""
 msgctxt "comments title"
 msgid "One response to &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s responses to &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Uma resposta para &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s respostas para &ldquo;%2$s&rdquo;"
 
 #: ../templates/comments.php:19
 msgid "&larr; Older comments"
-msgstr ""
+msgstr "&larr; comtantários antigos"
 
 #: ../templates/comments.php:22
 msgid "Newer comments &rarr;"
-msgstr ""
+msgstr "Novos comentários &rarr;"
 
 #: ../templates/comments.php:31
 msgid "Comments are closed."
-msgstr ""
+msgstr "Comentários estão encerrados"
 
 #: ../templates/content-home.php:65
 #, php-format
@@ -291,11 +291,11 @@ msgstr ""
 
 #: ../templates/content-page.php:2
 msgid "Pages:"
-msgstr ""
+msgstr "Páginas:"
 
 #: ../templates/entry-meta.php:2
 msgid "By"
-msgstr ""
+msgstr "Por"
 
 #: ../templates/exit-meta.php:12
 msgid "Noticias Relacionadas"
@@ -311,12 +311,12 @@ msgstr ""
 
 #: ../templates/news.php:50
 msgid "No posts..."
-msgstr ""
+msgstr "Sem posts..."
 
 #: ../templates/newspaper.php:53
 msgid "No posts found"
-msgstr ""
+msgstr "Nenhum post encontrado"
 
 #: ../templates/old_newspaper.php:75
 msgid "Download PDF"
-msgstr ""
+msgstr "Descarregar PDF"
