@@ -27,7 +27,7 @@
 				<div class="row">
 					<div class="col-md-7 col-sm-7 search">
 						<div id="sb-search" class="sb-search hidden-xs">
-							<form>
+							<form action="/">
 								<input class="sb-search-input" placeholder="Digite o que procura e pressione enter..." type="text" value="" name="s" id="search">
 								<input class="sb-search-submit" type="submit" value="">
 								<span class="sb-icon-search" aria-hidden="true" data-icon="&#xf002;"></span>
