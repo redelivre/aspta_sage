@@ -28,13 +28,13 @@
 		<article class="pagina-conteudo">
 			<div class="noticias-relacionadas">
 				<h3 class="text-uppercase">Notícias Relacionadas</h3>
-				<?php $categories = get_the_category($post->ID);  
+				<?php $categories = get_the_tags($post->ID);  
 				if ($categories) {  $category_ids = array();  
 					foreach($categories as $individual_category)  
 						$category_ids[] = $individual_category->term_id; 
 			 
 					$args=array( 
-						'category__in' => $category_ids, 
+						'tags__in' => $category_ids, 
 						'post__not_in' => array($post->ID), 
 						'showposts'=>3, // Number of related posts that will be shown. 
 						'ignore_sticky_posts'=>1 
