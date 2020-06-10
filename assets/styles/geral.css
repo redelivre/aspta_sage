@@ -1353,20 +1353,26 @@ form .pesquisar {
 	color: #98ab28;
 }
 
-img.alignright {
+img.alignright, figure.alignright {
 	float:right;
 	margin-left: 1em;
 	margin-bottom: 1em;
 }
-img.alignleft {
+img.alignleft,, figure.alignleft {
 	margin-right: 1em;
 	margin-bottom: 1em;
 	float:left;
 }
-img.aligncenter {
+img.aligncenter, figure.aligncenter {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.wp-caption-text {
+	margin-bottom: 0.5em;
+	font-size: 0.9em;
+	text-align: center;
 }
 
 .image_search_post.img-responsive {
