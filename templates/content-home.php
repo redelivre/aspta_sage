@@ -184,8 +184,8 @@
 						<div class="parceria-banner">
 							<a href="http://alianzaagroecologia.redelivre.org.br/" target="_blank"><img class="mg-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-alianza.jpg" /></a>
 						</div>
-						<div class="parceria-banner">
-							<a href="https://www.agroecologiaemrede.org.br/" style="max-height: 141px;max-width: 180px;padding: 1em;margin-top: 4%;" target="_blank"><img class="img-responsive center-block" center-block src="<?php echo get_template_directory_uri(); ?>/assets/images/sidebar_partiners/logo_AeR_cor_horizontal.png" /></a>
+						<div class="parceria-banner" style="max-height: 141px;max-width: 180px;padding: 1em;margin-top: 4%;">
+							<a href="https://www.agroecologiaemrede.org.br/" target="_blank"><img class="img-responsive center-block" center-block src="<?php echo get_template_directory_uri(); ?>/assets/images/sidebar_partiners/logo_AeR_cor_horizontal.png" /></a>
 						</div>
 						<div class="parceria-banner">
 							<a href="http://www.agroecologia.org.br/" target="_blank"><img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-ana.jpg" /></a>
