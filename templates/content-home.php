@@ -159,7 +159,7 @@
 				
 				<div class="col-md-4 col-sm-6 col-xs-12 campanhas">
 					<h3 class="text-uppercase">Campanhas</h3>
-					<a href="<?php get_site_url(); ?>/tag/sementes-crioulas/" ><img class="img-responsive" style="margin-top: 2px; padding-top: 0;" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner_site.jpg" alt="Sementes Crioulas" /></a>
+					<a href="https://agroecologiaemrede.org.br/" ><img class="img-responsive" style="margin-top: 2px; padding-top: 0;" src="<?php echo get_template_directory_uri(); ?>/assets/images/Banner_AeR_310x120.png" alt="Banner AeR" /></a>
 					<a href="<?php get_site_url(); ?>/2015/05/metodo/" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner_lume.png" alt="Lume" /></a>
 					<a href="<?php get_site_url(); ?>/2014/03/17/conheca-os-produtos-da-gente/" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner_alimentos.jpg" alt="Alimentos Saudáveis" /></a>
 					<a href="http://projetosertaocarioca.wordpress.com" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/Banner_Sertão-Carioca.jpg" alt="Projeto Sertão Carioca" /></a>
@@ -185,7 +185,7 @@
 							<a href="http://alianzaagroecologia.redelivre.org.br/" target="_blank"><img class="mg-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-alianza.jpg" /></a>
 						</div>
 						<div class="parceria-banner">
-							<a href="http://www.agroecologiaemrede.org.br/" target="_blank"><img class="img-responsive center-block" center-block src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-agroecologia-em-rede.jpg" /></a>
+							<a href="https://www.agroecologiaemrede.org.br/" style="max-height: 141px;max-width: 180px;padding: 1em;margin-top: 4%;" target="_blank"><img class="img-responsive center-block" center-block src="<?php echo get_template_directory_uri(); ?>/assets/images/sidebar_partiners/logo_AeR_cor_horizontal.png" /></a>
 						</div>
 						<div class="parceria-banner">
 							<a href="http://www.agroecologia.org.br/" target="_blank"><img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-ana.jpg" /></a>
