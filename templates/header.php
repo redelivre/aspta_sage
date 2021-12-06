@@ -34,7 +34,7 @@
 							</form>
 						</div>
 					</div>
-					<div class="col-md-5 col-sm-5 logo"><a href="<?php bloginfo('url'); ?>" title="AS-PTA"><img src="<?php echo get_theme_mod('aspta_logo') ? get_theme_mod('aspta_logo') : get_template_directory_uri(). "/assets/images/logo_aspta.png"; ?>" class="img-responsive center-block"></a></div>
+					<div class="col-md-5 col-sm-5 logo"><a href="<?php bloginfo('url'); ?>" title="AS-PTA"><img src="<?php echo get_theme_mod('aspta_logo') ? get_theme_mod('aspta_logo') : get_stylesheet_directory_uri(). "/assets/images/logo_aspta.png"; ?>" class="img-responsive center-block"></a></div>
 				</div>
 			</div><!-- /.topo -->
 			

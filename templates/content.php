@@ -1,11 +1,11 @@
 							<article <?php post_class('lista'); ?>>
                 <div class="row lista-post">
-                <?php $thumb = aspta_get_post_thumbnail(false);
+                <?php $thumb = AsptaDivi::get_post_thumbnail(false);
                       if ($thumb !== false) { ?>
                   <div class="col-md-4 lista-img">
                     <a class="featured-thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="nofollow">
                       <div class="image_search_post">
-                        <?php aspta_get_post_thumbnail(); ?>
+                        <?php AsptaDivi::get_post_thumbnail(); ?>
                       </div>
                     </a>
                   </div>

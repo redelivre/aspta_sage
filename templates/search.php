@@ -1,7 +1,7 @@
               <article <?php post_class(); ?>>
                 <div class="row lista-post">
                   <div class="col-md-4 lista-img">
-                  	<?php aspta_get_post_thumbnail(); ?>
+                  	<?php AsptaDivi::get_post_thumbnail(); ?>
                   </div>
                   <div class="col-md-8 lista-conteudo">
                     <div class="lista-categoria">

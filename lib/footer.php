@@ -29,7 +29,7 @@ class FooterWidget extends WP_Widget {
    */
   public function widget( $args, $instance ) {
     ?>
-    <a href="<?php bloginfo('url'); ?>" title="AS-PTA"><img class="img-responsive center-block footer-logo" src="<?php echo get_theme_mod('aspta_logo') ? get_theme_mod('aspta_logo') : get_template_directory_uri(). "/assets/images/logo_aspta.png"; ?>" alt=""/></a>
+    <a href="<?php bloginfo('url'); ?>" title="AS-PTA"><img class="img-responsive center-block footer-logo" src="<?php echo get_theme_mod('aspta_logo') ? get_theme_mod('aspta_logo') : get_stylesheet_directory_uri(). "/assets/images/logo_aspta.png"; ?>" alt=""/></a>
     <p class="footer-descricao">A AS-PTA - Agricultura Familiar e Agro&shy;ecologia é uma associação de direito civil sem fins lucrativos que, desde 1983, atua para o fortalecimento da agricultura familiar e a promoção do desenvolvi&shy;mento rural sustentável no Brasil.</p>
     <?php
   }
