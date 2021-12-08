@@ -3,7 +3,7 @@
 	<article class="pagina-conteudo" <?php post_class(); ?>>
                 <?php if (wp_get_attachment_url(get_post_thumbnail_id(get_the_ID()))){ ?>
 		<div class="pagina-img">
-			<img class="img-responsive" src="<?php wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())) ? the_post_thumbnail_url('destaque-pagina') : get_template_directory_uri().'/assets/images/aspta-no-thumb.jpg'; ?>" />
+			<img class="img-responsive" src="<?php wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())) ? the_post_thumbnail_url('destaque-pagina') : get_stylesheet_directory_uri().'/assets/images/aspta-no-thumb.jpg'; ?>" />
 		</div>
                 <?php } ?>
 		<div class="pagina-data">

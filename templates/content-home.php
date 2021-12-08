@@ -159,9 +159,9 @@
 				
 				<div class="col-md-4 col-sm-6 col-xs-12 campanhas">
 					<h3 class="text-uppercase">Campanhas</h3>
-					<a href="<?php get_site_url(); ?>/tag/sementes-crioulas/" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner_site.jpg" alt="Sementes Crioulas" /></a>
-					<a href="<?php get_site_url(); ?>/2015/05/metodo/" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner_lume.png" alt="Lume" /></a>
-					<a href="<?php get_site_url(); ?>/2014/03/17/conheca-os-produtos-da-gente/" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner_alimentos.jpg" alt="Alimentos Saudáveis" /></a>
+					<a href="<?php get_site_url(); ?>/tag/sementes-crioulas/" ><img class="img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/banner_site.jpg" alt="Sementes Crioulas" /></a>
+					<a href="<?php get_site_url(); ?>/2015/05/metodo/" ><img class="img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/banner_lume.png" alt="Lume" /></a>
+					<a href="<?php get_site_url(); ?>/2014/03/17/conheca-os-produtos-da-gente/" ><img class="img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/banner_alimentos.jpg" alt="Alimentos Saudáveis" /></a>
 				</div>
 			</div>
 		</div>
@@ -178,22 +178,22 @@
 					</div>
 					<div class="col-md-10">
 						<div class="parceria-banner">
-							<a href="http://www6.ufrgs.br/abaagroeco" target="_blank"><img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-aba.jpg" /></a>
+							<a href="http://www6.ufrgs.br/abaagroeco" target="_blank"><img class="img-responsive center-block" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/banner-aba.jpg" /></a>
 						</div>
 						<div class="parceria-banner">
-							<a href="http://alianzaagroecologia.redelivre.org.br/" target="_blank"><img class="mg-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-alianza.jpg" /></a>
+							<a href="http://alianzaagroecologia.redelivre.org.br/" target="_blank"><img class="mg-responsive center-block" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/banner-alianza.jpg" /></a>
 						</div>
 						<div class="parceria-banner">
-							<a href="http://www.agroecologiaemrede.org.br/" target="_blank"><img class="img-responsive center-block" center-block src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-agroecologia-em-rede.jpg" /></a>
+							<a href="http://www.agroecologiaemrede.org.br/" target="_blank"><img class="img-responsive center-block" center-block src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/banner-agroecologia-em-rede.jpg" /></a>
 						</div>
 						<div class="parceria-banner">
-							<a href="http://www.agroecologia.org.br/" target="_blank"><img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-ana.jpg" /></a>
+							<a href="http://www.agroecologia.org.br/" target="_blank"><img class="img-responsive center-block" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/banner-ana.jpg" /></a>
 						</div>
 						<div class="parceria-banner">
-							<a href="http://www.agriculturesnetwork.org/" target="_blank"><img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-agriculture-network.jpg" /></a>
+							<a href="http://www.agriculturesnetwork.org/" target="_blank"><img class="img-responsive center-block" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/banner-agriculture-network.jpg" /></a>
 						</div>
 						<div class="parceria-banner">
-							<a href="http://www.asabrasil.org.br/" target="_blank"><img class="img-responsive center-block" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-asa.jpg" /></a>
+							<a href="http://www.asabrasil.org.br/" target="_blank"><img class="img-responsive center-block" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/banner-asa.jpg" /></a>
 						</div>
 					</div>
 				</div>

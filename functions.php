@@ -422,7 +422,7 @@ class AsptaDivi {
 	}
 	
 	function scripts() {
-		wp_enqueue_script('aspta_comment_scripts', get_template_directory_uri() . '/assets/scripts/comments.js', array('jquery'));
+		wp_enqueue_script('aspta_comment_scripts', get_stylesheet_directory_uri() . '/assets/scripts/comments.js', array('jquery'));
 	}
 	
 }
