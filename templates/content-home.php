@@ -162,7 +162,7 @@
 					<a href="https://agroecologiaemrede.org.br/" ><img class="img-responsive" style="margin-top: 2px; padding-top: 0;" src="<?php echo get_template_directory_uri(); ?>/assets/images/Banner_AeR_310x120.png" alt="Banner AeR" /></a>
 					<a href="<?php get_site_url(); ?>/2015/05/metodo/" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner_lume.png" alt="Lume" /></a>
 					<a href="<?php get_site_url(); ?>/2014/03/17/conheca-os-produtos-da-gente/" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner_alimentos.jpg" alt="Alimentos Saudáveis" /></a>
-					<a href="http://projetosertaocarioca.wordpress.com" ><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/Banner_Sertão-Carioca.jpg" alt="Projeto Sertão Carioca" /></a>
+					<a href="https://aspta.org.br/hortas-organicas-em-faixas-de-dutos/" ><img class="img-responsive" src="https://aspta.org.br/files/2022/07/Banner-digital_02.jpg" alt="Hortas Orgânicas em Faixas-de-Dutos" /></a>
 				</div>
 			</div>
 		</div>
